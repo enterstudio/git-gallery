@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+matt = User.create(:name => "Matt")
+matt.projects.build(:title => "git-built")
+matt.save
+
+jen = User.create(:name => "Jen")
+jen.projects.build(:title => "git-destroy")
+jen.save
+
+gitbuilt = Project.where(:title => "git-built").first
+gitbuilt.technologies.build(:name => "ROR")
+gitbuilt.save
+
