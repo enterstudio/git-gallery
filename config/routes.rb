@@ -1,8 +1,8 @@
 GitAtMe::Application.routes.draw do
-  resources :projects
-
-
-  resources :users
+  
+  resources :users do
+    resources :projects
+  end
 
 
   # The priority is based upon order of creation:

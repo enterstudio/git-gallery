@@ -7,9 +7,7 @@
 
 <p>
   <b>Users:</b>
-  <% @project.users.each do |user| %>
-    <%= user.name %>
-  <% end %>
+  <%= @project.user.name %>
 </p>
 
 <p>
@@ -18,5 +16,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Edit', edit_user_project_path(@project.user, @project) %> |
+<%= link_to 'Back', user_projects_path %>
