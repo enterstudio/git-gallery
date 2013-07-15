@@ -14,6 +14,13 @@ jen = User.create(:name => "Jen")
 jen.projects.build(:title => "git-destroy")
 jen.save
 
+js = Technology.create(:name => "Javascript")
+js.projects.build(:title => "jquery")
+gd = Project.where(:title => "git-destroy").first
+js.projects.push(gd)
+js.save
+
+
 gitbuilt = Project.where(:title => "git-built").first
 gitbuilt.technologies.build(:name => "ROR")
 gitbuilt.save
