@@ -11,6 +11,15 @@
 </p>
 
 <p>
+  <b>Technologies:</b>
+  <ul>
+  <% @project.technologies.each do |technology| %>
+    <li><%= technology.name %></li>
+  <% end %>
+  </ul>
+</p>
+
+<p>
   <b>Description:</b>
   <%= @project.description %>
 </p>

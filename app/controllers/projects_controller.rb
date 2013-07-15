@@ -27,6 +27,9 @@ class ProjectsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @project = @user.projects.build
+    3.times do
+      @project.technologies.build
+    end
 
     respond_to do |format|
       format.html # new.html.erb

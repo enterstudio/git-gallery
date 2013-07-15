@@ -20,6 +20,21 @@
     <%= f.text_area :description %>
   </div>
 
+  <p>
+    <%= label_tag 'project[technologies_to_add][]', 'Technologies' %>
+    <ul>
+      <% @project.technologies.each do |technology| %>
+
+      <li>
+        <% text_field(:recipe, :technologies_to_add, :name => 'project[technologies_to_add][]', :value => technology.name) %>
+
+        <%= text_field_tag 'project[technologies_to_add][]', technology.name %>
+      </li>
+      <% end %>
+    </ul>
+  </p>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
