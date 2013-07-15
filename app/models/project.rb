@@ -7,6 +7,7 @@ class Project < ActiveRecord::Base
   has_many :technologies, :through => :project_technologies
 
   def technologies_to_add=(technologies)
+    self.technologies = []
     technologies.collect(&:downcase).collect(&:strip).uniq.reject(&:blank?).each do |technology|
       self.technologies.build(:name => technology)
     end
