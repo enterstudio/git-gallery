@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :technologies, :projects
+  attr_accessible :email, :name, :technologies, :presentations
 
-  has_many :projects
-  has_many :technologies, :through => :projects
+  has_many :presentations
+  has_many :technologies, :through => :presentations
 end

@@ -1,10 +1,10 @@
-class Project < ActiveRecord::Base
+class Presentation < ActiveRecord::Base
   attr_accessible :description, :title, :user_id, :technologies_to_add
 
   belongs_to :user
 
-  has_many :project_technologies
-  has_many :technologies, :through => :project_technologies
+  has_many :presentation_technologies
+  has_many :technologies, :through => :presentation_technologies
 
   def technologies_to_add=(technologies)
     self.technologies = []

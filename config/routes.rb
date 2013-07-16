@@ -1,7 +1,7 @@
 GitAtMe::Application.routes.draw do
   
   resources :users do
-    resources :projects
+    resources :presentations
   end
 
 
