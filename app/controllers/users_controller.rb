@@ -14,9 +14,10 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @features = @user.features
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { redirect_to user_features_path(@user) } # show.html.erb
       format.json { render json: @user }
     end
   end
