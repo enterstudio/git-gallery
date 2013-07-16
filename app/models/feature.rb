@@ -1,5 +1,7 @@
 class Feature < ActiveRecord::Base
-  attr_accessible :description, :title, :user_id, :technologies_to_add, :project_id
+  attr_accessible :description, :title, :user_id, :technologies_to_add, :project_id, :image
+
+  mount_uploader :image, ImageUploader
 
   belongs_to :user
   belongs_to :project

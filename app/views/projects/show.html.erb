@@ -9,6 +9,12 @@
   <b>Source:</b>
   <%= @project.source %>
 </p>
+  
+<p>
+  <b>Image:</b>
+  <%= image_tag @project.image_url.to_s if @project.image? %>
+</p>
+
 
 <p>
   <b>Features:</b><br>

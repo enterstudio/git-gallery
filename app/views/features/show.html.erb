@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <b>Image:</b>
+  <%= image_tag @feature.image_url.to_s if @feature.image? %>
+</p>
+
+<p>
   <b>Technologies:</b>
   <ul>
     <% @feature.technologies.each do |technology| %>

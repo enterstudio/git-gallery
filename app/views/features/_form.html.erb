@@ -34,6 +34,10 @@
     </ul>
   </p>
 
+<p>
+  <%= f.file_field :image %>
+</p>
+
 <p>Choose Project
   <%= collection_select :feature, :project_id, Project.all, :id, :name %><br>
   OR <%= link_to 'Create new project', new_project_path %>
