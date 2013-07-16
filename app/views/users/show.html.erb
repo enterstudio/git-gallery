@@ -1,23 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Name:</b><br>
   <%= @user.name %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>Email:</b><br>
   <%= @user.email %>
 </p>
 
 <p>
-  <b>Features:</b>
-  <% @user.features.each do |feature| %>
-    <%= feature.title %>
-  <% end %>
+  <b>Features:</b><br>
+  <ul>
+    <% @user.features.each do |feature| %>
+      <li><%= link_to feature.title, user_feature_path(@user, feature) %></li>
+    <% end %>
+  </ul>
 </p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> | 
 <%= link_to 'New feature', new_user_feature_path(@user) %>

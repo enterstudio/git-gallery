@@ -14,7 +14,14 @@ class FeaturesController < ApplicationController
   # GET /users/1/features/1
   # GET /users/1/features/1.json
   def show
-    @feature = Feature.find(params[:id])
+    @user = User.find(params[:user_id])
+    feature = Feature.find(params[:id])
+    
+    if feature.user.id == @user.id
+      @feature = feature
+    else 
+      nil
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,6 +34,7 @@ class FeaturesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @feature = @user.features.build
+    
     3.times do
       @feature.technologies.build
     end
