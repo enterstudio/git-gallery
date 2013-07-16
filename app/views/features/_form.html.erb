@@ -26,7 +26,7 @@
       <% @feature.technologies.each do |technology| %>
 
       <li>
-        <% text_field(:recipe, :technologies_to_add, :name => 'feature[technologies_to_add][]', :value => technology.name) %>
+        <% text_field(:feature, :technologies_to_add, :name => 'feature[technologies_to_add][]', :value => technology.name) %>
 
         <%= text_field_tag 'feature[technologies_to_add][]', technology.name %>
       </li>
@@ -34,6 +34,10 @@
     </ul>
   </p>
 
+<p>Choose Project
+  <%= collection_select :feature, :project_id, Project.all, :id, :name %><br>
+  OR <%= link_to 'Create new project', new_project_path %>
+</p>
 
   <div class="actions">
     <%= f.submit %>

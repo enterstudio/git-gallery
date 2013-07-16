@@ -11,13 +11,14 @@
 </p>
 
 <p>
-  <b>Features:</b>
+  <b>Features:</b><br>
   <% @project.features.each do |feature| %>
-    <%= feature.title %>
+    <i>Title</i>: <%= link_to feature.title, user_feature_path(feature.user.id, feature.id) %><br>
+    <i>User</i>: <%= link_to feature.user.name, user_path(feature.user) %><br><br>
   <% end %>
 </p>
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-<%= link_to 'New Feature', new_user_feature_path(@user) %>
+<%= link_to 'Back', projects_path %> | 
+<%= link_to 'User List', users_path %>
