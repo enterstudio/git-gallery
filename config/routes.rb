@@ -2,8 +2,10 @@ GitAtMe::Application.routes.draw do
   
   resources :users do
     resources :presentations
+    resources :technologies, only: [:show]
   end
 
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,15 @@
+<!-- TRYING TO SHOW THE PROJECTS FROM A GIVEN USER FOR THE SELECTED TECHNOLOGY -->
+<h1><%= @user.name %>'s <i><%= @technology.name %></i> Presentations</h1>
+
+<% @user.presentations.each do |presentation| %>
+  <% presentation.technologies.each do |technology| %>
+    <ul>
+      <% if technology.name == @technology.name %>
+        <li><%= presentation.title %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<%= link_to_function "Back", "history.back()" %> | 
+<%= link_to "#{@user.name}'s Presentations", user_presentations_path(@user) %>

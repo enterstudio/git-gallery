@@ -14,7 +14,14 @@ class PresentationsController < ApplicationController
   # GET /users/1/presentations/1
   # GET /users/1/presentations/1.json
   def show
-    @presentation = Presentation.find(params[:id])
+    @user = User.find(params[:user_id])
+    presentation = Presentation.find(params[:id])
+    
+    if presentation.user.id == @user.id
+      @presentation = presentation
+    else 
+      nil
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,6 +34,7 @@ class PresentationsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @presentation = @user.presentations.build
+
     3.times do
       @presentation.technologies.build
     end
@@ -86,7 +94,7 @@ class PresentationsController < ApplicationController
     @presentation.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_presentations_url }
+      format.html { redirect_to user_presentations_url, notice: 'presentation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

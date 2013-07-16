@@ -1,4 +1,4 @@
-<h1>Listing presentations</h1>
+<h1><%= @user.name %> presentations</h1>
 
 <table>
   <tr>
@@ -13,8 +13,8 @@
   <tr>
     <td><%= presentation.title %></td>
     <td><%= presentation.description %></td>
-    <td><%= link_to 'Show', user_presentation_path(@user, presentation)%></td>
-    <td><%= link_to 'Edit', edit_user_presentation_path(@user, presentation) %></td>
+    <td><%= link_to 'Show', user_presentation_path(@user, presentation)%> | </td>
+    <td><%= link_to 'Edit', edit_user_presentation_path(@user, presentation) %> | </td>
     <td><%= link_to 'Destroy', user_presentation_path(@user, presentation) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

@@ -13,9 +13,9 @@
 <p>
   <b>Technologies:</b>
   <ul>
-  <% @presentation.technologies.each do |technology| %>
-    <li><%= technology.name %></li>
-  <% end %>
+    <% @presentation.technologies.each do |technology| %>
+      <li><%= link_to technology.name, user_technology_path(@user.id, technology.id) %></li>
+    <% end %>
   </ul>
 </p>
 
@@ -23,7 +23,6 @@
   <b>Description:</b>
   <%= @presentation.description %>
 </p>
-
 
 <%= link_to 'Edit', edit_user_presentation_path(@presentation.user, @presentation) %> |
 <%= link_to 'Back', user_presentations_path %>

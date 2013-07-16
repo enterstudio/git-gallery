@@ -1,23 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Name:</b><br>
   <%= @user.name %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>Email:</b><br>
   <%= @user.email %>
 </p>
 
 <p>
-  <b>presentations:</b>
-  <% @user.presentations.each do |presentation| %>
-    <%= presentation.title %>
-  <% end %>
+  <b>presentations:</b><br>
+  <ul>
+    <% @user.presentations.each do |presentation| %>
+      <li><%= link_to presentation.title, user_presentation_path(@user, presentation) %></li>
+    <% end %>
+  </ul>
 </p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 <%= link_to 'New presentation', new_user_presentation_path(@user) %>
+
+
+
+
+
