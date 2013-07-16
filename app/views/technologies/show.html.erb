@@ -5,7 +5,9 @@
   <% feature.technologies.each do |technology| %>
     <ul>
       <% if technology.name == @technology.name %>
-        <li><%= feature.title %></li>
+        <li>
+          <%= link_to feature.title, user_feature_path(@user.id, feature.id) %>
+        </li>
       <% end %>
     </ul>
   <% end %>
