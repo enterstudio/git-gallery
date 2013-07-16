@@ -1,16 +1,10 @@
 <!-- TRYING TO SHOW THE PROJECTS FROM A GIVEN USER FOR THE SELECTED TECHNOLOGY -->
 <h1><%= @user.name %>'s <i><%= @technology.name %></i> Features</h1>
 
-<% @user.features.each do |feature| %>
-  <% feature.technologies.each do |technology| %>
-    <ul>
-      <% if technology.name == @technology.name %>
-        <li>
-          <%= link_to feature.title, user_feature_path(@user.id, feature.id) %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
+<% @user.tech_features(@technology).each do |r| %>
+  <ul>
+    <li><%= link_to r.title, user_feature_path(@user.id, r.id) %></li>
+  </ul>
 <% end %>
 
 <%= link_to_function "Back", "history.back()" %> | 
