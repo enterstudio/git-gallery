@@ -1,8 +1,8 @@
 class Technology < ActiveRecord::Base
   attr_accessible :name
 
-  has_many :presentation_technologies
-  has_many :presentations, :through => :presentation_technologies
-  has_many :users, :through => :presentations  
+  has_many :feature_technologies
+  has_many :features, :through => :feature_technologies
+  has_many :users, :through => :features  
 
 end

@@ -1,0 +1,41 @@
+<%= form_for([@user, @feature]) do |f| %>
+  <% if @feature.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feature.errors.count, "error") %> prohibited this feature from being saved:</h2>
+
+      <ul>
+      <% @feature.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <p>
+    <%= label_tag 'feature[technologies_to_add][]', 'Technologies' %>
+    <ul>
+      <% @feature.technologies.each do |technology| %>
+
+      <li>
+        <% text_field(:recipe, :technologies_to_add, :name => 'feature[technologies_to_add][]', :value => technology.name) %>
+
+        <%= text_field_tag 'feature[technologies_to_add][]', technology.name %>
+      </li>
+      <% end %>
+    </ul>
+  </p>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

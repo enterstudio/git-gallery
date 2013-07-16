@@ -11,13 +11,13 @@
 </p>
 
 <p>
-  <b>presentations:</b>
-  <% @user.presentations.each do |presentation| %>
-    <%= presentation.title %>
+  <b>Features:</b>
+  <% @user.features.each do |feature| %>
+    <%= feature.title %>
   <% end %>
 </p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-<%= link_to 'New presentation', new_user_presentation_path(@user) %>
+<%= link_to 'New feature', new_user_feature_path(@user) %>
