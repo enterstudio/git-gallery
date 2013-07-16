@@ -1,5 +1,5 @@
 GitAtMe::Application.routes.draw do
-  resource :projects
+  resources :projects
   
   resources :users do
     resources :features

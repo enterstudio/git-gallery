@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @project.source %>
+</p>
+
+<p>
+  <b>Features:</b>
+  <% @project.features.each do |feature| %>
+    <%= feature.title %>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+<%= link_to 'New Feature', new_user_feature_path(@user) %>
