@@ -8,7 +8,13 @@ class UploadsController < ApplicationController
   # GET /uploads/new
   # GET /uploads/new.json
   def new
+    # raise params.class
     @upload = @uploadable.uploads.new
+    if User.where(:id => params[:user_id]).count > 0
+      @user = User.find(params[:user_id])
+    else
+      @user = nil
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -63,14 +69,15 @@ class UploadsController < ApplicationController
 
 private
   
-  def load_uploadable
-    resource, id = request.path.split('/')[1,2]
-    @uploadable = resource.singularize.classify.constantize.find(id)
-  end
-
   # def load_uploadable
-  #   klass = [Project, Feature].detect {|c| params["#{c.name.underscore}_id"]}
-  #   @uploadable = klass.find(params["{klass.name.underscore}_id"])
+  #   resource, id = request.path.split('/')[1,2]
+  #   @uploadable = resource.singularize.classify.constantize.find(id)
   # end
+
+  def load_uploadable
+    klass = [Project, Feature].detect {|c| params["#{c.name.underscore}_id"]}
+    # raise klass.find(params["#{klass.name.underscore}_id"])
+    @uploadable = klass.find(params["#{klass.name.underscore}_id"])
+  end
 
 end

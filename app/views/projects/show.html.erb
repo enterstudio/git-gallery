@@ -29,4 +29,5 @@
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %> | 
-<%= link_to 'User List', users_path %>
+<%= link_to 'User List', users_path %> |
+<%= link_to "Upload an Image", [:new, @project, :upload] %>

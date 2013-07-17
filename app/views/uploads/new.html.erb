@@ -1,25 +1,11 @@
 <h1>New Upload</h1>
 
-<%= form_for [@uploadable, @upload] do |f|%>
-  <% if @upload.errors.any? %>
-    <div class="error_messages">
-      <h2>Please correct the following errors.</h2>
-      <ul>
-      <% @upload.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if @user %>
+  
+    <%= render 'feature_form' %>
 
-  <div class="field">
-    <%= f.text_field :name %>
-  </div>
-  <p>
-  <b>Add An Image:</b>
-  <%= f.file_field :image %>
-  </p>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<% else %>
+
+    <%= render 'project_form' %>
+
 <% end %>
