@@ -13,7 +13,7 @@
 <p>
   <b>Images:</b>
   <% @project.uploads.each do |upload| %>
-  <%= image_tag upload.image_url.to_s if upload.image? %>
+    <%= image_tag upload.image_url.to_s if upload.image? %>
   <% end %>
 </p>
 

@@ -20,13 +20,13 @@ class FeaturesController < ApplicationController
     if feature.user.id == @user.id
       @feature = feature
     else 
-      nil
+      redirect_to @user, notice: "Feature #{feature.id} does not belong to you."
     end
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @feature }
-    end
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.json { render json: @feature }
+    # end
   end
 
   # GET /users/1/features/new

@@ -12,7 +12,9 @@
 
 <p>
   <b>Image:</b>
-  <%= image_tag @feature.image_url.to_s if @feature.image? %>
+    <% @feature.uploads.each do |upload| %>
+      <%= image_tag upload.image_url.to_s if upload.image? %>
+    <% end %>
 </p>
 
 <p>
