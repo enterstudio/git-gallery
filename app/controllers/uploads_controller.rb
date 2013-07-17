@@ -32,11 +32,19 @@ class UploadsController < ApplicationController
   def create
     @upload = @uploadable.uploads.new(params[:upload])
 
+    #IF COMING FROM PROJECT, REDIRECT TO PROJECT SHOW; IF COMING FROM USER/FEATURE, REDIRECT TO FEATURE SHOW
     if @upload.save
-      redirect_to @uploadable
+      if @uploadable.class.name == "Feature"
+        redirect_to user_feature_path(@uploadable.user, @uploadable)
+      else
+        redirect_to project_path(@uploadable)
+      end
     else
       render :new
     end
+    
+    # @upload.location_dependent_save(@uploadable)
+
   end
 
   # PUT /uploads/1
