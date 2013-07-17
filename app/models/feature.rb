@@ -1,5 +1,5 @@
 class Feature < ActiveRecord::Base
-  attr_accessible :description, :title, :user_id, :technologies_to_add, :project_id, :image
+  attr_accessible :description, :title, :user_id, :technologies_to_add, :project_id
 
   mount_uploader :image, ImageUploader
 
@@ -8,6 +8,8 @@ class Feature < ActiveRecord::Base
 
   has_many :feature_technologies
   has_many :technologies, :through => :feature_technologies
+
+  has_many :uploads, as: :uploadable
 
   def technologies_to_add=(technologies)
     self.technologies = []
