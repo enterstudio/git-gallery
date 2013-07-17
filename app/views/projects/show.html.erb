@@ -11,8 +11,10 @@
 </p>
   
 <p>
-  <b>Image:</b>
-  <%= image_tag @project.image_url.to_s if @project.image? %>
+  <b>Images:</b>
+  <% @project.uploads.each do |upload| %>
+  <%= image_tag upload.image_url.to_s if upload.image? %>
+  <% end %>
 </p>
 
 
