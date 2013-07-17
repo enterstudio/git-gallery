@@ -11,10 +11,8 @@
 </p>
 
 <p>
-  <b>Image:</b>
-    <% @feature.uploads.each do |upload| %>
-      <%= image_tag upload.image_url.to_s if upload.image? %>
-    <% end %>
+  <b>Description:</b>
+  <%= @feature.description %>
 </p>
 
 <p>
@@ -27,9 +25,12 @@
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @feature.description %>
+  <b>Image(s):</b>
+    <% @feature.uploads.each do |upload| %>
+      <%= image_tag upload.image_url.to_s if upload.image? %>
+    <% end %>
 </p>
+
 
 <%= link_to 'Edit', edit_user_feature_path(@feature.user, @feature) %> |
 <%= link_to "Back to #{@feature.user.name}", user_features_path %>
