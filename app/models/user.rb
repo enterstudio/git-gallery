@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   def tech_features(chosen_tech)
     Feature.joins(:technologies).where(:user_id => self.id, :technologies => {:name => chosen_tech.name})
+  end
 
   def send_email #see active record callbacks
   end
