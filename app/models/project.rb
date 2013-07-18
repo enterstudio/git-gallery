@@ -4,5 +4,5 @@ class Project < ActiveRecord::Base
   has_many :features
   has_many :users, :through => :features
 
-  has_many :uploads, as: :uploadable
+  has_many :uploads, as: :uploadable, :dependent => :destroy
 end

@@ -4,10 +4,10 @@ class Feature < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
 
-  has_many :feature_technologies
+  has_many :feature_technologies, :dependent => :destroy
   has_many :technologies, :through => :feature_technologies
 
-  has_many :uploads, as: :uploadable
+  has_many :uploads, as: :uploadable, :dependent => :destroy
 
   def technologies_to_add=(technologies)
     self.technologies = []
