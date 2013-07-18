@@ -7,7 +7,7 @@
 
 <p>
   <b>Project:</b>
-  <%= @feature.project.name %>
+  <%= link_to "#{@feature.project.name}", @feature.project %>
 </p>
 
 <p>
@@ -24,7 +24,7 @@
   <b>Technologies:</b>
   <ul>
     <% @feature.technologies.each do |technology| %>
-      <li><%= link_to technology.name, user_technology_path(@user.id, technology.id) %></li>
+      <li><%= link_to technology.name, user_technology_path(@feature.user, technology) %></li>
     <% end %>
   </ul>
 </p>
@@ -37,6 +37,6 @@
 </p>
 
 
-<%= link_to 'Edit', edit_user_feature_path(@feature.user, @feature) %> |
-<%= link_to "Back to #{@feature.user.name}", user_features_path %> | 
-<%= link_to "Upload an Image", [:new, @user, @feature, :upload] %>
+<%= link_to 'Edit', edit_feature_path(@feature) %> |
+<%= link_to "Back to #{@feature.user.name}'s Homepage", user_features_path(@feature.user) %> | 
+<%= link_to "Upload an Image", [:new, @feature, :upload] %>

@@ -13,9 +13,9 @@
   <tr>
     <td><%= feature.title %></td>
     <td><%= feature.description %></td>
-    <td><%= link_to 'Show', user_feature_path(@user, feature)%> | </td>
-    <td><%= link_to 'Edit', edit_user_feature_path(@user, feature) %> | </td>
-    <td><%= link_to 'Destroy', user_feature_path(@user, feature) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', feature %> | </td>
+    <td><%= link_to 'Edit', edit_feature_path(feature) %> | </td>
+    <td><%= link_to 'Destroy', feature , method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
@@ -23,4 +23,4 @@
 <br />
 
 <%= link_to 'New feature', new_user_feature_path(@user) %> | 
-<%= link_to_function "Back", "history.back()" %>
+<%= link_to 'All Users', users_path %>

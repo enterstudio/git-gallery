@@ -14,7 +14,7 @@
   <b>Features:</b><br>
   <ul>
     <% @user.features.each do |feature| %>
-      <li><%= link_to feature.title, user_feature_path(@user, feature) %></li>
+      <li><%= link_to feature.title, feature %></li>
     <% end %>
   </ul>
 </p>
@@ -22,4 +22,4 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %> | 
-<%= link_to 'New feature', new_user_feature_path(@user) %>
+<%= link_to 'New feature', new_feature_path %>
