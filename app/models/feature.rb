@@ -15,4 +15,12 @@ class Feature < ActiveRecord::Base
       self.technologies.build(:name => technology)
     end
   end
+
+  def editable_by?(user)
+    self.user == user
+  end
+
+  def destroyable_by?(user)
+    self.user == user
+  end
 end

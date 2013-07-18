@@ -47,8 +47,9 @@ class FeaturesController < ApplicationController
 
   # GET /users/1/features/1/edit
   def edit
-    # @user = User.find(params[:user_id])
     @feature = Feature.find(params[:id])
+    
+    can_current_user?(:edit, @feature)
   end
 
   # POST /users/1/features

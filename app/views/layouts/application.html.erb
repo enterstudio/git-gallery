@@ -11,7 +11,7 @@
 
     <%= yield %>
 
-    <%= link_to "Logout", logout_path if session[:user_id] %>
+    <br><%= link_to "Logout", logout_path if logged_in? %>
 
   </body>
 </html>

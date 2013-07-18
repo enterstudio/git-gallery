@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id])
+    # raise session[:user_id].inspect
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   helper_method :current_user
 
@@ -23,5 +24,14 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !!current_user
+  end
+  helper_method :logged_in?
+
+  def can_current_user?(action, object)
+    if !object.send("#{action}able_by?", current_user)
+      redirect_to user_path(current_user), :notice => "You are not authorized" and  return
+    else
+      true
+    end
   end
 end
