@@ -14,14 +14,14 @@ class FeaturesController < ApplicationController
   # GET /users/1/features/1
   # GET /users/1/features/1.json
   def show
-    @user = User.find(params[:user_id])
-    feature = Feature.find(params[:id])
+    # @user = User.find(params[:user_id])
+    @feature = Feature.find(params[:id])
     
-    if feature.user.id == @user.id
-      @feature = feature
-    else 
-      redirect_to @user, notice: "Feature #{feature.id} does not belong to you."
-    end
+    # if feature.user.id == @user.id
+      # @feature = feature
+    # else 
+      # redirect_to @user, notice: "Feature #{feature.id} does not belong to you."
+    # end
 
     # respond_to do |format|
     #   format.html # show.html.erb

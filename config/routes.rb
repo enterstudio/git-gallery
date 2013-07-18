@@ -4,7 +4,7 @@ GitAtMe::Application.routes.draw do
   end
   
   resources :users do
-    resources :features do
+    resources :features, :shallow => true do
       resources :uploads
     end
     resources :technologies, only: [:show]

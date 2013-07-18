@@ -35,7 +35,7 @@ class UploadsController < ApplicationController
     #IF COMING FROM PROJECT, REDIRECT TO PROJECT SHOW; IF COMING FROM USER/FEATURE, REDIRECT TO FEATURE SHOW
     if @upload.save
       if @uploadable.class.name == "Feature"
-        redirect_to user_feature_path(@uploadable.user, @uploadable)
+        redirect_to feature_path(@uploadable)
       else
         redirect_to project_path(@uploadable)
       end

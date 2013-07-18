@@ -13,12 +13,16 @@
   <div class="field">
     <%= f.text_field :name %>
   </div>
+  
   <p>
-  <b>Add An Image:</b>
-  <%= f.file_field :image %>
+    <b>Add An Image:</b>
+    <%= f.file_field :image %>
   </p>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+  
+  <%= link_to_function "Back", "history.back()" %>
 <% end %>
 
