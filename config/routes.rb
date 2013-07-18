@@ -1,4 +1,9 @@
 GitAtMe::Application.routes.draw do
+  
+  get "/login"  => "sessions#new"
+  post "/login" => "sessions#create"
+  get "/logout" => "sessions#destroy"
+
   resources :projects do
     resources :uploads
   end
@@ -9,8 +14,6 @@ GitAtMe::Application.routes.draw do
     end
     resources :technologies, only: [:show]
   end
-
-  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
