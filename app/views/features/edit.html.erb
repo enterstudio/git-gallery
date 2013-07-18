@@ -2,5 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', user_features_path([@user, @feature]) %> |
-<%= link_to 'Back', user_features_path %>
+<%= link_to "Back to #{@feature.user.name}'s Homepage", user_features_path(@feature.user) %>
