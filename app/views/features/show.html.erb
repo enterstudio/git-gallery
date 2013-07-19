@@ -39,12 +39,15 @@
 <b>Snippet(s):</b>
     <% @feature.snippets.each do |snippet| %>
       <h1><%= snippet.name %></h1>
+      <p>
+        <strong>Url:</strong>
+        <%= link_to "#{snippet.url}", snippet.url %>
+      </p>
 
       <p>
         <strong>Language:</strong>
         <%= snippet.language.titleize %>
       </p>
-
       <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
 
       <%= link_to "Edit", edit_snippet_path(snippet) %>
