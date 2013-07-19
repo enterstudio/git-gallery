@@ -1,4 +1,5 @@
 GitAtMe::Application.routes.draw do
+
   
   get "/login"  => "sessions#new"
   post "/login" => "sessions#create"
@@ -10,6 +11,7 @@ GitAtMe::Application.routes.draw do
   
   resources :users do
     resources :features, :shallow => true do
+      resources :snippets
       resources :uploads
     end
     resources :technologies, only: [:show]

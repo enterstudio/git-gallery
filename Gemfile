@@ -24,8 +24,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
 gem 'carrierwave'
+gem 'pygments.rb'
 
 
 # To use ActiveModel has_secure_password

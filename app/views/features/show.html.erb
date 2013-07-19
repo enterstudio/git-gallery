@@ -36,7 +36,22 @@
     <% end %>
 </p>
 
+<b>Snippet(s):</b>
+    <% @feature.snippets.each do |snippet| %>
+      <h1><%= snippet.name %></h1>
+
+      <p>
+        <strong>Language:</strong>
+        <%= snippet.language.titleize %>
+      </p>
+
+      <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
+
+      <%= link_to "Edit", edit_snippet_path(snippet) %>
+    <% end %>
+</p>
 
 <%= link_to 'Edit', edit_feature_path(@feature) %> |
 <%= link_to "Back to #{@feature.user.name}'s Homepage", user_features_path(@feature.user) %> | 
-<%= link_to "Upload an Image", [:new, @feature, :upload] %>
+<%= link_to "Upload an Image", [:new, @feature, :upload] %> |
+<%= link_to 'Add Snippet', new_feature_snippet_path(@feature) %> |
