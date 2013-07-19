@@ -1,4 +1,7 @@
 GitAtMe::Application.routes.draw do
+  resources :snippets
+
+
   resources :projects do
     resources :uploads
   end
