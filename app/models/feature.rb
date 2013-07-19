@@ -4,6 +4,8 @@ class Feature < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
 
+  has_many :snippets
+
   has_many :feature_technologies, :dependent => :destroy
   has_many :technologies, :through => :feature_technologies
 
