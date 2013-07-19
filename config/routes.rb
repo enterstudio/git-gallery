@@ -5,14 +5,13 @@ GitAtMe::Application.routes.draw do
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
 
-  resources :snippets
-
   resources :projects do
     resources :uploads
   end
   
   resources :users do
     resources :features, :shallow => true do
+      resources :snippets
       resources :uploads
     end
     resources :technologies, only: [:show]

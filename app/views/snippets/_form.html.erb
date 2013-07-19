@@ -1,4 +1,4 @@
-<%= form_for @snippet do |f| %>
+<%= form_for [@feature, @snippet] do |f| %>
   <% if @snippet.errors.any? %>
     <div class="error_messages">
       <h2><%= pluralize(@snippet.errors.count, "error") %> prohibited this snippet from being saved:</h2>
@@ -15,12 +15,20 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
     <%= f.label :language %><br />
     <%= f.select :language, options_for_select([["Ruby", "ruby"], ["Python", "python"], ["JavaScript", "javascript"], ["CoffeeScript", "coffeescript"], ["CSS", "css"], ["HTML", "html"]]) %>
   </div>
   <div class="field">
     <%= f.label :code, "Source Code" %><br />
     <%= f.text_area :code, rows: 14, cols: 50 %>
+  </div>
+  <div class="field">
+    <%= f.label :description, "Explain What You Did Here:" %><br />
+    <%= f.text_area :description, rows: 10, cols: 50 %>
   </div>
   <div class="actions">
     <%= f.submit "Post Snippet" %>

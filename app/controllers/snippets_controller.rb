@@ -8,13 +8,16 @@ class SnippetsController < ApplicationController
   end
 
   def new
+    @feature = Feature.find(params[:feature_id])
     @snippet = Snippet.new
   end
 
   def create
-    @snippet = Snippet.new(params[:snippet])
-    if @snippet.save
-      redirect_to @snippet, notice: "Snippet was successfully created."
+    @feature = Feature.find(params[:feature_id])
+    @feature.snippets.build(params[:snippet])
+    # @snippet = Snippet.new(params[:snippet])
+    if @feature.save
+      redirect_to @feature, notice: "Snippet was successfully created."
     else
       render :new
     end
@@ -26,8 +29,9 @@ class SnippetsController < ApplicationController
 
   def update
     @snippet = Snippet.find(params[:id])
+    @feature = @snippet.feature
     if @snippet.update_attributes(params[:snippet])
-      redirect_to @snippet, notice: "Snippet was successfully updated."
+      redirect_to @feature, notice: "Snippet was successfully updated."
     else
       render :edit
     end
