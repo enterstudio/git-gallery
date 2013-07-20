@@ -1,26 +1,27 @@
-<h1><%= @user.name %> Features</h1>
+<h1><%= @user.name %>'s Portfolio</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @features.each do |feature| %>
-  <tr>
-    <td><%= feature.title %></td>
-    <td><%= feature.description %></td>
-    <td><%= link_to 'Show', feature %> | </td>
-    <td><%= link_to 'Edit', edit_feature_path(feature) %> | </td>
-    <td><%= link_to 'Destroy', feature , method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+
+<% @user.projects.uniq.each do |project| %>
+  <table>
+    <tr>
+      <tr><th><h3>Project: <%= project.name %></h3></th></tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  <% project.features.each do |feature| %>
+    <tr>
+      <td><%= feature.title %></td>
+      <td><%= feature.description %></td>
+      <td><%= link_to 'Show', feature %> | </td>
+      <td><%= link_to 'Edit', edit_feature_path(feature) %> | </td>
+      <td><%= link_to 'Destroy', feature , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
 </table>
+<% end %>
 
 <br />
-
-<%= link_to 'New feature', new_user_feature_path(@user) %> | 
-<%= link_to 'All Users', users_path %>

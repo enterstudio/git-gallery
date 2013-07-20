@@ -3,7 +3,6 @@ class FeaturesController < ApplicationController
   # GET /users/1/features.json
   def index
     @user = User.find(params[:user_id])
-    @features = @user.features
 
     respond_to do |format|
       format.html # index.html.erb
