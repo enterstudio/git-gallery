@@ -5,6 +5,7 @@
 <% @user.projects.uniq.each do |project| %>
   <table>
     <tr>
+      <tr><th><h3>Project: <%= project.name %></h3></th></tr>
       <th>Title</th>
       <th>Description</th>
       <th></th>
