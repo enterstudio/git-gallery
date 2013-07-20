@@ -1,27 +1,24 @@
-<h1><%= @user.name %>'s Portfolio</h1>
-
-
-
-<% @user.projects.uniq.each do |project| %>
-  <table>
-    <tr>
-      <tr><th><h3>Project: <%= project.name %></h3></th></tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  <% project.features.each do |feature| %>
-    <tr>
-      <td><%= feature.title %></td>
-      <td><%= feature.description %></td>
-      <td><%= link_to 'Show', feature %> | </td>
-      <td><%= link_to 'Edit', edit_feature_path(feature) %> | </td>
-      <td><%= link_to 'Destroy', feature , method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+<h1 class="gg-head"><%= @user.name %>'s Portfolio</h1>
+<div class="small-12 columns">
+  <ul class="gg-list">
+    <% @user.projects.uniq.each do |project| %>
+    <li>
+      <h4><%= project.name %></h4>
+      <table>
+        <thead>
+          <th width="200">Title</th>
+          <th width="7500" colspan="3">Description</th>
+        </thead>
+          <% project.features.each do |feature| %>
+          <tr>
+            <td><%= link_to "#{feature.title}", feature %></td>
+            <td><%= feature.description %></td>
+            <td><%= link_to 'Edit', edit_feature_path(feature), class: "tiny button" %></td>
+            <td><%= link_to 'Destroy', feature , method: :delete, data: { confirm: 'Are you sure?' }, class: "tiny button" %></td>
+          </tr>
+      <% end %>
+      </table>
+    </li>
   <% end %>
-</table>
-<% end %>
-
-<br />
+</ul>
+</div>
