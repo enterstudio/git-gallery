@@ -25,3 +25,7 @@ gitbuilt = Feature.where(:title => "git-built").first
 gitbuilt.technologies.build(:name => "ROR")
 gitbuilt.save
 
+micah    = User.create(name: "Micah",    email: "micah.corn@flatironschool.com",        password: "test")
+jennifer = User.create(name: "Jennifer", email: "jennifer.campbell@flatironschool.com", password: "test")
+desmond  = User.create(name: "Desmond",  email: "desmond.rawls@flatironschool.com",     password: "test")
+matthew  = User.create(name: "Matthew",  email: "matthew.schmaus@flatironschool.com",   password: "test")
