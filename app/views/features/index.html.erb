@@ -9,7 +9,7 @@
           <th width="200">Title</th>
           <th width="750" colspan="3">Description</th>
         </thead>
-          <% project.features.each do |feature| %>
+          <% project.this_user_features(@user).each do |feature| %>
           <tr>
             <td><%= link_to "#{feature.title}", feature %></td>
             <td width="600"><%= feature.description %></td>
@@ -22,5 +22,9 @@
     <% end %>
   </ul>
 </div>
+
+<%= link_to 'Edit', edit_user_path(@user) if current_user == @user %> 
+
+
       
 
