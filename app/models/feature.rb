@@ -26,4 +26,8 @@ class Feature < ActiveRecord::Base
   def destroyable_by?(user)
     self.user == user
   end
+
+  def createable_by?(user)
+    self.user == user
+  end
 end

@@ -36,6 +36,8 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+
+    can_current_user?(:edit, @user)
   end
 
   # POST /users
