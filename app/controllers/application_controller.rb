@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 
   def can_current_user?(action, object)
     if !object.send("#{action}able_by?", current_user)
-      redirect_to user_path(current_user), :notice => "You are not authorized" and  return
+      redirect_to user_path(current_user), :notice => "You are not authorized" and return
     else
       true
     end

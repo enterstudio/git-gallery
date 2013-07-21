@@ -57,7 +57,6 @@ end
 ####################
 # TESTING PURPOSES #
 ####################
-
 trial = GithubParser.new
 username = "mschmaus201"
 
@@ -65,8 +64,9 @@ repo_page = trial.get_repo_page(username)
 # pp repo_page
 
 repo_hash = trial.get_repo_list(repo_page)
-rand_repo = repo_hash.keys[rand(repo_hash.keys.count)] #CHOOSES RANDOM REPO FROM GIVEN USER
 # pp repo_hash
+
+rand_repo = repo_hash.keys[rand(repo_hash.keys.count)] #CHOOSES RANDOM REPO FROM GIVEN USER
 
 root_directory = trial.scrape_repo_root_directory("/#{username}/#{rand_repo}")
 puts "\nThis is the root directory for #{rand_repo}\n\n".upcase

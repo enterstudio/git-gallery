@@ -47,6 +47,3 @@ js.save
 gitbuilt = Feature.where(:title => "playlists").first
 gitbuilt.technologies.build(:name => "Ruby on Rails")
 gitbuilt.save
-
-# Will this work? Feature not associated to a user
-js.features.build(:title => "jquery")
