@@ -16,7 +16,7 @@
     <td><%= project.source %></td>
     <td>
       <% project.users.uniq.each do |user|%>
-        <%= link_to "#{user.name}", user_path(user.name) %> 
+        <%= link_to "#{user.name}", user_path(user) %> 
       <% end %>
     </td>
     <td><%= link_to 'Show', project %></td>
