@@ -27,39 +27,47 @@ class GithubParser
 
   def scrape_repo_root_directory(url)
     root_files = {}
-    # {"Factor.app" => ["href", "icon span"]}
 
     root_directory = Nokogiri::HTML(open("https://github.com#{url}"))
-    root_directory.search('.files .content a').each_with_index do |row, i1|
-      root_files[row.content] ||= []
-      root_files[row.content] << row.attributes['href'].value.downcase
+    
+    root_content = root_directory.search('.files .content a')
+    root_icon_class = root_directory.search('.files .icon span')
+    root_size = root_content.size
 
-      root_directory.search('.files .icon span').each_with_index do |not_row, i2|
-        root_files[row.content] ||= []
-        root_files[row.content] << not_row.attributes['class'].value.downcase if i1 == i2
-      end
+    for i in 0..(root_size-1)
+      root_files[root_content[i].content] ||= []
+      root_files[root_content[i].content] << root_content[i].attributes['href'].value.downcase
+      root_files[root_content[i].content] << root_icon_class[i].attributes['class'].value.downcase
     end
-
-    # root_directory.search('.files .icon span').each_with_index do |row, i2|
-
-    #   # pp row.attributes['class'].value.downcase
-      # root_files[row.content] ||= []
-    #   root_files[row.content] << row.attributes['class'].value.downcase
-    # end
 
     return root_files
   end
+
+  # def fs_repo_members
+  #   member_list = []
+
+  #   page = Nokogiri::HTML(open("https://github.com/flatiron-school?tab=members"))
+  #   page.search('.members-list li h4 a').each do |member|
+  #     member_list << member.attributes['href'].value.downcase
+  #   end
+  #   return member_list
+  # end
 end
 
+####################
+# TESTING PURPOSES #
+####################
 trial = GithubParser.new
 username = "mschmaus201"
-# puts 
+
 repo_page = trial.get_repo_page(username)
 # pp repo_page
 
 repo_hash = trial.get_repo_list(repo_page)
 # pp repo_hash
 
-root_directory = trial.scrape_repo_root_directory("/#{username}/recipes-sample-app")
-pp root_directory
+rand_repo = repo_hash.keys[rand(repo_hash.keys.count)] #CHOOSES RANDOM REPO FROM GIVEN USER
 
+root_directory = trial.scrape_repo_root_directory("/#{username}/#{rand_repo}")
+puts "\nThis is the root directory for #{rand_repo}\n\n".upcase
+pp root_directory

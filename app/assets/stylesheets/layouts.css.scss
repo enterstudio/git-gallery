@@ -7,3 +7,68 @@ ul.breadcrumbs {
   border: none;
   margin-top: -30px;
 }
+
+li.fn a {
+  color: #222222;
+  text-decoration: none;
+}
+
+ul.gg-list {
+  list-style: none;
+}
+ul.gg-list-inline li{
+  list-style: none;
+  display: inline;
+  padding-right: 10px;
+}
+
+h1.gg-head, h2.gg-head {
+  font-size: 2em;
+  margin-bottom: 0px;
+  b {
+    color: #2ba6cb;
+  }
+}
+
+h2.gg-head {
+  font-size: 1.75em;
+  margin-top: 0;
+  margin-left: 20px;
+}
+
+div.gg-edit {
+  padding-top: 7px;
+}
+div.gg-div {
+  background-color: white;
+  width: 750px;
+  overflow: auto;
+  padding: 10px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+p.gg-p {
+  margin-left: 20;
+}
+
+div.gg-snippets {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+div.panel {
+  border: none;
+}
+
+div.gg-mini {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding-left: 7px;
+  width: 95px;
+}
+
+p.no-wrap {
+  white-space: nowrap;
+}

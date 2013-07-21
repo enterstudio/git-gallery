@@ -1,0 +1,51 @@
+<%= form_for([@user, @feature]) do |f| %>
+  <% if @feature.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feature.errors.count, "error") %> prohibited this feature from being saved:</h2>
+
+      <ul>
+      <% @feature.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset class=" small-8 columns">
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :title, class: "right inline" %>
+      </div>
+        <div class="small-9 columns"><%= f.text_field :title %></div>
+    </div>
+
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :description, class: "right inline" %>
+      </div>
+        <div class="small-9 columns"><%= f.text_field :description %></div>
+    </div>
+
+     <div class="row collapse">
+      <div class="small-3 columns">
+        <%= label_tag 'feature[technologies_to_add][]', 'Technologies', class: "right inline" %>
+      </div>
+      <div class="small-9 columns gg-edit">
+
+        <% for technology in @technologies %>
+          <%= check_box_tag 'feature[technology_ids][]',technology.id, @feature.technologies.include?(technology) %>
+          <%= technology.name %>
+        <% end %>
+      </div>
+<!-- 
+
+
+<p>Choose Project
+  <%= collection_select :feature, :project_id, Project.all, :id, :name %><br>
+  --OR-- <%= link_to 'Create new project', new_project_path %>
+</p> -->
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
