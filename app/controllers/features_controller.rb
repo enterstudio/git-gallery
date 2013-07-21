@@ -14,19 +14,12 @@ class FeaturesController < ApplicationController
   # GET /users/1/features/1
   # GET /users/1/features/1.json
   def show
-    # @user = User.find(params[:user_id])
     @feature = Feature.find(params[:id])
-    
-    # if feature.user.id == @user.id
-    #   @feature = feature
-    # else 
-    #   redirect_to @user, notice: "Feature #{feature.id} does not belong to you."
-    # end
 
-    # respond_to do |format|
-    #   format.html # show.html.erb
-    #   format.json { render json: @feature }
-    # end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @feature }
+    end
   end
 
   # GET /users/1/features/new
@@ -39,10 +32,12 @@ class FeaturesController < ApplicationController
       @feature.technologies.build
     end
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @feature }
-    end
+    can_current_user?(:create, @feature)
+
+    # respond_to do |format|
+    #   format.html # new.html.erb
+    #   format.json { render json: @feature }
+    # end
   end
 
   # GET /users/1/features/1/edit
@@ -55,8 +50,6 @@ class FeaturesController < ApplicationController
   # POST /users/1/features
   # POST /users/1/features.json
   def create
-    # raise params.inspect
-
     @user = User.find(params[:user_id])
 
     @feature = @user.features.build(params[:feature])
@@ -75,8 +68,6 @@ class FeaturesController < ApplicationController
   # PUT /users/1/features/1
   # PUT /users/1/features/1.json
   def update
-    # @user = User.find(params[:user_id])
-
     @feature = Feature.find(params[:id])
 
     respond_to do |format|

@@ -44,6 +44,8 @@ js = Technology.create(:name => "Javascript")
 js.features.push(Feature.where(:title => "git-destroy").first)
 js.save
 
+ror.features.push(Feature.where(:project_id => 1).first)
+
 gitbuilt = Feature.where(:title => "playlists").first
 gitbuilt.technologies.build(:name => "Ruby on Rails")
 gitbuilt.save
