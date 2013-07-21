@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Description</th>
+    <th>Project</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +12,7 @@
 <% @features.each do |feature| %>
   <tr>
     <td><%= feature.title %></td>
-    <td><%= feature.description %></td>
+    <td><%= feature.project.name %></td>
     <td><%= link_to 'Show', feature %> | </td>
     <td><%= link_to 'Edit', edit_feature_path(feature) %> | </td>
     <td><%= link_to 'Destroy', feature , method: :delete, data: { confirm: 'Are you sure?' } %></td>
