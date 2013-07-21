@@ -17,6 +17,28 @@ ul.gg-list {
   list-style: none;
 }
 
-h1.gg-head {
+h1.gg-head, h2.gg-head {
   font-size: 2em;
+  margin-bottom: 0px;
+  b {
+    color: #2ba6cb;
+  }
 }
+
+h2.gg-head {
+  font-size: 1.75em;
+  margin-top: 0;
+}
+
+div.gg-edit {
+  padding-top: 7px;
+}
+div.gg-div {
+  background-color: white;
+  width: 800px;
+  overflow: auto;
+}
+
+
+
+

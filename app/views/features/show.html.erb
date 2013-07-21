@@ -1,38 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>
-  <b>Project:</b>
-  <%= link_to "#{@feature.project.name}", @feature.project %>
+<h1 class="gg-head">
+  Project: <%= link_to "#{@feature.project.name}", @feature.project %>
 </h1>
-
-<p>
-  <b>Check Out <%= @feature.user.name %>'s Other Work Using These Technologies:</b>
-  <ul>
-    <% @feature.technologies.each do |technology| %>
-      <li><%= link_to technology.name, user_technology_path(@feature.user, technology) %></li>
-    <% end %>
-  </ul>
-</p>
-
-<h2>
-  <b><%= @feature.user.name %>'s Feature:</b>
-  <%= @feature.title %>
+<h2 class="gg-head">
+  Feature: <b><%= @feature.title %></b>
 </h2>
 
-<p>
-  <b>Description:</b>
-  <%= @feature.description %>
-</p>
+<p><b>Description:</b> <%= @feature.description %></p>
 
-<p>
-  <b>Image(s):</b>
+<p><b>Image(s):</b>
     <% @feature.uploads.each do |upload| %>
       <%= image_tag upload.image_url.to_s, width: '100' if upload.image? %>
     <% end %>
 </p>
-
-<b>Snippet(s):</b>
+<p><b>Snippet(s):</b>
     <% @feature.snippets.each do |snippet| %>
+      <div class="panel">
       <h3><%= snippet.name %></h3>
       <p>
         <strong>Url:</strong>
@@ -43,12 +27,19 @@
         <strong>Language:</strong>
         <%= snippet.language.titleize %>
       </p>
+      <div class="gg-div">
       <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
-
+      </div>
       <%= link_to "Edit", edit_snippet_path(snippet) %>
     <% end %>
 </p>
-
+ <b>Check Out <%= @feature.user.name %>'s Other Work Using These Technologies:</b>
+  <ul>
+    <% @feature.technologies.each do |technology| %>
+      <li><%= link_to technology.name, user_technology_path(@feature.user, technology) %></li>
+      </div>
+    <% end %>
+  </ul>
 
 
 <%= link_to 'Edit', edit_feature_path(@feature) %> |
