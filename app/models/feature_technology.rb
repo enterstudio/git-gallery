@@ -3,4 +3,6 @@ class FeatureTechnology < ActiveRecord::Base
 
   belongs_to :feature
   belongs_to :technology
+
+  
 end

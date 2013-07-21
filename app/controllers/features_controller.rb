@@ -47,6 +47,7 @@ class FeaturesController < ApplicationController
   # GET /users/1/features/1/edit
   def edit
     @feature = Feature.find(params[:id])
+    @technologies = Technology.all
     
     can_current_user?(:edit, @feature)
   end
@@ -55,7 +56,6 @@ class FeaturesController < ApplicationController
   # POST /users/1/features.json
   def create
     # raise params.inspect
-
     @user = User.find(params[:user_id])
 
     @feature = @user.features.build(params[:feature])
@@ -75,7 +75,8 @@ class FeaturesController < ApplicationController
   # PUT /users/1/features/1.json
   def update
     # @user = User.find(params[:user_id])
-
+     # raise params.inspect
+    params[:feature][:technology_ids] ||= []
     @feature = Feature.find(params[:id])
 
     respond_to do |format|
