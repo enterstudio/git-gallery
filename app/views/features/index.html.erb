@@ -7,18 +7,19 @@
       <table>
         <thead>
           <th width="200">Title</th>
-          <th width="7500" colspan="3">Description</th>
+          <th width="750" colspan="3">Description</th>
         </thead>
           <% project.features.each do |feature| %>
           <tr>
             <td><%= link_to "#{feature.title}", feature %></td>
-            <td><%= feature.description %></td>
+            <td width="600"><%= feature.description %></td>
             <td><%= link_to 'Edit', edit_feature_path(feature), class: "tiny button" %></td>
             <td><%= link_to 'Destroy', feature , method: :delete, data: { confirm: 'Are you sure?' }, class: "tiny button" %></td>
           </tr>
           <% end %>
       </table>
     </li>
+    <% end %>
   </ul>
 </div>
       

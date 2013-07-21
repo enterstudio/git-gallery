@@ -1,46 +1,47 @@
 <p id="notice"><%= notice %></p>
+<div class="small-12 columns">
+ 
+  <h1 class="gg-head">
+    Project: <%= link_to "#{@feature.project.name}", @feature.project %>
+  </h1>
+  <h2 class="gg-head">
+    Feature: <b><%= @feature.title %></b>
+  </h2>
 
-<h1 class="gg-head">
-  Project: <%= link_to "#{@feature.project.name}", @feature.project %>
-</h1>
-<h2 class="gg-head">
-  Feature: <b><%= @feature.title %></b>
-</h2>
-
-<p><b>Description:</b> <%= @feature.description %></p>
+  <div class="panel">
+    <p class="gg-p"><b>Description:</b> <%= @feature.description %></p>
+    <div class="gg-snippets">
+      <div class="gg-mini">
+        <p><b>Snippet(s):</b></p>
+      </div>
+      <% @feature.snippets.each do |snippet| %>
+      <div class="gg-div">
+        <h4><%= snippet.name %></h4>
+        <p class="no-wrap">
+          <strong>Url: </strong><%= link_to "#{snippet.url}", snippet.url %>
+        </p>
+        <p>
+          <strong>Language: </strong><%= snippet.language.titleize %>
+        </p>
+        <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
+        <br>
+        <%= link_to "Edit", edit_snippet_path(snippet) %>
+      </div>
+      <% end %>
+    </div>
 
 <p><b>Image(s):</b>
     <% @feature.uploads.each do |upload| %>
       <%= image_tag upload.image_url.to_s, width: '100' if upload.image? %>
     <% end %>
 </p>
-<p><b>Snippet(s):</b>
-    <% @feature.snippets.each do |snippet| %>
-      <div class="panel">
-      <h3><%= snippet.name %></h3>
-      <p>
-        <strong>Url:</strong>
-        <%= link_to "#{snippet.url}", snippet.url %>
-      </p>
-
-      <p>
-        <strong>Language:</strong>
-        <%= snippet.language.titleize %>
-      </p>
-      <div class="gg-div">
-      <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
-      </div>
-      <%= link_to "Edit", edit_snippet_path(snippet) %>
-    <% end %>
-</p>
  <b>Check Out <%= @feature.user.name %>'s Other Work Using These Technologies:</b>
-  <ul>
+  <ul class="gg-list-inline">
     <% @feature.technologies.each do |technology| %>
       <li><%= link_to technology.name, user_technology_path(@feature.user, technology) %></li>
-      </div>
     <% end %>
   </ul>
-
+</div>
 
 <%= link_to 'Edit', edit_feature_path(@feature) %> |
 <%= link_to "Back to #{@feature.user.name}'s Homepage", user_features_path(@feature.user) %> | 

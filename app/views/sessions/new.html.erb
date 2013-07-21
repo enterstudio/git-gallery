@@ -1,10 +1,22 @@
-<h1>Sessions#new</h1>
-
 <%= form_tag login_path %>
-	<%= label_tag :email, "Email:" %>
-	<%= text_field_tag :email %>
-	<br>
-	<%= label_tag :password, "Password:" %>
-	<%= password_field_tag :password %>
-	<br>
-	<%= submit_tag "Login" %>
+
+    <fieldset class=" small-8 columns">
+    <legend>Log In</legend>
+
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= label_tag :email, "Email", class: "right inline" %>
+      </div>
+      <div class="small-9 columns"><%= text_field_tag :email %></div>
+    </div>
+
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= label_tag :password, "Password", class: "right inline" %>
+      </div>
+      <div class="small-9 columns"><%= password_field_tag :password %></div>
+    </div>
+
+    <%= submit_tag "Login" %>
+
+  </fieldset>
