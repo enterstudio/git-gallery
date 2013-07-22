@@ -25,6 +25,22 @@ class GithubParser
     return repos_hash
   end
 
+  def get_collaborator_link(url)
+    repo = Nokogiri::HTML(open("https://github.com#{url}"))
+    repo.search('.numbers-summary li:nth-of-type(4) a').each do |link|
+      return link.attributes['href'].value.downcase
+    end
+  end
+
+  def get_collaborators(url)
+    collaborators = []
+    collaborator_page = Nokogiri::HTML(open("https://github.com#{url}"))
+    collaborator_page.search('.person a').each do |collaborator|
+      collaborators << collaborator.content
+    end
+    return collaborators
+  end
+
   def scrape_repo_root_directory(url)
     root_files = {}
 
@@ -66,8 +82,10 @@ repo_page = trial.get_repo_page(username)
 repo_hash = trial.get_repo_list(repo_page)
 # pp repo_hash
 
-rand_repo = repo_hash.keys[rand(repo_hash.keys.count)] #CHOOSES RANDOM REPO FROM GIVEN USER
+collaborators = trial.get_collaborators()
 
-root_directory = trial.scrape_repo_root_directory("/#{username}/#{rand_repo}")
-puts "\nThis is the root directory for #{rand_repo}\n\n".upcase
-pp root_directory
+# rand_repo = repo_hash.keys[rand(repo_hash.keys.count)] #CHOOSES RANDOM REPO FROM GIVEN USER
+
+# root_directory = trial.scrape_repo_root_directory("/#{username}/#{rand_repo}")
+# puts "\nThis is the root directory for #{rand_repo}\n\n".upcase
+# pp root_directory
