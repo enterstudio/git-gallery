@@ -5,21 +5,18 @@
     <th>Name</th>
     <th>Source</th>
     <th>Contributors</th>
-    <th></th>
-    <th></th>
-    <th></th>
+
   </tr>
 
 <% @projects.each do |project| %>
   <tr>
-    <td><%= project.name %></td>
+    <td><%= link_to "#{project.name}", project %></td>
     <td><%= project.source %></td>
     <td>
       <% project.users.uniq.each do |user|%>
         <%= link_to "#{user.name}", user_path(user) %> 
       <% end %>
     </td>
-    <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
     <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: "Are you sure you want to delete #{project.name}?" } %></td>
   </tr>

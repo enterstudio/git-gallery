@@ -68,6 +68,7 @@ class FeaturesController < ApplicationController
   # PUT /users/1/features/1
   # PUT /users/1/features/1.json
   def update
+    params[:feature][:technology_ids] ||= []
     @feature = Feature.find(params[:id])
 
     respond_to do |format|

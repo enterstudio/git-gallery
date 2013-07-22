@@ -17,6 +17,9 @@ GitAtMe::Application.routes.draw do
     resources :technologies, only: [:show]
   end
 
+  get "/technologies/:tech_name" => 'projects#filtered', as: "filtered_path"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

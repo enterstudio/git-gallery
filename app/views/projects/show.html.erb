@@ -1,34 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div class="small-9 columns gg-main-frame">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @project.name %>
-</p>
+  <h1><%= @project.name %></h1>
+  <div class="gg-imgplace">
+    <%= image_tag @project.uploads.last.image_url.to_s if @project.uploads.first.image? %>
+  </div>
 
-<p>
-  <b>Source:</b>
-  <%= @project.source %>
-</p>
+  <div id="project-description">
+    <h5>Description</h5>
+    <p><%= @project.description %></p>
+  </div>
   
-<p>
-  <b>Images:</b>
-  <% @project.uploads.each do |upload| %>
-    <%= image_tag upload.image_url.to_s if upload.image? %>
-  <% end %>
-</p>
+  <div class="clearfix"></div>
+  
+  <div id="tech-tags">
+    <h4>Tech Tags</h4>
+    <ul class="gg-list-inline">
+    <% @project.features.each do |feature| %>
+      <% feature.technologies.each do |tech| %>
+      <li><%= link_to tech.name, "/technologies/#{tech.name}"  %></li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
 
+  <div id="contributors">
+    <h4>Contributors</h4>
+    <ul class="gg-list-inline">
+      <% @project.users.uniq.each do |user| %>
+        <li><%= link_to user.name, user_path(user) %></li>
+      <% end %>
+    </ul>
+  </div>
 
+  <div class="clearfix"></div>
+
+  <p>
+    <b>Images:</b>
+    <% @project.uploads.each do |upload| %>
+      <div class="project-iframe"><%= image_tag upload.image_url.to_s if upload.image? %></div>
+    <% end %>
+  </p>
+
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'All Projects', projects_path %> | 
+  <%= link_to 'All Users', users_path %> |
+  <%= link_to "Upload an Image", [:new, @project, :upload] %> |
+  <%= link_to 'New feature', new_user_feature_path(current_user) %> |
+</div>
+
+<div class="small-3 columns gg-sidebar">
 <p>
-  <b>Features:</b><br>
+  <h2 class="sidebar-title">Features</h2><br>
   <% @project.features.each do |feature| %>
     <i>Title</i>: <%= link_to feature.title, feature_path(feature) %><br>
     <i>User</i>: <%= link_to feature.user.name, user_path(feature.user) %><br><br>
   <% end %>
 </p>
+</div>
 
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'All Projects', projects_path %> | 
-<%= link_to 'All Users', users_path %> |
-<%= link_to "Upload an Image", [:new, @project, :upload] %> |
-<%= link_to 'New feature', new_user_feature_path(current_user) %> |
