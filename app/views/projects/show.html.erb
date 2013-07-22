@@ -1,23 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="small-9 columns gg-main-frame">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @project.name %>
-</p>
+  <h1><%= @project.name %></h1>
+  <div class="gg-imgplace">
+  </div>
 
-<p>
-  <b>Source:</b>
-  <%= @project.source %>
-</p>
-  
-<p>
-  <b>Images:</b>
-  <% @project.uploads.each do |upload| %>
-    <%= image_tag upload.image_url.to_s if upload.image? %>
+  <p><%= @project.description %></p>
+
+  <h4>Tech Tags</h4>
+  <ul class="gg-list-inline">
+  <% @project.features.each do |feature| %>
+    <% feature.technologies.each do |tech| %>
+    <li><%= link_to tech.name, "/technologies/#{tech.name}"  %></li>
+    <% end %>
   <% end %>
-</p>
+  </ul>
 
+  <h4>Contributors</h4>
+  <ul>
+    <% @project.users.uniq.each do |user| %>
+      <%= link_to user.name, user_path(user) %>
+    <% end %>
+  </ul>
 
+  <p>
+    <b>Name:</b>
+    <%= @project.name %>
+  </p>
+
+  <p>
+    <b>Images:</b>
+    <% @project.uploads.each do |upload| %>
+      <%= image_tag upload.image_url.to_s if upload.image? %>
+    <% end %>
+  </p>
+</div>
+
+<div class="small-3 columns gg-sidebar">
 <p>
   <b>Features:</b><br>
   <% @project.features.each do |feature| %>
@@ -25,7 +44,7 @@
     <i>User</i>: <%= link_to feature.user.name, user_path(feature.user) %><br><br>
   <% end %>
 </p>
-
+</div>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'All Projects', projects_path %> | 
