@@ -23,11 +23,10 @@
   </head>
 
   <body>
+    <%= render "layouts/navigation_bar" %>
+    <%= render "layouts/breadcrumbs" %>
     <div class="container">
-      <%= render "layouts/navigation_bar" %>
-      <%= render "layouts/breadcrumbs" %>
-      <div class="small-9 columns"><%= yield %></div>
-      <div class="small-3 columns"></div>
+      <%= yield %>
       <%= javascript_include_tag "application" %>
     </div>
     <%= render "layouts/footer" %>

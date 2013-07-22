@@ -96,3 +96,53 @@ p.no-wrap {
   height: 0;
   line-height: 0;
 }
+
+div.gg-imgplace {
+  width: 40%;
+  margin: 15px;
+  float: left;
+}
+
+div.gg-sidebar {
+  background-color: #c3c3e5;
+  position: absolute right;
+  height: auto;
+}
+
+div.container {
+ padding-left: 5%; 
+}
+
+#project-description {
+  margin: 5em 0;
+}
+
+.clearfix:after {
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.sidebar-title {
+  text-align: center;
+}
+
+#tech-tags {
+  padding-left: 7.5%;
+  display: inline;
+  text-align: center;
+  float: left;
+}
+
+#contributors {
+  text-align: center;
+}
+
+div.project-iframe {
+  display: inline-block;
+  max-height: 300px;
+  max-width: 300px;
+  border: solid 10px white;
+}

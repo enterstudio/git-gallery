@@ -80,4 +80,10 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def filtered
+    @projects = Project.technologies(params[:tech_name])  
+  end
+
+
 end
