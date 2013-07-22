@@ -72,3 +72,11 @@ div.gg-mini {
 p.no-wrap {
   white-space: nowrap;
 }
+
+//customized panel 
+.panel {
+  height: 50px;
+  text-overflow: ellipsis;
+  text-align: center;
+  padding: 11px 1px;
+}

@@ -9,6 +9,30 @@
     <th></th>
     <th></th>
   </tr>
+<div class="row">
+ 
+<!--  <% @projects.each do |project| %>
+  <div class="large-3 small-6 columns">
+    <img src="http://www.futurity.org/wp-content/uploads/2012/10/robot_greeting_1.jpg">
+      <div class="panel">
+          <p><% project.users.uniq.each do |user|%>
+        <%= link_to "#{user.name}", user_path(user) %> 
+      <% end %></p> 
+      </div>
+  </div>
+  <% end %> -->
+
+  <% @projects.each do |project| %>
+  <div class="large-3 small-6 columns">
+    <img src="http://www.futurity.org/wp-content/uploads/2012/10/robot_greeting_1.jpg">
+      <div class="panel">
+          <p><% project.users.uniq.each do |user|%>
+        <%= link_to "#{user.name}", user_path(user) %> 
+      <% end %></p> 
+      </div>
+  </div>
+  <% end %>
+
 
 <% @projects.each do |project| %>
   <tr>
