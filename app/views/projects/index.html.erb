@@ -1,31 +1,33 @@
 <h1>Listing Projects</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Source</th>
-    <th>Contributors</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
-    <td><%= project.source %></td>
-    <td>
-      <% project.users.uniq.each do |user|%>
-        <%= link_to "#{user.name}", user_path(user) %> 
-      <% end %>
-    </td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: "Are you sure you want to delete #{project.name}?" } %></td>
-  </tr>
-<% end %>
-</table>
+<div id="gg-projects" class="clearfix">
+    <% @projects.each do |project| %>
+    <div class="large-3 small-6 columns">
+        <%= link_to_project_image(project) %>
+        <div class="panel">
+            <p>
+              <% project.users.uniq.each do |user|%>
+                <%= link_to "#{user.name}", user_path(user) %> 
+              <% end %>
+            </p> 
+        </div>
+    </div>
+    <% end %>
+</div>
 
 <br />
+<br />
+<br />
 
-<%= link_to 'Add A New project', new_project_path %>
+<div id="gg-projects-ui">
+  <%= link_to 'Add A New project', new_project_path %>
+</div>
+
+<br />
+<br />
+<br />
+
+
+
+
+

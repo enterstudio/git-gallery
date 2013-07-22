@@ -72,3 +72,27 @@ div.gg-mini {
 p.no-wrap {
   white-space: nowrap;
 }
+
+//customized panel 
+.panel {
+  height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  padding: 11px 1px;
+}
+
+#gg-projects {
+  display: block;
+  float: none;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+}
