@@ -10,7 +10,6 @@
 
   <div class="panel">
     <p class="gg-p"><b>Description:</b> <%= @feature.description %></p>
-    <div class="gg-snippets">
       <% @feature.snippets.each do |snippet| %>
       <div class="gg-div">
         <h4><%= snippet.name %></h4>
@@ -18,13 +17,15 @@
         <p class="no-wrap">
           <strong>Url: </strong><%= link_to "#{snippet.url}", snippet.url %>
         </p>
+
         <p>
           <strong>Language: </strong><%= snippet.language.titleize %>
         </p>
-        <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
-        <br>
+        <div class="gg-snippets">
+          <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
+        </div>
         <%= link_to "Edit", edit_snippet_path(snippet) %>
-      </div>
+    
     <% end %>
     </div>
 
