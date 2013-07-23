@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @features = @user.features
 
     respond_to do |format|
-      format.html { redirect_to user_features_path(@user) } # show.html.erb
+      format.html {@user} # show.html.erb
       format.json { render json: @user }
     end
   end

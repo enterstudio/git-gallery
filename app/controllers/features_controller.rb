@@ -2,7 +2,7 @@ class FeaturesController < ApplicationController
   # GET /users/1/features
   # GET /users/1/features.json
   def index
-    @user = User.find(params[:user_id])
+    @project = Project.find(params[:project_id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,12 +24,14 @@ class FeaturesController < ApplicationController
   # GET /users/1/features/new
   # GET /users/1/features/new.json
   def new
-    @user = User.find(params[:user_id])
-    @feature = @user.features.build
+    @project = Project.find(params[:project_id])
+    # @user = User.find(params[:user_id])
+    @technologies = Technology.all
+    @feature = @project.features.build
     
-    3.times do
-      @feature.technologies.build
-    end
+    # 3.times do
+    #   @feature.technologies.build
+    # end
 
     can_current_user?(:create, @feature)
 
@@ -50,9 +52,9 @@ class FeaturesController < ApplicationController
   # POST /users/1/features
   # POST /users/1/features.json
   def create
-    @user = User.find(params[:user_id])
-
-    @feature = @user.features.build(params[:feature])
+    @project = Project.find(params[:project_id])
+    @feature = @project.features.build(params[:feature])
+    @feature.user_id = current_user.id
 
     respond_to do |format|
       if @feature.save

@@ -6,14 +6,18 @@ GitAtMe::Application.routes.draw do
   get "/logout" => "sessions#destroy"
 
   resources :projects do
-    resources :uploads
-  end
-  
-  resources :users do
     resources :features, :shallow => true do
       resources :snippets
       resources :uploads
     end
+    resources :uploads
+  end
+  
+  resources :users do
+    # resources :features, :shallow => true do
+    #   resources :snippets
+    #   resources :uploads
+    # end
     resources :technologies, only: [:show]
   end
 

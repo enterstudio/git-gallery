@@ -10,7 +10,7 @@
       <li class="divider"></li>
         <li>
           <% if logged_in? %>
-          <%= link_to 'My Homepage', user_features_path(current_user) %>
+          <%= link_to 'My Homepage', current_user %>
           <% end %>
         </li>
       <li class="divider"></li>

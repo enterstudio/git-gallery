@@ -1,9 +1,13 @@
+body, .breadcrumbs {
+  background-color: #f2f2f2;
+}
+
 label.right {
   padding-right: 10px;
 }
 
 ul.breadcrumbs {
-  background-color: white;
+  // background-color: white;
   border: none;
   margin-top: -30px;
 }
@@ -18,8 +22,8 @@ ul.gg-list {
 }
 ul.gg-list-inline li{
   list-style: none;
-  display: inline;
-  padding-right: 10px;
+  display: inline-block;
+  padding: 25px;
 }
 
 h1.gg-head, h2.gg-head {
@@ -40,7 +44,6 @@ div.gg-edit {
   padding-top: 7px;
 }
 div.gg-div {
-  background-color: white;
   width: 750px;
   overflow: auto;
   padding: 10px;
@@ -114,7 +117,7 @@ div.gg-imgplace {
 // }
 
 div.container {
- padding-left: 5%; 
+ padding: 0 5%;
 }
 
 #project-description {
@@ -130,19 +133,15 @@ div.container {
   clear: both;
 }
 
-.sidebar-title {
-  text-align: center;
-}
-
 #tech-tags {
   padding-left: 7.5%;
   display: inline;
   text-align: center;
-  
 }
 
 #contributors {
   text-align: center;
+  background-color: #d2dfe0;
 }
 
 div.project-iframe {
@@ -157,13 +156,11 @@ div.project-iframe {
 ////////////////////////////
 .project-feature {
   background-color: #c3c3e5;
-  padding-right: 30px;
+  padding: 0 3%;
   border: solid 2px black;
 }
 
 .project-feature-image {
-  margin-left: 3%;
-  // margin-right: auto;
   height: auto;
   width: 250px;
   padding: 10px;
@@ -180,4 +177,25 @@ div.project-iframe {
 
 .project-feature-user-name {
   float: right;
+}
+
+#contributors h3 {
+  text-shadow: 1px 1px grey;
+}
+
+#project-title {
+  display: inline;
+  padding-right: 10px;
+}
+
+#features-title {
+  display: inline;
+}
+
+#new-feature {
+  text-align: right;
+}
+
+#destroy-link {
+  text-align: right;
 }
