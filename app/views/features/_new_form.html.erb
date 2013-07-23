@@ -11,29 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
+  <fieldset class=" small-8 columns">
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :title, class: "right inline" %>
+      </div>
+        <div class="small-9 columns"><%= f.text_field :title %></div>
+    </div>
 
-  <p>
-    <%= label_tag 'feature[technologies_to_add][]', 'Technologies' %>
-    <ul>
-      <% @feature.technologies.each do |technology| %>
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :description, class: "right inline" %>
+      </div>
+        <div class="small-9 columns"><%= f.text_field :description %></div>
+    </div>
 
-      <li>
-        <% text_field(:feature, :technologies_to_add, :name => 'feature[technologies_to_add][]', :value => technology.name) %>
-
-        <%= text_field_tag 'feature[technologies_to_add][]', technology.name %>
-      </li>
-      <% end %>
-    </ul>
-  </p>
-
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= label_tag 'feature[technologies_to_add][]', 'Technologies', class: "right inline" %>
+      </div>
+      <div class="small-9 columns gg-edit">
+        <% for technology in @technologies %>
+          <%= check_box_tag 'feature[technology_ids][]',technology.id, @feature.technologies.include?(technology) %>
+          <%= technology.name %>
+        <% end %>
+      </div>
+    </div>
+  </fieldset>
 
 
 <p>Choose Project

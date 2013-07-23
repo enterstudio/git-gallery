@@ -25,11 +25,12 @@ class FeaturesController < ApplicationController
   # GET /users/1/features/new.json
   def new
     @user = User.find(params[:user_id])
+    @technologies = Technology.all
     @feature = @user.features.build
     
-    3.times do
-      @feature.technologies.build
-    end
+    # 3.times do
+    #   @feature.technologies.build
+    # end
 
     can_current_user?(:create, @feature)
 
@@ -51,7 +52,6 @@ class FeaturesController < ApplicationController
   # POST /users/1/features.json
   def create
     @user = User.find(params[:user_id])
-
     @feature = @user.features.build(params[:feature])
 
     respond_to do |format|
