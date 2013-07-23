@@ -28,6 +28,7 @@
 
 <p><b>Image(s):</b>
     <% @feature.uploads.each do |upload| %>
+      <p><%= upload.description%></p>
       <%= image_tag upload.image_url.to_s, width: '100' if upload.image? %>
     <% end %>
 </p>

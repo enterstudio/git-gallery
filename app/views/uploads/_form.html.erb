@@ -1,4 +1,4 @@
-  <%= form_for [@user, @uploadable, @upload] do |f|%>
+<%= form_for [@uploadable, @upload] do |f|%>
   <% if @upload.errors.any? %>
     <div class="error_messages">
       <h2>Please correct the following errors.</h2>
@@ -13,16 +13,14 @@
   <div class="field">
     <%= f.text_field :name %>
   </div>
-  
   <p>
-    <b>Add An Image:</b>
-    <%= f.file_field :image %>
+  <b>Add An Image:</b>
+  <%= f.file_field :image %>
   </p>
-  
+  <b>Description:</b>
+  <%= f.text_field :description %>
+  </p>
   <div class="actions">
     <%= f.submit %>
   </div>
-  
-  <%= link_to_function "Back", "history.back()" %>
 <% end %>
-
