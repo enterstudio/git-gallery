@@ -2,7 +2,7 @@
 
 <% @users.each do |user| %>
   <ul class="vcard">
-    <li class="fn"><%= link_to "#{user.name.capitalize}", user %> <%= image_tag avatar_url(user) %></li>
+    <li class="fn"><%= link_to "#{user.name}", user %> <%= image_tag avatar_url(user) %></li>
     <li class="email"><%= mail_to user.email, "email" %>  
 
     
