@@ -5,7 +5,7 @@
     <% @projects.each do |project| %>
     <div class="large-3 small-6 columns gg-project-thumb">
         <%= link_to_project_image(project) %>
-        <div class="panel">
+        <div class="panel gg-panel">
             <p>
               <% project.users.uniq.each do |user|%>
                 <%= link_to "#{user.name}", user_path(user) %> 
