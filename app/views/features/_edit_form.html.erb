@@ -38,6 +38,37 @@
         <% end %>
       </div>
 
+
+            <div class="gg-div">
+        <% @feature.snippets.each do |snippet| %>
+        <span>
+          <h4><%= link_to snippet.name, snippet.url %></h4>
+          <span class="right">
+          <%= link_to "Edit", edit_snippet_path(snippet) %>
+        </span>
+      </span>
+        <p><%= snippet.description %></p>
+
+        <div class="gg-snippets">
+          <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
+        </div>
+    <% end %>
+    </div>
+
+<p><b>Image(s):</b>
+    <% @feature.uploads.each do |upload| %>
+      <%= image_tag upload.image_url.to_s, width: '100' if upload.image? %>
+    <% end %>
+</p>
+
+ <b>Check Out <%= @feature.user.name.split.first %>'s Other Work Using These Technologies:</b>
+  <ul class="gg-list-inline">
+    <% @feature.technologies.each do |technology| %>
+      <li><%= link_to technology.name, user_technology_path(@feature.user, technology) %></li>
+    <% end %>
+  </ul>
+</div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
