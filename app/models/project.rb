@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :name, :source, :description
+  attr_accessible :name, :source, :description, :features
 
   has_many :features
   has_many :users, :through => :features

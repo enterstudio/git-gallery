@@ -27,7 +27,11 @@ class Feature < ActiveRecord::Base
     self.user == user
   end
 
+  # def createable_by?(user)
+  #   self.user == user
+  # end
+
   def createable_by?(user)
-    self.user == user
+    self.project.users.include?(user)
   end
 end
