@@ -30,7 +30,7 @@
 
 <p>
   <h3 id="features-title">Features</h3>
-  <div id="new-feature"><%= link_to 'New', new_user_feature_path(current_user) %></div><br>
+  <div id="new-feature"><%= link_to 'New', new_project_feature_path(@project) %></div><br>
   <% @project.features.each do |feature| %>
     <div class="project-feature">
       <div class="project-feature-title">
@@ -57,9 +57,3 @@
     <div class="clearfix"></div>
   <% end %>
 </p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'All Projects', projects_path %> | 
-<%= link_to 'All Users', users_path %> |
-<%= link_to "Upload an Image", [:new, @project, :upload] %> |
-<%= link_to 'New feature', new_project_feature_path(@project) %> |
