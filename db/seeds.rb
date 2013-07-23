@@ -25,7 +25,7 @@ Project.create(:name => "Pizza",              :description => sample_description
 # CREATE USERS #
 ################
 matt   = User.create(:name => "Matt Schmaus",      	:email => "mschmaus201@gmail.com",    				:password => "password") # 1
-jen    = User.create(:name => "Jennifer Campbell",  :email => "jennifer.campbell@flatironschool.com",  :password => "password") # 2
+jen    = User.create(:name => "Jennifer Campbell",  :email => "jennifer.ml.campbell@gmail.com",  :password => "password") # 2
 micah  = User.create(:name => "Micah Corn",     	:email => "micah.corn@flatironschool.com",         :password => "password") # 3
 des    = User.create(:name => "Desmond Rawls",   	:email => "captaingrover@gmail.com",      			:password => "password") # 4
 thomas = User.create(:name => "Thomas",    			:email => "thomas.deatherage@flatironschool.com",  :password => "password") # 5

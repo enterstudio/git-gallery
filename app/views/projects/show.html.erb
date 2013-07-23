@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @project.name %></h1>
+<h1 id="project-title"><%= @project.name %></h1><%= link_to 'Edit', edit_project_path(@project) %>
+
+<div class="clearfix"></div>
 
 <div class="gg-imgplace">
   <%= project_image(@project) %>
@@ -27,7 +29,8 @@
 <div class="clearfix"></div>
 
 <p>
-  <h3>Features</h3><br>
+  <h3 id="features-title">Features</h3>
+  <div id="new-feature"><%= link_to 'New', new_user_feature_path(current_user) %></div><br>
   <% @project.features.each do |feature| %>
     <div class="project-feature">
       <div class="project-feature-title">
@@ -54,10 +57,3 @@
     <div class="clearfix"></div>
   <% end %>
 </p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'All Projects', projects_path %> | 
-<%= link_to 'All Users', users_path %> |
-<%= link_to "Upload an Image", [:new, @project, :upload] %> |
-<%= link_to 'New feature', new_user_feature_path(current_user) %> |
-
