@@ -30,14 +30,14 @@
 
 <p>
   <h3 id="features-title">Features</h3>
-  <div id="new-feature"><%= link_to 'New', new_project_feature_path(@project) %></div><br>
+  <div id="new-feature"><%= link_to 'New Feature', new_project_feature_path(@project) %></div><br>
   <% @project.features.each do |feature| %>
     <div class="project-feature">
       <div class="project-feature-title">
         <h4><%= link_to feature.title, feature_path(feature) %></h4>
       </div>
-      <div class="project-feature-user-name">
-        <h4><%= link_to feature.user.name, user_path(feature.user) %></h4>
+      <div class="project-feature-user-name" title="<%= feature.user.name %>">
+        <%= link_to (image_tag avatar_url(feature.user)), user_path(feature.user) %>
       </div>
       <div class="clearfix"></div>
       <ul class="gg-list-inline">
