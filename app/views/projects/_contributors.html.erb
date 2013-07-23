@@ -1,0 +1,11 @@
+<div id="contributors">
+  <h3>Contributors</h3>
+  <ul class="gg-list-inline">
+    <% @project.users.uniq.each do |user| %>
+      <li>
+        <%= image_tag avatar_url(user) %>
+        <%= link_to user.name, user_path(user) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
