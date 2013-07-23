@@ -21,24 +21,25 @@ class GithubParser
     repo_list_page.search('.repolist-name a').each do |repo|
       repos_hash[repo.content] = repo.attributes['href'].value.downcase
     end
-    
     return repos_hash
   end
 
-  def get_collaborator_link(url)
+  def get_contributors_link(url)
     repo = Nokogiri::HTML(open("https://github.com#{url}"))
-    repo.search('.numbers-summary li:nth-of-type(4) a').each do |link|
+    repo.search('ul.numbers-summary li:nth-of-type(4) a').each do |link|
       return link.attributes['href'].value.downcase
     end
   end
 
-  def get_collaborators(url)
-    collaborators = []
-    collaborator_page = Nokogiri::HTML(open("https://github.com#{url}"))
-    collaborator_page.search('.person a').each do |collaborator|
-      collaborators << collaborator.content
+  # DOESN'T WORK BECAUSE PAGE TAKES A SECOND TO LOAD DATA...THIS METHOD ONLY RETURNS DATA CRUNCHING TEXT
+  def get_contributors(url)
+    contributors = []
+    contributors_page = Nokogiri::HTML(open("https://github.com#{url}"))
+    # sleep(3)
+    contributors_page.search('#contributors').each do |contributor|
+      contributors << contributor.content
     end
-    return collaborators
+    return contributors
   end
 
   def scrape_repo_root_directory(url)
@@ -58,16 +59,6 @@ class GithubParser
 
     return root_files
   end
-
-  # def fs_repo_members
-  #   member_list = []
-
-  #   page = Nokogiri::HTML(open("https://github.com/flatiron-school?tab=members"))
-  #   page.search('.members-list li h4 a').each do |member|
-  #     member_list << member.attributes['href'].value.downcase
-  #   end
-  #   return member_list
-  # end
 end
 
 ####################
@@ -82,9 +73,9 @@ repo_page = trial.get_repo_page(username)
 repo_hash = trial.get_repo_list(repo_page)
 # pp repo_hash
 
-collaborators = trial.get_collaborators()
-
-# rand_repo = repo_hash.keys[rand(repo_hash.keys.count)] #CHOOSES RANDOM REPO FROM GIVEN USER
+# contributors_page = trial.get_contributors_link("/flatiron-school/002.students.flatironschool.com")
+# contributors = trial.get_contributors(contributors_page)
+# pp contributors
 
 # root_directory = trial.scrape_repo_root_directory("/#{username}/#{rand_repo}")
 # puts "\nThis is the root directory for #{rand_repo}\n\n".upcase
