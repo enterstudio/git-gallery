@@ -18,8 +18,8 @@ ul.gg-list {
 }
 ul.gg-list-inline li{
   list-style: none;
-  display: inline;
-  padding-right: 10px;
+  display: inline-block;
+  padding: 25px;
 }
 
 h1.gg-head, h2.gg-head {
@@ -114,7 +114,7 @@ div.gg-imgplace {
 // }
 
 div.container {
- padding-left: 5%; 
+ padding: 0 5%;
 }
 
 #project-description {
@@ -143,6 +143,7 @@ div.container {
 
 #contributors {
   text-align: center;
+  background-color: #d2dfe0;
 }
 
 div.project-iframe {
@@ -180,4 +181,8 @@ div.project-iframe {
 
 .project-feature-user-name {
   float: right;
+}
+
+h1, #contributors h3 {
+  text-shadow: 1px 1px grey;
 }
