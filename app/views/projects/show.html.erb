@@ -57,3 +57,9 @@
     <div class="clearfix"></div>
   <% end %>
 </p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'All Projects', projects_path %> | 
+<%= link_to 'All Users', users_path %> |
+<%= link_to "Upload an Image", [:new, @project, :upload] %> |
+<%= link_to 'New feature', new_project_feature_path(@project) %> |

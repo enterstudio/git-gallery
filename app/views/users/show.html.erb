@@ -1,25 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b><br>
-  <%= @user.name %>
-</p>
-
-<p>
-  <b>Email:</b><br>
-  <%= @user.email %>
-</p>
-
-<p>
-  <b>Features:</b><br>
-  <ul>
-    <% @user.features.each do |feature| %>
-      <li><%= link_to feature.title, feature %></li>
+<h1 class="gg-head"><%= @user.name %>'s Portfolio</h1>
+<div class="small-12 columns">
+  <ul class="gg-list">
+    <% @user.projects.uniq.each do |project| %>
+    <li>
+      <h4><%= project.name %></h4>
+      <table>
+        <thead>
+          <th width="200">Title</th>
+          <th width="750" colspan="3">Description</th>
+        </thead>
+          <% project.this_user_features(@user).each do |feature| %>
+          <tr>
+            <td><%= link_to "#{feature.title}", feature %></td>
+            <td width="600"><%= feature.description %></td>
+            <td><%= link_to 'Edit', edit_feature_path(feature), class: "tiny button" %></td>
+            <td><%= link_to 'Destroy', feature , method: :delete, data: { confirm: 'Are you sure?' }, class: "tiny button" %></td>
+          </tr>
+          <% end %>
+      </table>
+    </li>
     <% end %>
   </ul>
-</p>
+</div>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %> | 
-<%= link_to 'New feature', new_feature_path %>
