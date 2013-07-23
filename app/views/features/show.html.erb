@@ -11,12 +11,10 @@
   <div class="panel">
     <p class="gg-p"><b>Description:</b> <%= @feature.description %></p>
     <div class="gg-snippets">
-      <div class="gg-mini">
-        <p><b>Snippet(s):</b></p>
-      </div>
       <% @feature.snippets.each do |snippet| %>
       <div class="gg-div">
         <h4><%= snippet.name %></h4>
+        <p><%= snippet.description %></p>
         <p class="no-wrap">
           <strong>Url: </strong><%= link_to "#{snippet.url}", snippet.url %>
         </p>
