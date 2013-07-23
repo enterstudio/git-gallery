@@ -81,7 +81,6 @@ sql     = Technology.create(:name => "SQL")
 #####################################
 # CONNECT FEATURES AND TECHNOLOGIES #
 #####################################
-
 rails.features   << records
 rails.features   << router
 rails.features   << interview
