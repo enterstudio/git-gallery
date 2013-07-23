@@ -1,9 +1,13 @@
+body, .breadcrumbs {
+  background-color: #f2f2f2;
+}
+
 label.right {
   padding-right: 10px;
 }
 
 ul.breadcrumbs {
-  background-color: white;
+  // background-color: white;
   border: none;
   margin-top: -30px;
 }
@@ -129,15 +133,10 @@ div.container {
   clear: both;
 }
 
-.sidebar-title {
-  text-align: center;
-}
-
 #tech-tags {
   padding-left: 7.5%;
   display: inline;
   text-align: center;
-  
 }
 
 #contributors {
@@ -157,7 +156,7 @@ div.project-iframe {
 ////////////////////////////
 .project-feature {
   background-color: #c3c3e5;
-  padding: 1% 3%;
+  padding: 0 3%;
   border: solid 2px black;
 }
 
@@ -182,4 +181,21 @@ div.project-iframe {
 
 #contributors h3 {
   text-shadow: 1px 1px grey;
+}
+
+#project-title {
+  display: inline;
+  padding-right: 10px;
+}
+
+#features-title {
+  display: inline;
+}
+
+#new-feature {
+  text-align: right;
+}
+
+#destroy-link {
+  text-align: right;
 }

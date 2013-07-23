@@ -2,19 +2,11 @@
 
 <% @users.each do |user| %>
   <ul class="vcard">
-    <li class="fn"><%= link_to "#{user.name}", user %> <%= image_tag avatar_url(user) %></li>
+    <li class="fn"><%= link_to "#{user.name}", user %><br><%= link_to (image_tag avatar_url(user)), user %></li>
     <li class="email"><%= mail_to user.email, "email" %>  
-
-    
-    <%= link_to ' |  Destroy', user, method: :delete, data: { confirm: "Are you sure you want to delete #{user.name}?" } if current_user == user %></li>
-
   </ul>
 <% end %>
-
 
 <br />
 
 <%= link_to 'Project List', projects_path %>
-
-
-</ul>
