@@ -11,16 +11,16 @@
 ###################
 sample_description = " <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, cum, ipsam, quas dolore blanditiis incidunt delectus aperiam accusamus asperiores dolorem unde porro explicabo voluptates nesciunt officia voluptate vel culpa quos?</div><div>Dolor, cumque, doloribus, tempore quos voluptatem est vel fuga consequatur doloremque quod quidem laboriosam adipisci cum reiciendis quibusdam iure natus rerum odit dolores eveniet. Incidunt doloribus et veritatis aut voluptates.</div><div>Autem, voluptas, officia nesciunt suscipit modi libero sequi corporis facilis commodi deserunt dolor voluptatem ipsa at perspiciatis quis tempora eveniet sint. Deleniti, exercitationem, sit dolorem eius repudiandae cum dolores consequuntur!</div>"
 
-Project.create(:name => "Git Gallery", :description => sample_description)        # 1
-Project.create(:name => "Recipe App", :description => sample_description)         # 2
-Project.create(:name => "Playlister", :description => sample_description)         # 3
-Project.create(:name => "Library-Redux", :description => sample_description)      # 4
-Project.create(:name => "AppApp", :description => sample_description)             # 5
-Project.create(:name => "Assignmentio-Redux", :description => sample_description) # 6
-Project.create(:name => "OpenExam2", :description => sample_description)          # 7
-Project.create(:name => "Hire-Redux", :description => sample_description)         # 8
-Project.create(:name => "Teamline-Redux", :description => sample_description)     # 9
-Project.create(:name => "Pizza", :description => sample_description)              # 10
+Project.create(:name => "Git Gallery",        :description => sample_description, :source => "https://github.com/flatiron-school/git-gallery")        # 1
+Project.create(:name => "Recipe App",         :description => sample_description, :source => "https://github.com/flatiron-school/recipes-sample-app") # 2
+Project.create(:name => "Playlister",         :description => sample_description, :source => "https://github.com/micahrcorn/playlister-r")            # 3
+Project.create(:name => "Library-Redux",      :description => sample_description, :source => "https://github.com/flatiron-school/library-redux")      # 4
+Project.create(:name => "AppApp",             :description => sample_description, :source => "https://github.com/flatiron-school/appapp")             # 5
+Project.create(:name => "Assignmentio-Redux", :description => sample_description, :source => "https://github.com/flatiron-school/assignmentio-redux") # 6
+Project.create(:name => "OpenExam2",          :description => sample_description, :source => "https://github.com/flatiron-school/openexam2")          # 7
+Project.create(:name => "Hire-Redux",         :description => sample_description, :source => "https://github.com/flatiron-school/hire-redux")         # 8
+Project.create(:name => "Teamline-Redux",     :description => sample_description, :source => "https://github.com/flatiron-school/teamline-redux")     # 9
+Project.create(:name => "Pizza",              :description => sample_description, :source => "https://github.com/flatiron-school/pizza")              # 10
 ################
 # CREATE USERS #
 ################
