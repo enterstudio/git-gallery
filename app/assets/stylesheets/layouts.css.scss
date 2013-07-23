@@ -76,11 +76,13 @@ p.no-wrap {
 //customized panel 
 .panel {
   height: 50px;
+  width: 200px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
   padding: 11px 1px;
+  font-size: 70%;
 }
 
 #gg-projects {
