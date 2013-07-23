@@ -41,21 +41,34 @@ alex   = User.create(:name => "Alex",      :email => "alex.au@flatironschool.com
 #########################
 # ADD FEATURES TO USERS #
 #########################
-scraper          = Feature.create(:title => "Scraper",          :user_id => 1,  :project_id => 1)
-check_boxes      = Feature.create(:title => "Check Box",        :user_id => 3,  :project_id => 1)
-dossier          = Feature.create(:title => "Dossier",          :user_id => 13, :project_id => 5)
-tracker          = Feature.create(:title => "Tracker",          :user_id => 12, :project_id => 5)
-vote             = Feature.create(:title => "Vote",             :user_id => 8,  :project_id => 4)
-comments         = Feature.create(:title => "Comments",         :user_id => 5,  :project_id => 4)
-categories       = Feature.create(:title => "Categories",       :user_id => 10, :project_id => 6)
-objectives       = Feature.create(:title => "Objectives",       :user_id => 6,  :project_id => 6)
-interview        = Feature.create(:title => "Interviews",       :user_id => 7,  :project_id => 8)
-records          = Feature.create(:title => "Records",          :user_id => 7,  :project_id => 8)
-jobs             = Feature.create(:title => "Jobs",             :user_id => 7,  :project_id => 8)
-twitter_scraper  = Feature.create(:title => "Twitter Scraper",  :user_id => 10, :project_id => 9)
-scheduler        = Feature.create(:title => "Scheduler",        :user_id => 11, :project_id => 5)
-feature_sections = Feature.create(:title => "Feature Sections", :user_id => 2,  :project_id => 1)
-router           = Feature.create(:title => "Router",           :user_id => 4,  :project_id => 1)
+scraper          = Feature.create(:title => "Scraper",          :user_id => 1,  :project_id => 1) #1
+check_boxes      = Feature.create(:title => "Check Box",        :user_id => 3,  :project_id => 1) #2
+dossier          = Feature.create(:title => "Dossier",          :user_id => 13, :project_id => 5) #3
+tracker          = Feature.create(:title => "Tracker",          :user_id => 12, :project_id => 5) #4
+vote             = Feature.create(:title => "Vote",             :user_id => 8,  :project_id => 4) #5
+comments         = Feature.create(:title => "Comments",         :user_id => 5,  :project_id => 4) #6
+categories       = Feature.create(:title => "Categories",       :user_id => 10, :project_id => 6) #7
+objectives       = Feature.create(:title => "Objectives",       :user_id => 6,  :project_id => 6) #8
+interview        = Feature.create(:title => "Interviews",       :user_id => 7,  :project_id => 8) #9
+records          = Feature.create(:title => "Records",          :user_id => 7,  :project_id => 8) #10
+jobs             = Feature.create(:title => "Jobs",             :user_id => 7,  :project_id => 8) #11
+twitter_scraper  = Feature.create(:title => "Twitter Scraper",  :user_id => 10, :project_id => 9) #12
+scheduler        = Feature.create(:title => "Scheduler",        :user_id => 11, :project_id => 5) #13
+feature_sections = Feature.create(:title => "Feature Sections", :user_id => 2,  :project_id => 1) #14
+router           = Feature.create(:title => "Router",           :user_id => 4,  :project_id => 1) #15
+shallow_routes	 = Feature.create(:title => "Shallow Routes",	:user_id => 1,  :project_id => 1) #16
+
+############################
+# ADD SNIPPETS TO FEATURES #
+############################
+routes 		= Snippet.create(:name => "routes.rb",	:url => "https://github.com/flatiron-school/git-gallery/blob/master/config/routes.rb", 	:language => "ruby", 	:code => 
+  "resources :users do
+    resources :features, :shallow => true do
+      resources :snippets
+      resources :uploads
+    end
+    resources :technologies, only: [:show]
+  end", :description => "I didn't want to have a double-nested url so I made features shallow. This one line immediately changes the routes visible in rake routes.", :feature_id => 16)
 
 
 #######################
