@@ -46,3 +46,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
+
+group :development do
+  gem "better_errors"
+end
