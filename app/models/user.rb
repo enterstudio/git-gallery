@@ -22,4 +22,10 @@ class User < ActiveRecord::Base
   def editable_by?(user)
     self == user
   end
+
+  def self.search(query)
+    where("name like ?", "%#{query}%") 
+  end
+
 end
+
