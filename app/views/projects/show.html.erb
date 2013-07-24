@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1 id="project-title"><%= @project.name %></h1><%= link_to 'Edit', edit_project_path(@project) %>
+<h1 id="project-title"><%= @project.name %></h1>
+  <%= link_to 'Edit', edit_project_path(@project) %>
 
 <div class="clearfix"></div>
 
-<div class="gg-imgplace">
+<div class="gg-imgplace" id="hello">
   <%= project_image(@project) %>
 </div>
 
@@ -13,47 +14,16 @@
   <p><%= @project.description %></p>
 </div>
 
+<div class="clearfix"></div>
+
 <%= render "tech_tags" %>
 
 <div class="clearfix"></div>
 
 <%= render "contributors" %>
 
-<!-- <p>
-  <b>Images:</b>
-  <% @project.uploads.each do |upload| %>
-    <div class="project-iframe"><%= image_tag upload.image_url.to_s if upload.image? %></div>
-  <% end %>
-</p> -->
-
 <div class="clearfix"></div>
 
 <p>
-  <h3 id="features-title">Features</h3>
-  <div id="new-feature"><%= link_to 'New Feature', new_project_feature_path(@project) %></div><br>
-  <% @project.features.each do |feature| %>
-    <div class="project-feature">
-      <div class="project-feature-title">
-        <h4><%= link_to feature.title, feature_path(feature) %></h4>
-      </div>
-      <div class="project-feature-user-name" title="<%= feature.user.name %>">
-        <%= link_to (image_tag avatar_url(feature.user)), user_path(feature.user) %>
-      </div>
-      <div class="clearfix"></div>
-      <ul class="gg-list-inline">
-        <% feature.uploads[0,3].each do |upload| %>
-          <li><div class="gg-list-inline">
-            <%= image_tag upload.image_url %>
-          </div></li>
-        <% end %>
-      </ul>
-      <br>
-      <div class="project-feature-description">
-        <%= feature.description %>
-      </div>
-      <br>
-      <br>
-    </div>
-    <div class="clearfix"></div>
-  <% end %>
+  <%= render "features" %>
 </p>
