@@ -80,9 +80,9 @@ class FeaturesController < ApplicationController
     @feature = Feature.find(params[:id])
     @feature.destroy if can_current_user?(:destroy, @feature) == true
 
-    # respond_to do |format|
-    #   format.html { redirect_to user_features_path(@feature.user) }
-    #   format.json { head :no_content }
-    # end
+    respond_to do |format|
+      format.html { redirect_to user_path(@feature.user) }
+      format.json { head :no_content }
+    end
   end
 end

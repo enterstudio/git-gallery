@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-// require feature_accordian
+//= require feature_accordian
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
