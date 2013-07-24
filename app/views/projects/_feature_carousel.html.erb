@@ -1,0 +1,28 @@
+
+
+    
+      <div class="accordion-group">
+        <div class="project-feature">
+          <div class="accordion-heading accordion-toggle" data-toggle="collapse">
+            <div class="project-feature-title">
+              <h4><%= link_to feature.title, feature_path(feature) %></h4>
+            </div>
+
+
+<div class="project-feature-user-name" title="<%= feature.user.name %>">
+          <%= link_to (image_tag avatar_url(feature.user)), user_path(feature.user) %>
+        </div>
+        <div class="clearfix"></div>
+        <div class="project-feature-description">
+          <%= feature.description %>
+        </div>
+
+<%= render 'slides', :feature => feature %>
+
+      </div>
+      <br>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+<% end %>
+</nav>

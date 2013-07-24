@@ -1,28 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1 id="project-title"><%= @project.name %></h1>
-  <%= link_to 'Edit', edit_project_path(@project) %>
+<%= render "hero" %>
 
-<div class="clearfix"></div>
-
-<div class="gg-imgplace" id="hello">
-  <%= project_image(@project) %>
-</div>
-
-<div id="project-description">
-  <h4>Description</h4>
-  <p><%= @project.description %></p>
-</div>
-
-<div class="clearfix"></div>
-
-<%= render "tech_tags" %>
-
-<div class="clearfix"></div>
-
-<%= render "contributors" %>
-
-<div class="clearfix"></div>
+<%= link_to 'Edit', edit_project_path(@project) %>
 
 <p>
   <%= render "features" %>

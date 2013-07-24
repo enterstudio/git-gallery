@@ -1,34 +1,16 @@
-<h1>Listing Projects</h1>
-
-
-<div>
-  <% @projects.each do |project| %>
-    <div>
-      <%= link_to_project_image(project) %>
-      <div>
-        <p>
-          <% project.users.uniq.each do |user|%>
-            <%= link_to "#{user.name}", user_path(user) %> 
-          <% end %>
-        </p> 
-      </div>
-    </div>
-  <% end %>
+<div class="row">
+  <div class="span12">
+    <h1>Listing Projects</h1>
+    
+    <ul class="gallery-container">
+    <% @projects.each do |project| %>
+      <li>
+        <%= link_to_project_image(project) %>
+          <h3><%= project.name %></h3>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 </div>
 
-<br />
-<br />
-<br />
-
-<div>
-  <%= link_to 'Add A New project', new_project_path %>
-</div>
-
-<br />
-<br />
-<br />
-
-
-
-
-
+<%= link_to 'Add A New project', new_project_path, :class => "btn" %>

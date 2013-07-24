@@ -1,27 +1,19 @@
-<h3 id="features-title">Features</h3>
-<%= link_to 'New', new_project_feature_path(@project) %>
+<section>
+  <h3 id="features-title">Features</h3>
+  <%= link_to 'New', new_project_feature_path(@project) %>
 
-<% @project.features.each_with_index do |feature, index| %>
-  <div class="accordion-group">
-    <div class="project-feature">
-      <div class="accordion-heading accordion-toggle" data-toggle="collapse">
-        <div class="project-feature-title">
-          <h4><%= link_to feature.title, feature_path(feature) %></h4>
-        </div>
-        <div class="project-feature-user-name" title="<%= feature.user.name %>">
-          <%= link_to (image_tag avatar_url(feature.user)), user_path(feature.user) %>
-        </div>
-        <div class="clearfix"></div>
-        <div class="project-feature-description">
-          <%= feature.description %>
-        </div>
 
-<%= render 'slides', :feature => feature %>
+  <ul id="features" class="nav nav-tabs">
+    <% @project.features.each do |feature| %>
+    <li>
+      <%= link_to feature.title, feature_path(feature), :class => "btn-navbar" %>
+    </li>
+    <% end %>
 
-      </div>
-      <br>
-    </div>
+  </ul>
+  <div class="tab-content">
+    <% @project.features.each_with_index do |feature, index| %>
+      <%= render "feature_carousel", :locals => {:feature => feature, :index =>index} %>
+    <% end %>  
   </div>
-  
-  <div class="clearfix"></div>
-<% end %>
+</section>
