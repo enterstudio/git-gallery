@@ -11,26 +11,26 @@
     </div>
   <% end %>
 
-  <fieldset class=" small-8 columns">
-    <div class="row collapse">
-      <div class="small-3 columns">
-        <%= f.label :title, class: "right inline" %>
+  <fieldset>
+    <div >
+      <div >
+        <%= f.label :title%>
       </div>
-        <div class="small-9 columns"><%= f.text_field :title %></div>
+        <div><%= f.text_field :title %></div>
     </div>
 
-    <div class="row collapse">
-      <div class="small-3 columns">
-        <%= f.label :description, class: "right inline" %>
+    <div >
+      <div >
+        <%= f.label :description%>
       </div>
-        <div class="small-9 columns"><%= f.text_field :description %></div>
+        <div ><%= f.text_field :description %></div>
     </div>
 
-     <div class="row collapse">
-      <div class="small-3 columns">
-        <%= label_tag 'feature[technologies_to_add][]', 'Technologies', class: "right inline" %>
+     <div >
+      <div>
+        <%= label_tag 'feature[technologies_to_add][]', 'Technologies'%>
       </div>
-      <div class="small-9 columns gg-edit">
+      <div >
 
         <% for technology in @technologies %>
           <%= check_box_tag 'feature[technology_ids][]',technology.id, @feature.technologies.include?(technology) %>
@@ -39,17 +39,17 @@
       </div>
 
 
-            <div class="gg-div">
+            <div>
         <% @feature.snippets.each do |snippet| %>
         <span>
           <h4><%= link_to snippet.name, snippet.url %></h4>
-          <span class="right">
+          <span >
           <%= link_to "Edit", edit_snippet_path(snippet) %>
         </span>
       </span>
         <p><%= snippet.description %></p>
 
-        <div class="gg-snippets">
+        <div>
           <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
         </div>
     <% end %>
@@ -62,14 +62,14 @@
 </p>
 
  <b>Check Out <%= @feature.user.name.split.first %>'s Other Work Using These Technologies:</b>
-  <ul class="gg-list-inline">
+  <ul >
     <% @feature.technologies.each do |technology| %>
       <li><%= link_to technology.name, user_technology_path(@feature.user, technology) %></li>
     <% end %>
   </ul>
 </div>
 
-  <div class="actions">
+  <div >
     <%= f.submit %>
   </div>
 </fieldset>
