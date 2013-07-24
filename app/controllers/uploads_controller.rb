@@ -31,7 +31,7 @@ class UploadsController < ApplicationController
   # POST /uploads.json
   def create
     @upload = @uploadable.uploads.new(params[:upload])
-
+    @upload.position = @uploadable.snippets.size + @uploadable.uploads.size if @uploadable.class.name == "Feature"
     #IF COMING FROM PROJECT, REDIRECT TO PROJECT SHOW; IF COMING FROM USER/FEATURE, REDIRECT TO FEATURE SHOW
     if @upload.save
       if @uploadable.class.name == "Feature"
