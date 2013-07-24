@@ -7,11 +7,14 @@ GitAtMe::Application.routes.draw do
 
   resources :projects do
     resources :features, :shallow => true do
+      resources :slides, :only => :new
       resources :snippets
       resources :uploads
     end
     resources :uploads
   end
+
+
   
   resources :users do
     # resources :features, :shallow => true do

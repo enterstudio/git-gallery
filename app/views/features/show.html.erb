@@ -12,20 +12,23 @@
     <p class="gg-p"><b>Description:</b> <%= @feature.description %></p>
       <div class="gg-div">
         <% @feature.snippets.each do |snippet| %>
-        <h4><%= link_to snippet.name, snippet.url %></h4>
+        <span>
+          <h4><%= link_to snippet.name, snippet.url %></h4>
+          <span class="right">
+          <%= link_to "Edit", edit_snippet_path(snippet) %>
+        </span>
+      </span>
         <p><%= snippet.description %></p>
 
         <div class="gg-snippets">
           <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
-        </div>
-        <div class="right">
-          <%= link_to "Edit", edit_snippet_path(snippet) %>
         </div>
     <% end %>
     </div>
 
 <p><b>Image(s):</b>
     <% @feature.uploads.each do |upload| %>
+      <p><%= upload.description%></p>
       <%= image_tag upload.image_url.to_s, width: '100' if upload.image? %>
     <% end %>
 </p>

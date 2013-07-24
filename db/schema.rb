@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130723145756) do
+ActiveRecord::Schema.define(:version => 20130723211104) do
 
   create_table "feature_technologies", :force => true do |t|
     t.integer  "feature_id"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20130723145756) do
     t.datetime "updated_at",      :null => false
     t.string   "image"
     t.integer  "image_id"
+    t.text     "description"
   end
 
   add_index "uploads", ["uploadable_id", "uploadable_type"], :name => "index_uploads_on_uploadable_id_and_uploadable_type"

@@ -17,7 +17,11 @@ class SnippetsController < ApplicationController
     @feature.snippets.build(params[:snippet])
     # @snippet = Snippet.new(params[:snippet])
     if @feature.save
-      redirect_to @feature, notice: "Snippet was successfully created."
+      if params[:next_state] == "true"
+        redirect_to new_feature_slide_path(@feature), notice: 'Last slide was successfully created.'
+      else
+        redirect_to @feature, notice: "Snippet was successfully created."
+      end
     else
       render :new
     end
