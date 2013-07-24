@@ -1,4 +1,6 @@
 class FeaturesController < ApplicationController
+  skip_before_filter :login_required, :only => [:index, :show]
+  
   # GET /users/1/features
   # GET /users/1/features.json
   def index

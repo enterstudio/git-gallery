@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  skip_before_filter :login_required, :only => [:index, :show]
+  
   # GET /projects
   # GET /projects.json
   def index

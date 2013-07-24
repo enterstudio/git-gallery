@@ -1,4 +1,5 @@
 class TechnologiesController < ApplicationController
+  skip_before_filter :login_required, :only => [:show]
   # GET /users/1/technologies/1
   # GET /users/1/technologies/1.json
   def show
