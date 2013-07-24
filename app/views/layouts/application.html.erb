@@ -8,15 +8,11 @@
 <html>
   <head>
   	<meta charset="utf-8" />
-
   	<!-- Uncomment to make IE8 render like IE7 -->
   	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
-
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   	<title><%= content_for?(:title) ? yield(:title) : "Git Gallery" %></title>
-
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
@@ -25,10 +21,7 @@
   <body>
     <%= render "layouts/navigation_bar" %>
     <%= render "layouts/breadcrumbs" %>
-    <div class="container">
-      <%= yield %>
-      <%= javascript_include_tag "application" %>
-    </div>
-    <%= render "layouts/footer" %>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

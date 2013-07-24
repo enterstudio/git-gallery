@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <fieldset class=" small-8 columns">
-    <div class="row collapse">
-      <div class="small-3 columns">
-        <%= f.label :title, class: "right inline" %>
+  <fieldset>
+    <div class>
+      <div class>
+        <%= f.label :title %>
       </div>
-        <div class="small-9 columns"><%= f.text_field :title %></div>
+        <div><%= f.text_field :title %></div>
     </div>
 
-    <div class="row collapse">
-      <div class="small-3 columns">
-        <%= f.label :description, class: "right inline" %>
+    <div>
+      <div>
+        <%= f.label :description %>
       </div>
-        <div class="small-9 columns"><%= f.text_field :description %></div>
+        <div ><%= f.text_field :description %></div>
     </div>
 
-    <div class="row collapse">
-      <div class="small-3 columns">
-        <%= label_tag 'feature[technologies_to_add][]', 'Technologies', class: "right inline" %>
+    <div >
+      <div >
+        <%= label_tag 'feature[technologies_to_add][]', 'Technologies' %>
       </div>
-      <div class="small-9 columns gg-edit">
+      <div >
         <% for technology in @technologies %>
           <%= check_box_tag 'feature[technology_ids][]',technology.id, @feature.technologies.include?(technology) %>
           <%= technology.name %>
         <% end %>
       </div>
-      <div class="actions">
+      <div>
     <%= f.submit %>
   </div>
     </div>

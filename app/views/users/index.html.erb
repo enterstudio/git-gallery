@@ -1,9 +1,9 @@
 <h1>Gallery Members</h1>
 
 <% @users.each do |user| %>
-  <ul class="vcard">
-    <li class="fn"><%= link_to "#{user.name}", user %><br><%= link_to (image_tag avatar_url(user)), user %></li>
-    <li class="email"><%= mail_to user.email, "email" %>  
+  <ul>
+    <li><%= link_to "#{user.name}", user %><br><%= link_to (image_tag avatar_url(user)), user %></li>
+    <li><%= mail_to user.email, "email" %>  
   </ul>
 <% end %>
 

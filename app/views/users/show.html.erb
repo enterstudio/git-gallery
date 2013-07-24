@@ -1,6 +1,6 @@
-<h1 class="gg-head"><%= @user.name %>'s Portfolio</h1>
-<div class="small-12 columns">
-  <ul class="gg-list">
+<h1><%= @user.name %>'s Portfolio</h1>
+<div>
+  <ul>
     <% @user.projects.uniq.each do |project| %>
     <li>
       <h4><%= project.name %></h4>

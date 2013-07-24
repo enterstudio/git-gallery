@@ -1,26 +1,26 @@
 <h1>Listing Projects</h1>
 
 
-<div id="gg-projects" class="clearfix">
-    <% @projects.each do |project| %>
-    <div class="large-3 small-6 columns gg-project-thumb">
-        <%= link_to_project_image(project) %>
-        <div class="panel gg-panel">
-            <p>
-              <% project.users.uniq.each do |user|%>
-                <%= link_to "#{user.name}", user_path(user) %> 
-              <% end %>
-            </p> 
-        </div>
+<div>
+  <% @projects.each do |project| %>
+    <div>
+      <%= link_to_project_image(project) %>
+      <div>
+        <p>
+          <% project.users.uniq.each do |user|%>
+            <%= link_to "#{user.name}", user_path(user) %> 
+          <% end %>
+        </p> 
+      </div>
     </div>
-    <% end %>
+  <% end %>
 </div>
 
 <br />
 <br />
 <br />
 
-<div id="gg-projects-ui">
+<div>
   <%= link_to 'Add A New project', new_project_path %>
 </div>
 

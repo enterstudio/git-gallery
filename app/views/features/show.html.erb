@@ -1,26 +1,21 @@
 <p id="notice"><%= notice %></p>
-<div class="small-12 columns">
- 
-  <h1 class="gg-head">
+<div>
+  <h1>
     Project: <%= link_to "#{@feature.project.name}", @feature.project %>
   </h1>
-  <h2 class="gg-head">
+  <h2>
     Feature: <b><%= @feature.title %></b>
   </h2>
 
-  <div class="panel">
-    <p class="gg-p"><b>Description:</b> <%= @feature.description %></p>
-      <div class="gg-div">
+  <div>
+    <p><b>Description:</b> <%= @feature.description %></p>
+      <div>
         <% @feature.snippets.each do |snippet| %>
-        <span>
           <h4><%= link_to snippet.name, snippet.url %></h4>
-          <span class="right">
           <%= link_to "Edit", edit_snippet_path(snippet) %>
-        </span>
-      </span>
         <p><%= snippet.description %></p>
 
-        <div class="gg-snippets">
+        <div>
           <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
         </div>
     <% end %>
@@ -34,9 +29,9 @@
 </p>
 
  <b>Check Out <%= @feature.user.name.split.first %>'s Other Work Using These Technologies:</b>
-  <ul class="gg-list-inline">
+  <ul>
     <% @feature.technologies.each do |technology| %>
-      <li><%= link_to technology.name, user_technology_path(@feature.user, technology) %></li>
+    <li><%= link_to technology.name, user_technology_path(@feature.user, technology) %></li>
     <% end %>
   </ul>
 </div>
