@@ -19,24 +19,24 @@ class Feature < ActiveRecord::Base
   end
 
   def slides_in_order
-      presentation = []
-      self.add_snippets(presentation)
-      self.add_uploads(presentation)
-      presentation
+      slides = []
+      self.add_snippets(slides)
+      self.add_uploads(slides)
+      slides
   end
 
-  def add_snippets(presentation)
+  def add_snippets(slides)
     self.snippets.each do |snippet|
-        presentation[snippet.position - 1] = snippet
+        slides[snippet.position - 1] = snippet
     end
-    presentation
+    slides
   end
 
-  def add_uploads(presentation)
+  def add_uploads(slides)
     self.uploads.each do |upload|
-        presentation[upload.position - 1] = upload
+        slides[upload.position - 1] = upload
     end
-    presentation
+    slides
   end
 
   def editable_by?(user)
