@@ -136,8 +136,11 @@ div.container {
 }
 
 #tech-tags {
-  padding-left: 7.5%;
-  display: inline;
+  max-width: 300px;
+  height: auto;
+  // word-wrap: none;
+  line-height: 5px;
+  padding-left: 3.5%;
   text-align: center;
 }
 

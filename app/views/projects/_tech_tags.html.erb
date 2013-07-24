@@ -1,9 +1,9 @@
 <div id="tech-tags">
-  <h4>Tech Tags</h4>
-  <ul class="gg-list-inline">
+  <h5>Tech Tags</h5>
+  <ul>
   <% @project.features.each do |feature| %>
     <% feature.technologies.each do |tech| %>
-    <li><%= link_to tech.name, "/technologies/#{tech.name}"  %></li>
+    <%= link_to tech.name, "/technologies/#{tech.name}" %> |
     <% end %>
   <% end %>
   </ul>
