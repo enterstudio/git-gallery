@@ -14,7 +14,12 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require feature_accordian
+//= require ../../../vendor/assets/theme/js/bootstrap-affix
+//= require ../../../vendor/assets/theme/js/bootstrap
+//= require ../../../vendor/assets/theme/js/bootstrap.min
+//= require ../../../vendor/assets/theme/js/Charts
+//= require ../../../vendor/assets/theme/js/signin
+//= require ../../../vendor/assets/theme/js/Theme
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-

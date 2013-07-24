@@ -1,28 +1,19 @@
+<div class="tab-pane active" id="feature<%= i %>">
+  <%= link_to feature.title, feature_path(feature) %>
+    Hi
+  <%= feature.description %>
+  
+  <div id="featureSlideShow" class="carousel slide">
+    <ol class="carousel-indicators">
+      <% feature.slides_in_order.count.times do %>
+        <li data-target="#featureSlideShow"></li>
+      <% end %>
+    </ol>
 
-
-    
-      <div class="accordion-group">
-        <div class="project-feature">
-          <div class="accordion-heading accordion-toggle" data-toggle="collapse">
-            <div class="project-feature-title">
-              <h4><%= link_to feature.title, feature_path(feature) %></h4>
-            </div>
-
-
-<div class="project-feature-user-name" title="<%= feature.user.name %>">
-          <%= link_to (image_tag avatar_url(feature.user)), user_path(feature.user) %>
-        </div>
-        <div class="clearfix"></div>
-        <div class="project-feature-description">
-          <%= feature.description %>
-        </div>
-
-<%= render 'slides', :feature => feature %>
-
-      </div>
-      <br>
+    <div class="carousel-inner">
+      <% feature.slides_in_order.each do |slide| %>
+        <%= render "slides" %>
+      <% end %>
     </div>
   </div>
-  <div class="clearfix"></div>
-<% end %>
-</nav>
+</div>
