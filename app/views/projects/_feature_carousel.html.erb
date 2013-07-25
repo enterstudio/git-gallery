@@ -12,7 +12,7 @@
 
     <div class="carousel-inner">
       <% feature.slides_in_order.each do |slide| %>
-        <%= render "slides" %>
+        <%= render "slides", :slide => slide %>
       <% end %>
     </div>
   </div>

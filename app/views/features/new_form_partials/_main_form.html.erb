@@ -1,4 +1,3 @@
-
 <div class="container">
 <%= form_for([@project, @feature], html: {class: "form-horizontal"}) do |f| %>
   <% if @feature.errors.any? %>
@@ -25,8 +24,8 @@
     <%= render partial: "features/new_form_partials/technologies", :locals => {:f => f, :feature => @feature} %>
     </div>
   </fieldset>
-  <div>
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit, class: "btn btn-primary"%>
   </div>
 <% end %>
 </div>
