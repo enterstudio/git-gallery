@@ -9,8 +9,7 @@
 ###################
 # CREATE PROJECTS #
 ###################
-sample_description = " <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, cum, ipsam, quas dolore blanditiis incidunt delectus aperiam accusamus asperiores dolorem unde porro explicabo voluptates nesciunt officia voluptate vel culpa quos?</div><div>Dolor, cumque, doloribus, tempore quos voluptatem est vel fuga consequatur doloremque quod quidem laboriosam adipisci cum reiciendis quibusdam iure natus rerum odit dolores eveniet. Incidunt doloribus et veritatis aut voluptates.</div><div>Autem, voluptas, officia nesciunt suscipit modi libero sequi corporis facilis commodi deserunt dolor voluptatem ipsa at perspiciatis quis tempora eveniet sint. Deleniti, exercitationem, sit dolorem eius repudiandae cum dolores consequuntur!</div>"
-
+sample_description = "Description of Project ... Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space Words to fill up more space Words to fill up more space Words to fill up more space Words to fill up more space"
 Project.create(:name => "Git Gallery",        :description => sample_description, :source => "https://github.com/flatiron-school/git-gallery")        # 1
 Project.create(:name => "Recipe App",         :description => sample_description, :source => "https://github.com/flatiron-school/recipes-sample-app") # 2
 Project.create(:name => "Playlister",         :description => sample_description, :source => "https://github.com/micahrcorn/playlister-r")            # 3
