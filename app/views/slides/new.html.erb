@@ -1,4 +1,5 @@
-
-<h1><%= slide_prompt(@feature) %></h1>
-<button style="font-color:white"><%= link_to 'Code Snippet', new_feature_snippet_path(@feature)%></button>
-<button><%= link_to 'Image', new_feature_upload_path(@feature) %></button>
+<div class="gg-feature-form">
+	<h1 class="gg-lone-header"><%= slide_prompt(@feature) %></h1>
+	<button style="font-color:white"><%= link_to 'Code Snippet', new_feature_snippet_path(@feature)%></button>
+	<button><%= link_to 'Image', new_feature_upload_path(@feature) %></button>
+</div>
