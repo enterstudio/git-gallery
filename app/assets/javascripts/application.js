@@ -14,12 +14,13 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require feature_accordian
-//= require ../../../vendor/assets/theme/js/bootstrap-affix
+
 //= require ../../../vendor/assets/theme/js/bootstrap
-//= require ../../../vendor/assets/theme/js/bootstrap.min
-//= require ../../../vendor/assets/theme/js/Charts
-//= require ../../../vendor/assets/theme/js/signin
-//= require ../../../vendor/assets/theme/js/Theme
+//= require ../../../vendor/assets/theme/js/jquery-1.10.1.min
+//= require ../../../vendor/assets/theme/js/lightbox
+//= require ../../../vendor/assets/theme/js/main
+//= require ../../../vendor/assets/theme/js/prettify
+
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
