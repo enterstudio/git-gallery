@@ -1,13 +1,14 @@
-<h1>Gallery Members</h1>
+<div class="row">
+  <div class="span12">
+    <h1>Gallery Members</h1>
 
-<% @users.each do |user| %>
-  <ul>
-    <li><%= link_to "#{user.name}", user %><br><%= link_to (image_tag avatar_url(user)), user %></li>
-    <li><%= mail_to user.email, "email" %>  
-  </ul>
-<% end %>
-
-<br />
-
-<%= link_to 'Project List', projects_path %>
-
+    <ul class="gallery-container">  
+      <% @users.each do |user| %>
+        <li>
+          <%= link_to (image_tag avatar_url(user)), user %><br>
+          <%= link_to "#{user.name}", user %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,10 +1,9 @@
 <div>
-  <h5>Tech Tags</h5>
   <ul>
-  <% @project.features.each do |feature| %>
-    <% feature.technologies.each do |tech| %>
-    <%= link_to tech.name, "/technologies/#{tech.name}" %> |
+    <% @project.features.each do |feature| %>
+      <% feature.technologies.each do |tech| %>
+        <%= link_to tech.name, "/technologies/#{tech.name}" %> |
+      <% end %>
     <% end %>
-  <% end %>
   </ul>
 </div>

@@ -1,13 +1,13 @@
 <div>
-  <h3>Contributors</h3>
-  <ul>
-    <% @project.users.uniq.each do |user| %>
-    <li>
-      <div>
-        <%= link_to (image_tag avatar_url(user)), user_path(user) %><br>
-        <%= link_to user.name, user_path(user) %>
-      </div>
-    </li>
+  <h3>Top Contributors</h3><a href="#">See all</a>
+  
+  <ul class="gallery-container">
+    <% @project.users.uniq.take(4).each do |user| %>
+      <li>
+        <%= link_to (image_tag avatar_url(user)), user_path(user) %>
+        <h4><%= link_to user.name, user_path(user) %></h4>
+      </li>
     <% end %>
   </ul>
+
 </div>

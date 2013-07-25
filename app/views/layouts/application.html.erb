@@ -20,8 +20,10 @@
 
   <body>
     <%= render "layouts/navigation_bar" %>
-    <%= render "layouts/breadcrumbs" %>
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+    <div id="wrapper">
+      <%= render "layouts/breadcrumbs" %>
+      <div id="content"><%= yield %></div>
+      <%= javascript_include_tag "application" %>
+    </div>
   </body>
 </html>
