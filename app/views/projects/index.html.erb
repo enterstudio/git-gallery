@@ -34,7 +34,10 @@
 
 <div class="post-info clearfix">
     <div class="pull-left">
-        <a href="/theme_venera/single_post" class="post-comments">BY:
+   <!--    <h5>
+    <%= link_to project.name, project_path(project), :class => "recent-post-header" %>
+  </h5> -->
+        <a class= "post-comments"> BY:
         <% project.users.uniq.each do |user| %>
           <%= user.name %>
         <% end %>

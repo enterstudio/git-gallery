@@ -10,17 +10,13 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
-//= require twitter/bootstrap
-//= require feature_accordian
 
-//= require ../../../vendor/assets/theme/js/bootstrap
 //= require ../../../vendor/assets/theme/js/jquery-1.10.1.min
+//= require ../../../vendor/assets/theme/js/bootstrap
 //= require ../../../vendor/assets/theme/js/lightbox
-//= require ../../../vendor/assets/theme/js/main
 //= require ../../../vendor/assets/theme/js/prettify
-
+//= require ../../../vendor/assets/theme/js/main
+//= require feature_accordian
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
