@@ -1,13 +1,22 @@
 <section class="hero-unit">
+
+
   <h1 id="project-title"><%= @project.name %></h1>
 
-  <%= render "tech_tags" %>
+
+  <div class="hero_tags">
+    <%= render "tech_tags" %>
+  </div>
+  
 
   <div id="project-description">
     <h3>Description</h3>
     <p><%= @project.description %></p>
   </div>
 
-  <%= render "contributors" %>
+  <div>
+    <%= render "contributors" %>
+  </div>
+  
 
 </section>
