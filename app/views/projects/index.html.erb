@@ -34,7 +34,11 @@
 
 <div class="post-info clearfix">
     <div class="pull-left">
-        <a href="/theme_venera/single_post" class="post-comments">BY: LIST CONTRIBUTORS</a>
+        <a href="/theme_venera/single_post" class="post-comments">BY:
+        <% project.users.uniq.each do |user| %>
+          <%= user.name %>
+        <% end %>
+        </a>
     </div>
 
 </div>
