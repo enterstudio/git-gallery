@@ -11,15 +11,62 @@
 ###################
 sample_description = "Description of Project ... Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space Words to fill up more space Words to fill up more space Words to fill up more space Words to fill up more space"
 Project.create(:name => "Git Gallery",        :description => sample_description, :source => "https://github.com/flatiron-school/git-gallery")        # 1
-Project.create(:name => "Recipe App",         :description => sample_description, :source => "https://github.com/flatiron-school/recipes-sample-app") # 2
-Project.create(:name => "Playlister",         :description => sample_description, :source => "https://github.com/micahrcorn/playlister-r")            # 3
-Project.create(:name => "Library-Redux",      :description => sample_description, :source => "https://github.com/flatiron-school/library-redux")      # 4
-Project.create(:name => "AppApp",             :description => sample_description, :source => "https://github.com/flatiron-school/appapp")             # 5
-Project.create(:name => "Assignmentio-Redux", :description => sample_description, :source => "https://github.com/flatiron-school/assignmentio-redux") # 6
+Project.create(:name => "Syllaboss",         :description => sample_description, :source => "https://github.com/flatiron-school/recipes-sample-app") # 2
+Project.create(:name => "Hire-redux",         :description => sample_description, :source => "https://github.com/micahrcorn/playlister-r")            # 3
+Project.create(:name => "AppApp",      			:description => sample_description, :source => "https://github.com/flatiron-school/library-redux")      # 4
+Project.create(:name => "Assignmentio-Redux",             :description => sample_description, :source => "https://github.com/flatiron-school/appapp")             # 5
+Project.create(:name => "Library-Redux", 		:description => sample_description, :source => "https://github.com/flatiron-school/assignmentio-redux") # 6
 Project.create(:name => "OpenExam2",          :description => sample_description, :source => "https://github.com/flatiron-school/openexam2")          # 7
-Project.create(:name => "Hire-Redux",         :description => sample_description, :source => "https://github.com/flatiron-school/hire-redux")         # 8
-Project.create(:name => "Teamline-Redux",     :description => sample_description, :source => "https://github.com/flatiron-school/teamline-redux")     # 9
-Project.create(:name => "Pizza",              :description => sample_description, :source => "https://github.com/flatiron-school/pizza")              # 10
+Project.create(:name => "Teamline-Redux",         :description => sample_description, :source => "https://github.com/flatiron-school/hire-redux")         # 8
+Project.create(:name => "Pizza",     :description => sample_description, :source => "https://github.com/flatiron-school/teamline-redux")     # 9
+Project.create(:name => "KegKong",              :description => sample_description, :source => "https://github.com/flatiron-school/pizza")              # 10
+
+#######################
+# Add Project Uploads #
+#######################
+gitgallery = Project.all.first
+gitgallery.uploads.build
+gitgallery.uploads.first.remote_image_url = ""
+gitgallery.uploads.first.position = 1
+gitgallery.uploads.first.save
+
+syllaboss = Project.find(1)
+syllaboss.uploads.build
+syllaboss.uploads.first.remote_image_url = "http://25.media.tumblr.com/71309855e732bbf68922f3ee347e49ae/tumblr_mqicwxGxxE1sat8iwo1_1280.jpg" 
+syllaboss.uploads.first.position = 1
+syllaboss.uploads.first.save
+
+hireredux = Project.find(2)
+hireredux.uploads.build
+hireredux.uploads.first.remote_image_url = "http://24.media.tumblr.com/cac794eea510798937bbef981bc14409/tumblr_mqibnsstiy1sat8iwo1_1280.jpg" 
+hireredux.uploads.first.position = 1
+hireredux.uploads.first.save
+
+appapp = Project.find(3)
+appapp.uploads.build
+appapp.uploads.first.remote_image_url = "http://24.media.tumblr.com/2bce7c7d37b602841d5c1000f10937eb/tumblr_mqieg3KgT81sat8iwo1_1280.jpg" 
+appapp.uploads.first.position = 1
+appapp.uploads.first.save
+
+assignmentioredux = Project.find(4)
+assignmentioredux.uploads.build
+assignmentioredux.uploads.first.remote_image_url = "http://24.media.tumblr.com/a9447d4a4db1066facd445624a824593/tumblr_mqibnsstiy1sat8iwo5_1280.jpg" 
+assignmentioredux.uploads.first.position = 1
+assignmentioredux.uploads.first.save
+
+libraryredux = Project.find(5)
+libraryredux.uploads.build
+libraryredux.uploads.first.remote_image_url = "http://24.media.tumblr.com/2d11d481e79ca7d9fe72e65605fbe015/tumblr_mqif8q43HO1sat8iwo1_1280.jpg" 
+libraryredux.uploads.first.position = 1
+libraryredux.uploads.first.save
+
+openexam = Project.find(6)
+openexam.uploads.build
+openexam.uploads.first.remote_image_url = "http://25.media.tumblr.com/68c09941abaddc596f61dcc2765c9677/tumblr_mqifrlhXzj1sat8iwo1_1280.jpg" 
+openexam.uploads.first.position = 1
+openexam.uploads.first.save
+
+
 ################
 # CREATE USERS #
 ################
@@ -85,6 +132,35 @@ forms 		= Snippet.create(:name => "shallow forms", :url => "https://github.com/f
 #became this simpler form tag:
 <%= form_for [@feature, @snippet] do |f| %>",
 		:description => "Similar to what we saw with the paths, all form tags became simpler. Form tags for resources nested under features went from relying on the user, the feature, and the current resource to relying on only the feature and the current resource (in this case snippets).", :feature_id => 16, :position => 3)
+
+#######################
+# Add Feature Uploads #
+#######################
+feature1 = Feature.first
+	feature1.uploads.build
+	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/cac794eea510798937bbef981bc14409/tumblr_mqibnsstiy1sat8iwo1_1280.jpg"
+	feature1.uploads.first.position = 1
+	feature1.uploads.first.save
+
+	feature1.uploads.build
+	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/a9be25c610b23f91167bbc9b997ea8eb/tumblr_mqibnsstiy1sat8iwo2_1280.jpg" 
+	feature1.uploads.first.position = 2
+	feature1.uploads.first.save
+
+	feature1.uploads.build
+	feature1.uploads.first.remote_image_url = "http://25.media.tumblr.com/c08585bbe24b689d75cfc03626956a45/tumblr_mqibnsstiy1sat8iwo3_1280.jpg" 
+	feature1.uploads.first.position = 3
+	feature1.uploads.first.save
+
+	feature1.uploads.build
+	feature1.uploads.first.remote_image_url = "http://25.media.tumblr.com/1330e132c4bb3649adcf1116687fa8bb/tumblr_mqibnsstiy1sat8iwo4_1280.jpg" 
+	feature1.uploads.first.position = 4
+	feature1.uploads.first.save
+
+	feature1.uploads.build
+	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/a9447d4a4db1066facd445624a824593/tumblr_mqibnsstiy1sat8iwo5_1280.jpg" 
+	feature1.uploads.first.position = 5
+	feature1.uploads.first.save
 
 
 #######################

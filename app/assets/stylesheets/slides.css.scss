@@ -1,0 +1,49 @@
+.slide_container {
+  background-color: #f2f2f2;
+  height: 400px;
+}
+
+.temp1 {
+  background-color: grey;
+}
+
+.features-slide {
+  display: none;
+  padding: 20px;
+  padding-left: 70px;
+  background: #ffffff url('../images/quotes.png') 15px 20px no-repeat;
+  -webkit-box-shadow: 0px 1px 4px 1px #b4b6a9;
+  -moz-box-shadow: 0px 1px 4px 1px #b4b6a9;
+  box-shadow: 0px 1px 4px 1px #b4b6a9;
+  font-size: 17px;
+  line-height: 24px;
+  color: #005f6b;
+  font-family: "Abel", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.features-slide.active {
+  display: block;
+}
+
+.carousel {
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar {
+  padding: 0;
+  margin: 0;
+  height: 600px;
+  background-color: grey;
+  background-image: url("binding_dark.png")
+}
+
+div.feature-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.slide-content {
+  color: white;
+}
