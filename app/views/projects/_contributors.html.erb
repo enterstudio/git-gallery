@@ -1,11 +1,9 @@
-<div>
-  <h3>Top Contributors</h3><a href="#">See all</a>
-  
-  <ul class="gallery-container">
+<div id="contributors">
+  <h6>Contributors</h6>
+  <ul class="inline">
     <% @project.users.uniq.take(4).each do |user| %>
       <li>
-        <%= link_to (image_tag avatar_url(user)), user_path(user) %>
-        <h4><%= link_to user.name, user_path(user) %></h4>
+        <%= link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
       </li>
     <% end %>
   </ul>
