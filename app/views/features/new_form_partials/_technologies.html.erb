@@ -1,0 +1,8 @@
+
+<%= label_tag 'feature[technologies_to_add][]', 'Technologies', class: "control-label" %>
+<div class="controls">
+<% for technology in @technologies %>
+  <%= check_box_tag 'feature[technology_ids][]',technology.id, @feature.technologies.include?(technology) %>
+  <%= technology.name %>
+<% end %>
+</div>
