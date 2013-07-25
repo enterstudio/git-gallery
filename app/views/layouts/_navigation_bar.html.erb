@@ -1,40 +1,45 @@
-<nav class="navbar navbar-fixed-top">
-  <section class="navbar-inner">
-    <div class="container">
-    
-    <!-- Title Area -->
-    <%= link_to "Git Gallery", projects_path, :class => "brand" %>
-    
-    <ul class="nav">
-      <li>
-     <!-- When submit the form, the view rendered will be the index view of our articles resource -->
-        <%= form_tag(users_path, :method => "get") do %>
+<header id="header">
+  <div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
         
-        <% end %>
-      </li>
+        <!-- Title Area -->
+        <%= link_to "Git Gallery", projects_path, :class => "brand" %>
+        
+        <ul class="nav">
+          <li> <!-- When submit the form, the view rendered will be the index view of our articles resource -->
+            <%= form_tag(users_path, :method => "get") do %>
+            
+            <% end %>
+          </li>
 
-      <li>
-        <% if logged_in? %>
-        <%= link_to 'My Homepage', current_user %>
-        <% end %>
-      </li>
-      
-      <li>
-        <%= link_to 'Find People', users_path %>
-      </li>
+          <li>
+            <% if logged_in? %>
+              <%= link_to 'My Homepage', current_user %>
+            <% end %>
+          </li>
+          
+          <li>
+            <%= link_to 'Find People', users_path %>
+          </li>
+        </ul>
 
-      <li><%= login_logout %></li>
-      <li><%= sign_up %></li>
+        <div class="top-account-control visible-desktop">
+          <%= login_logout %>
+          <%= sign_up %>
+        </div>
 
-    </ul>
-      <ul class="nav pull-right">
-            <li>
-              <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
-        <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
-             of using a Rails form helper -->
-              <button class="btn" type="submit"><i class="icon-search"></i></button>
-            </li>
-      </ul>
+        
+        
+        <ul class="nav pull-right">
+          <li>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
+      <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
+           of using a Rails form helper -->
+            <button class="btn" type="submit"><i class="icon-search"></i></button>
+          </li>
+        </ul>
+      </div>
     </div>
-  </section>
-</nav>
+  </div>
+</header>

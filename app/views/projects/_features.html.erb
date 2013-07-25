@@ -1,19 +1,25 @@
 <section>
-  <h3 id="features-title">Features</h3>
-  <%= link_to 'New', new_project_feature_path(@project) %>
+  <div class="container">
+    <div class="row">
 
-  <ul id="features" class="nav nav-tabs">
-    <% @project.features.each do |feature| %>
-    <li>
-      <%= link_to feature.title, feature_path(feature), :class => "btn-navbar" %>
-    </li>
-    <% end %>
+      <div class="span12">
+        <h3 id="features-title" class="section-header">Features</h3>
+        <%= link_to 'New', new_project_feature_path(@project) %>
+      </div>
 
-  </ul>
-  
-  <div class="tab-content">
-    <% @project.features.take(1).each_with_index do |feat, index| %>
-      <%= render partial: "feature_carousel", :locals => {:feature => feat, :i => index} %>
-    <% end %>
+      <div id="features-slide">
+        <% @project.features.each do |feature| %>
+          <div class="feature">
+            <h3><%= link_to feature.title, feature_path(feature), :class => "feature-card-title" %></h3>
+            <p><%= feature.description %></p>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
   </div>
+
+  <% @project.features.take(1).each_with_index do |feat, index| %>
+    <%= render partial: "feature_carousel", :locals => {:feature => feat, :i => index} %>
+  <% end %>
 </section>

@@ -13,4 +13,6 @@
  *= require ../../../vendor/assets/theme/css/theme_venera_blue
  
  *= require_tree .
+
+ *= require custom
  */
