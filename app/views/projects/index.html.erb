@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="span12">
     <h1>Listing Projects</h1>
     
@@ -14,3 +14,95 @@
 </div>
 
 <%= link_to 'Add A New project', new_project_path, :class => "btn" %>
+ -->
+
+<div class="span12">
+  <div class="row">
+    <div class="span12">
+      <h3 class="section-header">Projects</h3>
+    </div>
+  </div>
+
+<div class="row">
+
+<% @projects.each do |project| %>
+<div class="span4">
+<div class="white-card recent-post clearfix">
+  <h5 class="recent-post-header">
+    <a href="/theme_venera/single_post"><%= project.name %></a>
+  </h5>
+
+<div class="post-info clearfix">
+    <div class="pull-left">
+        <a href="/theme_venera/single_post" class="post-comments">BY: LIST CONTRIBUTORS</a>
+    </div>
+
+</div>
+
+
+<div class="post-info clearfix">
+<div class="pull-left">
+<a href="/theme_venera/single_post" class="post-comments">14 Comments</a>
+</div>
+
+<div class="pull-right">
+<a href="#" class="post-like"><i class="icon-heart"></i>
+250
+</a></div>
+</div>
+
+
+
+<%= link_to_project_image(project) %>
+<p class="post-content separated"><%= project.description %></p>
+<%= link_to "Check it Out", project_path(project), :class => "btn btn-primary btn-extra pull-right" %>
+</div>
+</div>
+
+<% end %>
+
+</div>
+</div>
+
+
+<div class="row">
+<div class="span8">
+<h3 class="section-header">Pagination</h3>
+<div class="pagination">
+<ul>
+<li>
+<a href="#">Prev</a>
+</li>
+<li class="active">
+<a href="#">1</a>
+</li>
+<li>
+<a href="#">2</a>
+</li>
+<li>
+<a href="#">3</a>
+</li>
+<li class="visible-desktop-inline">
+<a href="#">4</a>
+</li>
+<li class="visible-desktop-inline">
+<a href="#">5</a>
+</li>
+<li class="visible-desktop-inline">
+<a href="#">6</a>
+</li>
+<li>
+<a href="#">Next</a>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
