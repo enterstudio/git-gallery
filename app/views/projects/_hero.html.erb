@@ -1,13 +1,26 @@
 <section class="hero-unit">
-  <h1 id="project-title"><%= @project.name %></h1>
 
-  <%= render "tech_tags" %>
+<div class="row-fluid">
+  <div id="hero-description" class="span12" >
 
-  <div id="project-description">
-    <h3>Description</h3>
-    <p><%= @project.description %></p>
+    <div class="span3">
+      <h1 id="project-title"><%= @project.name %></h1>
+    </div>
+
+    <div class="hero_tags span9">
+      <div class="row-fluid span12">
+        <%= render "tech_tags" %>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="span8"><p><%= @project.description %></p></div>
+    <div class="clearfix"></div>
+    <div class="hero_contrib">
+      <%= render "contributors" %>
+    </div>
+
   </div>
 
-  <%= render "contributors" %>
-
+</div>
 </section>

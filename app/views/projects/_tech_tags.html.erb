@@ -1,9 +1,10 @@
-<div>
-  <ul>
-    <% @project.features.each do |feature| %>
-      <% feature.technologies.each do |tech| %>
-        <%= link_to tech.name, "/technologies/#{tech.name}" %> |
-      <% end %>
+
+<ul class="inline tech">
+  <% @project.features.each do |feature| %>
+    <% feature.technologies.each do |tech| %>
+   <!--  <div class="span6"> -->
+      <li> <%= link_to image_tag(tech.icon_url, title: "#{tech.name}", rel: 'tooltip')  %> </li>
+   <!-- </div> -->
     <% end %>
-  </ul>
-</div>
+  <% end %>
+</ul>
