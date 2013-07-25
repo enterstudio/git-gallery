@@ -3,22 +3,6 @@
   display: inline-block;
 }
 
-// .white-card h3 { // ORIGINAL CSS IS FOR AN H5
-//   font-weight: 400;
-//   color: #31302e;
-//   // font-size: 18px; // REMOVED TO ALLOW FOR H3 SIZING
-//   margin-top: 0px;
-//   margin-bottom: 10px;
-//   padding-bottom: 10px;
-//   border-bottom: 1px solid #cfd1c6;
-//   -webkit-box-shadow: 0px 1px 0px #ffffff;
-//   -moz-box-shadow: 0px 1px 0px #ffffff;
-//   box-shadow: 0px 1px 0px #ffffff;
-//   text-shadow: -1px -1px #ffffff;
-
-//   text-align: center; // ADDED IN CUSTOM
-// }
-
 #features-title {
   display: inline;
   padding-right: 1%;
@@ -30,13 +14,6 @@
   overflow-wrap: scroll;
   white-space: nowrap;
 }
-
-// .feature {
-  
-//   padding: 5px 20px;
-//   background: white;
-//   height: 130px;
-// }
 
 .feature {
   padding: 10px;
@@ -63,7 +40,6 @@
 .feature h3 {
   font-weight: 400;
   color: #31302e;
-  // font-size: 18px; // REMOVED TO ALLOW FOR H3 SIZING
   margin-top: 0px;
   margin-bottom: 10px;
   padding-bottom: 10px;
