@@ -10,16 +10,7 @@
  *
  *= require_self
 
- *= require ../../../vendor/assets/theme/css/bootstrap
- *= require ../../../vendor/assets/theme/css/bootstrap-responsive
- 
- *= require ../../../vendor/assets/theme/css/application
- *= require ../../../vendor/assets/theme/css/application-black-orange
- *= require ../../../vendor/assets/theme/css/application-fire-starter
- *= require ../../../vendor/assets/theme/css/application-mean-green
- *= require ../../../vendor/assets/theme/css/application-ocean-breeze
- 
- *= require ../../../vendor/assets/theme/css/font-awesome
+ *= require ../../../vendor/assets/theme/css/theme_venera_blue
  
  *= require_tree .
  */
