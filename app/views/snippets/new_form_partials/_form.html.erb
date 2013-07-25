@@ -1,0 +1,36 @@
+<div class="container">
+<%= form_for([@feature, @snippet], html: {class: "form-horizontal"}) do |f| %>
+  <% if @snippet.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@snippet.errors.count, "error") %> prohibited this snippet from being saved:</h2>
+      <ul>
+      <% @snippet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Copy/paste your code, then explain how it relates to your feature.</legend>
+    <div class="gg-form-section">
+      <%= render partial: "snippets/new_form_partials/name", :locals => {:f => f, :feature => @feature} %>
+      <%= render partial: "snippets/new_form_partials/url", :locals => {:f => f, :feature => @feature} %>
+      <%= render partial: "snippets/new_form_partials/language", :locals => {:f => f, :feature => @feature} %>
+    </div>
+    <div class="gg-form-section">
+      <%= render partial: "snippets/new_form_partials/code", :locals => {:f => f, :feature => @feature} %>
+      <%= render partial: "snippets/new_form_partials/description", :locals => {:f => f, :feature => @feature} %>
+    </div>
+  </fieldset>
+
+  <div class="form-actions">
+  <div class="next-slide">
+    <%= f.submit "Next Slide", :class => "btn btn-primary gg-left-button" %>
+    <input name="next_state" type="hidden" value="false" />
+  </div>
+  <div>
+    <%= f.submit "I'm Done With This Feature", :class => "btn btn-primary gg-right-button" %>
+  </div>
+</div>
+<% end %>
