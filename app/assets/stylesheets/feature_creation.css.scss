@@ -5,11 +5,15 @@
 .gg-left-button{
 	display: inline-block;
 	float: left;
+	margin-top: 5%;
+	margin-left: 20%;
 }
 
 .gg-right-button{
 	display: inline-block;
 	float: right;
+	margin-top: 5%;	
+	margin-right: 20%;
 }
 
 .gg-feature-form {
@@ -19,6 +23,10 @@
 	padding-left: 100px;
 }
 
+.gg-button-options {
+	margin-bottom: 10%;
+}
+
 .gg-lone-header {
 
 }
@@ -26,4 +34,12 @@
 .gg-form-section {
 	display: inline-block;
 	float: left;
+}
+
+.shift-label-left {
+	left-margin: 100px;
+}
+
+.shift-control-left {
+	width: 110px;
 }

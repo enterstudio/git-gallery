@@ -25,43 +25,43 @@ Project.create(:name => "KegKong",              :description => sample_descripti
 # Add Project Uploads #
 #######################
 gitgallery = Project.all.first
-gitgallery.uploads.build
-gitgallery.uploads.first.remote_image_url = ""
+gitgallery.uploads.build(:name => "landing page gg")
+gitgallery.uploads.first.remote_image_url = "http://24.media.tumblr.com/882dd2c61b171f0a36f6578d60f9e593/tumblr_mqimmjKiEh1sat8iwo1_1280.jpg"
 gitgallery.uploads.first.position = 1
 gitgallery.uploads.first.save
 
-syllaboss = Project.find(1)
-syllaboss.uploads.build
+syllaboss = Project.find(2)
+syllaboss.uploads.build(:name => "landing page sb")
 syllaboss.uploads.first.remote_image_url = "http://25.media.tumblr.com/71309855e732bbf68922f3ee347e49ae/tumblr_mqicwxGxxE1sat8iwo1_1280.jpg" 
 syllaboss.uploads.first.position = 1
 syllaboss.uploads.first.save
 
-hireredux = Project.find(2)
-hireredux.uploads.build
-hireredux.uploads.first.remote_image_url = "http://24.media.tumblr.com/cac794eea510798937bbef981bc14409/tumblr_mqibnsstiy1sat8iwo1_1280.jpg" 
+hireredux = Project.find(3)
+hireredux.uploads.build(:name => "landing page hr")
+hireredux.uploads.first.remote_image_url = "http://24.media.tumblr.com/5df852a1c08b9b69dbf7330a955160d8/tumblr_mqiddtCNuN1sat8iwo1_1280.jpg" 
 hireredux.uploads.first.position = 1
 hireredux.uploads.first.save
 
-appapp = Project.find(3)
-appapp.uploads.build
+appapp = Project.find(4)
+appapp.uploads.build(:name => "landing page aa")
 appapp.uploads.first.remote_image_url = "http://24.media.tumblr.com/2bce7c7d37b602841d5c1000f10937eb/tumblr_mqieg3KgT81sat8iwo1_1280.jpg" 
 appapp.uploads.first.position = 1
 appapp.uploads.first.save
 
-assignmentioredux = Project.find(4)
-assignmentioredux.uploads.build
-assignmentioredux.uploads.first.remote_image_url = "http://24.media.tumblr.com/a9447d4a4db1066facd445624a824593/tumblr_mqibnsstiy1sat8iwo5_1280.jpg" 
+assignmentioredux = Project.find(5)
+assignmentioredux.uploads.build(:name => "landing page ar")
+assignmentioredux.uploads.first.remote_image_url = "http://25.media.tumblr.com/3b8c9146db28690df25f508b78dcc84e/tumblr_mqiexqwgm31sat8iwo1_1280.jpg" 
 assignmentioredux.uploads.first.position = 1
 assignmentioredux.uploads.first.save
 
-libraryredux = Project.find(5)
-libraryredux.uploads.build
+libraryredux = Project.find(6)
+libraryredux.uploads.build(:name => "landing page lr")
 libraryredux.uploads.first.remote_image_url = "http://24.media.tumblr.com/2d11d481e79ca7d9fe72e65605fbe015/tumblr_mqif8q43HO1sat8iwo1_1280.jpg" 
 libraryredux.uploads.first.position = 1
 libraryredux.uploads.first.save
 
-openexam = Project.find(6)
-openexam.uploads.build
+openexam = Project.find(7)
+openexam.uploads.build(:name => "landing page oe")
 openexam.uploads.first.remote_image_url = "http://25.media.tumblr.com/68c09941abaddc596f61dcc2765c9677/tumblr_mqifrlhXzj1sat8iwo1_1280.jpg" 
 openexam.uploads.first.position = 1
 openexam.uploads.first.save
@@ -137,27 +137,27 @@ forms 		= Snippet.create(:name => "shallow forms", :url => "https://github.com/f
 # Add Feature Uploads #
 #######################
 feature1 = Feature.first
-	feature1.uploads.build
+	feature1.uploads.build(:name => "shallow_routes_feature")
 	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/cac794eea510798937bbef981bc14409/tumblr_mqibnsstiy1sat8iwo1_1280.jpg"
 	feature1.uploads.first.position = 1
 	feature1.uploads.first.save
 
-	feature1.uploads.build
+	feature1.uploads.build(:name => "shallow_routes_rake_after")
 	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/a9be25c610b23f91167bbc9b997ea8eb/tumblr_mqibnsstiy1sat8iwo2_1280.jpg" 
 	feature1.uploads.first.position = 2
 	feature1.uploads.first.save
 
-	feature1.uploads.build
+	feature1.uploads.build(:name => "shallow_routes_rake_before")
 	feature1.uploads.first.remote_image_url = "http://25.media.tumblr.com/c08585bbe24b689d75cfc03626956a45/tumblr_mqibnsstiy1sat8iwo3_1280.jpg" 
 	feature1.uploads.first.position = 3
 	feature1.uploads.first.save
 
-	feature1.uploads.build
+	feature1.uploads.build(:name => "shallow_routes_snippet")
 	feature1.uploads.first.remote_image_url = "http://25.media.tumblr.com/1330e132c4bb3649adcf1116687fa8bb/tumblr_mqibnsstiy1sat8iwo4_1280.jpg" 
 	feature1.uploads.first.position = 4
 	feature1.uploads.first.save
 
-	feature1.uploads.build
+	feature1.uploads.build(:name => "shallow_routes_user")
 	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/a9447d4a4db1066facd445624a824593/tumblr_mqibnsstiy1sat8iwo5_1280.jpg" 
 	feature1.uploads.first.position = 5
 	feature1.uploads.first.save
