@@ -75,20 +75,21 @@
 						<div class="login-box">
 						<a class="close login-box-close" href="#">×</a>
 						<h4 class="login-box-head">Login</h4>
-							<%= form_tag login_path %>
+							
 							<div class="control-group">
+							<%= form_tag login_path %>
 						<%= label_tag :email, "Email"%>
-						<div ><%= text_field_tag :email, nil, class:'span2' %></div>
+						<div ><%= text_field_tag :email, nil, :class=>'span2' %></div>
 						</div>
 
 						<div class="control-group">
 						 <%= label_tag :password, "Password" %>
-						<div ><%= password_field_tag :password, nil, class:'span2' %></div>
+						<div ><%= password_field_tag :password, nil, :class=>'span2' %></div>
 						</div>
 
 						<div class="login-actions">
 
-				     	<%= submit_tag "Login" , class: 'btn btn-primary'%><br><br>
+				     	<%= submit_tag "Login", :class=>'btn btn-primary'%><br><br>
 				     	<% end%> 
 
 		<!-- LOG OUT -->
