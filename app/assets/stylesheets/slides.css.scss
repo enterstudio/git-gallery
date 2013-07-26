@@ -1,17 +1,16 @@
 .slide_container {
   background-color: #f2f2f2;
+  background-image: url("binding_dark.png");
   height: 400px;
 }
 
-.temp1 {
-  background-color: grey;
-}
 
 .features-slide {
   display: none;
   padding: 20px;
   padding-left: 70px;
   background: #ffffff url('../images/quotes.png') 15px 20px no-repeat;
+  background-image: url("binding_dark.png");
   -webkit-box-shadow: 0px 1px 4px 1px #b4b6a9;
   -moz-box-shadow: 0px 1px 4px 1px #b4b6a9;
   box-shadow: 0px 1px 4px 1px #b4b6a9;
@@ -46,4 +45,75 @@ div.feature-section {
 
 .slide-content {
   color: white;
+}
+
+.slider-w {
+  background-image: url("binding_dark.png");
+}
+
+.yellow {
+  display:inline-block;
+  background-color: grey;
+  background-image: url("binding_dark.png");
+  margin: 0;
+  padding: 0;
+  height: 550px;
+  width: 100%;
+}
+
+.carousel_sidebar, .feature_carousel {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel_container {
+padding: 0;
+}
+
+.row-fluid .span8 {
+  width: 70%;
+  *width: 70%;
+}
+
+.row-fluid .span4 {
+  padding: 0;
+  margin: 0;
+  width: 30%;
+  *width: 30%;
+}
+
+// .snippet-description, .active {
+
+//     color: #ffffff;
+//   line-height: 1.5em;
+//   font-size: 1.5em;
+//   padding: 1em 0; 
+
+// }
+.slider-w .item {
+  padding-top: 20px;
+  height: 550px;
+}
+
+.user-sidebar {
+  padding-top: 10px;
+  margin: 0;
+  height: 300px;
+  width: 100%;
+  display:inline-block;
+  background-color: black;
+  background-image: url("binding_dark.png");
+  
+}
+.misc-side {
+  background-color: black;
+  background-image: url("binding_dark.png");
+  height: 250px;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-control {
+  font-size: 50px;
+  top: 7%;
 }

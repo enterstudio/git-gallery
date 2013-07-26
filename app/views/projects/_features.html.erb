@@ -1,6 +1,6 @@
 <div class="span12 feature-section">
 
-  <div>
+  <div class="creator">
     <h3 id="features-title" class="section-header">Features</h3>
     <%= link_to 'New', new_project_feature_path(@project) %>
   </div>
@@ -14,10 +14,11 @@
 
   </div>
 
-  <%= render :partial => "feature_carousel", :locals => {:features => @project.features }%>
-
-  
-
+  <div class="container-fluid carousel_container">
+  <div class="row-fluid">
+    <%= render :partial => "feature_carousel", :locals => {:features => @project.features }%>
+  </div>
+  </div>
 </div>
   
     

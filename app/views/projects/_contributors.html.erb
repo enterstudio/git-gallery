@@ -1,11 +1,25 @@
-<div id="contributors">
-  <h6>Contributors</h6>
-  <ul class="inline">
-    <% @project.users.uniq.take(4).each do |user| %>
-      <li>
-        <%= link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
-      </li>
-    <% end %>
-  </ul>
-
+<div class="container contrib-contain">
+  <div class="row">
+    <div class="span12">
+      <div class="contribs-title">
+        <h6>Contributors</h6>
+      </div>
+      <div id="contribs-slide">
+        <% @project.users.uniq.each do |user| %>
+        <div class="contrib">
+          <%= link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
+        </div>
+        <% end %>
+        <% @project.users.uniq.each do |user| %>
+        <div class="contrib">
+          <%= link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
+        </div>
+        <% end %>
+        <% @project.users.uniq.each do |user| %>
+        <div class="contrib">
+          <%= link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
+        </div>
+        <% end %>
+    </div>
+  </div>
 </div>
