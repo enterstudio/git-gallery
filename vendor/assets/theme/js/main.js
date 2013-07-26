@@ -10,7 +10,7 @@
     });
     $('.login-box-close').on("click", function(e) {
       $(this).closest(".login-box").fadeOut("fast");
-      return false;
+      // return false;
     });
     prettyPrint();
     $(".slider-browser-center").animate({

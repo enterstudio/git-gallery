@@ -46,41 +46,11 @@
 <!-- LOGIN/ACCOUNT BAR  -->
 
 <div class="top-account-control visible-desktop">
-	
 	<!-- ACCOUNT TAB -->
-
 	<% if !logged_in? %>
            <%= link_to "Create Account", new_user_path, class: 'top-create-account'%>    
     	<% else%>
            <%= link_to "My Account", nil, class: 'top-create-account'%>		     	
     <% end %>
-			
-	<!-- LOG IN/LOG OUT-->
-	
-		<a href="#" class="top-sign-in">LOGIN</a>
-		<div class="login-box">
-			<a class="close login-box-close" href="#">×</a>
-			<h4 class="login-box-head">Login</h4>
-			<%= form_tag login %>	
-				<div class="control-group">
-					<%= label_tag :email, "Email"%>
-					<div>
-						<%= text_field_tag :email, nil, :class=>'span2' %>
-					</div>
-				</div>
-				<div class="control-group">
-				 	<%= label_tag :password, "Password" %>
-					<div>
-						<%= password_field_tag :password, nil, :class=>'span'%>
-					</div>
-				</div>
-				<div class="login-actions">
-					<%= submit_tag "Login", :class=>'btn btn-primary'%>
-					<br/>
-					<br/>
-				</div>
-		</div>
-	
-		<%= link_to "Logout", logout_path, :class=> 'top-sign-in'%>
-	
- </div>
+	<%= render 'layouts/login'%>
+</div>
