@@ -5,9 +5,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    raise params
-    user = User.where(:email => params[:email]).first
-    if user && user.authenticate(params[:password])
+    user = User.where(:email => params[:session][:email]).first
+    if user && user.authenticate(params[:session][:password])
       login(user)
       redirect_to user
     else
@@ -17,6 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    raise params
     reset_session
     redirect_to login_path
   end
