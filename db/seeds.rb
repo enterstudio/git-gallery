@@ -11,15 +11,15 @@
 ###################
 sample_description = "Description of Project ... Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space Words to fill up more space Words to fill up more space Words to fill up more space Words to fill up more space"
 Project.create(:name => "Git Gallery",        :description => "Get ready for GitHub's replacement. Git Gallery is a layer of storytelling on top of Github. You can create slideshows about how you built particular features in your repository. We chose slideshows because they demand more storytelling to go with the code. These slideshows are an alternative to technical blogging with the added benefit of keeping everything in the context of your repository and your team. Teams can work together. Each team member should create the slideshows that explain the features they understand best. This is an ideal portfolio to show prospective employers. You're a developer. You know what you did and why you did it. Show off.", :source => "https://github.com/flatiron-school/git-gallery")        # 1
-Project.create(:name => "Syllaboss",         :description => "It's like homework on the internet and stuff. You can see what you have to do and how long you can procrastinate. We used bootstrap cause it's easy.", :source => "https://github.com/flatiron-school/recipes-sample-app") # 2
+Project.create(:name => "Syllaboss",          :description => "It's like homework on the internet and stuff. You can see what you have to do and how long you can procrastinate. We used bootstrap cause it's easy.", :source => "https://github.com/flatiron-school/recipes-sample-app") # 2
 Project.create(:name => "Hire-redux",         :description => "Everybody loves gauges. Boats have gauges, motorcycles have gauges, jets have gauges, why shouldn't Rebecca's hiring process have gauges? We used bootstrap cause it's easy", :source => "https://github.com/micahrcorn/playlister-r")            # 3
-Project.create(:name => "AppApp",      			:description => "You don't have to be anxious about your application anymore. We help Adam reject applicants more efficiently. Our algorithm automates the flatiron formula: 1 professional athlete, 1 poker player, 1 sky-diver, 1 special forces soldier, 5 investment bankers, 10 Ivy-leaguers, 20 art majors. We used bootstrap cause its easy.", :source => "https://github.com/flatiron-school/library-redux")      # 4
-Project.create(:name => "Assignmentio-Redux",             :description => "Now you have to do the homework. We used bootstrap cause it's easy.", :source => "https://github.com/flatiron-school/appapp")             # 5
-Project.create(:name => "Library-Redux", 		:description => "Please list links for working with github's api. They're impossible to find.", :source => "https://github.com/flatiron-school/assignmentio-redux") # 6
+Project.create(:name => "AppApp",      			  :description => "You don't have to be anxious about your application anymore. We help Adam reject applicants more efficiently. Our algorithm automates the flatiron formula: 1 professional athlete, 1 poker player, 1 sky-diver, 1 special forces soldier, 5 investment bankers, 10 Ivy-leaguers, and 20 art majors. We used bootstrap cause its easy.", :source => "https://github.com/flatiron-school/library-redux")      # 4
+Project.create(:name => "Assignmentio-Redux", :description => "Now you have to do the homework. We used bootstrap cause it's easy.", :source => "https://github.com/flatiron-school/appapp")             # 5
+Project.create(:name => "Library-Redux", 		  :description => "Please list links for working with github's api. They're impossible to find.", :source => "https://github.com/flatiron-school/assignmentio-redux") # 6
 Project.create(:name => "OpenExam2",          :description => "What color shoelaces was Matz wearing the first time he thought about duck typing??", :source => "https://github.com/flatiron-school/openexam2")          # 7
-Project.create(:name => "Teamline-Redux",         :description => "The Flatiron NSA", :source => "https://github.com/flatiron-school/hire-redux")         # 8
-Project.create(:name => "Pizza",     :description => "Hawaiian pizza is my favorite. What's yours?", :source => "https://github.com/flatiron-school/teamline-redux")     # 9
-Project.create(:name => "KegKong",              :description => "The first step in Kegerator AI. @thekellyallen: ORDER MORE BEER!", :source => "https://github.com/flatiron-school/pizza")              # 10
+Project.create(:name => "Teamline-Redux",     :description => "The Flatiron NSA", :source => "https://github.com/flatiron-school/hire-redux")         # 8
+Project.create(:name => "Pizza",              :description => "Hawaiian pizza is my favorite. What's yours?", :source => "https://github.com/flatiron-school/teamline-redux")     # 9
+Project.create(:name => "KegKong",            :description => "The first step in Kegerator AI. @thekellyallen: ORDER MORE BEER!", :source => "https://github.com/flatiron-school/pizza")              # 10
 
 
 #######################
@@ -83,38 +83,38 @@ kegkong.uploads.first.save
 ################
 # CREATE USERS #
 ################
-matt   = User.create(:name => "Matt Schmaus",      				:email => "mschmaus201@gmail.com",    				:password => "password") # 1
-jen    = User.create(:name => "Jennifer Campbell",  			:email => "jennifer.ml.campbell@gmail.com",  		:password => "password") # 2
-micah  = User.create(:name => "Micah Corn",     				:email => "micah.corn@flatironschool.com",         	:password => "password") # 3
-des    = User.create(:name => "Desmond Rawls",   				:email => "captaingrover@gmail.com",      			:password => "password") # 4
-thomas = User.create(:name => "Thomas Deatherage",    			:email => "thomas.deatherage@flatironschool.com",  :password => "password") # 5
-mendal = User.create(:name => "Mendel Kramer",    				:email => "mendal.kramer@flatironschool.com",      :password => "password") # 6
-david  = User.create(:name => "David Manaster",     			:email => "david.manaster@flatironschool.com",     :password => "password") # 7
-steven = User.create(:name => "Steven Brooks",    				:email => "steven.brooks@flatironschool.com",      :password => "password") # 8
-jack   = User.create(:name => "Jack Altman",      				:email => "jack.altman@flatironschool.com",        :password => "password") # 9
-sagar  = User.create(:name => "Sagar Shah",     				:email => "sagar.shah@flatironschool.com",         :password => "password") # 10
-sam    = User.create(:name => "Samantha Radocchia",  			:email => "samantha.radocchia@flatironschool.com", :password => "password") # 11
-max    = User.create(:name => "Maxwell Jacobson",   			:email => "maxwell.jacobson@flatironschool.com",   :password => "password") # 12
-alisa   = User.create(:name => "Alisa Chang",      				:email => "alisa.chang@flatironschool.com",            :password => "password") # 13
-josh   = User.create(:name => "Josh Collins",      				:email => "joshua.collins@flatironschool.com",            :password => "password") #14
-kristen   = User.create(:name => "Kristen Curtis",      		:email => "Kristen.Curtis@flatironschool.com",            :password => "password") #15
-sarah   = User.create(:name => "Sarah Duve",      				:email => "Sarah.Duve@flatironschool.com",            :password => "password") #16
-jen   = User.create(:name => "Jennifer Eisenberg",      		:email => "jennifer.eisenberg@flatironschool.com",            :password => "password") #17
-dan   = User.create(:name => "Daniel Friedman",      			:email => "daniel.friedman@flatironschool.com",            :password => "password") #18
-joe   = User.create(:name => "Joseph Giralt",      				:email => "joseph.giralt@flatironschool.com",            :password => "password") #19
-chris   = User.create(:name => "Chris Gonzales",      			:email => "chris.gonzales@flatironschool.com",            :password => "password") #20
-katie   = User.create(:name => "Katie Ishibashi",      			:email => "katie.ishibashi@flatironschool.com",            :password => "password") #21
-chris   = User.create(:name => "Chris Lake",      				:email => "chris.lake@flatironschool.com",            :password => "password") #22
-carlos   = User.create(:name => "Carlos Lazo",      			:email => "carlos.lazo@flatironschool.com",            :password => "password") #23
-george   = User.create(:name => "George Lin",      				:email => "george.lin@flatironschool.com",            :password => "password") #24
-kirin   = User.create(:name => "Kirin",      					:email => "kirin.masood@flatironschool.com",            :password => "password") #25
-ruthie   = User.create(:name => "Ruthie Nachmany",      		:email => "ruthie.nachmany@flatironschool.com",            :password => "password") #26
-dave   = User.create(:name => "David Rodrigues",      			:email => "david.rodrigues@flatironschool.com",            :password => "password") #27
-jordan   = User.create(:name => "Jordan Trevino",      			:email => "jordan.trevino@flatironschool.com",            :password => "password") #28
-anisha   = User.create(:name => "Anisha Vasandani",      		:email => "anisha.vasandani@flatironschool.com",            :password => "password") #29
-adam   = User.create(:name => "Adam Waxman",      				:email => "adam.waxman@flatironschool.com",            :password => "password") #30
-ning   = User.create(:name => "Ning Yap",      					:email => "ning.yap@flatironschool.com",            :password => "password") #31
-alex   = User.create(:name => "Alex",      						:email => "alex.au@flatironschool.com",            :password => "password") #32
+matt    = User.create(:name => "Matt Schmaus",       :email => "mschmaus201@gmail.com",    				:password => "password") # 1
+jen     = User.create(:name => "Jennifer Campbell",  :email => "jennifer.ml.campbell@gmail.com",  		:password => "password") # 2
+micah   = User.create(:name => "Micah Corn",     		 :email => "micah.corn@flatironschool.com",         	:password => "password") # 3
+des     = User.create(:name => "Desmond Rawls",   	 :email => "captaingrover@gmail.com",      			:password => "password") # 4
+thomas  = User.create(:name => "Thomas Deatherage",  :email => "thomas.deatherage@flatironschool.com",  :password => "password") # 5
+mendal  = User.create(:name => "Mendel Kramer",    	 :email => "mendal.kramer@flatironschool.com",      :password => "password") # 6
+david   = User.create(:name => "David Manaster",     :email => "david.manaster@flatironschool.com",     :password => "password") # 7
+steven  = User.create(:name => "Steven Brooks",    	 :email => "steven.brooks@flatironschool.com",      :password => "password") # 8
+jack    = User.create(:name => "Jack Altman",      	 :email => "jack.altman@flatironschool.com",        :password => "password") # 9
+sagar   = User.create(:name => "Sagar Shah",     		 :email => "sagar.shah@flatironschool.com",         :password => "password") # 10
+sam     = User.create(:name => "Samantha Radocchia", :email => "samantha.radocchia@flatironschool.com", :password => "password") # 11
+max     = User.create(:name => "Maxwell Jacobson",   :email => "maxwell.jacobson@flatironschool.com",   :password => "password") # 12
+alisa   = User.create(:name => "Alisa Chang",      	 :email => "alisa.chang@flatironschool.com",            :password => "password") # 13
+josh    = User.create(:name => "Josh Collins",       :email => "joshua.collins@flatironschool.com",            :password => "password") #14
+kristen = User.create(:name => "Kristen Curtis",     :email => "Kristen.Curtis@flatironschool.com",            :password => "password") #15
+sarah   = User.create(:name => "Sarah Duve",      	 :email => "Sarah.Duve@flatironschool.com",            :password => "password") #16
+jen     = User.create(:name => "Jennifer Eisenberg", :email => "jennifer.eisenberg@flatironschool.com",            :password => "password") #17
+dan     = User.create(:name => "Daniel Friedman",    :email => "daniel.friedman@flatironschool.com",            :password => "password") #18
+joe     = User.create(:name => "Joseph Giralt",      :email => "joseph.giralt@flatironschool.com",            :password => "password") #19
+chris   = User.create(:name => "Chris Gonzales",     :email => "chris.gonzales@flatironschool.com",            :password => "password") #20
+katie   = User.create(:name => "Katie Ishibashi",    :email => "katie.ishibashi@flatironschool.com",            :password => "password") #21
+chris   = User.create(:name => "Chris Lake",      	 :email => "chris.lake@flatironschool.com",            :password => "password") #22
+carlos  = User.create(:name => "Carlos Lazo",      	 :email => "carlos.lazo@flatironschool.com",            :password => "password") #23
+george  = User.create(:name => "George Lin",      	 :email => "george.lin@flatironschool.com",            :password => "password") #24
+kirin   = User.create(:name => "Kirin",      				 :email => "kirin.masood@flatironschool.com",            :password => "password") #25
+ruthie  = User.create(:name => "Ruthie Nachmany",    :email => "ruthie.nachmany@flatironschool.com",            :password => "password") #26
+dave    = User.create(:name => "David Rodrigues",    :email => "david.rodrigues@flatironschool.com",            :password => "password") #27
+jordan  = User.create(:name => "Jordan Trevino",     :email => "jordan.trevino@flatironschool.com",            :password => "password") #28
+anisha  = User.create(:name => "Anisha Vasandani",   :email => "anisha.vasandani@flatironschool.com",            :password => "password") #29
+adam    = User.create(:name => "Adam Waxman",      	 :email => "adam.waxman@flatironschool.com",            :password => "password") #30
+ning    = User.create(:name => "Ning Yap",      		 :email => "ning.yap@flatironschool.com",            :password => "password") #31
+alex    = User.create(:name => "Alex",      				 :email => "alex.au@flatironschool.com",            :password => "password") #32
 
 
 #########################
