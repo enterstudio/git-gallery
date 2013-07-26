@@ -121,7 +121,7 @@ alex   = User.create(:name => "Alex",      						:email => "alex.au@flatironscho
 # ADD FEATURES TO USERS #
 #########################
 scraper          = Feature.create(:title => "Scraper",          :user_id => 1,  :project_id => 1) #1
-check_boxes      = Feature.create(:title => "Check Box",        :user_id => 3,  :project_id => 1) #2
+check_boxes      = Feature.create(:title => "Nav Bar",        :user_id => 3,  :project_id => 1) #2
 toggle_bar          = Feature.create(:title => "Toggle Bar",          :user_id => 17, :project_id => 2) #3
 schedulize          = Feature.create(:title => "Schedulize Method",          :user_id => 20, :project_id => 2) #4
 theme_swap             = Feature.create(:title => "Theme Swap",             :user_id => 24,  :project_id => 2) #5
@@ -131,11 +131,13 @@ chart       = Feature.create(:title => "chart",       :user_id => 7,  :project_i
 error_messages        = Feature.create(:title => "Error Messages",       :user_id => 23,  :project_id => 3) #9
 tab_views          = Feature.create(:title => "Tab Views",          :user_id => 30,  :project_id => 3) #10
 new_user_login             = Feature.create(:title => "New User Login",             :user_id => 11,  :project_id => 4) #11
-dossier          = Feature.create(:title => "Dossier Model",          :user_id => 32, :project_id => 4) #3
-twitter_scraper  = Feature.create(:title => "Twitter Scraper",  :user_id => 12, :project_id => 4) #12
-calendar        = Feature.create(:title => "Calendar",        :user_id => 19, :project_id => 4) #13
-ratf_abstraction = Feature.create(:title => "Ratf Abstraction", :user_id => 6,  :project_id => 5) #14
-permissions2           = Feature.create(:title => "Permissions",           :user_id => 10,  :project_id => 5) #15
+dossier          = Feature.create(:title => "Dossier Model",          :user_id => 32, :project_id => 4) #12
+twitter_scraper  = Feature.create(:title => "Twitter Scraper",  :user_id => 12, :project_id => 4) #13
+calendar        = Feature.create(:title => "Calendar",        :user_id => 19, :project_id => 4) #14
+ratf_abstraction = Feature.create(:title => "Ratf Abstraction", :user_id => 6,  :project_id => 5) #15
+polymorphic          = Feature.create(:title => "Polymorphism",          :user_id => 4,  :project_id => 1) #1
+shallow_routes         = Feature.create(:title => "Shallow Routes",          :user_id => 2,  :project_id => 1) #15
+permissions2           = Feature.create(:title => "Permissions",           :user_id => 10,  :project_id => 5) #16
 validations	 = Feature.create(:title => "Validations",	:user_id => 18,  :project_id => 5, 	:description => "I kept my urls simple despite complex nested resources by using shallow routes.") #16
 due_dates          = Feature.create(:title => "Due Dates",          :user_id => 31, :project_id => 5) #17
 comments_model         = Feature.create(:title => "Comments",          :user_id => 8,  :project_id => 6) #1
@@ -158,6 +160,36 @@ flow_meter = Feature.create(:title => "Flow Meter", :user_id => 19,  :project_id
 raspberry_pi           = Feature.create(:title => "Rasberry Pi",           :user_id => 20,  :project_id => 10) #15
 chron_jobs	 = Feature.create(:title => "Chron Jobs",	:user_id => 28,  :project_id => 10)
 
+#######################
+# Add Feature Uploads #
+#######################
+feature1 = gitgallery.features.last
+	feature1.uploads.build(:name => "shallow_routes_feature")
+	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/cac794eea510798937bbef981bc14409/tumblr_mqibnsstiy1sat8iwo1_1280.jpg"
+	feature1.uploads.first.position = 1
+	feature1.uploads.first.save
+
+	one = feature1.uploads.build(:name => "shallow_routes_rake_after")
+	one.remote_image_url = "http://24.media.tumblr.com/a9be25c610b23f91167bbc9b997ea8eb/tumblr_mqibnsstiy1sat8iwo2_1280.jpg" 
+	one.position = 2
+	one.save
+
+	two = feature1.uploads.build(:name => "shallow_routes_rake_before")
+	two.remote_image_url = "http://25.media.tumblr.com/c08585bbe24b689d75cfc03626956a45/tumblr_mqibnsstiy1sat8iwo3_1280.jpg" 
+	two.position = 3
+	two.save
+
+	three = feature1.uploads.build(:name => "shallow_routes_snippet")
+	three.remote_image_url = "http://25.media.tumblr.com/1330e132c4bb3649adcf1116687fa8bb/tumblr_mqibnsstiy1sat8iwo4_1280.jpg" 
+	three.position = 4
+	three.save
+
+	four = feature1.uploads.build(:name => "shallow_routes_user")
+	four.remote_image_url = "http://24.media.tumblr.com/a9447d4a4db1066facd445624a824593/tumblr_mqibnsstiy1sat8iwo5_1280.jpg" 
+	four.position = 5
+	four.save
+
+
 
 ############################
 # ADD SNIPPETS TO FEATURES #
@@ -170,7 +202,7 @@ routes 		= Snippet.create(:name => "routes.rb",	:url => "https://github.com/flat
 	end
 	resources :technologies, only: [:show]
 end", 
-	  :description => "I didn't want to have a double-nested url so I made features shallow. This one line immediately changes the routes visible in rake routes.", :feature_id => 16, :position => 1)
+	  :description => "I didn't want to have a double-nested url so I made features shallow. This one line immediately changes the routes visible in rake routes.", :feature_id => 17, :position => 1)
 
 paths 		= Snippet.create(:name => "shallow paths", :url => "https://github.com/flatiron-school/git-gallery/blob/master/app/views/features/show.html.erb", :language => "ruby", :code =>
 	 "#this path:
@@ -178,7 +210,7 @@ new_user_feature_snippet_path(@user, @feature)
  
 #became this simpler path:
 new_feature_snippet_path(@feature)",
-		:description => "All feature paths previously included the user. For snippets and uploads, which belong to a feature, the user is unnecessary information. Now the paths to snippets and uploads only depend on the feature they belong to.", :feature_id => 16, :position => 2)
+		:description => "All feature paths previously included the user. For snippets and uploads, which belong to a feature, the user is unnecessary information. Now the paths to snippets and uploads only depend on the feature they belong to.", :feature_id => 17, :position => 2)
 
 forms 		= Snippet.create(:name => "shallow forms", :url => "https://github.com/flatiron-school/git-gallery/blob/master/app/views/snippets/_form.html.erb", :language => "ruby", :code =>
 	"#this form tag:
@@ -186,36 +218,8 @@ forms 		= Snippet.create(:name => "shallow forms", :url => "https://github.com/f
  
 #became this simpler form tag:
 <%= form_for [@feature, @snippet] do |f| %>",
-		:description => "Similar to what we saw with the paths, all form tags became simpler. Form tags for resources nested under features went from relying on the user, the feature, and the current resource to relying on only the feature and the current resource (in this case snippets).", :feature_id => 16, :position => 3)
+		:description => "Similar to what we saw with the paths, all form tags became simpler. Form tags for resources nested under features went from relying on the user, the feature, and the current resource to relying on only the feature and the current resource (in this case snippets).", :feature_id => 17, :position => 3)
 
-#######################
-# Add Feature Uploads #
-#######################
-feature1 = Feature.first
-	feature1.uploads.build(:name => "shallow_routes_feature")
-	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/cac794eea510798937bbef981bc14409/tumblr_mqibnsstiy1sat8iwo1_1280.jpg"
-	feature1.uploads.first.position = 1
-	feature1.uploads.first.save
-
-	feature1.uploads.build(:name => "shallow_routes_rake_after")
-	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/a9be25c610b23f91167bbc9b997ea8eb/tumblr_mqibnsstiy1sat8iwo2_1280.jpg" 
-	feature1.uploads.first.position = 2
-	feature1.uploads.first.save
-
-	feature1.uploads.build(:name => "shallow_routes_rake_before")
-	feature1.uploads.first.remote_image_url = "http://25.media.tumblr.com/c08585bbe24b689d75cfc03626956a45/tumblr_mqibnsstiy1sat8iwo3_1280.jpg" 
-	feature1.uploads.first.position = 3
-	feature1.uploads.first.save
-
-	feature1.uploads.build(:name => "shallow_routes_snippet")
-	feature1.uploads.first.remote_image_url = "http://25.media.tumblr.com/1330e132c4bb3649adcf1116687fa8bb/tumblr_mqibnsstiy1sat8iwo4_1280.jpg" 
-	feature1.uploads.first.position = 4
-	feature1.uploads.first.save
-
-	feature1.uploads.build(:name => "shallow_routes_user")
-	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/a9447d4a4db1066facd445624a824593/tumblr_mqibnsstiy1sat8iwo5_1280.jpg" 
-	feature1.uploads.first.position = 5
-	feature1.uploads.first.save
 
 
 #######################
