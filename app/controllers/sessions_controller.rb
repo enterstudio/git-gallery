@@ -5,10 +5,11 @@ class SessionsController < ApplicationController
   end
 
   def create
+    raise params
     user = User.where(:email => params[:email]).first
     if user && user.authenticate(params[:password])
       login(user)
-      redirect_to user_path(user)
+      redirect_to user
     else
       flash[:notice] = "Could not authenticate for #{params[:email]}"
       render :new
