@@ -4,7 +4,6 @@
   height: 400px;
 }
 
-
 .features-slide {
   display: none;
   padding: 20px;
@@ -29,13 +28,7 @@
   margin: 0;
 }
 
-#sidebar {
-  padding: 0;
-  margin: 0;
-  height: 600px;
-  background-color: grey;
-  background-image: url("binding_dark.png")
-}
+
 
 div.feature-section {
   width: 100%;
@@ -51,7 +44,7 @@ div.feature-section {
   background-image: url("binding_dark.png");
 }
 
-.yellow {
+.sidebar {
   display:inline-block;
   background-color: grey;
   background-image: url("binding_dark.png");
@@ -59,6 +52,7 @@ div.feature-section {
   padding: 0;
   height: 550px;
   width: 100%;
+  border-left: 2px solid #282b2b;
 }
 
 .carousel_sidebar, .feature_carousel {
@@ -95,16 +89,18 @@ padding: 0;
   height: 550px;
 }
 
-.user-sidebar {
+.top-sidebar {
+  text-align: center;
   padding-top: 10px;
   margin: 0;
-  height: 300px;
+  height: 250px;
   width: 100%;
   display:inline-block;
   background-color: black;
   background-image: url("binding_dark.png");
-  
+  border-bottom: 2px solid #282b2b;
 }
+
 .misc-side {
   background-color: black;
   background-image: url("binding_dark.png");
@@ -116,4 +112,8 @@ padding: 0;
 .carousel-control {
   font-size: 50px;
   top: 7%;
+}
+
+.sidebar-user {
+  padding-top: 5%;
 }
