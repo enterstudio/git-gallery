@@ -1,0 +1,11 @@
+<div class="yellow">
+  <div class="user-sidebar">
+    <h3> Feature Name: </h3><%= feature.user.name %>
+    <%= image_tag avatar_url(feature.user) %>
+    
+  </div>
+  <div class="misc-side">
+    <h3> Feature Description: </h3><%=feature.description ||= "No Description Supplied!"  %>
+
+  </div>
+</div>

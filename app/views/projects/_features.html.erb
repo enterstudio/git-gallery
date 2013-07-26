@@ -14,10 +14,11 @@
 
   </div>
 
-  <%= render :partial => "feature_carousel", :locals => {:features => @project.features }%>
-
-  
-
+  <div class="container-fluid carousel_container">
+  <div class="row-fluid">
+    <%= render :partial => "feature_carousel", :locals => {:features => @project.features }%>
+  </div>
+  </div>
 </div>
   
     
