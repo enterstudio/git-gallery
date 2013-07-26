@@ -15,18 +15,19 @@ Project.create(:name => "Syllaboss",         :description => "It's a like homewo
 Project.create(:name => "Hire-redux",         :description => "Everybody loves gauges. Boats have gauges, motorcycles have gauges, jets have gauges, why shouldn't Rebecca's hiring process have gauges? We used bootstrap cause it's easy", :source => "https://github.com/micahrcorn/playlister-r")            # 3
 Project.create(:name => "AppApp",      			:description => "You don't have to be anxious about your application anymore. We help Adam reject applicants more efficiently. Our algorithm automates the flatiron formula: 1 professional athlete, 1 poker player, 1 sky-diver, 1 special forces soldier, 5 investment bankers, 20 art majors. We used bootstrap cause its easy.", :source => "https://github.com/flatiron-school/library-redux")      # 4
 Project.create(:name => "Assignmentio-Redux",             :description => "Now you have to do the homework. We used bootstrap cause it's easy.", :source => "https://github.com/flatiron-school/appapp")             # 5
-Project.create(:name => "Library-Redux", 		:description => "Please create links for working with github's api. They're impossible to find.", :source => "https://github.com/flatiron-school/assignmentio-redux") # 6
-Project.create(:name => "OpenExam2",          :description => "What color shoelaces was Matz wearing when the first time he thought about duck typing??", :source => "https://github.com/flatiron-school/openexam2")          # 7
+Project.create(:name => "Library-Redux", 		:description => "Please list links for working with github's api. They're impossible to find.", :source => "https://github.com/flatiron-school/assignmentio-redux") # 6
+Project.create(:name => "OpenExam2",          :description => "What color shoelaces was Matz wearing the first time he thought about duck typing??", :source => "https://github.com/flatiron-school/openexam2")          # 7
 Project.create(:name => "Teamline-Redux",         :description => "The Flatiron NSA", :source => "https://github.com/flatiron-school/hire-redux")         # 8
 Project.create(:name => "Pizza",     :description => "Hawaiian pizza is my favorite. What's yours?", :source => "https://github.com/flatiron-school/teamline-redux")     # 9
 Project.create(:name => "KegKong",              :description => "The first step in Kegerator AI", :source => "https://github.com/flatiron-school/pizza")              # 10
+
 
 #######################
 # Add Project Uploads #
 #######################
 gitgallery = Project.all.first
 gitgallery.uploads.build(:name => "landing page gg")
-gitgallery.uploads.first.remote_image_url = "http://24.media.tumblr.com/882dd2c61b171f0a36f6578d60f9e593/tumblr_mqimmjKiEh1sat8iwo1_1280.jpg"
+gitgallery.uploads.first.remote_image_url = "http://25.media.tumblr.com/725f1dc52c3cdfd8c307e17b6c8c4766/tumblr_mqimmjKiEh1sat8iwo1_r1_1280.jpg"
 gitgallery.uploads.first.position = 1
 gitgallery.uploads.first.save
 
@@ -66,43 +67,97 @@ openexam.uploads.first.remote_image_url = "http://25.media.tumblr.com/68c09941ab
 openexam.uploads.first.position = 1
 openexam.uploads.first.save
 
+teamline = Project.find(8)
+teamline.uploads.build(:name => "landing page oe")
+teamline.uploads.first.remote_image_url = "http://24.media.tumblr.com/692982b3659acdfcc1e2f734cb03a8bf/tumblr_mqk43zoU8w1sat8iwo1_1280.jpg" 
+teamline.uploads.first.position = 1
+teamline.uploads.first.save	
+
+kegkong = Project.find(10)
+kegkong.uploads.build(:name => "landing page kegkong")
+kegkong.uploads.first.remote_image_url = "http://25.media.tumblr.com/210151e01686cf79ead887214e6dd6f7/tumblr_mqk1x66nEL1sat8iwo1_1280.jpg" 
+kegkong.uploads.first.position = 1
+kegkong.uploads.first.save
+
 
 ################
 # CREATE USERS #
 ################
-matt   = User.create(:name => "Matt Schmaus",      	:email => "mschmaus201@gmail.com",    				:password => "password") # 1
-jen    = User.create(:name => "Jennifer Campbell",  :email => "jennifer.ml.campbell@gmail.com",  :password => "password") # 2
-micah  = User.create(:name => "Micah Corn",     	:email => "micah.corn@flatironschool.com",         :password => "password") # 3
-des    = User.create(:name => "Desmond Rawls",   	:email => "captaingrover@gmail.com",      			:password => "password") # 4
-thomas = User.create(:name => "Thomas",    			:email => "thomas.deatherage@flatironschool.com",  :password => "password") # 5
-mendal = User.create(:name => "Mendal",    			:email => "mendal.kramer@flatironschool.com",      :password => "password") # 6
-david  = User.create(:name => "David",     			:email => "david.manaster@flatironschool.com",     :password => "password") # 7
-steven = User.create(:name => "Steven",    			:email => "steven.brooks@flatironschool.com",      :password => "password") # 8
-jack   = User.create(:name => "Jack",      			:email => "jack.altman@flatironschool.com",        :password => "password") # 9
-sagar  = User.create(:name => "Sagar",     			:email => "sagar.shah@flatironschool.com",         :password => "password") # 10
-sam    = User.create(:name => "Samantha",  			:email => "samantha.radocchia@flatironschool.com", :password => "password") # 11
-max    = User.create(:name => "Maxwell",   			:email => "maxwell.jacobson@flatironschool.com",   :password => "password") # 12
-alex   = User.create(:name => "Alex",      			:email => "alex.au@flatironschool.com",            :password => "password") # 13
+matt   = User.create(:name => "Matt Schmaus",      				:email => "mschmaus201@gmail.com",    				:password => "password") # 1
+jen    = User.create(:name => "Jennifer Campbell",  			:email => "jennifer.ml.campbell@gmail.com",  		:password => "password") # 2
+micah  = User.create(:name => "Micah Corn",     				:email => "micah.corn@flatironschool.com",         	:password => "password") # 3
+des    = User.create(:name => "Desmond Rawls",   				:email => "captaingrover@gmail.com",      			:password => "password") # 4
+thomas = User.create(:name => "Thomas Deatherage",    			:email => "thomas.deatherage@flatironschool.com",  :password => "password") # 5
+mendal = User.create(:name => "Mendel Kramer",    				:email => "mendal.kramer@flatironschool.com",      :password => "password") # 6
+david  = User.create(:name => "David Manaster",     			:email => "david.manaster@flatironschool.com",     :password => "password") # 7
+steven = User.create(:name => "Steven Brooks",    				:email => "steven.brooks@flatironschool.com",      :password => "password") # 8
+jack   = User.create(:name => "Jack Altman",      				:email => "jack.altman@flatironschool.com",        :password => "password") # 9
+sagar  = User.create(:name => "Sagar Shah",     				:email => "sagar.shah@flatironschool.com",         :password => "password") # 10
+sam    = User.create(:name => "Samantha Radocchia",  			:email => "samantha.radocchia@flatironschool.com", :password => "password") # 11
+max    = User.create(:name => "Maxwell Jacobson",   			:email => "maxwell.jacobson@flatironschool.com",   :password => "password") # 12
+alisa   = User.create(:name => "Alisa Chang",      				:email => "alisa.chang@flatironschool.com",            :password => "password") # 13
+josh   = User.create(:name => "Josh Collins",      				:email => "joshua.collins@flatironschool.com",            :password => "password") #14
+kristen   = User.create(:name => "Kristen Curtis",      		:email => "Kristen.Curtis@flatironschool.com",            :password => "password") #15
+sarah   = User.create(:name => "Sarah Duve",      				:email => "Sarah.Duve@flatironschool.com",            :password => "password") #16
+jen   = User.create(:name => "Jennifer Eisenberg",      		:email => "jennifer.eisenberg@flatironschool.com",            :password => "password") #17
+dan   = User.create(:name => "Daniel Friedman",      			:email => "daniel.friedman@flatironschool.com",            :password => "password") #18
+joe   = User.create(:name => "Joseph Giralt",      				:email => "joseph.giralt@flatironschool.com",            :password => "password") #19
+chris   = User.create(:name => "Chris Gonzales",      			:email => "chris.gonzales@flatironschool.com",            :password => "password") #20
+katie   = User.create(:name => "Katie Ishibashi",      			:email => "katie.ishibashi@flatironschool.com",            :password => "password") #21
+chris   = User.create(:name => "Chris Lake",      				:email => "chris.lake@flatironschool.com",            :password => "password") #22
+carlos   = User.create(:name => "Carlos Lazo",      			:email => "carlos.lazo@flatironschool.com",            :password => "password") #23
+george   = User.create(:name => "George Lin",      				:email => "george.lin@flatironschool.com",            :password => "password") #24
+kirin   = User.create(:name => "Kirin",      					:email => "kirin.masood@flatironschool.com",            :password => "password") #25
+ruthie   = User.create(:name => "Ruthie Nachmany",      		:email => "ruthie.nachmany@flatironschool.com",            :password => "password") #26
+dave   = User.create(:name => "David Rodrigues",      			:email => "david.rodrigues@flatironschool.com",            :password => "password") #27
+jordan   = User.create(:name => "Jordan Trevino",      			:email => "jordan.trevino@flatironschool.com",            :password => "password") #28
+anisha   = User.create(:name => "Anisha Vasandani",      		:email => "anisha.vasandani@flatironschool.com",            :password => "password") #29
+adam   = User.create(:name => "Adam Waxman",      				:email => "adam.waxman@flatironschool.com",            :password => "password") #30
+ning   = User.create(:name => "Ning Yap",      					:email => "ning.yap@flatironschool.com",            :password => "password") #31
+alex   = User.create(:name => "Alex",      						:email => "alex.au@flatironschool.com",            :password => "password") #32
+
 
 #########################
 # ADD FEATURES TO USERS #
 #########################
 scraper          = Feature.create(:title => "Scraper",          :user_id => 1,  :project_id => 1) #1
 check_boxes      = Feature.create(:title => "Check Box",        :user_id => 3,  :project_id => 1) #2
-dossier          = Feature.create(:title => "Dossier",          :user_id => 13, :project_id => 5) #3
-tracker          = Feature.create(:title => "Tracker",          :user_id => 12, :project_id => 5) #4
-vote             = Feature.create(:title => "Vote",             :user_id => 8,  :project_id => 4) #5
-comments         = Feature.create(:title => "Comments",         :user_id => 5,  :project_id => 4) #6
-categories       = Feature.create(:title => "Categories",       :user_id => 10, :project_id => 6) #7
-objectives       = Feature.create(:title => "Objectives",       :user_id => 6,  :project_id => 6) #8
-interview        = Feature.create(:title => "Interviews",       :user_id => 7,  :project_id => 8) #9
-records          = Feature.create(:title => "Records",          :user_id => 7,  :project_id => 8) #10
-jobs             = Feature.create(:title => "Jobs",             :user_id => 7,  :project_id => 8) #11
-twitter_scraper  = Feature.create(:title => "Twitter Scraper",  :user_id => 10, :project_id => 9) #12
-scheduler        = Feature.create(:title => "Scheduler",        :user_id => 11, :project_id => 5) #13
-feature_sections = Feature.create(:title => "Feature Sections", :user_id => 2,  :project_id => 1) #14
-router           = Feature.create(:title => "Router",           :user_id => 4,  :project_id => 1) #15
-shallow_routes	 = Feature.create(:title => "Shallow Routes",	:user_id => 1,  :project_id => 1, 	:description => "I kept my urls simple despite complex nested resources by using shallow routes.") #16
+toggle_bar          = Feature.create(:title => "Toggle Bar",          :user_id => 17, :project_id => 2) #3
+schedulize          = Feature.create(:title => "Schedulize Method",          :user_id => 20, :project_id => 2) #4
+theme_swap             = Feature.create(:title => "Theme Swap",             :user_id => 24,  :project_id => 2) #5
+permissions         = Feature.create(:title => "User Permissions",         :user_id => 21,  :project_id => 2) #6
+admin_dashboard       = Feature.create(:title => "Admin Dashboard",       :user_id => 22, :project_id => 3) #7
+chart       = Feature.create(:title => "chart",       :user_id => 7,  :project_id => 3) #8
+error_messages        = Feature.create(:title => "Error Messages",       :user_id => 23,  :project_id => 3) #9
+tab_views          = Feature.create(:title => "Tab Views",          :user_id => 30,  :project_id => 3) #10
+new_user_login             = Feature.create(:title => "New User Login",             :user_id => 11,  :project_id => 4) #11
+dossier          = Feature.create(:title => "Dossier Model",          :user_id => 32, :project_id => 4) #3
+twitter_scraper  = Feature.create(:title => "Twitter Scraper",  :user_id => 12, :project_id => 4) #12
+calendar        = Feature.create(:title => "Calendar",        :user_id => 19, :project_id => 4) #13
+ratf_abstraction = Feature.create(:title => "Ratf Abstraction", :user_id => 6,  :project_id => 5) #14
+permissions2           = Feature.create(:title => "Permissions",           :user_id => 10,  :project_id => 5) #15
+validations	 = Feature.create(:title => "Validations",	:user_id => 18,  :project_id => 5, 	:description => "I kept my urls simple despite complex nested resources by using shallow routes.") #16
+due_dates          = Feature.create(:title => "Due Dates",          :user_id => 31, :project_id => 5) #17
+comments_model         = Feature.create(:title => "Comments",          :user_id => 8,  :project_id => 6) #1
+sessions      = Feature.create(:title => "Sessions",        :user_id => 5,  :project_id => 6) #2
+debugging_links          = Feature.create(:title => "Debugging Link Controller",          :user_id => 13, :project_id => 6) #4
+filter_functions             = Feature.create(:title => "Filter Functions",             :user_id => 8,  :project_id => 6) #5
+dashboard_view         = Feature.create(:title => "Dashboard View",         :user_id => 25,  :project_id => 7) #6
+syntax_highlighting       = Feature.create(:title => "Syntax Highlighting",       :user_id => 16, :project_id => 7) #7
+add_period       = Feature.create(:title => "Add List Period",       :user_id => 27,  :project_id => 7) #8
+quiz_status        = Feature.create(:title => "Quiz Status",       :user_id => 28,  :project_id => 7) #9
+hashtags          = Feature.create(:title => "Hashtags",          :user_id => 9,  :project_id => 8) #10
+slider_js             = Feature.create(:title => "Slider js",             :user_id => 15,  :project_id => 8) #11
+github_scraper  = Feature.create(:title => "Github Scraper",  :user_id => 26, :project_id => 8) #12
+timezones        = Feature.create(:title => "Time Zones",        :user_id => 14, :project_id => 8) #13
+tomato_sauce = Feature.create(:title => "Tomato Sauce", :user_id => 2,  :project_id => 9) #14
+cheese           = Feature.create(:title => "Cheese",           :user_id => 4,  :project_id => 9) #15
+ham	 = Feature.create(:title => "Ham",	:user_id => 1,  :project_id => 9)
+pineapple	 = Feature.create(:title => "Pineapple",	:user_id => 1,  :project_id => 10)
+flow_meter = Feature.create(:title => "Flow Meter", :user_id => 19,  :project_id => 10) #14
+raspberry_pi           = Feature.create(:title => "Rasberry Pi",           :user_id => 20,  :project_id => 10) #15
+chron_jobs	 = Feature.create(:title => "Chron Jobs",	:user_id => 28,  :project_id => 10)
+
 
 ############################
 # ADD SNIPPETS TO FEATURES #
@@ -186,34 +241,37 @@ sql     = Technology.create(:name => "SQL")
 #####################################
 # CONNECT FEATURES AND TECHNOLOGIES #
 #####################################
-rails.features   << records
-rails.features   << router
-rails.features   << interview
-rails.features   << scheduler
+rails.features   << permissions
+rails.features   << validations
+rails.features   << sessions
+rails.features   << comments_model
 rails.features   << dossier
-ruby.features    << records
+ruby.features    << filter_functions
 ruby.features    << twitter_scraper
-ruby.features    << check_boxes
-ruby.features    << scheduler
-ruby.features    << interview
-git.features     << check_boxes
-git.features     << scheduler
-git.features     << interview
-json.features    << scraper          
-jquery.features  << check_boxes      
-css.features     << dossier          
-css.features     << tracker          
-jquery.features  << vote             
-jquery.features  << comments         
-js.features      << categories       
-js.features      << objectives       
-html.features    << interview        
-sql.features     << records          
-sinatra.features << jobs             
-json.features    << twitter_scraper  
-python.features  << scheduler        
-html.features    << feature_sections 
-sql.features     << router
+ruby.features    << add_period
+ruby.features    << github_scraper
+ruby.features    << chron_jobs
+git.features     << ham
+git.features     << pineapple
+git.features     << cheese
+json.features    << twitter_scraper          
+jquery.features  << github_scraper      
+css.features     << dashboard_view          
+css.features     << theme_swap         
+jquery.features  << slider_js            
+jquery.features  << syntax_highlighting         
+js.features      << slider_js       
+js.features      << syntax_highlighting       
+html.features    << chart       
+sql.features     << ratf_abstraction          
+sinatra.features << chron_jobs            
+json.features    << github_scraper  
+python.features  << tomato_sauce       
+html.features    << tab_views 
+sql.features     << permissions
+
+
+
 
 rails.save
 git.save
