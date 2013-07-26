@@ -14,8 +14,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def login(user)
+  
     session[:user_id] = user.id
     @current_user = user
+
   end
 
   def login_required

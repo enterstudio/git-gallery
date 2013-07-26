@@ -1,0 +1,27 @@
+<% if !logged_in? %>
+	<a href="#" class="top-sign-in">LOGIN</a>
+	<div class="login-box">
+		<a class="close login-box-close" href="#">×</a>
+		<h4 class="login-box-head">Login</h4>
+		
+		<%=form_for(:session, url: login_path) do |f|%>	
+			<div class="control-group">
+				<%= f.label :email, "Email"%>
+				<%= f.text_field :email, :class=>'span2' %>
+			</div>	
+			<div class="control-group">
+			 	<%= f.label :password, "Password" %>
+			 	<%= f.password_field :password, :class=>'span'%>
+			<div>
+			<div class="login-actions">
+				<%= f.submit "Login", :class=>'btn btn-primary'%>
+				<br/>
+				<br/>
+			</div>
+		<%end %>
+
+	</div>
+<%else %>
+<%= link_to "Logout", logout_path, class: 'top-sign-in'%>
+	
+<% end %>
