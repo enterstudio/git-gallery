@@ -9,11 +9,12 @@
 }
 
 .contrib {
-  padding: 1.5% 1.5% 1.5% 3%;
-
+  text-align: center;
+  font-size: 12px;
+  padding: 0 0 1% 3%;
   display: inline-block;
-  width: 5%; // CHANGE THIS TO CHANGE WIDTH OF FEATURE BOX
-   a{ 
+  width: 85px; // CHANGE THIS TO CHANGE WIDTH OF FEATURE BOX
+  a { 
     filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
     filter: gray; /* IE6-9 */
     -webkit-filter: grayscale(.7); /* Google Chrome & Safari 6+ */
@@ -26,5 +27,10 @@
 }
 
 .contribs-title h6 {
-  padding-left: 3%;
+  padding-left: 5%;
+}
+
+.contrib-contain {
+  width: 100%;
+  margin: 0%;
 }

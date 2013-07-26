@@ -1,0 +1,16 @@
+<div class="sidebar">
+  
+  <div class="top-sidebar">
+    <h3> <%= feature.title %> </h3>
+    <div class="sidebar-user">
+      <%= link_to (image_tag avatar_url(feature.user)), user_path(feature.user) %><br>
+      <%= link_to feature.user.name, user_path(feature.user) %>
+    </div>
+  </div>
+  
+  <div class="misc-side">
+    <h3>Feature Description:</h3>
+      <%= feature.description ||= "There is no description supplied for this feature!" %>
+  </div>
+
+</div>
