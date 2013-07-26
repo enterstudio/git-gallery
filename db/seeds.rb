@@ -10,16 +10,16 @@
 # CREATE PROJECTS #
 ###################
 sample_description = "Description of Project ... Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space  Words to fill up more space Words to fill up more space Words to fill up more space Words to fill up more space Words to fill up more space"
-Project.create(:name => "Git Gallery",        :description => sample_description, :source => "https://github.com/flatiron-school/git-gallery")        # 1
-Project.create(:name => "Syllaboss",         :description => sample_description, :source => "https://github.com/flatiron-school/recipes-sample-app") # 2
-Project.create(:name => "Hire-redux",         :description => sample_description, :source => "https://github.com/micahrcorn/playlister-r")            # 3
-Project.create(:name => "AppApp",      			:description => sample_description, :source => "https://github.com/flatiron-school/library-redux")      # 4
-Project.create(:name => "Assignmentio-Redux",             :description => sample_description, :source => "https://github.com/flatiron-school/appapp")             # 5
-Project.create(:name => "Library-Redux", 		:description => sample_description, :source => "https://github.com/flatiron-school/assignmentio-redux") # 6
-Project.create(:name => "OpenExam2",          :description => sample_description, :source => "https://github.com/flatiron-school/openexam2")          # 7
-Project.create(:name => "Teamline-Redux",         :description => sample_description, :source => "https://github.com/flatiron-school/hire-redux")         # 8
-Project.create(:name => "Pizza",     :description => sample_description, :source => "https://github.com/flatiron-school/teamline-redux")     # 9
-Project.create(:name => "KegKong",              :description => sample_description, :source => "https://github.com/flatiron-school/pizza")              # 10
+Project.create(:name => "Git Gallery",        :description => "Git Gallery is a layer of storytelling on top of Github. You can create slideshows about how you built particular features in your repository. We chose slideshows because they demand more storytelling to go with the code. These slideshows are an alternative to technical blogging with the added benefit of keeping everything in the context of your repository and your team. Teams can work together. Each team member should create the slideshows that explain the features they understand best. This is an ideal portfolio to show prospective employers. You're a developer. You know what you did and why you did it. Show off.", :source => "https://github.com/flatiron-school/git-gallery")        # 1
+Project.create(:name => "Syllaboss",         :description => "It's a like homework on the internet and stuff. You can see what you have to do and how long you can procrastinate. We used bootstrap cause it's easy.", :source => "https://github.com/flatiron-school/recipes-sample-app") # 2
+Project.create(:name => "Hire-redux",         :description => "Everybody loves gauges. Boats have gauges, motorcycles have gauges, jets have gauges, why shouldn't Rebecca's hiring process have gauges? We used bootstrap cause it's easy", :source => "https://github.com/micahrcorn/playlister-r")            # 3
+Project.create(:name => "AppApp",      			:description => "You don't have to be anxious about your application anymore. We help Adam reject applicants more efficiently. Our algorithm automates the flatiron formula: 1 professional athlete, 1 poker player, 1 sky-diver, 1 special forces soldier, 5 investment bankers, 20 art majors. We used bootstrap cause its easy.", :source => "https://github.com/flatiron-school/library-redux")      # 4
+Project.create(:name => "Assignmentio-Redux",             :description => "Now you have to do the homework. We used bootstrap cause it's easy.", :source => "https://github.com/flatiron-school/appapp")             # 5
+Project.create(:name => "Library-Redux", 		:description => "Please create links for working with github's api. They're impossible to find.", :source => "https://github.com/flatiron-school/assignmentio-redux") # 6
+Project.create(:name => "OpenExam2",          :description => "What color shoelaces was Matz wearing when the first time he thought about duck typing??", :source => "https://github.com/flatiron-school/openexam2")          # 7
+Project.create(:name => "Teamline-Redux",         :description => "The Flatiron NSA", :source => "https://github.com/flatiron-school/hire-redux")         # 8
+Project.create(:name => "Pizza",     :description => "Hawaiian pizza is my favorite. What's yours?", :source => "https://github.com/flatiron-school/teamline-redux")     # 9
+Project.create(:name => "KegKong",              :description => "The first step in Kegerator AI", :source => "https://github.com/flatiron-school/pizza")              # 10
 
 #######################
 # Add Project Uploads #
