@@ -2,51 +2,20 @@
   clear: both;
 }
 
-#contributors li {
-  padding-right: 25px;
-  a{
-    padding-right: 25px;
-    filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
-    filter: gray; /* IE6-9 */
-    -webkit-filter: grayscale(.7); /* Google Chrome & Safari 6+ */
-  }
-  a:hover{
-    filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
-    filter: gray; /* IE6-9 */
-    -webkit-filter: grayscale(0); /* Google Chrome & Safari 6+ */
-  }
-}
-
-.hero_contrib {
-  margin-top: 40px;
-  margin-bottom: 0;
-}
-
-
 #hero-description {
   color: white;
   margin-bottom: 0;
 }
-
-.hero-tags {
-}
-
-
 
 .hero-unit {
   background-color: grey;
   background-image: url("binding_dark.png");
   height: 20%;
   border-radius: 0;
-  padding: 30px;
-  padding-top: 40px;
-  padding-bottom: 20px;
+  padding: 3%;
+  padding-top: 3.2%;
+  padding-bottom: 1%;
 }
-
-
-
-
-
 
 .tech li a{
   padding-right: 25px;
