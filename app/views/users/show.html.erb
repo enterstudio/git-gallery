@@ -10,3 +10,15 @@
     </ul>
   </div>
 </div>
+
+<div>
+  <h2>Other Repos by <%= @user.name %>:</h2>
+  <ul>
+    <% Repo.where(:owner_id => @user.id).each do |repo| %>
+      <li>
+        <%= link_to repo.name, repo.html_url %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
