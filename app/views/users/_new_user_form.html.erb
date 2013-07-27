@@ -1,43 +1,21 @@
-<%= form_for(@user) do |f| %>
 
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <fieldset>
-    <legend>Sign Up</legend>
-
-    <div>
+      <div class="control-group">
+        <%= f.label :name, "Name"%>
+        <%= f.text_field :name, :class=>'span2' %>
+      </div> 
+      <div class="control-group">
+        <%= f.label :email, "Email"%>
+        <%= f.text_field :email, :class=>'span2' %>
+      </div>  
+      <div class="control-group">
+        <%= f.label :password, "Password" %>
+        <%= f.password_field :password, :class=>'span'%>
       <div>
-        <%= f.label :name %>
+      </div class="actions">
+        <%= f.submit "Sign Up", :class=>'btn'%>
+        <br/>
+        <br/>
       </div>
-      <div><%= f.text_field :name %></div>
-    </div>
 
-    <div>
-      <div>
-        <%= f.label :email %>
-      </div>
-      <div><%= f.text_field :email %></div>
-    </div>
-
-    <div>
-      <div>
-        <%= f.label :password %>
-      </div>
-      <div><%= f.password_field :password %></div>
-    </div>
-
-    <div>
-      <div><%= f.submit %></div> 
-    </div>
-  </fieldset>
-<% end %>

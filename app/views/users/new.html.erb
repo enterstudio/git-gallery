@@ -1,5 +1,13 @@
 <h1>Welcome to Git Gallery</h1>
 
-<%= render 'form' %>
+<div class="span6">
+<div class="white-card extra-padding">
+  <fieldset>
+      <%=form_for(@user) do |f|%> 
 
+		<%= render partial: 'new_user_form', :locals => {:f => f, :user => @feature}  %>
 
+    <%end %>
+  </fieldset>
+</div>
+</div>
