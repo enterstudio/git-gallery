@@ -2,8 +2,7 @@
   <div class="snippet-description">
     <p><%= snippet.description %></p>
   </div>
-
-
-<div>
-  <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
-</div>
+  
+  <div>
+    <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
+  </div>
