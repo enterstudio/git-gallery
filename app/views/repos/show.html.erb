@@ -1,0 +1,22 @@
+<div class="container">
+<div class="white-card">
+	<h1><%= @repo.name %></h1>
+	<ul>
+		<li>
+			<%= link_to 'url', @repo.url %>
+		</li>
+		<li>
+			<%= link_to 'contents', "#{@repo.url}/contents" %>
+			<ul>
+				<% JSON.parse(open("#{@repo.url}/contents").read).each do |directory| %>
+				<li>
+					<%= contents_tree(directory)%>
+				</li>
+				<% end %>
+			</ul>
+		</li>
+	</ul>
+</div>
+</div>
+
+

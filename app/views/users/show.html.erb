@@ -17,6 +17,7 @@
     <% Repo.where(:owner_id => @user.id).each do |repo| %>
       <li>
         <%= link_to repo.name, repo.html_url %>
+        <%= link_to 'Browse', repo %>
       </li>
     <% end %>
   </ul>

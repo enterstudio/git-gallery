@@ -14,14 +14,10 @@ GitAtMe::Application.routes.draw do
     resources :uploads
   end
 
-
   
   resources :users do
-    # resources :features, :shallow => true do
-    #   resources :snippets
-    #   resources :uploads
-    # end
     resources :technologies, only: [:show]
+    resources :repos, :shallow => true, only: [:show]
   end
 
   get "/technologies/:tech_name" => 'projects#filtered', as: "filtered_path"
