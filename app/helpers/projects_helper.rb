@@ -15,3 +15,12 @@ module ProjectsHelper
 		end
 	end
 end
+
+
+def image_link(project)
+	if project.uploads != []
+	 "#{project.uploads.first.image_url.to_s}"
+	else
+		"http://octodex.github.com/images/octocat-de-los-muertos.jpg"
+	end
+end

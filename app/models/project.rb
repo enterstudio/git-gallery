@@ -24,4 +24,12 @@ class Project < ActiveRecord::Base
     # where t.name = "Rails"
     where('technologies.name' => tech_name)
   end
+
+    def show_info
+    "<div class=\"thumbnail-hover-w\">
+    <div class=\"thumbnail-hover-title\"> self.name </div>
+    <div class=\"thumbnail-hover-text\">  self.description </div>
+    </div>"
+  end
+
 end
