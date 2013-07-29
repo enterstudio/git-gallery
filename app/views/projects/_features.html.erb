@@ -8,7 +8,7 @@
   <div id="features-slide">
     <% @project.features.each_with_index do |feat, index| %>
       <div class="feature">
-        <h2><%= link_to feat.title, feature_path(feat), :class => "feature-card-title" %></h2>
+        <h2 class="feature-card-title"><%= feat.title %></h2>
       </div>
     <% end %>
 

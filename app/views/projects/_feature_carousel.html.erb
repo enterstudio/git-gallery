@@ -8,7 +8,7 @@
         <div class="item active">
           <div class="span12 feature_carousel">
             <% if features.last.slides_in_order != [] %>
-              <h1 class="slider-header"><%= first.name %></h1>
+              <h4 class="slider-header"><%= first.name %></h4>
               <p class="slide-content"><%= first.description %></p>
             <% else %>
               <h1 class="slider-header">THIS FEATURE HAS NO SLIDES</h1>
@@ -23,7 +23,7 @@
             <% if features.last.slides_in_order != [] %>
               <%= render :partial => "slide", :locals => {:slide_type => slide } %>
             <% else %>
-              <h1 class="slider-header">THIS FEATURE HAS NO SLIDES</h1>
+              <h4 class="slider-header">THIS FEATURE HAS NO SLIDES</h4>
             <% end %>
           </div>
         </div>
