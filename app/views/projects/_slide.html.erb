@@ -1,9 +1,5 @@
-<div class="item">
-  <div class="span12 feature_carousel">
-    <% if slide_type.is_a?(Snippet)  %>
-      <%= render :partial => "slide_snippet", :locals => {:snippet => slide_type } %>
-    <% else %>
-      <%= render :partial => "slide_upload", :locals => {:upload => slide_type } %>
-    <% end %>
-  </div>
-</div>
+<% if slide_type.is_a?(Snippet)  %>
+  <%= render :partial => "slide_snippet", :locals => {:snippet => slide_type } %>
+<% else %>
+  <%= render :partial => "slide_upload", :locals => {:upload => slide_type } %>
+<% end %>

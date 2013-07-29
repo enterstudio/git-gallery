@@ -24,7 +24,15 @@
               <% @project.features.each do |feature| %>
                 <div id="<%= feature.title.downcase.gsub(" ", "_") %>" class="item">
                   <div class="span12 feature_carousel">
-                    <h4 class="slider-header"><%= feature.title %> HAS NO SLIDES</h4>
+                    
+                    <% if feature.slides_in_order != [] %>
+                      <% feature.slides_in_order.each do |slide| %>
+                        <%= render :partial => "slide", :locals => {:slide_type => slide } %>
+                      <% end %>
+                    <% else %>
+                      <h4 class="slider-header"><%= feature.title %> HAS NO SLIDES</h4>
+                    <% end %>
+
                   </div>
                 </div>
               <% end %>
