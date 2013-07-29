@@ -26,10 +26,11 @@ end
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'pygments.rb'
+gem 'omniauth-github'
 
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+# gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'debugger'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -47,7 +48,7 @@ gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
 
-group :development do
-  gem "better_errors"
-  gem "binding_of_caller"
-end
+# group :development do
+#   gem "better_errors"
+#   gem "binding_of_caller"
+# end

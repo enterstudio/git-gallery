@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130727232854) do
+ActiveRecord::Schema.define(:version => 20130729145723) do
 
   create_table "feature_technologies", :force => true do |t|
     t.integer  "feature_id"
@@ -89,6 +89,8 @@ ActiveRecord::Schema.define(:version => 20130727232854) do
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
     t.string   "avatar_url"
+    t.string   "provider"
+    t.string   "uid"
   end
 
 end

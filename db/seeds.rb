@@ -76,38 +76,38 @@ kegkong.uploads.first.save
 ################
 # CREATE USERS #
 ################
-matt    = User.create(:name => "Matt Schmaus",       :email => "mschmaus201@gmail.com",    				      :password => "password") # 1
-jen     = User.create(:name => "Jennifer Campbell",  :email => "jennifer.ml.campbell@gmail.com",  		  :password => "password") # 2
-micah   = User.create(:name => "Micah Corn",     		 :email => "micah.corn@flatironschool.com",         :password => "password") # 3
-des     = User.create(:name => "Desmond Rawls",   	 :email => "captaingrover@gmail.com",      			    :password => "password") # 4
-thomas  = User.create(:name => "Thomas Deatherage",  :email => "thomas.deatherage@flatironschool.com",  :password => "password") # 5
-mendal  = User.create(:name => "Mendel Kramer",    	 :email => "mendal.kramer@flatironschool.com",      :password => "password") # 6
-david   = User.create(:name => "David Manaster",     :email => "david.manaster@flatironschool.com",     :password => "password") # 7
-steven  = User.create(:name => "Steven Brooks",    	 :email => "steven.brooks@flatironschool.com",      :password => "password") # 8
-jack    = User.create(:name => "Jack Altman",      	 :email => "jack.altman@flatironschool.com",        :password => "password") # 9
-sagar   = User.create(:name => "Sagar Shah",     		 :email => "sagar.shah@flatironschool.com",         :password => "password") # 10
-sam     = User.create(:name => "Samantha Radocchia", :email => "samantha.radocchia@flatironschool.com", :password => "password") # 11
-max     = User.create(:name => "Maxwell Jacobson",   :email => "maxwell.jacobson@flatironschool.com",   :password => "password") # 12
-alisa   = User.create(:name => "Alisa Chang",      	 :email => "alisa.chang@flatironschool.com",        :password => "password") # 13
-josh    = User.create(:name => "Josh Collins",       :email => "joshua.collins@flatironschool.com",     :password => "password") #14
-kristen = User.create(:name => "Kristen Curtis",     :email => "Kristen.Curtis@flatironschool.com",     :password => "password") #15
-sarah   = User.create(:name => "Sarah Duve",      	 :email => "Sarah.Duve@flatironschool.com",         :password => "password") #16
-jen     = User.create(:name => "Jennifer Eisenberg", :email => "jennifer.eisenberg@flatironschool.com", :password => "password") #17
-dan     = User.create(:name => "Daniel Friedman",    :email => "daniel.friedman@flatironschool.com",    :password => "password") #18
-joe     = User.create(:name => "Joseph Giralt",      :email => "joseph.giralt@flatironschool.com",      :password => "password") #19
-chris   = User.create(:name => "Chris Gonzales",     :email => "chris.gonzales@flatironschool.com",     :password => "password") #20
-katie   = User.create(:name => "Katie Ishibashi",    :email => "katie.ishibashi@flatironschool.com",    :password => "password") #21
-chris   = User.create(:name => "Chris Lake",      	 :email => "chris.lake@flatironschool.com",         :password => "password") #22
-carlos  = User.create(:name => "Carlos Lazo",      	 :email => "carlos.lazo@flatironschool.com",        :password => "password") #23
-george  = User.create(:name => "George Lin",      	 :email => "george.lin@flatironschool.com",         :password => "password") #24
-kirin   = User.create(:name => "Kirin",      				 :email => "kirin.masood@flatironschool.com",       :password => "password") #25
-ruthie  = User.create(:name => "Ruthie Nachmany",    :email => "ruthie.nachmany@flatironschool.com",    :password => "password") #26
-dave    = User.create(:name => "David Rodrigues",    :email => "david.rodrigues@flatironschool.com",    :password => "password") #27
-jordan  = User.create(:name => "Jordan Trevino",     :email => "jordan.trevino@flatironschool.com",     :password => "password") #28
-anisha  = User.create(:name => "Anisha Vasandani",   :email => "anisha.vasandani@flatironschool.com",   :password => "password") #29
-adam    = User.create(:name => "Adam Waxman",      	 :email => "adam.waxman@flatironschool.com",        :password => "password") #30
-ning    = User.create(:name => "Ning Yap",      		 :email => "ning.yap@flatironschool.com",           :password => "password") #31
-alex    = User.create(:name => "Alex",      				 :email => "alex.au@flatironschool.com",            :password => "password") #32
+matt    = User.create(:name => "Matt Schmaus",       :email => "mschmaus201@gmail.com",    				      	) # 1
+jen     = User.create(:name => "Jennifer Campbell",  :email => "jennifer.ml.campbell@gmail.com",  		  		) # 2
+micah   = User.create(:name => "Micah Corn",     		 :email => "micah.corn@flatironschool.com",         	) # 3
+des     = User.create(:name => "Desmond Rawls",   	 :email => "captaingrover@gmail.com",      			    	) # 4
+thomas  = User.create(:name => "Thomas Deatherage",  :email => "thomas.deatherage@flatironschool.com",  		) # 5
+mendal  = User.create(:name => "Mendel Kramer",    	 :email => "mendal.kramer@flatironschool.com",      		) # 6
+david   = User.create(:name => "David Manaster",     :email => "david.manaster@flatironschool.com",     		) # 7
+steven  = User.create(:name => "Steven Brooks",    	 :email => "steven.brooks@flatironschool.com",      		) # 8
+jack    = User.create(:name => "Jack Altman",      	 :email => "jack.altman@flatironschool.com",        		) # 9
+sagar   = User.create(:name => "Sagar Shah",     		 :email => "sagar.shah@flatironschool.com",         	) # 10
+sam     = User.create(:name => "Samantha Radocchia", :email => "samantha.radocchia@flatironschool.com", 		) # 11
+max     = User.create(:name => "Maxwell Jacobson",   :email => "maxwell.jacobson@flatironschool.com",   		) # 12
+alisa   = User.create(:name => "Alisa Chang",      	 :email => "alisa.chang@flatironschool.com",        		) # 13
+josh    = User.create(:name => "Josh Collins",       :email => "joshua.collins@flatironschool.com",     		) #14
+kristen = User.create(:name => "Kristen Curtis",     :email => "Kristen.Curtis@flatironschool.com",     		) #15
+sarah   = User.create(:name => "Sarah Duve",      	 :email => "Sarah.Duve@flatironschool.com",         		) #16
+jen     = User.create(:name => "Jennifer Eisenberg", :email => "jennifer.eisenberg@flatironschool.com", 		) #17
+dan     = User.create(:name => "Daniel Friedman",    :email => "daniel.friedman@flatironschool.com",    		) #18
+joe     = User.create(:name => "Joseph Giralt",      :email => "joseph.giralt@flatironschool.com",      		) #19
+chris   = User.create(:name => "Chris Gonzales",     :email => "chris.gonzales@flatironschool.com",     		) #20
+katie   = User.create(:name => "Katie Ishibashi",    :email => "katie.ishibashi@flatironschool.com",    		) #21
+chris   = User.create(:name => "Chris Lake",      	 :email => "chris.lake@flatironschool.com",         		) #22
+carlos  = User.create(:name => "Carlos Lazo",      	 :email => "carlos.lazo@flatironschool.com",        		) #23
+george  = User.create(:name => "George Lin",      	 :email => "george.lin@flatironschool.com",         		) #24
+kirin   = User.create(:name => "Kirin",      				 :email => "kirin.masood@flatironschool.com",       ) #25
+ruthie  = User.create(:name => "Ruthie Nachmany",    :email => "ruthie.nachmany@flatironschool.com",    		) #26
+dave    = User.create(:name => "David Rodrigues",    :email => "david.rodrigues@flatironschool.com",    		) #27
+jordan  = User.create(:name => "Jordan Trevino",     :email => "jordan.trevino@flatironschool.com",     		) #28
+anisha  = User.create(:name => "Anisha Vasandani",   :email => "anisha.vasandani@flatironschool.com",   		) #29
+adam    = User.create(:name => "Adam Waxman",      	 :email => "adam.waxman@flatironschool.com",        		) #30
+ning    = User.create(:name => "Ning Yap",      		 :email => "ning.yap@flatironschool.com",           	) #31
+alex    = User.create(:name => "Alex",      				 :email => "alex.au@flatironschool.com",            ) #32
 
 #########################
 # ADD FEATURES TO USERS #
