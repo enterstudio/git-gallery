@@ -19,4 +19,20 @@
 //= require feature_accordian
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+//$(function(){ $(document).foundation(); });
+
+$(document).ready(function() {
+  $('.item').hide();
+
+  $('.item:first').show();
+  $('.feature').eq(0).addClass('selected');
+
+  $('.feature h2').click(function() {
+    $('.feature').removeClass('selected');
+    $(this).parent().addClass('selected');
+
+    $('.item').hide();
+    var sel = "#"+$(this).data('name');
+    $(sel).show();
+  });
+});

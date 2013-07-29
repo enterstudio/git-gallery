@@ -6,29 +6,33 @@
   </div>
 
   <div id="features-slide">
-    <% @project.features.each_with_index do |feat, index| %>
+    <% @project.features.each do |feat| %>
       <div class="feature">
-        <h2 class="feature-card-title"><%= feat.title %></h2>
+        <h2 class="feature-card-title" data-name="<%= feat.title.downcase.gsub(" ", "_") %>">
+          <%= feat.title %>
+        </h2>
       </div>
     <% end %>
-
   </div>
 
   <div class="container-fluid carousel_container">
-  <div class="row-fluid">
-    <%= render :partial => "feature_carousel", :locals => {:features => @project.features }%>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="span8">
+          <div class="carousel slide over-something" id="homepage-carousel">
+            <div class="carousel-inner slider-w carousel-contents">
+              <% @project.features.each do |feature| %>
+                <div id="<%= feature.title.downcase.gsub(" ", "_") %>" class="item">
+                  <div class="span12 feature_carousel">
+                    <h4 class="slider-header"><%= feature.title %> HAS NO SLIDES</h4>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
+
 </div>
-  
-    
-
-      
-
-      
-
-    
-      
-
-
-    

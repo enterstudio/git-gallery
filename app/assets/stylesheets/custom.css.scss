@@ -26,11 +26,6 @@
   box-shadow: 0px 1px 4px 1px #b4b6a9, 2px 2px 1px 0px #fff inset;
   margin-bottom: 0;
   background-color: #fafbf7;
-  background-image: -moz-linear-gradient(top, #f8f9f4, #fdfdfb);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f8f9f4), to(#fdfdfb));
-  background-image: -webkit-linear-gradient(top, #f8f9f4, #fdfdfb);
-  background-image: -o-linear-gradient(top, #f8f9f4, #fdfdfb);
-  background-image: linear-gradient(to bottom, #f8f9f4, #fdfdfb);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff8f9f4', endColorstr='#fffdfdfb', GradientType=0);
   display: inline-block;
@@ -71,7 +66,15 @@ input#search {
   height: 20px;
 }
 
-.feature :hover {
-  background-color: black;
+.feature h2 {
+  cursor: pointer;
 }
 
+.selected {
+  background-color: #8c8c8c;
+  background-image: url("binding_dark.png");
+  // border: solid 1px #8c8c8c;
+  h2 {
+    color: white;
+  }
+}
