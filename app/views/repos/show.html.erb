@@ -8,9 +8,9 @@
 		<li>
 			<%= link_to 'contents', "#{@repo.url}/contents" %>
 			<ul>
-				<% JSON.parse(open("#{@repo.url}/contents").read).each do |directory| %>
+				<% @repo.parse_repo_trunk.each do |directory| %>
 				<li>
-					<%= contents_tree(directory)%>
+					<%= view_tree(directory)%>
 				</li>
 				<% end %>
 			</ul>

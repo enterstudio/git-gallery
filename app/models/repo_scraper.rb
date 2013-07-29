@@ -9,7 +9,7 @@ class Repo_scraper
   end
 
   def scrape_repos
-    repos = JSON.parse(open("https://api.github.com/users/#{@user.name}/repos").read)
+    repos = JSON.parse(open("https://api.github.com/users/#{@user.name}/repos?access_token=#{@user.token}").read)
 
     repos.each do |repo|
       

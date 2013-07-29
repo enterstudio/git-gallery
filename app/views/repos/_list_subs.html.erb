@@ -1,8 +1,8 @@
 <ul>
 	<%=link_to sub_directory["name"], sub_directory["url"]%>
-	<% JSON.parse(open(sub_directory["url"]).read).each do |sub_directory| %>
+	<% parse_repo_tree(sub_directory).each do |sub_sub| %>
 	<li>
-		<%= contents_tree(sub_directory) %>
+		<%= view_tree(sub_sub) %>
 	<li>
 	<% end %>
 </ul>
