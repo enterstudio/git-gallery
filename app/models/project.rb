@@ -1,7 +1,11 @@
 class Project < ActiveRecord::Base
-  attr_accessible :name, :source, :description, :features
+  attr_accessible :name, :source, :description, :features, :creator_id
 
   has_one :repo
+
+  has_many :project_technologies
+  has-many :technologies, :through => :project_technologies
+
   has_many :features
   has_many :users, :through => :features
 
@@ -32,4 +36,11 @@ class Project < ActiveRecord::Base
     project.source = repo.url
   end
 
+  def get_technologies
+    creator = self.repo.user
+    techs = JSON.parse(open("https://api.github.com/users/#{creator.name}/repos?access_token=#{creator.token}").read)
+    techs.each do |technology, mystery_number|
+      saved_tech = Technology.where(:name => technology) || Technology.new(:name => technology)
+    end
+  end
 end

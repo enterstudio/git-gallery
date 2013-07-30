@@ -15,7 +15,7 @@
   <h2>Choose a Repo for Your Next Gallery</h2>
   <h3>Repos:</h3>
   <ul>
-    <% Repo.where(:owner_id => @user.id).each do |repo| %>
+    <% Repo.where(:user_id => @user.id).each do |repo| %>
       <li class="repo">
         <%= link_to repo.name, repo.html_url%>
         <%= link_to 'Browse', repo %>

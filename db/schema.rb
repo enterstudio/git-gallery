@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730154158) do
+ActiveRecord::Schema.define(:version => 20130730204428) do
 
   create_table "feature_technologies", :force => true do |t|
     t.integer  "feature_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20130730154158) do
     t.string   "url"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.integer  "owner_id"
+    t.integer  "user_id"
     t.string   "html_url"
     t.integer  "project_id"
   end
