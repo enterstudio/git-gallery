@@ -3,6 +3,10 @@
 // carousel-slides and carousel-sidebar divs.
 
 ///////////////////// MAIN //////////////////////////
+.carousel-control {
+  font-size: 50px;
+  top: 25px;
+}
 
 .carousel-main {
   height: 550px;
@@ -12,16 +16,18 @@
   margin: 0;
 }
 
-.span12.item {
+.span12.item1 {
   margin-left: 0;
 }
-
 ///////////////////// SIDEBAR ///////////////////////
 .carousel-sidebar {
   border-left: 1px solid #538187;
-  h2, h5, p, em {
-    color: white;  
-  } 
+  h2, h5, p, em, li {
+    color: white;
+  }
+  li {
+     list-style: none; 
+    }
 }
 
 .top-sidebar {
@@ -43,13 +49,12 @@
   height: 328px;
   padding: 20px;
 }
-
 ///////////////////// SLIDES ////////////////////////
-
 .carousel-slides {
   width: 800px;
   h2 {
     color: white;
+    text-align: center;
+    // border-bottom: 2px solid #5c8a87;
   }
 }
-

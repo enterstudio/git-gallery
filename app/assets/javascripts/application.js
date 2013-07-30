@@ -22,17 +22,18 @@
 //$(function(){ $(document).foundation(); });
 
 $(document).ready(function() {
-  $('.item').hide();
+  $('.item1').hide();
 
-  $('.item:first').show();
+  $('.item1:first').show();
   $('.feature').eq(0).addClass('selected');
 
   $('.feature h2').click(function() {
     $('.feature').removeClass('selected');
     $(this).parent().addClass('selected');
 
-    $('.item').hide();
+    $('.item1').hide();
     var sel = "#"+$(this).data('name');
     $(sel).show();
+    // $(sel).carousel();
   });
 });
