@@ -7,28 +7,21 @@
     Feature: <b><%= @feature.title %></b>
   </h2>
 
-  <div>
-    <p><b>Description:</b> <%= @feature.description %></p>
-      <div>
-        <% @feature.snippets.each do |snippet| %>
-          <h4><%= link_to snippet.name, snippet.url %></h4>
-          <%= link_to "Edit", edit_snippet_path(snippet) %>
-        <p><%= snippet.description %></p>
 
-        <div>
-          <%= raw Pygments.highlight(snippet.code, lexer: snippet.language) %>
-        </div>
+  <p><b>Description:</b> <%= @feature.description %></p>
+    
+  <ul>
+    <% @feature.slides_in_order.each do |slide| %>
+      <li>
+        <p><%= slide.name %></p>
+        <p><%= slide.description%></p>
+        <p><%= snippet_or_upload_show(slide) %></p>
+      </li>
     <% end %>
-    </div>
+  </ul>
 
-<p><b>Image(s):</b>
-    <% @feature.uploads.each do |upload| %>
-      <p><%= upload.description%></p>
-      <%= image_tag upload.image_url.to_s, width: '100' if upload.image? %>
-    <% end %>
-</p>
 
- <b>Check Out <%= @feature.user.name.split.first %>'s Other Work Using These Technologies:</b>
+  <b>Check Out <%= @feature.user.name.split.first %>'s Other Work Using These Technologies:</b>
   <ul>
     <% @feature.technologies.each do |technology| %>
     <li><%= link_to technology.name, user_technology_path(@feature.user, technology) %></li>
