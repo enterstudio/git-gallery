@@ -1,6 +1,8 @@
 <h1>Editing: <%= @feature.title %></h1>
 
-<div><%= render 'edit_form' %></div>
+<div><%= render partial: 'features/edit_form_partials/edit_form', :locals => {:feature => @feature} %></div>
 
 <div><%= link_to 'Back', @feature %></div>
+
+
 
