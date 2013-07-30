@@ -1,20 +1,31 @@
+<script>
+$(document).ready(function(){
+	$.ajax({
+		url: "#{@repo.url}/contents?access_token=#{@repo.owner.token}",
+		type: "GET",
+		cache: false,
+		dataType: "json",
+		success: function(){
+			alert("hello")
+		},
+		error: function(){
+			alert("error")
+		}
+	});
+});
+</script>
+
+
 <div class="container">
 <div class="white-card">
-	<h1><%= @repo.name %></h1>
+	<h2><%= link_to @repo.name, @repo.html_url %></h2>
+	<h3><%= link_to 'contents', "#{@repo.url}/contents" %></h3>
 	<ul>
+		<% @repo.parse_repo_trunk.each do |directory| %>
 		<li>
-			<%= link_to 'url', @repo.url %>
+			<%= view_tree(directory)%>
 		</li>
-		<li>
-			<%= link_to 'contents', "#{@repo.url}/contents" %>
-			<ul>
-				<% @repo.parse_repo_trunk.each do |directory| %>
-				<li>
-					<%= view_tree(directory)%>
-				</li>
-				<% end %>
-			</ul>
-		</li>
+		<% end %>
 	</ul>
 </div>
 </div>

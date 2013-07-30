@@ -10,6 +10,12 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+
+
+//= require jquery
+//= require jquery_ujs
+// require ../../../vendor/plugins/chosen/chosen.jquery.js
+// require ../../../vendor/plugins/chosen/chosen.proto.js
 //= require ../../../vendor/assets/theme/js/jquery-1.10.1.min
 //= require ../../../vendor/assets/theme/js/bootstrap
 //= require ../../../vendor/assets/theme/js/lightbox

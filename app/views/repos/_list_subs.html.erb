@@ -1,8 +1,8 @@
+
+<%=link_to sub_directory["name"], sub_directory["url"]%>
+
+<% parse_repo_tree(sub_directory).each do |sub_sub| %>
 <ul>
-	<%=link_to sub_directory["name"], sub_directory["url"]%>
-	<% parse_repo_tree(sub_directory).each do |sub_sub| %>
-	<li>
-		<%= view_tree(sub_sub) %>
-	<li>
-	<% end %>
+	<%= view_tree(sub_sub) %>
 </ul>
+<% end %>
