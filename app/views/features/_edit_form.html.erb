@@ -30,12 +30,15 @@
 
     <ul id="sortable2" class="sortable grid">
       
-<% @feature.uploads.each do |upload| %>
-     <li draggable="true" class="" style="display: list-item;"><p><%= upload.description%></p>
-      <%= image_tag upload.image_url.to_s, width: '100' if upload.image?%>
-      </li>
-    <% end %>
-</ul>
+    <% @feature.slides_in_order.each do |slide| %>
+         <li draggable="true" class="" style="display: list-item;">
+         <input type="hidden" name="slides[][class]" value="<%= slide.class %>"></input>
+         <input type="hidden" name="slides[][id]" value="<%= slide.id %>"></input>
+         <p><%= slide.name %></p>
+          <p><%= slide.description%></p>
+          </li>
+        <% end %>
+    </ul>
 
     
 
