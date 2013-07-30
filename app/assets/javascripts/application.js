@@ -34,6 +34,6 @@ $(document).ready(function() {
     $('.item1').hide();
     var sel = "#"+$(this).data('name');
     $(sel).show();
-    // $(sel).carousel();
+    $(sel).carousel();
   });
 });
