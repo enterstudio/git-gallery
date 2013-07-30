@@ -22,6 +22,13 @@
 //$(function(){ $(document).foundation(); });
 
 $(document).ready(function() {
+
+  $('.carousel').carousel();
+
+  $('.carousel').each(function() {
+    $(this).find('.item:first').addClass('active');
+  });
+
   $('.item1').hide();
 
   $('.item1:first').show();
@@ -34,6 +41,5 @@ $(document).ready(function() {
     $('.item1').hide();
     var sel = "#"+$(this).data('name');
     $(sel).show();
-    $(sel).carousel();
   });
 });

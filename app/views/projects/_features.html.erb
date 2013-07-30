@@ -1,5 +1,4 @@
 <div class="span12 feature-section">
-
   <div class="creator">
     <h3 id="features-title" class="section-header">Features</h3>
     <%= link_to 'New', new_project_feature_path(@project) %>
@@ -18,32 +17,34 @@
   <div class="container-fluid ">
     <div class="row-fluid">
       <% @project.features.each do |feat| %>
-      <div id="<%= feat.title.downcase.gsub(" ", "_") %>" class="span12 item1 carousel_container carousel-main">
-        <div class="span8 carousel-slides">
-          <%= render :partial => "carousel_slides", :locals => {:feature => feat} %>
-        </div>
-        <div class="span4 carousel-sidebar">
-          <div class="top-sidebar">
-            <h2><%= feat.user.name %> </h2>
-            <%= link_to (image_tag avatar_url(feat.user)), user_path(feat.user) %>
-            <p>Member since: <%= feat.user.created_at.strftime("%b %d %Y") %></p>
+        <div id="<%= feat.title.downcase.gsub(" ", "_") %>" class="span12 item1 carousel_container carousel-main">
+          <div class="span8 carousel-slides">
+            <%= render :partial => "carousel_slides", :locals => {:feature => feat} %>
           </div>
-          <div class="bottom-sidebar">
-            <h2>Feature Description</h2>
-            <p><%= feat.description %></p>
-            <h2>Feature Slides</h2>
-            <ul>
-              <% feat.slides_in_order.each do |slide| %>
-                <li><%= slide.name %>  =><em>  <%= slide.class %></em></li>
-              <% end %>
-            </ul>
-            <em>Created on <%= feat.created_at.strftime("%A, %b %d %Y") %></em><br>
-            <em>Last updated on <%= feat.updated_at.strftime("%A, %b %d %Y") %></em>
+          <div class="span4 carousel-sidebar">
+            <div class="top-sidebar">
+              <h2><%= feat.user.name %> </h2>
+              <%= link_to (image_tag avatar_url(feat.user)), user_path(feat.user) %>
+              <p><em>Member since: <%= feat.user.created_at.strftime("%b %d %Y") %></em></p>
+            </div>
+            <div class="bottom-sidebar">
+              <h2>Feature Description</h2>
+              <p><%= feat.description %></p>
+              <h2>Feature Slides</h2>
+              <ul>
+                <% feat.slides_in_order.each do |slide| %>
+                  <li><%= slide.name %>  =><em>  <%= slide.class %></em></li>
+                <% end %>
+              </ul>
+              <p>
+                <em>Created on <%= feat.created_at.strftime("%A, %b %d %Y") %></em>
+                <br>
+                <em>Last updated on <%= feat.updated_at.strftime("%A, %b %d %Y") %></em>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
       <% end %>
     </div>
   </div>
-
 </div>

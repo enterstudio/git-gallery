@@ -11,8 +11,8 @@ module SlidesHelper
     render :partial => slide_partial_name(slide_type), :locals => {:snippet => slide_type }
   end
 
-  private 
-    def slide_partial_name(slide_type)
-      "slide_#{slide_type.class.to_s.downcase}"
-    end
+private 
+  def slide_partial_name(slide_type)
+    "slide_#{slide_type.class.to_s.downcase}"
+  end
 end
