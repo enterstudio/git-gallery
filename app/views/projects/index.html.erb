@@ -1,96 +1,224 @@
 
 
-<div class="span12">
-  <div class="row">
-    <div class="span12">
-      <h3 class="section-header">Projects</h3>
+
+<section class="section-wrapper">
+    <h3 class="section-header">Projects</h3>
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+            <a href="#tab1" data-toggle="tab">Popular</a>
+        </li>
+        <li class="">
+            <a href="#tab2" data-toggle="tab">Recent</a>
+        </li>
+        <li class="visible-desktop">
+             <a href="#tab3" data-toggle="tab">Language</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab1">
+                                <div class="span12">
+                        <div class="row">
+
+                            <% @projects.each do |project| %>
+                                <div class="span4">
+                                <div class="white-card recent-post clearfix">
+                                  <h5 class="recent-post-header">
+                                    <a href="/theme_venera/single_post"><%= project.name %></a>
+                                  </h5>
+
+                                <div class="post-info clearfix">
+                                    <div class="pull-left">
+                                   <!--    <h5>
+                                    <%= link_to project.name, project_path(project), :class => "recent-post-header" %>
+                                  </h5> -->
+                                        <a class= "post-comments"> BY:
+                                        <% project.users.uniq.each do |user| %>
+                                          <%= user.name %>
+                                        <% end %>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="post-info clearfix">
+                                <div class="pull-left">
+                                <a href="/theme_venera/single_post" class="post-comments">14 Comments</a>
+                                </div>
+
+                                <div class="pull-right">
+                                <a href="#" class="post-like"><i class="icon-heart"></i>
+                                250
+                                </a></div>
+                                </div>
+
+                                <%= link_to_project_image(project) %>
+                                <p class="post-content separated"><%= project.description %></p>
+                                <%= link_to "Check it Out", project_path(project), :class => "btn btn-primary btn-extra pull-right" %>
+                                </div>
+                            </div>
+
+                            <% end %>
+
+                        </div>
+                    </div>
+        </div>
+        <div class="tab-pane" id="tab2">
+                                    <div class="span12">
+                                <div class="row">
+
+                                    <% @projects.each do |project| %>
+                                        <div class="span4">
+                                        <div class="white-card recent-post clearfix">
+                                          <h5 class="recent-post-header">
+                                            <a href="/theme_venera/single_post"><%= project.name %></a>
+                                          </h5>
+
+                                        <div class="post-info clearfix">
+                                            <div class="pull-left">
+                                           <!--    <h5>
+                                            <%= link_to project.name, project_path(project), :class => "recent-post-header" %>
+                                          </h5> -->
+                                                <a class= "post-comments"> BY:
+                                                <% project.users.uniq.each do |user| %>
+                                                  <%= user.name %>
+                                                <% end %>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="post-info clearfix">
+                                        <div class="pull-left">
+                                        <a href="/theme_venera/single_post" class="post-comments">14 Comments</a>
+                                        </div>
+
+                                        <div class="pull-right">
+                                        <a href="#" class="post-like"><i class="icon-heart"></i>
+                                        250
+                                        </a></div>
+                                        </div>
+
+                                        <%= link_to_project_image(project) %>
+                                        <p class="post-content separated"><%= project.description %></p>
+                                        <%= link_to "Check it Out", project_path(project), :class => "btn btn-primary btn-extra pull-right" %>
+                                        </div>
+                                    </div>
+
+                                    <% end %>
+
+                                </div>
+                            </div>
+        </div>
+        <div class="tab-pane" id="tab3">
+            <ul class="nav nav-pills" id="myPills">
+                <li class="active">
+                    <a href="#pill1" data-toggle="pill">Ruby</a>
+                </li>
+                <li>
+                    <a href="#pill2" data-toggle="pill">Python</a>
+                </li>
+                <li class="visible-desktop">
+                    <a href="#pill3" data-toggle="pill">PHP</a>
+                </li>
+                <li class="hidden-not-big-desktop">
+                    <a href="#pill4" data-toggle="pill">C++</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="pill1">
+                <p>Ruby Projects</p>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                </div>
+                <div class="tab-pane" id="pill2">
+                <p>Python Projects</p>
+                   <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                   <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+
+                </div>
+                <div class="tab-pane" id="pill3">
+                <p>PHP Projects</p>
+                   <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                   <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                </div>
+                <div class="tab-pane" id="pill4">
+                <p>C++ Projects</p>
+                   <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                   <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                <br/><br/>
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
-
-<div class="row">
-
-<% @projects.each do |project| %>
-<div class="span4">
-<div class="white-card recent-post clearfix">
-  <h5 class="recent-post-header">
-    <a href="/theme_venera/single_post"><%= project.name %></a>
-  </h5>
-
-<div class="post-info clearfix">
-    <div class="pull-left">
-   <!--    <h5>
-    <%= link_to project.name, project_path(project), :class => "recent-post-header" %>
-  </h5> -->
-        <a class= "post-comments"> BY:
-        <% project.users.uniq.each do |user| %>
-          <%= user.name %>
-        <% end %>
-        </a>
-    </div>
-
-</div>
-
-
-<div class="post-info clearfix">
-<div class="pull-left">
-<a href="/theme_venera/single_post" class="post-comments">14 Comments</a>
-</div>
-
-<div class="pull-right">
-<a href="#" class="post-like"><i class="icon-heart"></i>
-250
-</a></div>
-</div>
+</section>
 
 
 
-<%= link_to_project_image(project) %>
-<p class="post-content separated"><%= project.description %></p>
-<%= link_to "Check it Out", project_path(project), :class => "btn btn-primary btn-extra pull-right" %>
-</div>
-</div>
-
-<% end %>
-
-</div>
-</div>
 
 
-<div class="row">
-<div class="span8">
-<h3 class="section-header">Pagination</h3>
-<div class="pagination">
-<ul>
-<li>
-<a href="#">Prev</a>
-</li>
-<li class="active">
-<a href="#">1</a>
-</li>
-<li>
-<a href="#">2</a>
-</li>
-<li>
-<a href="#">3</a>
-</li>
-<li class="visible-desktop-inline">
-<a href="#">4</a>
-</li>
-<li class="visible-desktop-inline">
-<a href="#">5</a>
-</li>
-<li class="visible-desktop-inline">
-<a href="#">6</a>
-</li>
-<li>
-<a href="#">Next</a>
-</li>
-</ul>
-</div>
 
-</div>
-</div>
-</div>
+
+
 
 
 

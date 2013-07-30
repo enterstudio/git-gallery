@@ -26,6 +26,19 @@
         <div ><%= f.text_field :description %></div>
     </div>
 
+
+
+    <ul id="sortable2" class="sortable grid">
+      
+<% @feature.uploads.each do |upload| %>
+     <li draggable="true" class="" style="display: list-item;"><p><%= upload.description%></p>
+      <%= image_tag upload.image_url.to_s, width: '100' if upload.image?%>
+      </li>
+    <% end %>
+</ul>
+
+    
+
      <div >
       <div>
         <%= label_tag 'feature[technologies_to_add][]', 'Technologies'%>

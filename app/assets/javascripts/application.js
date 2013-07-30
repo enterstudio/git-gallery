@@ -10,13 +10,16 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-
 //= require ../../../vendor/assets/theme/js/jquery-1.10.1.min
 //= require ../../../vendor/assets/theme/js/bootstrap
 //= require ../../../vendor/assets/theme/js/lightbox
 //= require ../../../vendor/assets/theme/js/prettify
 //= require ../../../vendor/assets/theme/js/main
 //= require feature_accordian
+//= require ../../../vendor/assets/html5sortable/jquery.sortable.min
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+$('.sortable').sortable().bind('sortupdate', function() {
+	
+});

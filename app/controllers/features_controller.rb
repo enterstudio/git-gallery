@@ -38,7 +38,7 @@ class FeaturesController < ApplicationController
     @feature = Feature.find(params[:id])
     @technologies = Technology.all
     
-    can_current_user?(:edit, @feature)
+    # can_current_user?(:edit, @feature)
   end
 
   # POST /users/1/features
