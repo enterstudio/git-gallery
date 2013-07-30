@@ -1,7 +1,7 @@
 require 'json'
 require 'open-uri'
 
-class Repo_scraper
+class RepoScraper
 
   def initialize(user)
     @user = user

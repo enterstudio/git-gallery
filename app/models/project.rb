@@ -3,7 +3,8 @@ class Project < ActiveRecord::Base
 
   has_one :repo
 
-
+  has_many :project_technologies, :dependent => :destroy
+  has_many :technologies, :through => :project_technologies
 
   has_many :features
   has_many :users, :through => :features
@@ -29,12 +30,12 @@ class Project < ActiveRecord::Base
     where('technologies.name' => tech_name)
   end
 
-
   def get_technologies
     creator = self.repo.user
-    techs = JSON.parse(open("https://api.github.com/users/#{creator.name}/repos?access_token=#{creator.token}").read)
+    techs = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}/languages?access_token=#{creator.token}").read)
     techs.each do |technology, mystery_number|
-      saved_tech = Technology.where(:name => technology) || Technology.new(:name => technology)
+      saved_tech = Technology.where(:name => technology).first || Technology.create(:name => technology)
+      project_tech = ProjectTechnology.create(:project_id => self.id, :technology_id => saved_tech.id)
     end
   end
 end
