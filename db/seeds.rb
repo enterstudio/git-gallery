@@ -192,7 +192,7 @@ routes = Snippet.create(:name => "routes.rb",	:url => "https://github.com/flatir
 	end
 	resources :technologies, only: [:show]
 end", 
-	  :description => "I didn't want to have a double-nested url so I made features shallow. This one line immediately changes the routes visible in rake routes.", :feature_id => 17, :position => 1)
+	  :description => "I didn't want to have a double-nested url so I made features shallow. This one line immediately changes the routes visible in rake routes.", :feature_id => 17, :position => 6)
 
 paths = Snippet.create(:name => "shallow paths", :url => "https://github.com/flatiron-school/git-gallery/blob/master/app/views/features/show.html.erb", :language => "ruby", :code =>
 	 "#this path:
@@ -200,7 +200,7 @@ new_user_feature_snippet_path(@user, @feature)
  
 #became this simpler path:
 new_feature_snippet_path(@feature)",
-		:description => "All feature paths previously included the user. For snippets and uploads, which belong to a feature, the user is unnecessary information. Now the paths to snippets and uploads only depend on the feature they belong to.", :feature_id => 17, :position => 2)
+		:description => "All feature paths previously included the user. For snippets and uploads, which belong to a feature, the user is unnecessary information. Now the paths to snippets and uploads only depend on the feature they belong to.", :feature_id => 17, :position => 7)
 
 forms = Snippet.create(:name => "shallow forms", :url => "https://github.com/flatiron-school/git-gallery/blob/master/app/views/snippets/_form.html.erb", :language => "ruby", :code =>
 	"#this form tag:
@@ -208,7 +208,7 @@ forms = Snippet.create(:name => "shallow forms", :url => "https://github.com/fla
  
 #became this simpler form tag:
 <%= form_for [@feature, @snippet] do |f| %>",
-		:description => "Similar to what we saw with the paths, all form tags became simpler. Form tags for resources nested under features went from relying on the user, the feature, and the current resource to relying on only the feature and the current resource (in this case snippets).", :feature_id => 17, :position => 3)
+		:description => "Similar to what we saw with the paths, all form tags became simpler. Form tags for resources nested under features went from relying on the user, the feature, and the current resource to relying on only the feature and the current resource (in this case snippets).", :feature_id => 17, :position => 8)
 
 #######################
 # CREATE TECHNOLOGIES #

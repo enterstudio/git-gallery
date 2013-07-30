@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row-fluid">
     <h3 class="section-header">Projects: <%= @user.name.titleize %></h3>
-
     <ul class="thumbnails">
       <% @user.projects.each do |project| %>
       <li class="span3"> 
@@ -9,6 +8,5 @@
       </li>
       <% end %>
     </ul>
-
   </div>
 </div>
