@@ -10,7 +10,7 @@ module UsersHelper
   end
 
     def link_to_user_description(user)
-    "<a href= \" \" class=\"thumbnail with-content\" data-rel=\"lightbox[gallery]\"><img alt=\"Photo-card-big-1\" src=#{avatar_url(user)}>
+    "<a href= \"/users/#{user.id}\" class=\"thumbnail with-content\"><img alt=\"Photo-card-big-1\" src=#{avatar_url(user)}>
     <div class=\"thumbnail-hover-w\">
     <div class=\"thumbnail-hover-title\">  #{user.name} </div>
     <div class=\"thumbnail-hover-text\"> \"User Information here!\" </div>
