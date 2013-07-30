@@ -1,3 +1,5 @@
+
+
 <%= form_for([@project, @feature]) do |f| %>
   <% if @feature.errors.any? %>
     <div id="error_explanation">
@@ -25,6 +27,22 @@
       </div>
         <div ><%= f.text_field :description %></div>
     </div>
+
+
+
+    <ul id="sortable2" class="sortable grid">
+      
+    <% @feature.slides_in_order.each do |slide| %>
+         <li draggable="true" class="" style="display: list-item;">
+         <input type="hidden" name="slides[][class]" value="<%= slide.class %>"></input>
+         <input type="hidden" name="slides[][id]" value="<%= slide.id %>"></input>
+         <p><%= slide.name %></p>
+          <p><%= slide.description%></p>
+          </li>
+        <% end %>
+    </ul>
+
+    
 
      <div >
       <div>
