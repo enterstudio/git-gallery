@@ -3,8 +3,7 @@ class Project < ActiveRecord::Base
 
   has_one :repo
 
-  has_many :project_technologies
-  has-many :technologies, :through => :project_technologies
+
 
   has_many :features
   has_many :users, :through => :features
@@ -30,11 +29,6 @@ class Project < ActiveRecord::Base
     where('technologies.name' => tech_name)
   end
 
-  def new_from_repo(id)
-    project = Project.new
-    repo = Repo.find(id)
-    project.source = repo.url
-  end
 
   def get_technologies
     creator = self.repo.user
