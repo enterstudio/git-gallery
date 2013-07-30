@@ -24,4 +24,5 @@ class Project < ActiveRecord::Base
     # where t.name = "Rails"
     where('technologies.name' => tech_name)
   end
+
 end
