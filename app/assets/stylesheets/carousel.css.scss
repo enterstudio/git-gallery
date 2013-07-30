@@ -1,0 +1,55 @@
+// Styles for the carousel on the Project Show Page.
+// Carousel-main is the main container that has
+// carousel-slides and carousel-sidebar divs.
+
+///////////////////// MAIN //////////////////////////
+
+.carousel-main {
+  height: 550px;
+  background-color: black;
+  background-image: url("binding_dark.png");
+  padding: 0;
+  margin: 0;
+}
+
+.span12.item {
+  margin-left: 0;
+}
+
+///////////////////// SIDEBAR ///////////////////////
+.carousel-sidebar {
+  border-left: 1px solid #538187;
+  h2, h5, p, em {
+    color: white;  
+  } 
+}
+
+.top-sidebar {
+  text-align: center;
+  height: 200px;
+  width: 100%;
+  display:inline-block;
+  border-bottom: 1px solid #538187;
+  padding-left: 20px;
+  a{
+    color: white;
+  }
+  img {
+    margin: 10px;
+  }
+}
+
+.bottom-sidebar {
+  height: 328px;
+  padding: 20px;
+}
+
+///////////////////// SLIDES ////////////////////////
+
+.carousel-slides {
+  width: 800px;
+  h2 {
+    color: white;
+  }
+}
+

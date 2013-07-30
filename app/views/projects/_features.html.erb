@@ -5,8 +5,10 @@
     <%= link_to 'New', new_project_feature_path(@project) %>
   </div>
 
+
   <div id="features-slide">
     <% @project.features.each do |feat| %>
+
       <div class="feature">
         <h2 class="feature-card-title" data-name="<%= feat.title.downcase.gsub(" ", "_") %>">
           <%= feat.title %>
@@ -15,14 +17,13 @@
     <% end %>
   </div>
 
-  <div class="container-fluid carousel_container">
+  <div class="container-fluid carousel_container carousel-main">
     <div class="row-fluid">
-      <div class="span12">
-        <div class="span8">
+      <% @project.features.each do |feature| %>
+      <div id="<%= feature.title.downcase.gsub(" ", "_") %>" class="span12 item">
+        <div class="span8 carousel-slides">
           <div class="carousel slide over-something" id="homepage-carousel">
             <div class="carousel-inner slider-w carousel-contents">
-              <% @project.features.each do |feature| %>
-                <div id="<%= feature.title.downcase.gsub(" ", "_") %>" class="item">
                   <div class="span12 feature_carousel">
                     
                     <% if feature.slides_in_order != [] %>
@@ -30,16 +31,28 @@
                         <%= render :partial => "slide", :locals => {:slide_type => slide } %>
                       <% end %>
                     <% else %>
-                      <h4 class="slider-header"><%= feature.title %> HAS NO SLIDES</h4>
+                      <h2><%= feature.title %> has no slides.</h2>
                     <% end %>
-
                   </div>
-                </div>
-              <% end %>
+                
             </div>
           </div>
         </div>
+        <div class="span4 carousel-sidebar">
+          <div class="top-sidebar">
+            <h2><%= feature.user.name %> </h2>
+            <%= link_to (image_tag avatar_url(feature.user)), user_path(feature.user) %>
+            <p>Member since: <%= feature.user.created_at.strftime("%b %d %Y") %></p>
+          </div>
+          <div class="bottom-sidebar">
+            <h2>Feature Description</h2>
+            <p><%= feature.description %></p>
+            <em>Created on <%= feature.created_at.strftime("%A, %b %d %Y") %></em><br>
+            <em>Last updated on <%= feature.updated_at.strftime("%A, %b %d %Y") %></em>
+          </div>
+        </div>
       </div>
+      <% end %>
     </div>
   </div>
 
