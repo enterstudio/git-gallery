@@ -12,9 +12,8 @@ $(document).ready(function(){
 		$.each(folders_array, function(this_folder) {
 			if (folder["type"] == "dir"){
 				$.get(folder["url"]+"&access_token=<%= @repo.owner.token%>", function(sub_html){
-						for (var k = 0; k<sub_html.length; k++){
-						$('#'+folder).append("<li>" + sub_html[k]["name"] + "</li>");
-						}
+					for (var k = 0; k<sub_html.length; k++){
+					$('#'+folder).append("<li>" + sub_html[k]["name"] + "</li>");
 					}
 				});
 			}
