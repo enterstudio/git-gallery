@@ -19,7 +19,26 @@
 //= require ../../../vendor/assets/html5sortable/jquery.sortable.min
 //= require_tree .
 
+
 $(function(){ $(document).foundation(); });
 $('.sortable').sortable().bind('sortupdate', function() {
-	
+
+//$(function(){ $(document).foundation(); });
+
+$(document).ready(function() {
+  $('.item1').hide();
+
+  $('.item1:first').show();
+  $('.feature').eq(0).addClass('selected');
+
+  $('.feature h2').click(function() {
+    $('.feature').removeClass('selected');
+    $(this).parent().addClass('selected');
+
+    $('.item1').hide();
+    var sel = "#"+$(this).data('name');
+    $(sel).show();
+    // $(sel).carousel();
+  });
+
 });

@@ -1,16 +1,23 @@
 <div class="sidebar">
   
   <div class="top-sidebar">
-    <h3> <%= feature.title %> </h3>
     <div class="sidebar-user">
-      <%= link_to (image_tag avatar_url(feature.user)), user_path(feature.user) %><br>
-      <%= link_to feature.user.name, user_path(feature.user) %>
+      <br>
+      <h3><%= link_to user.name, user_path(user) %></h3> 
     </div>
   </div>
   
   <div class="misc-side">
-    <h3>Feature Description:</h3>
-      <%= feature.description ||= "There is no description supplied for this feature!" %>
+    <h4>Feature Description</h4>
+      <p><%= feature.description ||= "There is no description supplied for this feature!" %></p>
+      <h4>Feature Snippets</h4>
+      <ul>
+        <% feature.snippets.each do |snip| %>
+          <li><p><%= snip.name %></p></li>
+        <% end %>
+      </ul>
+      <h5>Created on <%= feature.created_at.strftime("%A, %b %d %Y") %></h5>
+      <h5>Last updated on <%= feature.updated_at.strftime("%A, %b %d %Y") %></h5>
   </div>
 
 </div>
