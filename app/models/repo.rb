@@ -1,6 +1,7 @@
 class Repo < ActiveRecord::Base
-  attr_accessible :github_id, :name, :published_at, :url, :html_url, :owner_id
+  attr_accessible :github_id, :name, :published_at, :url, :html_url, :owner_id, :project_id
 
+  belongs_to :project
   has_many :user_repos
   has_many :users, :through => :user_repos
 

@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row-fluid">
     <h3 class="section-header">Projects: <%= @user.name.titleize %></h3>
@@ -9,16 +10,16 @@
       <% end %>
     </ul>
   </div>
-</div>
 
 <div>
   <h2>Choose a Repo for Your Next Gallery</h2>
   <h3>Repos:</h3>
   <ul>
     <% Repo.where(:owner_id => @user.id).each do |repo| %>
-      <li>
-        <%= link_to repo.name, repo.html_url %>
+      <li class="repo">
+        <%= link_to repo.name, repo.html_url%>
         <%= link_to 'Browse', repo %>
+        <%= link_to 'Show It Off', projects_path(:repo_id => repo.id), :method => :post %>
       </li>
     <% end %>
   </ul>

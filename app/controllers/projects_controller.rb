@@ -41,10 +41,17 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(params[:project])
+    if params[:project]
+      raise "wrong way!"
+    else
+      @project = Project.new
+    end
 
     respond_to do |format|
       if @project.save
+        repo = Repo.find(params[:repo_id])
+        repo.project_id = @project.id
+        repo.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render json: @project, status: :created, location: @project }
       else

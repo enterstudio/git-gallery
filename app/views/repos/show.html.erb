@@ -1,23 +1,31 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script></script>
+
 <script>
 $(document).ready(function(){
-	$.ajax({
-		url: "#{@repo.url}/contents?access_token=#{@repo.owner.token}",
-		type: "GET",
-		cache: false,
-		dataType: "json",
-		success: function(){
-			alert("hello")
-		},
-		error: function(){
-			alert("error")
+	$.get("<%= @repo.url%>/contents?access_token=<%=@repo.owner.token%>", function(html) {
+		var folders_array = []
+		for (var i = 0; i<html.length; i++) {
+  		var folder = html[i];
+  		$('#dir_list').append("<ul id="+ folder["name"] +">"+ folder["name"] + "</ul>");
+  		folders_array << folder;
 		}
+		$.each(folders_array, function(this_folder) {
+			if (folder["type"] == "dir"){
+				$.get(folder["url"]+"&access_token=<%= @repo.owner.token%>", function(sub_html){
+						for (var k = 0; k<sub_html.length; k++){
+						$('#'+folder).append("<li>" + sub_html[k]["name"] + "</li>");
+						}
+					}
+				});
+			}
+		});
 	});
 });
 </script>
 
 
 <div class="container">
-<div class="white-card">
+<div id="dir_list" class="white-card">
 	<h2><%= link_to @repo.name, @repo.html_url %></h2>
 	<h3><%= link_to 'contents', "#{@repo.url}/contents" %></h3>
 	<ul>
@@ -29,5 +37,7 @@ $(document).ready(function(){
 	</ul>
 </div>
 </div>
+
+
 
 
