@@ -1,5 +1,8 @@
 
 <ul class="inline tech">
+	<% @project.technologies.each do |tech| %>
+		<li><%= tech.name %><li>
+	<% end %>
   <% @project.features.each do |feature| %>
     <% feature.technologies.each do |tech| %>
    <!--  <div class="span6"> -->
