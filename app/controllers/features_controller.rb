@@ -30,7 +30,7 @@ class FeaturesController < ApplicationController
     @technologies = Technology.all
     @feature = @project.features.build
 
-    can_current_user?(:create, @feature)
+    # can_current_user?(:create, @feature)
   end
 
   # GET /users/1/features/1/edit

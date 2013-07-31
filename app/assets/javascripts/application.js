@@ -12,23 +12,23 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require ../../../vendor/plugins/chosen/chosen.jquery.js
-// require ../../../vendor/plugins/chosen/chosen.proto.js
 //= require ../../../vendor/assets/theme/js/jquery-1.10.1.min
 //= require ../../../vendor/assets/theme/js/bootstrap
 //= require ../../../vendor/assets/theme/js/lightbox
 //= require ../../../vendor/assets/theme/js/prettify
 //= require ../../../vendor/assets/theme/js/main
+//= require ../../../vendor/assets/chosen/chosen.jquery.min
 //= require feature_accordian
 //= require ../../../vendor/assets/html5sortable/jquery.sortable.min
 //= require_tree .
 
-//$(function(){ $(document).foundation(); });
 
-$(function(){ $(document).foundation(); });
-$('.sortable').sortable().bind('sortupdate', function() {
+$(function(){
+
+
+	$(".chosen-select").chosen();
+
+	$('.sortable').sortable().bind('sortupdate', function() {
+	});
+
 });
-
-
-
-
