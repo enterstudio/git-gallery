@@ -52,8 +52,8 @@ class Project < ActiveRecord::Base
     self.creator
     contributors = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}/contributors?access_token=#{creator.token}").read)
     contributors.each do |contributor|
-      saved_contributor = Contributor.where(:github_id => contributor["id"]).first || Contributor.create(:github_id => contributor["id"], :name => contributor["login"], :email => contributor["email"])
-      project_contributor = ProjectContributor.create(:project_id => self.id, :contributor_id => contributor["id"])
+      saved_contributor = Contributor.where(:github_id => contributor["id"]).first || Contributor.create(:github_id => contributor["id"], :name => contributor["login"])
+      project_contributor = ProjectContributor.create(:project_id => self.id, :contributor_id => saved_contributor.id)
     end  
   end
 
