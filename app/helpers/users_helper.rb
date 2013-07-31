@@ -1,5 +1,4 @@
 module UsersHelper
-
   def avatar_url(user)
     if user.avatar_url.present? && user.email
       user.avatar_url
@@ -9,7 +8,7 @@ module UsersHelper
     end
   end
 
-    def link_to_user_description(user)
+  def link_to_user_description(user)
     "<a href= \"/users/#{user.id}\" class=\"thumbnail with-content\"><img alt=\"Photo-card-big-1\" src=#{avatar_url(user)}>
     <div class=\"thumbnail-hover-w\">
     <div class=\"thumbnail-hover-title\">  #{user.name} </div>
@@ -18,6 +17,7 @@ module UsersHelper
     </a>".html_safe
   end
 
-
+  def is_project?(repo)
+    return true if repo.project_id != nil
+  end
 end
-

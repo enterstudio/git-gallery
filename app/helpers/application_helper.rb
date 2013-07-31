@@ -1,7 +1,4 @@
 module ApplicationHelper
-
-
-
   def link_to_hidden_description(project)
     "<a href= \"../projects/#{project.id} \" class=\"thumbnail with-content\"><img alt=\"Photo-card-big-1\" src=#{image_link(project)}>
         <div class=\"thumbnail-hover-w\">
