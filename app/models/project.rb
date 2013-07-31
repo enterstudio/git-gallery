@@ -3,6 +3,8 @@ class Project < ActiveRecord::Base
 
   has_one :repo
 
+  has_many :contributors
+
   has_many :project_technologies, :dependent => :destroy
   has_many :technologies, :through => :project_technologies
 
@@ -30,12 +32,31 @@ class Project < ActiveRecord::Base
     where('technologies.name' => tech_name)
   end
 
+  def self.find_by_repo(repo)
+    previous_repo = Repo.joins(:project).where(:github_id => repo.github_id).first
+    previous_project = previous_repo.project if previous_repo
+  end
+
   def get_technologies
-    creator = self.repo.user
+    self.creator
     techs = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}/languages?access_token=#{creator.token}").read)
     techs.each do |technology, mystery_number|
       saved_tech = Technology.where(:name => technology).first || Technology.create(:name => technology)
       project_tech = ProjectTechnology.create(:project_id => self.id, :technology_id => saved_tech.id)
     end
   end
+
+  def get_contributors
+    self.creator
+    contributors = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}/contributors?access_token=#{creator.token}").read)
+    contributors.each do |contributor|
+      saved_contributor = Contributor.where(:github_id => contributor["id"]).first || Contributor.create(:github_id => contributor["id"], :name => contributor["login"])
+      project_contributor = ProjectContributor.create(:project_id => self.id, :contributor_id => saved_contributor.id)
+    end  
+  end
+
+  def creator
+    self.repo.user
+  end
 end
+

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730214330) do
+ActiveRecord::Schema.define(:version => 20130731030612) do
+
+  create_table "contributors", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "github_id"
+  end
 
   create_table "feature_technologies", :force => true do |t|
     t.integer  "feature_id"
@@ -27,6 +35,13 @@ ActiveRecord::Schema.define(:version => 20130730214330) do
     t.datetime "updated_at",  :null => false
     t.integer  "user_id"
     t.integer  "project_id"
+  end
+
+  create_table "project_contributors", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "contributor_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "project_technologies", :force => true do |t|
