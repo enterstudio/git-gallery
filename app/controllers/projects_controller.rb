@@ -66,11 +66,18 @@ class ProjectsController < ApplicationController
 
   # PUT /projects/1
   # PUT /projects/1.json
-  respond_to :html, :json
   def update
-    @project = Project.find(params[:project])
-    @project.update_attributes(params[:project])
-    respond_with @project
+    @project = Project.find(params[:id])
+
+    respond_to do |format|
+      if @project.update_attributes(params[:project])
+        format.html { redirect to(@project, :notice => 'User was successfully updated')}
+        format.json { respond_with_bip(@project)}
+      else
+        format.html { render :action => "edit"}
+        format.json { respond_with_bip(@project)}
+      end
+    end
   end
 
   # DELETE /projects/1
