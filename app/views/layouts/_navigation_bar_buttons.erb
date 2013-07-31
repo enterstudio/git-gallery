@@ -1,56 +1,15 @@
-<ul class="nav">
-	<li class="active">
-		<%= link_to "Homepage", current_user %>
-	</li>	
-	<li class="dropdown">
-		<a href="/theme_venera/basic_elements" class="dropdown-toggle" data-toggle="dropdown">
-			Placeholder
-		</a>
-		<ul class="dropdown-menu">
-			<li>
-				<a href="#">Pricing Table</a>
-			</li>
-			<li>
-				<a href="#">Basic Elements</a>
-			</li>
-			<li>
-				<a href="#">Awesome Icons</a>
-			</li>
-
-			<li class="divider"></li>
-			<li class="nav-header">Pages Examples</li>
-
-			<li>
-				<a href="#">About Us Page</a>
-			</li>
-			
-			<li>
-				<a href="#">Gallery of Images</a>
-			</li>
-			
-			<li>
-				<a href="#">Page not found</a>
-			</li>
-			<li>
-				<a href="#">Coming Soon Page</a>
-			</li>
-		</ul>
-	</li>
-	<li class="">
+<ul class="nav">	
+	<li>
 		<%= form_tag(users_path, :method => "get") do %>
-    		<%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
-    	<% end %>
-    </li>
+  		<%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
+  	<% end %>
+  </li>
 </ul>
 
 <!-- LOGIN/ACCOUNT BAR  -->
-
 <div class="top-account-control visible-desktop">
 	<!-- ACCOUNT TAB -->
-	<% if !logged_in? %>
-           <%= link_to "Create Account", new_user_path, class: 'top-create-account'%>    
-    	<% else%>
-           <%= link_to "#{current_user.name}", nil, class: 'top-create-account'%>		     	
-    <% end %>
-	<%= render 'layouts/login'%>
+	<i><%= link_to "", current_user, :class => "icon-home" %></i>
+	<%= render 'layouts/login' %>
+	<%= link_to "#{current_user.name}", nil, class: 'top-create-account' if logged_in? %>
 </div>

@@ -1,25 +1,35 @@
-<div class="container">
-  <div class="row-fluid">
-    <h3 class="section-header">Projects: <%= @user.name.titleize %></h3>
-    <ul class="thumbnails">
-      <% @user.projects.each do |project| %>
-      <li class="span3"> 
-        <%= link_to_hidden_description(project) %>
-      </li>
-      <% end %>
-    </ul>
+<div class="container user_show">
+  <div class="row-fluid span12">
+    <section class="span8 user_gallery">
+      <h3 class="section-header">My Projects</h3>
+      <ul class="thumbnails">
+        <% @user.projects.each do |project| %>
+          <li class="span4"> 
+            <div class="gallery-project">
+              <%= link_to_hidden_description(project) %>
+            </div>
+          </li>  
+        <% end %>
+      </ul>
+    </section>
+    
+    <aside class="span4 user_repo">
+      <div>
+        <h3>Make a Project</h3>
+        <h5>Available Repos</h5>
+        <ul>
+          <% Repo.where(:user_id => @user.id).each do |repo| %>
+            <li class="repo">
+              <span>
+                <h4>
+                  <%= link_to repo.name.truncate(25), repo.html_url, id: "#{repo.name}" %>
+                  <i><%= link_to "", projects_path(:repo_id => repo.id), :method => :post, class: 'icon-plus-sign pull-right', :"data-name" => "#{repo.name}" %></i>
+                </h4>  
+              </span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </aside>
   </div>
-
-<div>
-  <h2>Choose a Repo for Your Next Gallery</h2>
-  <h3>Repos:</h3>
-  <ul>
-    <% Repo.where(:user_id => @user.id).each do |repo| %>
-      <li class="repo">
-        <%= link_to repo.name, repo.html_url%>
-        <%= link_to 'Browse', repo %>
-        <%= link_to 'Show It Off', projects_path(:repo_id => repo.id), :method => :post %>
-      </li>
-    <% end %>
-  </ul>
 </div>
