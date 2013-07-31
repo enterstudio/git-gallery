@@ -8,16 +8,13 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    # raise session[:user_id].inspect
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   helper_method :current_user
 
   def login(user)
-  
     session[:user_id] = user.id
     @current_user = user
-
   end
 
   def login_required
@@ -27,7 +24,6 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
-  
   helper_method :logged_in?
 
   def can_current_user?(action, object)
