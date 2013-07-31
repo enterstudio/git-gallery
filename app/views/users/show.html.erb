@@ -7,9 +7,12 @@
     <h3 class="section-header">My Projects</h3>
     <ul class="thumbnails">
         <% @user.projects.each do |project| %>
-        <li class="span3"> 
-          <%= link_to_hidden_description(project) %>
-      </li>  
+        
+          <li class="span3"> 
+            <div class="gallery-project">
+              <%= link_to_hidden_description(project) %>
+            </div>
+          </li>  
         <% end %>
     </ul>
     </section>
