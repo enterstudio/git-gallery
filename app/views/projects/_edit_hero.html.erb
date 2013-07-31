@@ -1,0 +1,43 @@
+<section class="hero-unit">
+
+<div class="row-fluid">
+  <div id="hero-description" class="span12" >
+
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="span3 hero-title">
+      <h1 id="project-title"><%= render partial: "edit_project_title", :locals => {:f => f, :project => @project} %></h1>
+    </div>
+
+    <div class="hero_tags span9">
+      <div class="row-fluid span12">
+        <%= render "tech_tags" %>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="span8 proj-descript"><p><%= render partial: "edit_description", :locals => {:f => f, :project => @project} %></p></div>
+    <div class="clearfix"></div>
+    <div class="hero_contrib">
+		<%= render "contributors" %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+  </div>
+</div>
+</section>
