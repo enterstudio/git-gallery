@@ -58,5 +58,9 @@ class Project < ActiveRecord::Base
   def creator
     self.repo.user
   end
+
+  def editable_by?(user)
+    self.users.include?(user)
+  end
 end
 

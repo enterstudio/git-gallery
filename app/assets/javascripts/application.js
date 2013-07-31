@@ -21,6 +21,8 @@
 //= require ../../../vendor/assets/masonry/masonry.pkgd.min
 //= require feature_accordian
 //= require ../../../vendor/assets/html5sortable/jquery.sortable.min
+//= require best_in_place
+//= require best_in_place
 //= require_tree .
 
 /////////// Document Ready ////////////////////////////
