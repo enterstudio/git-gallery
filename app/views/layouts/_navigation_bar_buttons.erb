@@ -12,6 +12,6 @@
 <!-- LOGIN/ACCOUNT BAR  -->
 <div class="top-account-control visible-desktop">
 	<!-- ACCOUNT TAB -->
-	<%= link_to "#{current_user.name}", nil, class: 'top-create-account' if logged_in? %>
 	<%= render 'layouts/login' %>
+	<%= link_to "#{current_user.name}", nil, class: 'top-create-account' if logged_in? %>
 </div>
