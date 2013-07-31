@@ -22,12 +22,8 @@
     <%= render "layouts/navigation_bar" %>
     <div id="wrapper">
       <%= render "layouts/breadcrumbs" %>
-      <div><%= render "layouts/github_sign_in" %></div>
       <div id="content"><%= yield %></div>
       <%= javascript_include_tag "application" %>
     </div>
   </body>
 </html>
-
-
-<div id="one" class="one two"></div>
