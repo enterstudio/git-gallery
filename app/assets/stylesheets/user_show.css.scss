@@ -1,0 +1,36 @@
+// CSS for the user show page is here
+
+.user_show {  
+ 
+}
+
+.user_gallery {
+
+  h3 {
+    text-align: center;
+  } 
+}
+
+ 
+
+.user_repo {
+  background-color: #538187;
+  h3, h5 {
+    padding-left: 20px;
+  }
+  h4{
+    line-height: 1.25em;
+    a {
+      color: white;
+    }
+  }
+  li{
+    list-style: none;
+  }
+  .icon-plus-sign {
+    color: green;
+  }
+}
+
+
+
