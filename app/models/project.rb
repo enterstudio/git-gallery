@@ -34,9 +34,7 @@ class Project < ActiveRecord::Base
 
   def self.find_by_repo(repo)
     previous_repo = Repo.joins(:project).where(:github_id => repo.github_id).first
-    if previous_repo
-      previous_project = previous_repo.project
-    end
+    previous_project = previous_repo.project if previous_repo
   end
 
   def get_technologies
