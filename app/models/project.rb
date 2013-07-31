@@ -30,6 +30,13 @@ class Project < ActiveRecord::Base
     where('technologies.name' => tech_name)
   end
 
+  def self.find_by_repo(repo)
+    previous_repo = Repo.joins(:project).where(:github_id => repo.github_id).first
+    if previous_repo
+      previous_project = previous_repo.project
+    end
+  end
+
   def get_technologies
     creator = self.repo.user
     techs = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}/languages?access_token=#{creator.token}").read)
