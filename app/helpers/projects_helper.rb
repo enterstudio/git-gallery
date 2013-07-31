@@ -14,13 +14,23 @@ module ProjectsHelper
 			image_tag("http://octodex.github.com/images/octocat-de-los-muertos.jpg")
 		end
 	end
-end
 
+	def user_dependent_view(project, attribute)
+		if project.editable_by?(current_user)
+			render partial: "edit_project_#{attribute}", :locals => {:project => project}
+		else
+			project.send(attribute)
+		end
+	end
 
-def image_link(project)
-	if project.uploads != []
-	 "#{project.uploads.first.image_url.to_s}"
-	else
-		"http://octodex.github.com/images/octocat-de-los-muertos.jpg"
+	def image_link(project)
+		if project.uploads != []
+		 "#{project.uploads.first.image_url.to_s}"
+		else
+			"http://octodex.github.com/images/octocat-de-los-muertos.jpg"
+		end
 	end
 end
+
+
+
