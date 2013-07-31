@@ -50,7 +50,7 @@
 	<% if !logged_in? %>
            <%= link_to "Create Account", new_user_path, class: 'top-create-account'%>    
     	<% else%>
-           <%= link_to "My Account", nil, class: 'top-create-account'%>		     	
+           <%= link_to "#{current_user.name}", nil, class: 'top-create-account'%>		     	
     <% end %>
 	<%= render 'layouts/login'%>
 </div>
