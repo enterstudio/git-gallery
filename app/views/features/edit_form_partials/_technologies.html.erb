@@ -1,11 +1,14 @@
-     <div >
-      <div>
-        <%= label_tag 'feature[technologies_to_add][]', 'Technologies'%>
-      </div>
-      <div >
-
-        <% for technology in @technologies %>
-          <%= check_box_tag 'feature[technology_ids][]',technology.id, @feature.technologies.include?(technology) %>
-          <%= technology.name %>
-        <% end %>
-      </div>
+<div>
+  <div>
+    <% label_tag g 'feature[technologies_to_add][]', 'technologies'%>
+  </div>
+  <div class="controls">
+    <% label_tag g 'feature[technologies_to_add][]', 'technologies', class: "control-label" %>
+    <select data-placeholder="Choose Technologies..." class="chosen-select" multiple style="width:350px;" tabindex="4">
+      <option value=""></option>
+      <% for technology in @technologies %>
+      <option value="United States"><% technology.name e %></option>
+      <% end %>
+    </select>
+  </div>
+</div>
