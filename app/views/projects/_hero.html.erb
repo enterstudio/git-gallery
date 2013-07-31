@@ -1,10 +1,20 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script></script>
+
+<script>
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+</script>
+
 <section class="hero-unit">
 
 <div class="row-fluid">
   <div id="hero-description" class="span12" >
 
+
     <div class="span3 hero-title">
-      <h1 id="project-title"><%= @project.name %></h1>
+      <h1 id="project-title"><%= user_dependent_view(@project) %></h1>
     </div>
 
     <div class="hero_tags span9">

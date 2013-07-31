@@ -3,7 +3,7 @@
 <div class="row-fluid">
   <div id="hero-description" class="span12" >
 
-<%= form_for(@project) do |f| %>
+<%= form_for(@project, html: {class: "form-horizontal"}) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -17,6 +17,7 @@
   <% end %>
 
     <div class="span3 hero-title">
+    	<h1><%= best_in_place @project, :name, :type => :input %></h1>
       <h1 id="project-title"><%= render partial: "edit_project_title", :locals => {:f => f, :project => @project} %></h1>
     </div>
 

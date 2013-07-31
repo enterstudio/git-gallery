@@ -27,6 +27,7 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'pygments.rb'
 gem 'omniauth-github'
+gem 'best_in_place'
 
 
 # To use ActiveModel has_secure_password

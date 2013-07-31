@@ -21,6 +21,8 @@
 //= require ../../../vendor/assets/theme/js/main
 //= require feature_accordian
 //= require ../../../vendor/assets/html5sortable/jquery.sortable.min
+//= require best_in_place
+//= require best_in_place
 //= require_tree .
 
 //$(function(){ $(document).foundation(); });

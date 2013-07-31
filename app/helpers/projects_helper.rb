@@ -14,6 +14,14 @@ module ProjectsHelper
 			image_tag("http://octodex.github.com/images/octocat-de-los-muertos.jpg")
 		end
 	end
+
+	def user_dependent_view(project)
+		if project.editable_by?(current_user)
+			render partial: "edit_project_name", :locals => {:project => project}
+		else
+			project.name
+		end
+	end
 end
 
 
