@@ -8,7 +8,7 @@ module ReposHelper
 	end
 
 	def parse_repo_tree(sub_directory)
-  		JSON.parse(open("#{sub_directory["url"]}&access_token=#{Repo.find(params[:id]).owner.token}").read)
+  		JSON.parse(open("#{sub_directory["url"]}&access_token=#{Repo.find(params[:id]).user.token}").read)
   	end
 end
 
