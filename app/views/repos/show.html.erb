@@ -2,7 +2,7 @@
 
 <script>
 $(document).ready(function(){
-	$.get("<%= @repo.url%>/contents?access_token=<%=@repo.owner.token%>", function(html) {
+	$.get("<%= @repo.url%>/contents?access_token=<%=@repo.user.token%>", function(html) {
 		var folders_array = []
 		for (var i = 0; i<html.length; i++) {
   		var folder = html[i];
@@ -11,7 +11,7 @@ $(document).ready(function(){
 		}
 		$.each(folders_array, function(this_folder) {
 			if (folder["type"] == "dir"){
-				$.get(folder["url"]+"&access_token=<%= @repo.owner.token%>", function(sub_html){
+				$.get(folder["url"]+"&access_token=<%= @repo.user.token%>", function(sub_html){
 					for (var k = 0; k<sub_html.length; k++){
 					$('#'+folder).append("<li>" + sub_html[k]["name"] + "</li>");
 					}
