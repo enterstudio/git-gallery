@@ -1,8 +1,5 @@
-
-$('i a.icon-plus-sign').hover(function() {
-  var sel = "#"+$(this).data('name');
-  $(sel).css("color", "#538187");
+$('a.icon-plus-sign').hover(function() {
+  $(this).parent().parent().css("font-size", "1.75em");
 }, function() {
-  var sel = "#"+$(this).data('name');
-  $(sel).css("color", "#dbeaf4");
+  $(this).parent().parent().css("font-size", "1.25em");
 });
