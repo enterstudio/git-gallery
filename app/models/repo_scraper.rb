@@ -20,6 +20,7 @@ class RepoScraper
         new_repo.published_at = repo["published_at"]
         new_repo.url = repo["url"]
         new_repo.html_url = repo["html_url"]
+        new_repo.github_id = repo["id"]
         new_repo.user_id = @user.id
 
         puts "saved successfully" if new_repo.save
