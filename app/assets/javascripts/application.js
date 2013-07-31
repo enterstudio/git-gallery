@@ -12,40 +12,48 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require ../../../vendor/plugins/chosen/chosen.jquery.js
-// require ../../../vendor/plugins/chosen/chosen.proto.js
 //= require ../../../vendor/assets/theme/js/jquery-1.10.1.min
 //= require ../../../vendor/assets/theme/js/bootstrap
 //= require ../../../vendor/assets/theme/js/lightbox
 //= require ../../../vendor/assets/theme/js/prettify
 //= require ../../../vendor/assets/theme/js/main
+//= require ../../../vendor/assets/chosen/chosen.jquery.min
 //= require feature_accordian
 //= require ../../../vendor/assets/html5sortable/jquery.sortable.min
 //= require_tree .
 
-//$(function(){ $(document).foundation(); });
 
-$(function(){ $(document).foundation(); });
-$('.sortable').sortable().bind('sortupdate', function() {
+$(function(){
+
+
+	$(".chosen-select").chosen();
+
+	$('.sortable').sortable().bind('sortupdate', function() {
+	});
+
+
+	$('.carousel').carousel();
+
+	$('.carousel').each(function() {
+	  $(this).find('.item:first').addClass('active');
+	});
+
+	$('.item1').hide();
+
+	$('.item1:first').show();
+	$('.feature').eq(0).addClass('selected');
+
+	$('.feature h2').click(function() {
+	  $('.feature').removeClass('selected');
+	  $(this).parent().addClass('selected');
+
+	  $('.item1').hide();
+	  var sel = "#"+$(this).data('name');
+	  $(sel).show();
+	});
+
 });
 
 
-$('.carousel').carousel();
 
-$('.carousel').each(function() {
-  $(this).find('.item:first').addClass('active');
-});
 
-$('.item1').hide();
-
-$('.item1:first').show();
-$('.feature').eq(0).addClass('selected');
-
-$('.feature h2').click(function() {
-  $('.feature').removeClass('selected');
-  $(this).parent().addClass('selected');
-
-  $('.item1').hide();
-  var sel = "#"+$(this).data('name');
-  $(sel).show();
-});
