@@ -15,11 +15,11 @@ module ProjectsHelper
 		end
 	end
 
-	def user_dependent_view(project)
+	def user_dependent_view(project, attribute)
 		if project.editable_by?(current_user)
-			render partial: "edit_project_name", :locals => {:project => project}
+			render partial: "edit_project_#{attribute}", :locals => {:project => project}
 		else
-			project.name
+			project.attribute
 		end
 	end
 end
