@@ -37,10 +37,12 @@
 .bottom-sidebar {
   height: 328px;
   padding: 20px 20px 0 20px;
+  overflow-y: scroll;
 }
 
 .top-sidebar {
   text-align: center;
+  overflow-y: scroll;
   height: 200px;
   width: 100%;
   display:inline-block;
