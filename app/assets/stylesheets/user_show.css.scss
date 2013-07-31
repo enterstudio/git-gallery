@@ -1,0 +1,57 @@
+// CSS for the user show page is here
+
+.user_show {  
+ margin: 0;
+ width: auto;
+}
+
+.user_gallery {
+
+  h3 {
+    text-align: center;
+  } 
+
+  .thumbnails {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+ 
+
+.user_repo {
+
+  background-color: grey;
+  background-image: url("binding_dark.png");
+  h3, h5 {
+    padding-left: 20px;
+    color: white;
+
+  }
+  h4{
+    line-height: 1.25em;
+    a {
+      color: #dbeaf4;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #538187
+    }
+  }
+  li{
+    list-style: none;
+  }
+  .icon-plus-sign {
+    color: white;
+    margin-right: 50px;
+  }
+
+  span:hover {
+      color: #538187
+  }
+}
+
+
+
+
+

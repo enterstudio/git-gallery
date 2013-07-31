@@ -1,27 +1,21 @@
 <% if !logged_in? %>
-	<a href="#" class="top-sign-in">LOGIN</a>
-	<div class="login-box">
-		<a class="close login-box-close" href="#">×</a>
-		<h4 class="login-box-head">Login</h4>
-		
-		<%=form_for(:session, url: login_path) do |f|%>	
-			<div class="control-group">
-				<%= f.label :email, "Email"%>
-				<%= f.text_field :email, :class=>'span2' %>
-			</div>	
-			<div class="control-group">
-			 	<%= f.label :password, "Password" %>
-			 	<%= f.password_field :password, :class=>'span'%>
-			<div>
-			<div class="login-actions">
-				<%= f.submit "Login", :class=>'btn btn-primary'%>
-				<br/>
-				<br/>
-			</div>
-		<%end %>
+  <a href="#" class="top-sign-in">Sign in with GitHub</a>
+  <div class="login-box">
+    <a class="close login-box-close" href="#">X</a><br>
+    <!-- <h4 class="login-box-head">Login</h4> -->
 
-	</div>
-<%else %>
-<%= link_to "Logout", logout_path, class: 'top-sign-in'%>
-	
+    <% if current_user %>
+      Signed in as <%= current_user.name %>!
+      <%= link_to "Sign out", signout_path %>
+    <% else %>
+      <i class="icon-github">
+        <br><%= link_to "Sign in using Github", "/auth/github" %>
+      </i>
+      <br><br>
+      <p><em>(If you don't have a GitHub account, GTFO)</em></p>
+    <% end %>
+
+  </div>
+<% else %>
+  <%= link_to "Logout", logout_path, class: 'top-sign-in'%>
 <% end %>
