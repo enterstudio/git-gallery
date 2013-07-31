@@ -1,6 +1,7 @@
 $('a.icon-plus-sign').hover(function() {
-  $(this).parent().parent().css("font-size", "1.75em");
+  var sel = "#"+$(this).data("name");
+  $(sel).addClass("active_repo"); // "active_repo" see user_show.css
 }, function() {
-  $(this).parent().parent().css("font-size", "1.25em");
+  var sel = "#"+$(this).data("name");
+  $(sel).removeClass("active_repo");
 });
-

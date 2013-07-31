@@ -4,7 +4,7 @@
       <h3 class="section-header">My Projects</h3>
       <ul class="thumbnails">
         <% @user.projects.each do |project| %>
-          <li class="span3"> 
+          <li class="span4"> 
             <div class="gallery-project">
               <%= link_to_hidden_description(project) %>
             </div>
@@ -22,7 +22,7 @@
             <li class="repo">
               <span>
                 <h4>
-                  <%= link_to repo.name.truncate(25), repo.html_url %>
+                  <%= link_to repo.name.truncate(25), repo.html_url, id: "#{repo.name}" %>
                   <i><%= link_to "", projects_path(:repo_id => repo.id), :method => :post, class: 'icon-plus-sign pull-right', :"data-name" => "#{repo.name}" %></i>
                 </h4>  
               </span>

@@ -17,13 +17,20 @@
   }
 }
 
-// .gallery-project {
-//   background-color: #dbeaf4;
-//   border: 2px solid white;
-//   height: 100px;
-//   display: table-cell; 
-//   vertical-align: middle;
-// }
+.gallery-project {
+  // background-color: #dbeaf4;
+  // border: 2px solid white;
+  height: 165px;
+  display: table-cell; 
+  vertical-align: middle;
+  img {
+    width: 270px;
+    height: auto;
+  }
+  li {
+    margin-bottom: 20px;
+  }
+}
  
 
 .user_repo {
@@ -54,4 +61,7 @@
   }
 }
 
+.active_repo {
+  color: #538187 !important;
+}
 

@@ -18,11 +18,12 @@
 //= require ../../../vendor/assets/theme/js/prettify
 //= require ../../../vendor/assets/theme/js/main
 //= require ../../../vendor/assets/chosen/chosen.jquery.min
+//= require ../../../vendor/assets/masonry/masonry.pkgd.min
 //= require feature_accordian
 //= require ../../../vendor/assets/html5sortable/jquery.sortable.min
 //= require_tree .
 
-
+/////////// Document Ready ////////////////////////////
 $(function(){
 
 
@@ -31,4 +32,19 @@ $(function(){
 	$('.sortable').sortable().bind('sortupdate', function() {
 	});
 
+
+  ////////////////// Masonry Functions /////////////////
+
+  $('.thumbnails').masonry( {
+    gutter: 20,
+    itemSelector: ".gallery-project"
+  });
+
+
+
+  ////////////////// Masonry Functions /////////////////
+
+
 });
+/////////// Document Ready ////////////////////////////
+
