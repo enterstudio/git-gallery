@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container user_show">
 
-  <div class="row-fluid span12 user_show">
+  <div class="row-fluid span12">
 
     <section class="span8 user_gallery">
 
@@ -21,10 +21,12 @@
 <% Repo.where(:user_id => @user.id).each do |repo| %>
 <li class="repo">
 <span>
-  <h4><%= link_to repo.name.truncate(25), repo.html_url%>
-  <i>
-   <%= link_to '', projects_path(:repo_id => repo.id), :method => :post, class: 'icon-plus-sign pull-right' %> 
-  </i>
+  <h4>
+    <%= link_to repo.name.truncate(25), repo.html_url%>
+    <i>
+    <%= link_to '', projects_path(:repo_id => repo.id), :method => :post, class: 'icon-plus-sign pull-right' %> 
+    </i>
+    
 </h4>  
 </span>
 </li>
