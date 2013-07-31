@@ -1,8 +1,8 @@
 <% if !logged_in? %>
   <a href="#" class="top-sign-in">Sign in with GitHub</a>
   <div class="login-box">
-    <a class="close login-box-close" href="#">X</a>
-    <h4 class="login-box-head">Login</h4>
+    <a class="close login-box-close" href="#">X</a><br>
+    <!-- <h4 class="login-box-head">Login</h4> -->
 
     <% if current_user %>
       Signed in as <%= current_user.name %>!
@@ -16,6 +16,6 @@
     <% end %>
 
   </div>
-<%else %>
+<% else %>
   <%= link_to "Logout", logout_path, class: 'top-sign-in'%>
 <% end %>
