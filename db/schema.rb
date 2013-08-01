@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130801000110) do
+ActiveRecord::Schema.define(:version => 20130801143134) do
 
   create_table "contributors", :force => true do |t|
     t.string   "name"
@@ -114,9 +114,8 @@ ActiveRecord::Schema.define(:version => 20130801000110) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "password_digest"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "avatar_url"
     t.string   "provider"
     t.string   "uid"

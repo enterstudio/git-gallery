@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # raise env
     user = User.from_omniauth(env["omniauth.auth"])
     RepoScraper.new(user)
     session[:user_id] = user.id
@@ -16,4 +17,3 @@ class SessionsController < ApplicationController
     redirect_to root_url, notice: "Signed out!"
   end
 end
-

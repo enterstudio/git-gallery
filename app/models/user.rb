@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :technologies, :features, :password
+  attr_accessible :email, :name, :technologies, :features
 
   has_many :repos
   
@@ -48,6 +48,7 @@ class User < ActiveRecord::Base
       user.uid = auth["uid"]
       user.name = auth["info"]["nickname"]
       user.email = auth["info"]["email"]
+      user.avatar_url = auth["info"]["image"]
       user.token = auth["credentials"]["token"]
   end
 end
