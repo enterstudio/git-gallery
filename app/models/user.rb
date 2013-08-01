@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :technologies, :features, :password
+  attr_accessible :email, :name, :technologies, :features
 
   has_many :repos
   
@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
   has_many :projects, :through => :user_projects
 
   has_many :technologies, :through => :features
-  
+
+  after_destroy :prune_repos, :disassociate_projects
+
   # has_secure_password
 
   # after_create :send_email, :ping_api
@@ -35,7 +37,7 @@ class User < ActiveRecord::Base
   end
 
   def self.search(query)
-    where("name like ?", "%#{query}%") 
+    where("name like ?", "%#{query}%")
   end
 
   def self.from_omniauth(auth)
@@ -48,9 +50,20 @@ class User < ActiveRecord::Base
       user.uid = auth["uid"]
       user.name = auth["info"]["nickname"]
       user.email = auth["info"]["email"]
+      user.avatar_url = auth["info"]["image"]
       user.token = auth["credentials"]["token"]
+    end
+  end
+
+  def prune_repos
+    self.repos.each do |repo|
+      !repo.project_id ? repo.destroy : repo.user_id = nil
+    end
+  end
+
+  def disassociate_projects
+    self.user_projects.each do |row|
+      row.destroy
+    end
   end
 end
-
-end
-

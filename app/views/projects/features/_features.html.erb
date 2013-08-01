@@ -7,7 +7,6 @@ $(document).ready(function() {
 });
 </script>
 
-
 <div class="span12 feature-section">
   <div id="features-slide">
     <% @project.features.each do |feat| %>
@@ -49,7 +48,7 @@ $(document).ready(function() {
               <h2>Feature Slides</h2>
               <ul>
                 <% feat.slides_in_order.each do |slide| %>
-                  <li><%= slide.name %>  =><em>  <%= slide.class %></em></li>
+                  <li><%= slide.name if slide %>  =><em>  <%= slide.class %></em></li>
                 <% end %>
               </ul>
               <p>
