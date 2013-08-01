@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130801143134) do
+ActiveRecord::Schema.define(:version => 20130801160645) do
 
   create_table "contributors", :force => true do |t|
     t.string   "name"
@@ -63,11 +63,12 @@ ActiveRecord::Schema.define(:version => 20130801143134) do
     t.integer  "github_id"
     t.datetime "published_at"
     t.string   "url"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "user_id"
     t.string   "html_url"
     t.integer  "project_id"
+    t.integer  "github_owner_id"
   end
 
   create_table "snippets", :force => true do |t|

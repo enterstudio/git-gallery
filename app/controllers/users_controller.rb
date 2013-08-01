@@ -83,7 +83,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    session[:user_id] = nil
+    reset_session
     @user = User.find(params[:id])
     @user.destroy
 
