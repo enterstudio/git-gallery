@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :projects, :through => :user_projects
 
   has_many :technologies, :through => :features
-  
+
   # has_secure_password
 
   # after_create :send_email, :ping_api
@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   end
 
   def self.search(query)
-    where("name like ?", "%#{query}%") 
+    where("name like ?", "%#{query}%")
   end
 
   def self.from_omniauth(auth)
@@ -50,8 +50,6 @@ class User < ActiveRecord::Base
       user.email = auth["info"]["email"]
       user.avatar_url = auth["info"]["image"]
       user.token = auth["credentials"]["token"]
+    end
   end
 end
-
-end
-

@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # raise env
     user = User.from_omniauth(env["omniauth.auth"])
     RepoScraper.new(user)
     session[:user_id] = user.id
