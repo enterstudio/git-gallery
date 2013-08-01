@@ -1,25 +1,41 @@
-<div class="span12 feature-section">
-  <div class="creator">
-    <h3 id="features-title" class="section-header">Features</h3>
-    <%= link_to 'New', new_project_feature_path(@project) %>
-  </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
 
+<script>
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+</script>
+
+
+<div class="span12 feature-section">
   <div id="features-slide">
     <% @project.features.each do |feat| %>
       <div class="feature">
         <h2 class="feature-card-title" data-name="<%= feat.title.downcase.gsub(" ", "_") %>">
-          <%= feat.title %>
+          <%= user_dependent_view_for_feature(feat, "title") %>
         </h2>
       </div>
     <% end %>
+      <div class="feature new">
+      <div class="creator">
+        <% if @features.empty? && current_user %>
+          <h2 class="feature-card-title">Add A Feature To Your Project!</h2>
+        <% elsif current_user%>
+          <h3 id="features-title" class="section-header">Features</h3>
+        <% end %>
+          <%= link_to 'New', new_project_feature_path(@project) if current_user%>
+      </div>
+    </div>
   </div>
+</div>
 
   <div class="container-fluid ">
     <div class="row-fluid">
       <% @project.features.each do |feat| %>
         <div id="<%= feat.title.downcase.gsub(" ", "_") %>" class="span12 item1 carousel_container carousel-main">
           <div class="span8 carousel-slides">
-            <%= render :partial => "carousel_slides", :locals => {:feature => feat} %>
+            <%= render :partial => "projects/carousel/carousel_slides", :locals => {:feature => feat} %>
           </div>
           <div class="span4 carousel-sidebar">
             <div class="top-sidebar">
