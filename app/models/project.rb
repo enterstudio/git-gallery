@@ -69,5 +69,9 @@ class Project < ActiveRecord::Base
   def editable_by?(user)
     self.users.include?(user)
   end
+
+  def default_description
+    self.description || "This is a sample description."
+  end
 end
 

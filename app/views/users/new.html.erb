@@ -5,7 +5,7 @@
   <fieldset>
       <%=form_for(@user) do |f|%> 
 
-		<%= render partial: 'new_user_form', :locals => {:f => f, :user => @feature}  %>
+		<%= render partial: 'users/forms/new_user_form', :locals => {:f => f, :user => @feature}  %>
 
     <%end %>
   </fieldset>

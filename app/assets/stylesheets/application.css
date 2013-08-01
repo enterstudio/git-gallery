@@ -11,6 +11,7 @@
  *= require_self
  *= require ../../../vendor/assets/chosen/chosen.min
  *= require ../../../vendor/assets/theme/css/theme_venera_blue
+ *= require /projects
  *= require_tree .
 
  *= require custom
