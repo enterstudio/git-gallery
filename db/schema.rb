@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130801160645) do
+ActiveRecord::Schema.define(:version => 20130801214300) do
 
   create_table "contributors", :force => true do |t|
     t.string   "name"
@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(:version => 20130801160645) do
     t.datetime "updated_at", :null => false
     t.string   "avatar_url"
     t.string   "provider"
-    t.string   "uid"
+    t.string   "github_id"
     t.string   "token"
   end
 
