@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130731030612) do
+ActiveRecord::Schema.define(:version => 20130801000110) do
 
   create_table "contributors", :force => true do |t|
     t.string   "name"
@@ -31,10 +31,9 @@ ActiveRecord::Schema.define(:version => 20130731030612) do
   create_table "features", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "user_id"
-    t.integer  "project_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "user_project_id"
   end
 
   create_table "project_contributors", :force => true do |t|
@@ -104,6 +103,13 @@ ActiveRecord::Schema.define(:version => 20130731030612) do
   end
 
   add_index "uploads", ["uploadable_id", "uploadable_type"], :name => "index_uploads_on_uploadable_id_and_uploadable_type"
+
+  create_table "user_projects", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

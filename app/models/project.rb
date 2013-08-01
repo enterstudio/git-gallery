@@ -8,8 +8,8 @@ class Project < ActiveRecord::Base
   has_many :project_technologies, :dependent => :destroy
   has_many :technologies, :through => :project_technologies
 
-  has_many :features
-  has_many :users, :through => :features
+  has_many :user_projects
+  has_many :users, :through => :user_projects
 
   has_many :uploads, :as => :uploadable, :dependent => :destroy
 
@@ -35,6 +35,14 @@ class Project < ActiveRecord::Base
   def self.find_by_repo(repo)
     previous_repo = Repo.joins(:project).where(:github_id => repo.github_id).first
     previous_project = previous_repo.project if previous_repo
+  end
+
+  def features
+    features = []
+    self.user_projects.each do |user_project|
+      features << user_project.features
+    end
+    features.flatten
   end
 
   def get_technologies

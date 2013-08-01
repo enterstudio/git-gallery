@@ -28,7 +28,7 @@ class FeaturesController < ApplicationController
   def new
     @project = Project.find(params[:project_id])
     @technologies = Technology.all
-    @feature = @project.features.build
+    @feature = Feature.new
 
     # can_current_user?(:create, @feature)
   end
@@ -45,8 +45,10 @@ class FeaturesController < ApplicationController
   # POST /users/1/features.json
   def create
     @project = Project.find(params[:project_id])
-    @feature = @project.features.build(params[:feature])
-    @feature.user_id = current_user.id
+    @feature = Feature.new(params[:feature])
+    # @feature = @project.features.build(params[:feature])
+    @user_project = UserProject.create(:project_id => params[:project_id], :user_id => current_user.id)
+    @feature.user_project_id = @user_project.id
 
     respond_to do |format|
       if @feature.save

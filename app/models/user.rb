@@ -2,10 +2,12 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :technologies, :features, :password
 
   has_many :repos
-  has_many :features, :dependent => :destroy
-  has_many :technologies, :through => :features
-  has_many :projects, :through => :features
+  
+  has_many :user_projects
+  has_many :projects, :through => :user_projects
 
+  has_many :technologies, :through => :features
+  
   # has_secure_password
 
   # after_create :send_email, :ping_api
@@ -22,6 +24,14 @@ class User < ActiveRecord::Base
 
   def editable_by?(user)
     self == user
+  end
+
+  def features
+    features = []
+    self.user_projects.each do |user_project|
+      features << user_project.features
+    end
+    features.flatten
   end
 
   def self.search(query)

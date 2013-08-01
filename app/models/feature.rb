@@ -1,8 +1,7 @@
 class Feature < ActiveRecord::Base
-  attr_accessible :description, :title, :user_id, :technologies_to_add, :project_id, :technology_ids
+  attr_accessible :description, :title, :technologies_to_add, :technology_ids, :user_project_id
 
-  belongs_to :user
-  belongs_to :project
+  belongs_to :user_project
 
   has_many :snippets
 
@@ -16,6 +15,14 @@ class Feature < ActiveRecord::Base
       # if Technology.where()
     self.technologies.build(:name => technology)
     end
+  end
+
+  def project
+    self.user_project.project
+  end
+
+  def user
+    self.user_project.user
   end
 
   def slides_in_order
@@ -46,10 +53,6 @@ class Feature < ActiveRecord::Base
   def destroyable_by?(user)
     self.user == user
   end
-
-  # def createable_by?(user)
-  #   self.user == user
-  # end
 
   def createable_by?(user)
     self.project.users.include?(user)
