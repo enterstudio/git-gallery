@@ -3,7 +3,7 @@
   <!-- Carousel items -->
   <div class="carousel-inner">
     <% if !feature.slides_in_order.empty? %>
-      <%= render :collection => feature.slides_in_order, :partial => 'slide', :as => :slide_type %>
+      <%= render :collection => feature.slides_in_order, :partial => 'projects/features/slide', :as => :slide_type %>
     <% else %>
       <h2><%= feature.title %> has no slides.</h2>
     <% end %>
