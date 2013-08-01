@@ -1,4 +1,22 @@
+.gallery-project {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .gg-project-thumb img{
   height: 200px;
   width: 200px;
+}
+
+.gallery-project-title-card {
+  opacity: .4;
+  background-color: black;
+}
+
+.gallery-project-title {
+  h4 {
+    color: #dbeaf4;
+    padding: 4px; 
+    margin-bottom: 5px;
+  }
 }
