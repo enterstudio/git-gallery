@@ -5,8 +5,17 @@
  width: auto;
 }
 
-.user_gallery {
+.user_gallery_explain {
+  padding: 20px;
+  
+  p {
+    margin-right: 150px;
+    font-size: 1.5em;
+    line-height: 1.3em;
+  }
+}
 
+.user_gallery {
   h3 {
     text-align: center;
   } 
@@ -65,3 +74,7 @@
   color: #538187 !important;
 }
 
+.right-push {
+  margin-top: 50px;
+  margin-left: 250px;
+}
