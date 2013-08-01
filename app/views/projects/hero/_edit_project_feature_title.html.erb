@@ -1,13 +1,5 @@
-<p>
-  <div class="activator-<%= feat.id %>-title">
-  <%= best_in_place feat, :title, :type => :input, :activator => ".activator-#{feat.id}-title" %>
-</p>
-
-<h1 id="project-title">
-<div>
   <div class="hero-inline">
-      <%= best_in_place @project, :name, :type => :input, :activator => ".activator-#{@project.id}-name" %>
+    <%= best_in_place feat, :title, :type => :input, :activator => ".activator-#{feat.id}-title" %>
   </div>
-  <div class="activator-<%= @project.id %>-name"><i class="hero icon-pencil"></i></div>
+  <div class="activator-<%= feat.id %>-title"><i class="hero icon-pencil"></i></div>
 </div>
-</h1>
