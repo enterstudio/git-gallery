@@ -20,7 +20,7 @@ class SnippetsController < ApplicationController
       if params[:next_state] == "true"
         redirect_to new_feature_slide_path(@feature), notice: 'Last slide was successfully created.'
       else
-        redirect_to @feature, notice: "Snippet was successfully created."
+        redirect_to @feature.project, notice: "Slides were successfully created."
       end
     else
       render :new
