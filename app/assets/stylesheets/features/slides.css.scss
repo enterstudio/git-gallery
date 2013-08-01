@@ -73,15 +73,31 @@ padding: 0;
   width: 30%;
   *width: 30%;
 }
+.slide-snippet-header {
+  font-weight: 400;
+  text-align: center;
+  color: white;
+}
 
-// .snippet-description, .active {
+.snippet-description {
+  color: white;
+  margin-left: 20px;
+  p {
+    line-height: 1.3em;
+    font-size: 1.3em;
+    margin-top: 10px;
+    margin-right: 200px;
+  }
+  strong {
+    display: inline;
+    font-size: 1.3em;
+    font-weight: 400;
+  }
+}
 
-//     color: #ffffff;
-//   line-height: 1.5em;
-//   font-size: 1.5em;
-//   padding: 1em 0; 
-
-// }
+.slide-code-snippet {
+  padding: 0, 20px, 0, 20px;
+}
 
 .slider-w .item {
   padding-top: 20px;
@@ -89,7 +105,7 @@ padding: 0;
 }
 
 .misc-side {
-  background-color: black;
+  background-color: 1F1D11;
   background-image: url("binding_dark.png");
   height: 250px;
   padding: 0;
@@ -117,3 +133,6 @@ padding: 0;
 // .active {
 //   background-color: blue;
 // }
+.slide-code-snippet {
+  
+}

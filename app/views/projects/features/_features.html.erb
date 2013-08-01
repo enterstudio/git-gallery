@@ -7,8 +7,10 @@ $(document).ready(function() {
 });
 </script>
 
-
+<!-- ########################## THIS IS FOR THE FEATURES SLIDER ######################## -->
 <div class="span12 feature-section">
+  <div class="slider-container">
+    
   <div id="features-slide">
     <% @project.features.each do |feat| %>
       <div class="feature">
@@ -18,18 +20,24 @@ $(document).ready(function() {
       </div>
     <% end %>
       <div class="feature new">
-      <div class="creator">
+
+        <div class="creator">
         <% if @features.empty? && current_user %>
           <h2 class="feature-card-title">Add A Feature To Your Project!</h2>
         <% elsif current_user%>
           <h3 id="features-title" class="section-header">Features</h3>
         <% end %>
           <%= link_to 'New', new_project_feature_path(@project) if current_user%>
+        </div>
+
       </div>
-    </div>
+</div>
   </div>
 </div>
+<!-- ########################## THIS IS FOR THE FEATURES SLIDER ######################## -->
 
+
+<!-- ########################## THIS IS FOR THE FEATURES CAROUSEL ###################### -->
   <div class="container-fluid ">
     <div class="row-fluid">
       <% @project.features.each do |feat| %>
@@ -62,5 +70,7 @@ $(document).ready(function() {
         </div>
       <% end %>
     </div>
+<!-- ########################## THIS IS FOR THE FEATURES CAROUSEL ###################### -->
+
   </div>
 </div>

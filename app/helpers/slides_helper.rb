@@ -14,6 +14,6 @@ module SlidesHelper
   end
 
   def slide_partial_name(slide_type)
-    "slide_#{slide_type.class.to_s.downcase}"
+    "projects/features/slide_#{slide_type.class.to_s.downcase}"
   end
 end
