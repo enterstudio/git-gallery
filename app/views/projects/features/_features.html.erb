@@ -45,7 +45,7 @@ $(document).ready(function() {
             </div>
             <div class="bottom-sidebar">
               <h2>Feature Description</h2>
-              <p><%= feat.description %></p>
+              <p><%= user_dependent_view_for_feature(feat, "description") %></p>
               <h2>Feature Slides</h2>
               <ul>
                 <% feat.slides_in_order.each do |slide| %>
