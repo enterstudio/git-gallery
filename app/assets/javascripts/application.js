@@ -33,17 +33,12 @@ $(function(){
 
 	$('.sortable').sortable().bind('sortupdate', function() {
 	});
-
-
+  
   ////////////////// Masonry Functions /////////////////
-
   $('.thumbnails').masonry( {
     gutter: 20,
     itemSelector: ".gallery-project"
   });
-
-
-
   ////////////////// Masonry Functions /////////////////
 
 
