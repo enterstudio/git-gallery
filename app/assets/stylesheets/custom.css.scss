@@ -46,7 +46,7 @@ body {
   // margin-top: 0px;
   // margin-bottom: 10px;
   // padding-bottom: 10px;
-  text-align: center;
+  // text-align: center;
   vertical-align: middle;
   text-overflow: ellipsis;
   white-space: normal;
@@ -63,7 +63,9 @@ input#search {
 }
 
 .creator {
-  // display: none;
+  h3{
+    margin-top: 17px;
+  }
 }
 
 .navbar-inner {
