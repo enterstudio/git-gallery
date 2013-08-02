@@ -23,7 +23,7 @@ $(function(){
 
 				url: "/features/1/update_slide_order.html",
 				type: "post",
-				data: {blake: 7},
+				data: {"content" : slides},
 				dataType: "json",
 				// beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
 				success: function(data) {
