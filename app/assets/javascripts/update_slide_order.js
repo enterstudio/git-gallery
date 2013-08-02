@@ -15,7 +15,7 @@ $(function(){
 				slides.push({class: class_type, id: id});
 			});
 
-			slides = JSON.stringify(slides);  //makes json
+			// slides = JSON.stringify(slides);  //makes json
 
 			console.log(slides);
 
@@ -23,7 +23,7 @@ $(function(){
 
 				url: "/features/1/update_slide_order.html",
 				type: "post",
-				data: slides,
+				data: {blake: 7},
 				dataType: "json",
 				// beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
 				success: function(data) {
