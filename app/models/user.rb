@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
+    where(auth.slice("provider", "github_id")).first || create_from_omniauth(auth)
   end
 
   def self.create_from_omniauth(auth)
@@ -61,9 +61,20 @@ class User < ActiveRecord::Base
     end
   end
 
+  def associate_with_existing_projects ## Maybe use an error catch for each on NilClass so we can iterate over the original database response
+    old_projects = UserProject.where(:contributor_github_id => self.github_id)
+    if !old_projects.empty?
+      old_projects.each do |old_project|
+        old_project.user_id = self.id
+        old_project.save
+      end
+    end
+  end
+
+
   def disassociate_projects
-    self.user_projects.each do |row|
-      row.destroy
+    self.user_projects.each do |user_project|
+      user_project.user_id = nil
     end
   end
 end

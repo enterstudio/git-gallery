@@ -12,12 +12,9 @@ class RepoScraper
     repos = JSON.parse(open("https://api.github.com/users/#{@user.name}/repos?access_token=#{@user.token}").read)
 
     repos.each do |repo|
-      repo_check = Repo.where(:github_id => repo["id"]).first
+      repo_check = Repo.where(:github_id => repo["id"])
       
-      if repo_check
-        repo_check.user_id = @user.id
-        UserProject.create(:user_id => @user.id, :project_id => repo_check.project_id)
-      else
+      if repo_check.empty?
         new_repo = Repo.new
         new_repo.github_id = repo["id"]
         new_repo.name = repo["name"]

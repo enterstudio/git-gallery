@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   # POST /projects.json
-  def create
+  def create  ### This logic needs to be abstracted
     @repo = Repo.find(params[:repo_id])
     previous_project = Project.find_by_repo(@repo)
       if previous_project
@@ -54,9 +54,6 @@ class ProjectsController < ApplicationController
         if @project.save
           @repo.project_id = @project.id
           @repo.save
-
-          UserProject.create_with_project(@project, current_user)
-
           @project.get_technologies
           @project.get_contributors
           format.html { redirect_to project_path(@project), notice: 'Project was successfully created.' }
