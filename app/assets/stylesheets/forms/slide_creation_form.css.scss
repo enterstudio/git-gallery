@@ -1,0 +1,46 @@
+// These are the styles for the slide creation process.
+// example url http://localhost:3000/features/40/slides/new
+
+// Styles can be found on the following partials or pages
+// _new_slide_prompt.html.erb
+// (slides) new.html.erb
+
+
+.slide-creation-1 {
+  width: 800px;
+  a {
+    color: #cb3120;
+  }
+}
+
+.gg-multiple-buttons {
+  display: inline-block;
+  float: right;
+
+  .btn-primary-white, .btn-primary-green {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    padding-right: 10px;
+    border: 3px solid #cb3120;
+    height: 50px;
+  }
+
+  .btn-primary-green {
+    background-color: #cb3120;
+  }
+    
+}
+
+.gg-feature-form {
+  display: block;
+  clear: both;
+  padding: 100px;
+    h3 {
+    color: #0E1A1C;
+  }
+}
+
+.buttons-with-margins {
+  margin: 10px;
+}

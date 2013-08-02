@@ -1,7 +1,9 @@
-<div class="gg-feature-form">
-	<h1 class="gg-lone-header"><%= slide_prompt(@feature) %></h1>
-  <div class="container span12">
-  <div class="buttons-with-margins">
+<div class="slide-creation-1">
+
+	<%= slide_prompt(@feature) %>
+
+  <div class="container span8">
+    <div class="buttons-with-margins">
       <!-- ACCOUNT TAB -->
       <div class="gg-multiple-buttons">
         <%= link_to raw("<h3>Upload an Image</h3>"), new_feature_upload_path(@feature), :class => "btn btn-primary btn-primary-green"%>
