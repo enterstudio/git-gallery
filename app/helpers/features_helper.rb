@@ -7,7 +7,17 @@ module FeaturesHelper
   	end
   end
 
+
   def tech_select_options(technologies)
     render partial: 'features/edit_form_partials/tech_select_options', :locals => {:technologies => technologies}
   end
+
+  def user_dependent_view_for_feature(feature, attribute)
+    if feature.editable_by?(current_user)
+      render partial: "projects/hero/edit_project_feature_#{attribute}", :locals => {:feat => feature}
+    else
+      feature.send(attribute)
+    end
+  end
+  
 end
