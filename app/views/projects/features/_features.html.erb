@@ -48,7 +48,7 @@ $(document).ready(function() {
           <div class="span4 carousel-sidebar">
             <div class="top-sidebar">
               <h2><%= feat.user.name if feat.user %> </h2>
-              <%= link_to (image_tag avatar_url(feat.user)), user_path(feat.user) if feat.user %>
+              <%= link_to (image_tag avatar_url(feat.user), class: "img-circle"), user_path(feat.user) if feat.user %>
               <p><em>Member since: <%= feat.user.created_at.strftime("%b %d %Y") if feat.user %></em></p>
             </div>
             <div class="bottom-sidebar">

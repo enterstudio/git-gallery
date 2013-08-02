@@ -17,7 +17,7 @@
 
 .container-fluid {
   background-color: #0E1A1C;
-  border-right: 10px solid #cb3120;
+  // border-right: 10px solid #cb3120;
 
   height: 550px;
   padding: 0;
@@ -36,9 +36,14 @@ border-right: 10px solid #cb3120;  h2, h5, p, em, li {
     }
 }
 
+.carousel-control {
+  color: #cb3120;
+}
+
 .bottom-sidebar {
   height: 328px;
-  padding: 20px 20px 0 20px;
+  padding: 15px 20px 0 20px;
+  border-bottom: 3px solid #cb3120;
   overflow-y: scroll;
 }
 
@@ -53,6 +58,7 @@ border-right: 10px solid #cb3120;  h2, h5, p, em, li {
   }
   img {
     margin: 10px;
+    border: 3px solid #cb3120;
   }
 }
 ///////////////////// SLIDES ////////////////////////
