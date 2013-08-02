@@ -1,13 +1,20 @@
-<div >
-      <div >
-        <%= f.label :title%>
-      </div>
-        <div><%= f.text_field :title %></div>
-    </div>
 
-    <div >
-      <div >
-        <%= f.label :description%>
-      </div>
-        <div ><%= f.text_field :description %></div>
-    </div>
+<h1 id="project-title">
+<div>
+  <div class="hero-inline">
+      <%= best_in_place @feature, :title, :type => :input, :activator => ".activator-#{@feature.id}-name" %>
+  </div>
+  <div class="activator-<%= @feature.id %>-name"><i class="hero icon-pencil"></i></div>
+</div>
+</h1>
+
+
+
+<h3 id="project-description">
+<div>
+  <div class="hero-inline">
+      <%= best_in_place @feature, :description, :type => :input, :activator => ".activator-#{@feature.id}-description" %>
+  </div>
+  <div class="activator-<%= @feature.id %>-description"><i class="hero icon-pencil"></i></div>
+</div>
+</h3>

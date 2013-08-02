@@ -1,5 +1,5 @@
 class FeaturesController < ApplicationController
-  skip_before_filter :login_required, :only => [:index, :show, :edit]
+  skip_before_filter :login_required, :only => [:index, :show, :edit, :update_slide_order]
   
   # GET /users/1/features
   # GET /users/1/features.json
@@ -37,8 +37,13 @@ class FeaturesController < ApplicationController
   def edit
     @feature = Feature.find(params[:id])
     @technologies = Technology.all
-    
     # can_current_user?(:edit, @feature)
+  end
+
+  def update_slide_order
+
+    debugger
+    puts "hello"
   end
 
   # POST /users/1/features
@@ -71,7 +76,7 @@ class FeaturesController < ApplicationController
         snippet_or_upload.save
       end
     
-      params[:feature][:technology_ids] ||= []
+  
     end
     @feature = Feature.find(params[:id])
 
