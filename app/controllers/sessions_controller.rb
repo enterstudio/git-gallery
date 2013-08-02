@@ -9,7 +9,11 @@ class SessionsController < ApplicationController
     user.associate_with_existing_projects
     RepoScraper.new(user)
     session[:user_id] = user.id
-    redirect_to user, notice: "Signed in!"
+    if user.created_at > (Time.now - 10.seconds)
+      redirect_to edit_user_path(user), notice: "You have successfully been signed up! Please confirm your information before continuing."
+    else
+      redirect_to user, notice: "Signed in!"
+    end
   end
 
   def destroy
