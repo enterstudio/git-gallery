@@ -8,9 +8,10 @@
       $('.login-box').fadeIn("fast");
       // return false;
     });
-    $('.login-box-close').on("click", function(e) {
-      $(this).closest(".login-box").fadeOut("fast");
-      // return false;
+    $("#wrapper").click(function(e) {
+      if (e.target != $(".login-box")) {
+        $(".login-box").fadeOut("fast");
+      }
     });
     prettyPrint();
     $(".slider-browser-center").animate({

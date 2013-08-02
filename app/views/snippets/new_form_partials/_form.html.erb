@@ -24,13 +24,17 @@
     </div>
   </fieldset>
 
-  <div class="button-options">
-  <div class="next-slide">
-    <%= f.submit "Next Slide", :class => "btn btn-primary gg-left-button" %>
-    <input name="next_state" type="hidden" value="false" />
+  <div class="gg-button-container">
+    <div class="buttons-with-margins">
+      <div class="gg-multiple-buttons">
+        <%= f.submit "I'm Done With This Feature", :class => "btn btn-primary btn-primary-green" %>
+      </div>
+      <div class="next-slide gg-multiple-buttons">
+        <%= f.submit "Next Slide", :class => "btn btn-primary btn-primary-white" %>
+        <input name="next_state" type="hidden" value="false" />
+      </div>
+    </div>
   </div>
-  <div>
-    <%= f.submit "I'm Done With This Feature", :class => "btn btn-primary gg-right-button" %>
-  </div>
-</div>
 <% end %>
+</div>
+

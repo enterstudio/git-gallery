@@ -13,6 +13,7 @@ class SnippetsController < ApplicationController
   end
 
   def create
+    raise params
     @feature = Feature.find(params[:feature_id])
     snippet = @feature.snippets.build(params[:snippet])
     snippet.position = @feature.snippets.size + @feature.uploads.size

@@ -106,9 +106,44 @@ input#search {
   width: 250px;
 }
 
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn.disabled,
+.btn[disabled] {
+  color: #538187;
+  background-color: white;
+}
+
+.btn-primary-green:hover,
+.btn-primary-green:focus,
+.btn-primary-green:active,
+.btn-primary-green.active,
+.btn-primary-green.disabled,
+.btn-primary-green[disabled] {
+  color: black;
+  background-color: #538187;
+  *background-color: #26869c;
+}
+
+.gg-button-container {
+  width: 1000px;
+}
+
+.gg-multiple-buttons {
+  display: inline-block;
+  float: right;
+}
+
+.buttons-with-margins {
+  margin: 30px;
+}
+
 #content-wrapper {
   margin-left:auto;
   margin-right:auto;
   width: 97%;
   background-color: #f2ffee;
 }
+

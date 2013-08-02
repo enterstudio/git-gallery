@@ -2,10 +2,10 @@
 }
 
 #contribs-slide {
-  width: 100%;
-  overflow-x: auto;
-  overflow-wrap: scroll;
-  white-space: nowrap;
+ width: 100%;
+ overflow-x: auto;
+ overflow-wrap: scroll;
+ white-space: nowrap;
 }
 
 .contrib {
@@ -27,13 +27,14 @@
   img {
     border: 3px solid #cb3120;
   }
+
 }
 
 .contribs-title h6 {
-  padding-left: 5%;
+ padding-left: 5%;
 }
 
 .contrib-contain {
-  width: 100%;
-  margin: 0%;
+ width: 100%;
+ margin: 0%;
 }
