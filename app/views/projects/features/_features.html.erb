@@ -23,7 +23,7 @@ $(document).ready(function() {
 
         <div class="creator">
         <% if @features.empty? && current_user %>
-          <h2 class="feature-card-title">Add A Feature To Your Project!</h2>
+          <h3 class="feature-card-title">Add A Feature To Your Project!</h3>
         <% elsif current_user%>
           <h3 id="features-title" class="section-header">Features</h3>
         <% end %>
