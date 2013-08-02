@@ -3,8 +3,6 @@ class Project < ActiveRecord::Base
 
   has_one :repo
 
-  has_many :contributors
-
   has_many :project_technologies, :dependent => :destroy
   has_many :technologies, :through => :project_technologies
 
@@ -55,11 +53,12 @@ class Project < ActiveRecord::Base
   end
 
   def get_contributors
-    self.creator
     contributors = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}/contributors?access_token=#{creator.token}").read)
     contributors.each do |contributor|
-      saved_contributor = Contributor.where(:github_id => contributor["id"]).first || Contributor.create(:github_id => contributor["id"], :name => contributor["login"])
-      project_contributor = ProjectContributor.create(:project_id => self.id, :contributor_id => saved_contributor.id)
+      userproject = UserProject.find_or_create_by(:project_id => self.id, :contributor_github_id => contributor["id"])
+      user = User.where(:github_id => userproject.contributor_github_id).first
+      userproject.user_id = user.id if user
+      userproject.save
     end  
   end
 

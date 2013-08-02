@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.from_omniauth(env["omniauth.auth"])
+    user.associate_with_existing_projects
     RepoScraper.new(user)
     session[:user_id] = user.id
     redirect_to user, notice: "Signed in!"
