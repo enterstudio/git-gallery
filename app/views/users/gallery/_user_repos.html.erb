@@ -1,0 +1,20 @@
+<aside class="span4 user_repo">
+  <div>
+    <h3>Make a Project</h3>
+    <h5>Available Repos</h5>
+    <ul>
+      <% Repo.where(:user_id => page_user.id).each do |repo| %>
+        <% if !is_project?(repo) %>
+          <li class="repo">
+            <span>
+              <h4>
+                <%= link_to repo.name.truncate(25), repo.html_url, id: "#{repo.name}" %>
+                <i><%= link_to "", projects_path(:repo_id => repo.id), :method => :post, class: 'icon-plus-sign pull-right', :"data-name" => "#{repo.name}" %></i>
+              </h4>  
+            </span>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</aside>

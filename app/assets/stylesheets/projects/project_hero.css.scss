@@ -10,11 +10,13 @@
 
 .hero-unit {
   background-color: #538187;
-  // background-image: url("binding_dark.png");
+  border-right: 3px solid #cb3120;
+  border-bottom: 10px solid #cb3120;
+  margin-bottom: 40px;
+  box-shadow: none;
   height: 20%;
   border-radius: 0;
   padding: 0;
-  margin-bottom: 0;
 }
 
 .tech li a{
@@ -53,4 +55,16 @@
 .proj-descript p{
   margin-top: 1.5%;
   margin-left: 5%;
+}
+
+.hero.icon-pencil {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.hero-inline {
+
+  float: left;
+  margin-left: 20px;
+  margin-right: 10px;
 }

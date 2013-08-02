@@ -10,13 +10,16 @@
 
 .carousel-main {
   height: 550px;
-  background-color: black;
-  background-image: url("binding_dark.png");
+  background-color: #0E1A1C;
   padding: 0;
   margin: 0;
 }
 
 .container-fluid {
+  background-color: #0E1A1C;
+  border-right: 10px solid #cb3120;
+
+  height: 550px;
   padding: 0;
 }
 
@@ -25,8 +28,7 @@
 }
 ///////////////////// SIDEBAR ///////////////////////
 .carousel-sidebar {
-  border-left: 1px solid #538187;
-  h2, h5, p, em, li {
+border-right: 10px solid #cb3120;  h2, h5, p, em, li {
     color: white;
   }
   li {
@@ -46,9 +48,8 @@
   height: 200px;
   width: 100%;
   display:inline-block;
-  border-bottom: 1px solid #538187;
-  a{
-    color: white;
+  border-bottom: 3px solid #cb3120;  a{
+  color: white;
   }
   img {
     margin: 10px;
