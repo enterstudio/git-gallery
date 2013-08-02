@@ -1,0 +1,31 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <div>
+      <div><%= f.label :name %></div>
+      <div><%= f.text_field :name %></div>
+    </div>
+
+    <div>
+      <div><%= f.label :email %></div>
+      <div ><%= f.text_field :email %></div>
+    </div>
+
+    <div>
+      <div><%= f.submit %></div> 
+    </div>
+
+    <div id="destroy-link"><%= link_to 'Delete User', @user, method: :delete, data: { confirm: "Are you sure you want to delete #{@user.name}?" } if current_user == @user %></div>
+  </fieldset>
+<% end %>
