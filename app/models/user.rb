@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :technologies, :features
+  attr_accessible :email, :name, :github_id
 
   has_many :repos
   
@@ -41,13 +41,13 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
+    where(auth.slice("provider", "github_id")).first || create_from_omniauth(auth)
   end
 
   def self.create_from_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
-      user.uid = auth["uid"]
+      user.github_id = auth["uid"]
       user.name = auth["info"]["nickname"]
       user.email = auth["info"]["email"]
       user.avatar_url = auth["info"]["image"]

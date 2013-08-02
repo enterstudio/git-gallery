@@ -9,4 +9,14 @@ class Repo < ActiveRecord::Base
   def parse_repo_trunk
   	JSON.parse(open("#{self.url}/contents?access_token=#{self.user.token}").read)
   end
+
+  def get_collaborators
+    collaborators_login = []
+
+    repo_info = JSON.parse(open("https://api.github.com/repos/#{self.user.name}/#{self.name}/collaborators").read)
+    repo_info.each do |collab_info|
+      collaborators_login << collab_info["login"]
+    end
+    collaborators_login
+  end
 end
