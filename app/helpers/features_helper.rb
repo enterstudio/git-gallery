@@ -6,4 +6,8 @@ module FeaturesHelper
   		image_tag slide.image_url.to_s, width: '100' if slide.image?
   	end
   end
+
+  def tech_select_options(technologies)
+    render partial: 'features/edit_form_partials/tech_select_options', :locals => {:technologies => technologies}
+  end
 end

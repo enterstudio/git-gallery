@@ -1,9 +1,4 @@
 <div class="controls">
-<%= label_tag 'feature[technologies_to_add][]', 'Technologies', class: "control-label" %>
-<select data-placeholder="Choose Technologies..." class="chosen-select" multiple style="width:350px;" tabindex="4">
-  <option value=""></option>
-  <% for technology in @technologies %>
-  <option value="United States"><%= technology.name %></option>
-  <% end %>
-</select>
+<%= select_tag name="feature[technologies_to_add][]", tech_select_options(@technologies), :multiple => true, :class => "chosen-select"  %>
 </div>
+

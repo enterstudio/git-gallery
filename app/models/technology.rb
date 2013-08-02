@@ -6,5 +6,9 @@ class Technology < ActiveRecord::Base
 
   has_many :feature_technologies
   has_many :features, :through => :feature_technologies
-  has_many :users, :through => :features  
+  has_many :users, :through => :features 
+
+  def self.find_or_create_by(hash)
+    self.where(hash).first || self.create(hash)
+  end 
 end

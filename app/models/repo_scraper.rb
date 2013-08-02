@@ -14,7 +14,10 @@ class RepoScraper
     repos.each do |repo|
       repo_check = Repo.where(:github_id => repo["id"]).first
       
-      if !repo_check
+      if repo_check
+        repo_check.user_id = @user.id
+        UserProject.create(:user_id => @user.id, :project_id => repo_check.project_id)
+      else
         new_repo = Repo.new
         new_repo.github_id = repo["id"]
         new_repo.name = repo["name"]
@@ -25,9 +28,6 @@ class RepoScraper
         new_repo.github_owner_id = repo["owner"]["id"]
 
         puts "saved successfully" if new_repo.save
-      else
-        repo_check.user_id = @user.id
-        UserProject.create(:user_id => @user.id, :project_id => repo_check.project_id)
       end
     end     
   end

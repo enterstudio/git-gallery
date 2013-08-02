@@ -64,12 +64,14 @@ class FeaturesController < ApplicationController
   # PUT /users/1/features/1
   # PUT /users/1/features/1.json
   def update
-    params[:slides].each_with_index do |slide, index|
-      snippet_or_upload = slide[:class].constantize.find(slide[:id])
-      snippet_or_upload.position = index + 1
-      snippet_or_upload.save
+    if params[:slides]
+      params[:slides].each_with_index do |slide, index|
+        snippet_or_upload = slide[:class].constantize.find(slide[:id])
+        snippet_or_upload.position = index + 1
+        snippet_or_upload.save
+      end
+      params[:feature][:technology_ids] ||= [] ### What is this?? Where/why are we passing technology_ids instead of technologies_to_add?
     end
-    params[:feature][:technology_ids] ||= []
     @feature = Feature.find(params[:id])
 
     respond_to do |format|
