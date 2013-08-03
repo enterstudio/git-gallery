@@ -10,9 +10,7 @@ class User < ActiveRecord::Base
 
   after_destroy :prune_repos, :disassociate_projects
 
-  # has_secure_password
-
-  # after_create :send_email, :ping_api
+  validates :email, :uniqueness => true, :email_format => true
 
   def tech_features(chosen_tech)
     Feature.joins(:technologies).where(:user_id => self.id, :technologies => {:name => chosen_tech.name})

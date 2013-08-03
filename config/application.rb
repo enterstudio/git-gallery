@@ -1,6 +1,9 @@
+require_relative '../lib/email_format_validator.rb'
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
