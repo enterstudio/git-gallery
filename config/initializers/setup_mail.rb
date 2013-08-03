@@ -1,5 +1,5 @@
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = {
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
   :domain               => "gmail.com",
@@ -9,5 +9,5 @@ config.action_mailer.smtp_settings = {
   :enable_starttls_auto => true
 }
 
-# ActionMailer::Base.default_url_options[:host] = "localhost:3000"
+# ActionMailer::Base.default_url_options[:host] = "localhost:3000"  #Moved to config/application.rb
 # Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
