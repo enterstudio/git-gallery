@@ -1,3 +1,5 @@
+require 'development_mail_interceptor' #SHOULD THIS MOVE ANYWHERE ELSE?
+
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :address              => "smtp.gmail.com",
@@ -11,4 +13,4 @@ ActionMailer::Base.smtp_settings = {
 
 
 # ActionMailer::Base.default_url_options[:host] = "localhost:3000"  #Moved to config/application.rb
-# Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
+ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
