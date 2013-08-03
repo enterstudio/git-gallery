@@ -6,4 +6,10 @@ class GgMailer < ActionMailer::Base
     # attachments["rails.png"] = File.read("#{Rails.root}/public/images/rails.png")
     mail(:to => @user.email, :subject => "Registration Confirmation")
   end
+
+  def new_project(project, contributor)
+    @project = project
+    @contributor = contributor
+    mail(:to => @contributor["email"], :subject => "A repo you contributed to was just made into a project on Git Gallery.")
+  end
 end
