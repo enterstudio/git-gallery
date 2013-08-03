@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    where(auth.slice("provider", "github_id")).first || create_from_omniauth(auth)
+    where(:github_id => auth["uid"]).first || create_from_omniauth(auth)
   end
 
   def self.create_from_omniauth(auth)
@@ -52,6 +52,7 @@ class User < ActiveRecord::Base
       user.email = auth["info"]["email"]
       user.avatar_url = auth["info"]["image"]
       user.token = auth["credentials"]["token"]
+      user.registered = false
     end
   end
 
@@ -70,7 +71,6 @@ class User < ActiveRecord::Base
       end
     end
   end
-
 
   def disassociate_projects
     self.user_projects.each do |user_project|
