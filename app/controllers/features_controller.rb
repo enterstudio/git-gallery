@@ -55,6 +55,7 @@ class FeaturesController < ApplicationController
         format.html { redirect_to new_feature_slide_path(@feature), notice: 'Feature was successfully created.' }
         format.json { render json: @feature, status: :created, location: @feature }
       else
+        @technologies = Technology.all
         format.html { render action: "new" }
         format.json { render json: @feature.errors, status: :unprocessable_entity }
       end
