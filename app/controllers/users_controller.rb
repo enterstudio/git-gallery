@@ -72,7 +72,7 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        GgMailer.registration_confirmation(@user) if @user.registered == false
+        GgMailer.registration_confirmation(@user).deliver if @user.registered == false
         @user.registered = true
         @user.save
 
