@@ -1,5 +1,5 @@
 <div class="gg-feature-form">
-	<%= render 'snippets/new_form_partials/form' %>
+	<%= render partial: 'snippets/new_form_partials/form', :locals => {:feature => @feature, :snippet => @snippet} %>
 </div>
 
 
