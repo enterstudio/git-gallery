@@ -9,7 +9,7 @@
             <span>
               <h4>
                 <%= link_to repo.name.truncate(25), repo.html_url, id: "#{repo.name}" %>
-                <i><%= link_to "", projects_path(:repo_id => repo.id), :method => :post, class: 'icon-plus-sign pull-right', :"data-name" => "#{repo.name}" %></i>
+                <i><%= link_to "", projects_path(:repo_id => repo.id), :method => :post, class: 'icon-plus-sign pull-right', :"data-name" => "#{repo.name}" if repo.user == current_user %></i>
               </h4>  
             </span>
           </li>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130802054046) do
+ActiveRecord::Schema.define(:version => 20130803180512) do
 
   create_table "feature_technologies", :force => true do |t|
     t.integer  "feature_id"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20130802054046) do
     t.string   "provider"
     t.string   "github_id"
     t.string   "token"
+    t.boolean  "registered"
   end
 
 end
