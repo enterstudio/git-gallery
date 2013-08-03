@@ -1,16 +1,6 @@
 <div class="container">
 <%= form_for([@project, @feature], html: {class: "form-horizontal"}) do |f| %>
-  <% if @feature.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@feature.errors.count, "error") %> prohibited this feature from being saved:</h2>
-
-      <ul>
-      <% @feature.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: "shared/error_messages", :locals => {:target => @feature} %>
 
   <fieldset>
 
