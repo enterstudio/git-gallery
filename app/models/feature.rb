@@ -11,6 +11,7 @@ class Feature < ActiveRecord::Base
   has_many :uploads, as: :uploadable, :dependent => :destroy
 
   validates_presence_of :description
+  validates_presence_of :title
 
   def technologies_to_add=(technologies)
     technologies.collect(&:downcase).collect(&:strip).uniq.reject(&:blank?).each do |technology|

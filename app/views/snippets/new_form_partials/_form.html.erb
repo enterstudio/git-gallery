@@ -5,13 +5,13 @@
   <fieldset>
     <legend>Copy/paste your code, then explain how it relates to your feature.</legend>
     <div class="gg-form-section">
-      <%= render partial: "snippets/new_form_partials/name", :locals => {:f => f, :feature => @feature} %>
-      <%= render partial: "snippets/new_form_partials/url", :locals => {:f => f, :feature => @feature} %>
-      <%= render partial: "snippets/new_form_partials/language", :locals => {:f => f, :feature => @feature} %>
+      <%= render partial: "snippets/new_form_partials/name", :locals => {:f => f, :snippet => @snippet} %>
+      <%= render partial: "snippets/new_form_partials/url", :locals => {:f => f, :snippet => @snippet} %>
+      <%= render partial: "snippets/new_form_partials/language", :locals => {:f => f, :snippet => @snippet} %>
     </div>
     <div class="gg-form-section">
-      <%= render partial: "snippets/new_form_partials/code", :locals => {:f => f, :feature => @feature} %>
-      <%= render partial: "snippets/new_form_partials/description", :locals => {:f => f, :feature => @feature} %>
+      <%= render partial: "snippets/new_form_partials/code", :locals => {:f => f, :snippet => @snippet} %>
+      <%= render partial: "snippets/new_form_partials/description", :locals => {:f => f, :snippet => @snippet} %>
     </div>
   </fieldset>
 

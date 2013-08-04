@@ -5,9 +5,9 @@
   <fieldset>
   <legend>Upload a screenshot and describe how it relates to your feature.</legend>
   <div class="gg-form-section">
-    <%= render partial: "uploads/new_upload_partials/name", :locals => {:f => f} %>
-    <%= render partial: "uploads/new_upload_partials/image", :locals => {:f => f} %>
-    <%= render partial: "uploads/new_upload_partials/description", :locals => {:f => f} %>
+    <%= render partial: "uploads/new_upload_partials/name", :locals => {:f => f, :upload => @upload} %>
+    <%= render partial: "uploads/new_upload_partials/image", :locals => {:f => f, :upload => @upload} %>
+    <%= render partial: "uploads/new_upload_partials/description", :locals => {:f => f, :upload => @upload} %>
   </div>
   </fieldset>
   <div class="button-options">
