@@ -1,5 +1,5 @@
 <div class="control-group">
-	<%= f.label :name, "Name Your Snippet", class: "control-label"%>
+	<%= f.label :name, mark_required(snippet, :name, :label => "Name Your Snippet"), class: "control-label"%>
 		<div class="controls">
     <%= f.text_field :name %>
 	</div>

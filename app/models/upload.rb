@@ -5,6 +5,10 @@ class Upload < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  validates_presence_of :image
+  validates_presence_of :name
+  validates_presence_of :description
+
   # def location_dependent_save(uploadable)
   # 	if self.save
   #     if uploadable.class.name == "Feature"
