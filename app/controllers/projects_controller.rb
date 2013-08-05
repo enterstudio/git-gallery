@@ -51,6 +51,7 @@ class ProjectsController < ApplicationController
       if @project.save
         @repo.project_id = @project.id
         @repo.save
+        @project.get_description
         @project.get_technologies
         @project.get_contributors
         

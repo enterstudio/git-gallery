@@ -21,12 +21,13 @@
   <body>
     <%= render "layouts/navigation_bar" %>
     <div id="wrapper">
-      <div id="content-wrapper">
-        <div id="content"><%= yield %></div>
-          <%= javascript_include_tag "application" %>
+      <div id="content-wrapper"> 
+        <div id="content">
+          <%= yield %>
         </div>
-<!--       <footer>
-      </footer> -->
+        <%= javascript_include_tag "application" %>
+      </div>
     </div>
+
   </body>
 </html>

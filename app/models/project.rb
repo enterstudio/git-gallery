@@ -78,5 +78,15 @@ class Project < ActiveRecord::Base
   def default_description
     self.description || "This is a sample description."
   end
+
+  def get_description
+    github_description = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}").read)["description"]
+    if !github_description.empty?
+      self.description =  github_description
+    else 
+      self.description = "Please write a short description about this project."
+    self.save
+    end
+  end
 end
 

@@ -1,6 +1,8 @@
 body {
   margin: 0 !important;
   padding: 40px 0 0 0 !important;
+  height: 100%;
+  background-color: #f2ffee;
 }
 
 .breadcrumb {
@@ -10,6 +12,7 @@ body {
 
 #wrapper {
   background-color: #f2ffee;
+  height: 100%;
 
 }
 
@@ -21,7 +24,6 @@ body {
 #features-slide {
   padding: 0;
   margin: 0;
-
   background-color: #f2ffee;
   width: 100%;
   overflow-x: auto;
@@ -45,7 +47,7 @@ body {
 .feature h2, h3 {
   margin-left: 20px;
   font-weight: 400;
-  color: #FFFFFF;
+  color: #0E1A1C;
   vertical-align: middle;
   text-overflow: ellipsis;
   white-space: normal;
@@ -131,19 +133,14 @@ input#search {
   width: 1000px;
 }
 
-.gg-multiple-buttons {
-  display: inline-block;
-  float: right;
-}
 
-.buttons-with-margins {
-  margin: 30px;
-}
+
 
 #content-wrapper {
   margin-left:auto;
   margin-right:auto;
   width: 97%;
+  height: 100%;
   background-color: #f2ffee;
 }
 

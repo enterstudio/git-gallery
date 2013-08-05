@@ -15,17 +15,14 @@
 	margin-top: 5%;	
 }
 
-.gg-feature-form {
-	display: block;
-	clear: both;
-	padding: 100px;
-}
+
 
 .gg-button-options {
 	margin-bottom: 10%;
 }
 
 .gg-lone-header {
+
 }
 
 .gg-form-section {
@@ -51,5 +48,13 @@
   margin-right: 5px;
   span {
   	font-size: 30px;
+  }
+}
+
+.feature-card-title {
+  a {
+    color: white;
+    text-decoration: none;
+    border: none;
   }
 }
