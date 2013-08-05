@@ -1,6 +1,10 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
+#To customize this seed file:
+#1. put a fake email in your user.create spot
+#2. make your UserProject in the top four blank and fill in whoever's was blank before with their id 1-4
+
 ###################
 # CREATE PROJECTS #
 ###################
@@ -79,7 +83,7 @@ kegkong.uploads.first.save
 matt    = User.create(:name => "Matt Schmaus",       :email => "mschmaus201@gmail.com",    				      	) # 1
 jen     = User.create(:name => "Jennifer Campbell",  :email => "jennifer.ml.campbell@gmail.com",  		  		) # 2
 micah   = User.create(:name => "Micah Corn",         :email => "micah.corn@flatironschool.com",         	) # 3
-des     = User.create(:name => "Desmond Rawls",   	 :email => "captaingrover@gmail.com",      			    	) # 4
+des     = User.create(:name => "Desmond Rawls",   	 :email => "captaingrover@test.com",      			    	) # 4
 thomas  = User.create(:name => "Thomas Deatherage",  :email => "thomas.deatherage@flatironschool.com",  		) # 5
 mendal  = User.create(:name => "Mendel Kramer",    	 :email => "mendal.kramer@flatironschool.com",      		) # 6
 david   = User.create(:name => "David Manaster",     :email => "david.manaster@flatironschool.com",     		) # 7
@@ -155,9 +159,9 @@ chron_jobs	        = Feature.create(:title => "Chron Jobs",	               :desc
 #######################
 # Add UserProjects    #
 #######################
-user_project = UserProject.create(:contributor_github_id => 1010670,  :project_id => 1)
-user_project = UserProject.create(:contributor_github_id => 4138752,  :project_id => 1)
-user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1)
+user_project = UserProject.create(:contributor_github_id => 1010670,  :project_id => 1, :user_id => 3)
+user_project = UserProject.create(:contributor_github_id => 4138752,  :project_id => 1, :user_id => 1)
+user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1, :user_id => 2)
 user_project = UserProject.create(:contributor_github_id => 774328,  :project_id => 1)
 user_project = UserProject.create(:user_id => 1,  :project_id => 1)
 user_project = UserProject.create(:user_id => 3,  :project_id => 1)
@@ -174,7 +178,7 @@ user_project = UserProject.create(:user_id => 32, :project_id => 4)
 user_project = UserProject.create(:user_id => 12, :project_id => 4)
 user_project = UserProject.create(:user_id => 19, :project_id => 4)
 user_project = UserProject.create(:user_id => 6,  :project_id => 5)
-user_project = UserProject.create(:user_id => 4,  :project_id => 1)
+user_project = UserProject.create(:user_id => 33,  :project_id => 1)
 user_project = UserProject.create(:user_id => 2,  :project_id => 1)
 user_project = UserProject.create(:user_id => 10, :project_id => 5)
 user_project = UserProject.create(:user_id => 18, :project_id => 5)
