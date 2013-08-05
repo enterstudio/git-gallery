@@ -30,6 +30,10 @@ module ProjectsHelper
 			"http://octodex.github.com/images/octocat-de-los-muertos.jpg"
 		end
 	end
+
+	def default_description
+		"Add a Description"
+	end
 end
 
 
