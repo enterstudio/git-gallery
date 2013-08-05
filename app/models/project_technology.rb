@@ -4,7 +4,5 @@ class ProjectTechnology < ActiveRecord::Base
   belongs_to :project
   belongs_to :technology
 
-  def self.find_or_create_by(hash)
-    self.where(hash).first || self.create(hash)
-  end 
+  extend Findable
 end
