@@ -46,6 +46,7 @@ class FeaturesController < ApplicationController
       slide.position = index
       slide.save
     end
+    # {"slides"=>{"0"=>{"class"=>"Snippet", "id"=>"1"}, "1"=>{"class"=>"Snippet", "id"=>"1"}}, "feature_id"=>"41"}
   end
 
   # POST /users/1/features
@@ -74,7 +75,7 @@ class FeaturesController < ApplicationController
     if params[:slides] 
       params[:slides].each_with_index do |slide, index|
         snippet_or_upload = slide[:class].constantize.find(slide[:id])
-        snippet_or_upload.position = index + 1
+        snippet_or_upload.position = index
         snippet_or_upload.save
       end
     end

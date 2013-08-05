@@ -29,7 +29,7 @@
       <ul class="nav nav-tabs sortable" data-feature-id="<%= @feature.id %>">
        <% @feature.slides_in_order.each_with_index do |slide, index| %>
       	<% myclass = index == 0 ? 'active' : ''%>
-        <li data-id="1" data-class-type="Snippet" class="<%=myclass %>"><a href="#l<%=index%>" data-toggle="tab">Slide <%=index + 1%></a></li>
+        <li data-id="<%= slide.id %>" data-class-type="<%= slide.class %>" class="<%=myclass %>"><a href="#l<%=index%>" data-toggle="tab">Slide <%=index + 1%></a></li>
      
          <% end %>
           </ul>
