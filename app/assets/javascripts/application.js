@@ -32,13 +32,8 @@ $(function(){
 
 	$(".chosen-select").chosen();
 
-<<<<<<< HEAD
 	$('.sortable').sortable()
-=======
-	$('.sortable').sortable().bind('sortupdate', function() {
-	});
-  
->>>>>>> master
+
   ////////////////// Masonry Functions /////////////////
   $('.thumbnails').masonry( {
     gutter: 20,

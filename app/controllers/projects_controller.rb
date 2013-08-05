@@ -19,12 +19,9 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project }
-<<<<<<< HEAD
-    @features=@project.features
-=======
 
     @features = @project.features
->>>>>>> master
+
     end
   end
 
