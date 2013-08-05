@@ -8,6 +8,7 @@ $(function(){
 		update: function(){ //when we update order update slides array
 
 			var slides = []; //create an empty slide array 
+			var feature_id = $('.sortable').data('feature-id'); //get feature id
 			//build slide list 
 			$(".sortable li").each(function(i, slide){
 				var class_type = $(slide).data("class-type");
@@ -17,15 +18,13 @@ $(function(){
 
 			// slides = JSON.stringify(slides);  //makes json
 
-			console.log(slides);
-
 			request = $.ajax({
 
-				url: "/features/1/update_slide_order.html",
+				url: "/features/"+feature_id+"/update_slide_order.html",
 				type: "post",
-				data: {"content" : slides},
+				data: {"slides": slides},
 				dataType: "json",
-				// beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+				//beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
 				success: function(data) {
 					console.log('success we sent data: '+data);
 				}, error: function(request, status, error) {

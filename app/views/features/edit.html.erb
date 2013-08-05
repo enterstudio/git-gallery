@@ -1,6 +1,9 @@
 <div class="slides-custom">
+
+
+
   <div class="tabbable tabs-left">
-      <ul class="nav nav-tabs sortable">
+      <ul class="nav nav-tabs sortable" data-feature-id="<%= @feature.id %>">
         <li data-id="1" data-class-type="Snippet" class="active"><a href="#lA" data-toggle="tab">Section 1</a></li>
         <li data-id="2" data-class-type="Snippet"><a href="#lB" data-toggle="tab">Section 2</a></li>
         <li data-id="3" data-class-type="Upload"><a href="#lC" data-toggle="tab">Section 3</a></li>
@@ -16,5 +19,108 @@
           <p>What up girl, this is Section C.</p>
         </div>
       </div>
+  </div>
+</div>
+
+
+
+
+
+<div><%= link_to 'Back', @feature %></div>
+
+
+
+
+
+
+<div class="slides-custom">
+
+<h1 id="project-title">
+<div>
+    <div class="hero-inline">
+        <%= best_in_place @feature, :title, :type => :input, :activator => ".activator-#{@feature.id}-name" %>
+    </div>
+    <div class="activator-<%= @feature.id %>-name">
+      <i class="hero icon-pencil"></i>
+      </div>
+</div>
+</h1>
+
+
+
+<h3 id="project-description">
+<div>
+  <div class="hero-inline">
+      <%= best_in_place @feature, :description, :type => :input, :activator => ".activator-#{@feature.id}-description" %>
+  </div>
+  <div class="activator-<%= @feature.id %>-description"><i class="hero icon-pencil"></i></div>
+</div>
+</h3>
+
+  <h3>Check Out Your Slides</h3>
+<!-- ajax included  -->
+
+  <div class="tabbable tabs-left">
+      <ul class="nav nav-tabs sortable" data-feature-id="<%= @feature.id %>">
+        <li data-id="1" data-class-type="Snippet" class="active"><a href="#lA" data-toggle="tab">Section 1</a></li>
+        <li data-id="2" data-class-type="Snippet"><a href="#lB" data-toggle="tab">Section 2</a></li>
+        <li data-id="3" data-class-type="Upload"><a href="#lC" data-toggle="tab">Section 3</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="lA">
+          <p>I'm in Section A.</p>
+        </div>
+        <div class="tab-pane" id="lB">
+          <p>Howdy, I'm in Section B.</p>
+        </div>
+        <div class="tab-pane" id="lC">
+          <p>What up girl, this is Section C.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- ajax included  -->
+
+  <div class="tabbable tabs-left">
+    <ul class="nav nav-tabs sortable sortable-placeholder">
+      <% @feature.slides_in_order.each_with_index do |slide, index| %>
+      <% myclass = index == 0 ? 'active' : ''%>
+        <li class="<%=myclass %>">
+          <a href="#l<%=index%>" data-toggle="tab"> Slide <%=index + 1%></a>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="tab-content">
+      <% @feature.slides_in_order.each_with_index do |slide, index| %>
+      
+        <div class="tab-pane" id="l<%= index %>">
+            <li draggable="true" class="" style="display: list-item;">
+              <input type="hidden" name="slides[][class]" value="<%= slide.class %>"></input>
+              <input type="hidden" name="slides[][id]" value="<%= slide.id %>"></input>
+              <p><%= slide.name %></p>
+              <p><%= slide.description%></p>
+              <p><%= snippet_or_upload_show(slide) %></p>
+            </li>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+        
+  <br/>
+  <br/>
+  <br/>
+  <h3>Pick Your Technologies</h3>
+  <div class="controls">
+  <!--  <%= label_tag 'feature[technologies_to_add][]', 'Technologies', class: "control-label" %> -->
+    <select data-placeholder="Choose Technologies..." name="feature[technology_ids][]" class="chosen-select" multiple style="width:350px;" tabindex="4">
+      <option value=""></option>
+      <% for technology in @technologies %>
+       <option value=<%= technology.id%>><%= technology.name %></option>
+      <% end %>
+    </select>
   </div>
 </div>

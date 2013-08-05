@@ -41,9 +41,12 @@ class FeaturesController < ApplicationController
   end
 
   def update_slide_order
-
-    debugger
-    puts "hello"
+    params[:slides].each do |index, slide_hash|
+      # raise params.inspect
+      slide = slide_hash["class"].constantize.find(slide_hash["id"])
+      slide.postion = index
+      slide.save
+    end
   end
 
   # POST /users/1/features
