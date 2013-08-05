@@ -71,22 +71,14 @@ class FeaturesController < ApplicationController
   # PUT /users/1/features/1
   # PUT /users/1/features/1.json
   def update
-<<<<<<< HEAD
-=======
 
->>>>>>> master
     if params[:slides] 
       params[:slides].each_with_index do |slide, index|
         snippet_or_upload = slide[:class].constantize.find(slide[:id])
         snippet_or_upload.position = index + 1
         snippet_or_upload.save
       end
-<<<<<<< HEAD
-    
-  
-=======
 
->>>>>>> master
     end
     @feature = Feature.find(params[:id])
 
