@@ -3,7 +3,6 @@ class GgMailer < ActionMailer::Base
 
   def registration_confirmation(user)
     @user = user
-    
     # attachments["rails.png"] = File.read("#{Rails.root}/public/images/rails.png") #USE THIS IF YOU WANT TO INCLUDE ATTACHMENT
     mail(:to => @user.email, :subject => "Registration Confirmation")
   end

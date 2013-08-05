@@ -36,11 +36,7 @@ class Project < ActiveRecord::Base
   end
 
   def features
-    features = []
-    self.user_projects.each do |user_project|
-      features << user_project.features
-    end
-    features.flatten
+    user_projects.collect(&:features).flatten
   end
 
   def get_technologies
@@ -52,28 +48,27 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def creator
+    self.repo.user
+  end
+
   def get_contributors
     contributors = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}/contributors?access_token=#{creator.token}").read)
+    
     contributors.each do |contributor|
       contributor_info = JSON.parse(open("https://api.github.com/users/#{contributor["login"]}?access_token=#{creator.token}").read)
-      
-      userproject = UserProject.find_or_create_by(:project_id => self.id, :contributor_github_id => contributor["id"])
+      userproject = UserProject.find_or_create_by(:project_id => self.id, :contributor_github_id => contributor_info["id"])
       user = User.where(:github_id => userproject.contributor_github_id).first
       userproject.user_id = user.id if user
       userproject.save
-      GgMailer.new_project(self, contributor_info).deliver
 
-      # raise self
-      if self.users.where(:github_id == contributor_info["id"]).first
-        GgMailer.new_project(self, self.users.where(:github_id == contributor_info["id"]).first).deliver
-      elsif contributor_info["email"]
-        GgMailer.new_project(self, contributor_info).deliver
-      end
+      mail_on_new_project(self, contributor_info)
     end
   end
 
-  def creator
-    self.repo.user
+  def mail_on_new_project(project, contributor_info)
+    contributor_if_present = project.users.where(:github_id => contributor_info["id"]).first || contributor_info
+    GgMailer.new_project(self, contributor_if_present).deliver if !contributor_if_present["email"].empty?
   end
 
   def editable_by?(user)
