@@ -31,8 +31,14 @@
 }
 
 #project-title {
+
   font-size: 2.5em;
   margin-bottom: 2%;
+}
+
+.description-custom {
+  width: 750px;
+  float: left;
 }
 
 .hero-title {
@@ -63,6 +69,6 @@
 .hero-inline {
 
   float: left;
-  margin-left: 20px;
+  margin-left: 0px;
   margin-right: 10px;
 }

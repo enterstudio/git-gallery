@@ -41,10 +41,9 @@ class FeaturesController < ApplicationController
   end
 
   def update_slide_order
-    params[:slides].each do |index, slide_hash|
-      # raise params.inspect
+    params["slides"].each do |index, slide_hash|
       slide = slide_hash["class"].constantize.find(slide_hash["id"])
-      slide.postion = index
+      slide.position = index
       slide.save
     end
   end

@@ -34,14 +34,14 @@ class Feature < ActiveRecord::Base
 
   def add_snippets(slides)
     self.snippets.each do |snippet|
-        slides[snippet.position - 1] = snippet
+        slides[snippet.position] = snippet
     end
     slides
   end
 
   def add_uploads(slides)
     self.uploads.each do |upload|
-        slides[upload.position - 1] = upload
+        slides[upload.position] = upload
     end
     slides
   end
