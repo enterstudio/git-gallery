@@ -27,10 +27,9 @@
 
 <div class="tabbable tabs-left">
       <ul class="nav nav-tabs sortable" data-feature-id="<%= @feature.id %>">
-       <% @feature.slides_in_order.each_with_index do |slide, index| %>
-       <% myclass = index == 0 ? 'active' : ''%>
-        <li data-id="<%=slide.id %>" data-class-type="<%= slide.class %>" class="<%=myclass %>"><a href="#l<%=index%>" data-toggle="tab">Slide <%=index + 1%></a></li>
-      <%end %>
+        <li data-id="1" data-class-type="Snippet" class="active"><a href="#lA" data-toggle="tab">Section 1</a></li>
+        <li data-id="2" data-class-type="Snippet"><a href="#lB" data-toggle="tab">Section 2</a></li>
+        <li data-id="3" data-class-type="Upload"><a href="#lC" data-toggle="tab">Section 3</a></li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="lA">
