@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.github_id = auth["uid"]
       user.name = auth["info"]["nickname"]
-      user.email = auth["info"]["email"]
+      user.email = auth["info"]["email"] || "#{user.name}@UPDATE-EMAIL.com"
       user.avatar_url = auth["info"]["image"]
       user.token = auth["credentials"]["token"]
       user.registered = false
