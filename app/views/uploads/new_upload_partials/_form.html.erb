@@ -1,22 +1,13 @@
 <div class="container span8 gg-feature-form">
 <%= form_for [@uploadable, @upload], html: {class: "form-horizontal"} do |f|%>
-  <% if @upload.errors.any? %>
-    <div class="error_messages">
-      <h2>Please correct the following errors.</h2>
-      <ul>
-      <% @upload.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: "shared/error_messages", :locals => {:target => @upload} %>
   
   <fieldset>
   <legend>Upload a screenshot and describe how it relates to your feature.</legend>
   <div class="gg-form-section">
-    <%= render partial: "uploads/new_upload_partials/name", :locals => {:f => f} %>
-    <%= render partial: "uploads/new_upload_partials/image", :locals => {:f => f} %>
-    <%= render partial: "uploads/new_upload_partials/description", :locals => {:f => f} %>
+    <%= render partial: "uploads/new_upload_partials/name", :locals => {:f => f, :upload => @upload} %>
+    <%= render partial: "uploads/new_upload_partials/image", :locals => {:f => f, :upload => @upload} %>
+    <%= render partial: "uploads/new_upload_partials/description", :locals => {:f => f, :upload => @upload} %>
   </div>
   </fieldset>
   <div class="button-options">

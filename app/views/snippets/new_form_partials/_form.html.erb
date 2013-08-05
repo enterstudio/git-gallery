@@ -1,26 +1,17 @@
 <div class="container span8">
 <%= form_for([@feature, @snippet], html: {class: "form-horizontal"}) do |f| %>
-  <% if @snippet.errors.any? %>
-    <div class="error_messages">
-      <h2><%= pluralize(@snippet.errors.count, "error") %> prohibited this snippet from being saved:</h2>
-      <ul>
-      <% @snippet.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: "shared/error_messages", :locals => {:target => @snippet} %>
 
   <fieldset>
     <legend>Copy/paste your code, then explain how it relates to your feature.</legend>
     <div class="gg-form-section">
-      <%= render partial: "snippets/new_form_partials/name", :locals => {:f => f, :feature => @feature} %>
-      <%= render partial: "snippets/new_form_partials/url", :locals => {:f => f, :feature => @feature} %>
-      <%= render partial: "snippets/new_form_partials/language", :locals => {:f => f, :feature => @feature} %>
+      <%= render partial: "snippets/new_form_partials/name", :locals => {:f => f, :snippet => @snippet} %>
+      <%= render partial: "snippets/new_form_partials/url", :locals => {:f => f, :snippet => @snippet} %>
+      <%= render partial: "snippets/new_form_partials/language", :locals => {:f => f, :snippet => @snippet} %>
     </div>
     <div class="gg-form-section">
-      <%= render partial: "snippets/new_form_partials/code", :locals => {:f => f, :feature => @feature} %>
-      <%= render partial: "snippets/new_form_partials/description", :locals => {:f => f, :feature => @feature} %>
+      <%= render partial: "snippets/new_form_partials/code", :locals => {:f => f, :snippet => @snippet} %>
+      <%= render partial: "snippets/new_form_partials/description", :locals => {:f => f, :snippet => @snippet} %>
     </div>
   </fieldset>
 

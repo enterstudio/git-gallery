@@ -44,24 +44,20 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create  ### This logic needs to be abstracted
     @repo = Repo.find(params[:repo_id])
-    previous_project = Project.find_by_repo(@repo)
-      if previous_project
-        redirect_to previous_project
+    @project = Project.new
+    @project.name = @repo.name
+    
+    respond_to do |format|
+      if @project.save
+        @repo.project_id = @project.id
+        @repo.save
+        @project.get_technologies
+        @project.get_contributors
+        format.html { redirect_to project_path(@project), notice: 'Project was successfully created.' }
+        format.json { render json: @project, status: :created, location: @project }
       else
-        @project = Project.new
-        @project.name = @repo.name
-      respond_to do |format|
-        if @project.save
-          @repo.project_id = @project.id
-          @repo.save
-          @project.get_technologies
-          @project.get_contributors
-          format.html { redirect_to project_path(@project), notice: 'Project was successfully created.' }
-          format.json { render json: @project, status: :created, location: @project }
-        else
-          format.html { render action: "new" }
-          format.json { render json: @project.errors, status: :unprocessable_entity }
-        end
+        format.html { render action: "new" }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
   end

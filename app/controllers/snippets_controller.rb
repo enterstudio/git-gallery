@@ -13,11 +13,10 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    raise params
     @feature = Feature.find(params[:feature_id])
-    snippet = @feature.snippets.build(params[:snippet])
-    snippet.position = @feature.snippets.size + @feature.uploads.size
-    if @feature.save
+    @snippet = @feature.snippets.build(params[:snippet])
+    @snippet.position = @feature.snippets.size + @feature.uploads.size
+    if @snippet.save
       if params[:next_state] == "true"
         redirect_to new_feature_slide_path(@feature), notice: 'Last slide was successfully created.'
       else

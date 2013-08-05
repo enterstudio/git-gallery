@@ -1,4 +1,4 @@
-<%= f.label :title, class: "control-label" %>
+<%= f.label :title, mark_required(feature, :title), class: "control-label" %>
 <div class="controls">
 <%= f.text_field :title, placeholder: "Give your feature a title..." %>
 </div>
