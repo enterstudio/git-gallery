@@ -161,8 +161,8 @@ chron_jobs	        = Feature.create(:title => "Chron Jobs",	               :desc
 #######################
 user_project = UserProject.create(:contributor_github_id => 1010670,  :project_id => 1, :user_id => 3)
 user_project = UserProject.create(:contributor_github_id => 4138752,  :project_id => 1, :user_id => 1)
-user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1, :user_id => 2)
-user_project = UserProject.create(:contributor_github_id => 774328,  :project_id => 1)
+user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1)
+user_project = UserProject.create(:contributor_github_id => 774328,  :project_id => 1, :user_id => 4)
 user_project = UserProject.create(:user_id => 1,  :project_id => 1)
 user_project = UserProject.create(:user_id => 3,  :project_id => 1)
 user_project = UserProject.create(:user_id => 17, :project_id => 2)
