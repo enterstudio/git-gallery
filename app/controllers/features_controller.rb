@@ -88,7 +88,7 @@ class FeaturesController < ApplicationController
   # DELETE /users/1/features/1.json
   def destroy
     @feature = Feature.find(params[:id])
-    @feature.destroy if can_current_user?(:destroy, @feature) == true
+    @feature.destroy if can_current_user?(:destroy, @feature)
 
     respond_to do |format|
       format.html { redirect_to user_path(@feature.user) }
