@@ -53,7 +53,6 @@ class FeaturesController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @feature = Feature.new(params[:feature])
-    # @feature = @project.features.build(params[:feature])
     @user_project = UserProject.where(:project_id => params[:project_id], :user_id => current_user.id).first
     @feature.user_project_id = @user_project.id
 
@@ -95,7 +94,6 @@ class FeaturesController < ApplicationController
       if @feature.update_attributes(params[:feature])
         format.html { redirect_to feature_path(@feature), notice: 'Feature was successfully updated.' }
         format.json { respond_with_bip(@feature)}
-        # format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @feature.errors, status: :unprocessable_entity }

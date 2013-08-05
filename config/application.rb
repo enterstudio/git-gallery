@@ -1,5 +1,3 @@
-require_relative '../lib/email_format_validator.rb'
-
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
