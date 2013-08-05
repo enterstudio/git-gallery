@@ -2,7 +2,7 @@
   <div class="row-fluid span12">
     
     <%= show_projects(@user) %> <!-- this can be found in users_helper -->
-    <%= render :partial => "users/gallery/user_repos", :locals => { :page_user => @user } %>
+    <%= render :partial => "users/gallery/user_repos", :locals => { :page_user => @user } if @user == current_user %>
 
   </div>
 </div>
