@@ -15,6 +15,10 @@
   }
 }
 
+.gallery-project-title-card {
+  margin-top: 20px;
+}
+
 .user_gallery {
   h3 {
     text-align: center;
@@ -29,11 +33,12 @@
 .gallery-project {
   // background-color: #dbeaf4;
   // border: 2px solid white;
-  height: 165px;
+  height: 200px;
   display: table-cell; 
   vertical-align: middle;
+  text-align: center;
   img {
-    width: 270px;
+    width: 175px;
     height: auto;
   }
   li {
