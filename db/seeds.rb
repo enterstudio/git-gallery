@@ -162,22 +162,22 @@ chron_jobs	        = Feature.create(:title => "Chron Jobs",	               :desc
 user_project = UserProject.create(:contributor_github_id => 1010670,  :project_id => 1, :user_id => 3)
 user_project = UserProject.create(:contributor_github_id => 4138752,  :project_id => 1, :user_id => 1)
 user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1)
-user_project = UserProject.create(:contributor_github_id => 774328,  :project_id => 1, :user_id => 4)
-user_project = UserProject.create(:user_id => 1,  :project_id => 1)
-user_project = UserProject.create(:user_id => 3,  :project_id => 1)
-user_project = UserProject.create(:user_id => 17, :project_id => 2)
-user_project = UserProject.create(:user_id => 20, :project_id => 2)
-user_project = UserProject.create(:user_id => 24, :project_id => 2)
-user_project = UserProject.create(:user_id => 21, :project_id => 2)
-user_project = UserProject.create(:user_id => 22, :project_id => 3)
-user_project = UserProject.create(:user_id => 7,  :project_id => 3)
-user_project = UserProject.create(:user_id => 23, :project_id => 3)
-user_project = UserProject.create(:user_id => 30, :project_id => 3)
-user_project = UserProject.create(:user_id => 11, :project_id => 4)
-user_project = UserProject.create(:user_id => 32, :project_id => 4)
-user_project = UserProject.create(:user_id => 12, :project_id => 4)
-user_project = UserProject.create(:user_id => 19, :project_id => 4)
-user_project = UserProject.create(:user_id => 6,  :project_id => 5)
+user_project = UserProject.create(:project_id => 1, :user_id => 17)
+user_project = UserProject.create(:user_id => 1,  :project_id => 1) #5
+user_project = UserProject.create(:user_id => 3,  :project_id => 1) #6
+user_project = UserProject.create(:user_id => 17, :project_id => 2) #7
+user_project = UserProject.create(:user_id => 20, :project_id => 2) #8
+user_project = UserProject.create(:user_id => 24, :project_id => 2) #9
+user_project = UserProject.create(:user_id => 21, :project_id => 2) #10
+user_project = UserProject.create(:user_id => 22, :project_id => 3) #11
+user_project = UserProject.create(:user_id => 7,  :project_id => 3) #12
+user_project = UserProject.create(:user_id => 23, :project_id => 3) #13
+user_project = UserProject.create(:user_id => 30, :project_id => 3) #14
+user_project = UserProject.create(:user_id => 11, :project_id => 4) #15
+user_project = UserProject.create(:user_id => 32, :project_id => 4) #16
+user_project = UserProject.create(:user_id => 33, :project_id => 1) #17
+user_project = UserProject.create(:user_id => 19, :project_id => 4) #18
+user_project = UserProject.create(:user_id => 6,  :project_id => 5) #19
 user_project = UserProject.create(:user_id => 33,  :project_id => 1)
 user_project = UserProject.create(:user_id => 2,  :project_id => 1)
 user_project = UserProject.create(:user_id => 10, :project_id => 5)
@@ -244,7 +244,7 @@ routes = Snippet.create(:name => "routes.rb",	:url => "https://github.com/flatir
 	end
 	resources :technologies, only: [:show]
 end", 
-	  :description => "I didn't want to have a double-nested url so I made features shallow. This one line immediately changes the routes visible in rake routes.", :feature_id => 17, :position => 6)
+	  :description => "I didn't want to have a double-nested url so I made features shallow. This one line immediately changes the routes visible in rake routes.", :feature_id => 17, :position => 0)
 
 paths = Snippet.create(:name => "shallow paths", :url => "https://github.com/flatiron-school/git-gallery/blob/master/app/views/features/show.html.erb", :language => "ruby", :code =>
 	 "#this path:
@@ -252,7 +252,7 @@ new_user_feature_snippet_path(@user, @feature)
  
 #became this simpler path:
 new_feature_snippet_path(@feature)",
-		:description => "All feature paths previously included the user. For snippets and uploads, which belong to a feature, the user is unnecessary information. Now the paths to snippets and uploads only depend on the feature they belong to.", :feature_id => 17, :position => 7)
+		:description => "All feature paths previously included the user. For snippets and uploads, which belong to a feature, the user is unnecessary information. Now the paths to snippets and uploads only depend on the feature they belong to.", :feature_id => 17, :position => 1)
 
 forms = Snippet.create(:name => "shallow forms", :url => "https://github.com/flatiron-school/git-gallery/blob/master/app/views/snippets/_form.html.erb", :language => "ruby", :code =>
 	"#this form tag:
@@ -260,7 +260,7 @@ forms = Snippet.create(:name => "shallow forms", :url => "https://github.com/fla
  
 #became this simpler form tag:
 <%= form_for [@feature, @snippet] do |f| %>",
-		:description => "Similar to what we saw with the paths, all form tags became simpler. Form tags for resources nested under features went from relying on the user, the feature, and the current resource to relying on only the feature and the current resource (in this case snippets).", :feature_id => 17, :position => 8)
+		:description => "Similar to what we saw with the paths, all form tags became simpler. Form tags for resources nested under features went from relying on the user, the feature, and the current resource to relying on only the feature and the current resource (in this case snippets).", :feature_id => 17, :position => 2)
 
 #######################
 # CREATE TECHNOLOGIES #

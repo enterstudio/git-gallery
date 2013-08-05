@@ -8,4 +8,8 @@ class Snippet < ActiveRecord::Base
   # validates_presence_of :name
   # validates_presence_of :language, :message => ("Please select which languages you used in this feature")
   
+  def shift_position(index)
+    self.position = index.to_i + 1
+  end
+
 end

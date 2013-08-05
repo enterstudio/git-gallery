@@ -8,4 +8,8 @@ class Upload < ActiveRecord::Base
   validates_presence_of :image
   validates_presence_of :name
   validates_presence_of :description
+
+  def shift_position(index)
+    self.position = index.to_i + 1
+  end
 end
