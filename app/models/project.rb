@@ -55,7 +55,7 @@ class Project < ActiveRecord::Base
   def get_contributors
     contributors = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}/contributors?access_token=#{creator.token}").read)
     contributors.each do |contributor|
-      contributor_info = JSON.parse(open("https://api.github.com/users/#{contributor["login"]}").read)
+      contributor_info = JSON.parse(open("https://api.github.com/users/#{contributor["login"]}?access_token=#{creator.token}").read)
       
       userproject = UserProject.find_or_create_by(:project_id => self.id, :contributor_github_id => contributor["id"])
       user = User.where(:github_id => userproject.contributor_github_id).first
