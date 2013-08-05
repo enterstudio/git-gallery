@@ -9,7 +9,10 @@
 <!-- LOGIN/ACCOUNT BAR  -->
 <div class="top-account-control visible-desktop">
 	<!-- ACCOUNT TAB -->
-	<i><%= link_to "", current_user, :class => "icon-home" %></i>
+
+
+  
+	<i><%= link_to "", current_user, :class => "icon-home" if logged_in?  %></i> 
 	<%= render 'layouts/login' %>
 	<%= link_to "#{current_user.name}", edit_user_path(current_user), class: 'top-create-account' if logged_in? %>
 </div>
