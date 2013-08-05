@@ -3,8 +3,6 @@ class Project < ActiveRecord::Base
 
   has_one :repo
 
-  has_many :contributors
-
   has_many :project_technologies, :dependent => :destroy
   has_many :technologies, :through => :project_technologies
 
@@ -17,20 +15,20 @@ class Project < ActiveRecord::Base
     Feature.joins(:project).where(:project_id => self.id, :user_id => chosen_user.id)
   end
 
-  def self.technologies(tech_name)
-    # select p.name from projects p
-    # join features f on
-    # f.project_id = p.id
-    self.joins("JOIN features ON features.project_id = projects.id").
-    # join feature_technologies ft
-    # on ft.feature_id = f.id
-    joins("JOIN feature_technologies ON feature_technologies.feature_id = features.id").
-    # join technologies t on
-    # t.id = ft.technology_id
-    joins("JOIN technologies ON technologies.id = feature_technologies.technology_id").
-    # where t.name = "Rails"
-    where('technologies.name' => tech_name)
-  end
+  # def self.technologies(tech_name)
+  #   # select p.name from projects p
+  #   # join features f on
+  #   # f.project_id = p.id
+  #   self.joins("JOIN features ON features.project_id = projects.id").
+  #   # join feature_technologies ft
+  #   # on ft.feature_id = f.id
+  #   joins("JOIN feature_technologies ON feature_technologies.feature_id = features.id").
+  #   # join technologies t on
+  #   # t.id = ft.technology_id
+  #   joins("JOIN technologies ON technologies.id = feature_technologies.technology_id").
+  #   # where t.name = "Rails"
+  #   where('technologies.name' => tech_name)
+  # end
 
   def self.find_by_repo(repo)
     previous_repo = Repo.joins(:project).where(:github_id => repo.github_id).first
@@ -55,12 +53,16 @@ class Project < ActiveRecord::Base
   end
 
   def get_contributors
-    self.creator
     contributors = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}/contributors?access_token=#{creator.token}").read)
     contributors.each do |contributor|
-      saved_contributor = Contributor.where(:github_id => contributor["id"]).first || Contributor.create(:github_id => contributor["id"], :name => contributor["login"])
-      project_contributor = ProjectContributor.create(:project_id => self.id, :contributor_id => saved_contributor.id)
-    end  
+      contributor_info = JSON.parse(open("https://api.github.com/users/#{contributor["login"]}").read)
+      
+      userproject = UserProject.find_or_create_by(:project_id => self.id, :contributor_github_id => contributor["id"])
+      user = User.where(:github_id => userproject.contributor_github_id).first
+      userproject.user_id = user.id if user
+      userproject.save
+      GgMailer.new_project(self, contributor_info).deliver
+    end
   end
 
   def creator

@@ -12,21 +12,20 @@ class RepoScraper
     repos = JSON.parse(open("https://api.github.com/users/#{@user.name}/repos?access_token=#{@user.token}").read)
 
     repos.each do |repo|
+      repo_check = Repo.where(:github_id => repo["id"])
       
-      if Repo.where(:github_id => repo["id"]).empty?
+      if repo_check.empty?
         new_repo = Repo.new
         new_repo.github_id = repo["id"]
         new_repo.name = repo["name"]
         new_repo.published_at = repo["published_at"]
         new_repo.url = repo["url"]
         new_repo.html_url = repo["html_url"]
-        new_repo.github_id = repo["id"]
         new_repo.user_id = @user.id
+        new_repo.github_owner_id = repo["owner"]["id"]
 
         puts "saved successfully" if new_repo.save
       end
     end     
   end
-
 end
-

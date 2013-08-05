@@ -6,4 +6,13 @@ module ApplicationHelper
         </div>
         </a>".html_safe
   end
+
+  def mark_required(object, attribute, options = {})
+    label = options[:label]
+    if object.class.validators_on(attribute).map(&:class).include? ActiveModel::Validations::PresenceValidator
+      label ? "*#{label}" : "*#{attribute.to_s.capitalize}"
+    else
+      label ? "#{label}" : "#{attribute.to_s.capitalize}"
+    end
+  end
 end

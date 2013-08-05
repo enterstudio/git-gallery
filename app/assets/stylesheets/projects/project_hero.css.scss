@@ -10,11 +10,13 @@
 
 .hero-unit {
   background-color: #538187;
-  // background-image: url("binding_dark.png");
+  border-right: 3px solid #cb3120;
+  border-bottom: 10px solid #cb3120;
+  margin-bottom: 40px;
+  box-shadow: none;
   height: 20%;
   border-radius: 0;
   padding: 0;
-  margin-bottom: 0;
 }
 
 .tech li a{
@@ -69,6 +71,10 @@
 .hero-inline {
 
   float: left;
+<<<<<<< HEAD:app/assets/stylesheets/projects/project_hero.css.scss
   margin-left: 0px;
+=======
+  margin-left: 20px;
+>>>>>>> master:app/assets/stylesheets/projects/project_hero.css.scss
   margin-right: 10px;
 }

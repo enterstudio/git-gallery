@@ -10,7 +10,11 @@
  *
  *= require_self
  *= require ../../../vendor/assets/chosen/chosen.min
+<<<<<<< HEAD
  *= require ../../../vendor/assets/theme/css/theme_venera_blue
+=======
+ *= require ../../../vendor/assets/theme/css/theme_venera_blue_custom
+>>>>>>> master
  *= require /projects
  *= require_tree .
 

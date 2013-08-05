@@ -1,4 +1,9 @@
-<p>
-  <div class="activator-<%= feat.id %>-description">
-  <%= best_in_place feat, :title, :type => :input, :activator => ".activator-#{feat.id}-description" %>
-</p>
+
+<div class="feature-inline">
+  <p>
+    <%= best_in_place feat, :description, :type => :input, :activator => ".activator-#{feat.id}-description" %>
+  </p>
+</div>
+
+<i class="activator-<%= feat.id %>-description hero icon-pencil"></i>
+

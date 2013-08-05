@@ -1,6 +1,7 @@
 module UsersHelper
   def avatar_url(user)
-    if user.avatar_url.present? && user.email
+    # raise user
+    if user.avatar_url.present?
       user.avatar_url
     else
       gravatar_id = Digest::MD5::hexdigest(user.email).downcase if user.email

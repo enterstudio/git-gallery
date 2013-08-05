@@ -54,6 +54,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         login(@user)
+        @user.associate_with_existing_projects
         Repo_scraper.new(@user)
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
@@ -68,9 +69,13 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-
+    
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        GgMailer.registration_confirmation(@user).deliver if @user.registered == false
+        @user.registered = true
+        @user.save
+
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
@@ -83,6 +88,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    reset_session
     @user = User.find(params[:id])
     @user.destroy
 

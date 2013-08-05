@@ -1,5 +1,16 @@
 <div class="gg-feature-form">
 	<h1 class="gg-lone-header"><%= slide_prompt(@feature) %></h1>
-	<button style="font-color:white"><%= link_to 'Code Snippet', new_feature_snippet_path(@feature)%></button>
-	<button><%= link_to 'Image', new_feature_upload_path(@feature) %></button>
+  <div class="container span12">
+  <div class="buttons-with-margins">
+      <!-- ACCOUNT TAB -->
+      <div class="gg-multiple-buttons">
+        <%= link_to raw("<h3>Upload an Image</h3>"), new_feature_upload_path(@feature), :class => "btn btn-primary btn-primary-green"%>
+      </div>
+      <div class="gg-multiple-buttons">
+        <%= link_to raw("<h3>Copy/Paste A Code Snippet</h3>"), new_feature_snippet_path(@feature), :class => "btn btn-primary btn-primary-white"%>
+      </div>
+    </div>
+  </div>
 </div>
+
+
