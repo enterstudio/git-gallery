@@ -68,7 +68,7 @@ class Project < ActiveRecord::Base
 
   def mail_on_new_project(project, contributor_info)
     contributor_if_present = project.users.where(:github_id => contributor_info["id"]).first || contributor_info
-    GgMailer.new_project(self, contributor_if_present).deliver if !contributor_if_present["email"].empty?
+    GgMailer.new_project(self, contributor_if_present).deliver if !contributor_if_present["email"].nil?
   end
 
   def editable_by?(user)
@@ -81,12 +81,11 @@ class Project < ActiveRecord::Base
 
   def get_description
     github_description = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}").read)["description"]
-    if !github_description.empty?
-      self.description =  github_description
-    else 
+    if github_description.nil? || github_description.empty?
       self.description = "Please write a short description about this project."
-    self.save
+    else 
+      self.description =  github_description
     end
+    self.save
   end
 end
-
