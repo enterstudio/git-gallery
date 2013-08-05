@@ -16,12 +16,6 @@ class User < ActiveRecord::Base
     Feature.joins(:technologies).where(:user_id => self.id, :technologies => {:name => chosen_tech.name})
   end
 
-  # def send_email #see active record callbacks
-  # end
-
-  # def ping_api
-  # end
-
   def editable_by?(user)
     self == user
   end
