@@ -1,5 +1,5 @@
 class FeaturesController < ApplicationController
-  skip_before_filter :login_required, :only => [:index, :show, :edit]
+  skip_before_filter :login_required, :only => [:index, :show, :edit, :update_slide_order]
   
   # GET /users/1/features
   # GET /users/1/features.json
@@ -37,8 +37,16 @@ class FeaturesController < ApplicationController
   def edit
     @feature = Feature.find(params[:id])
     @technologies = Technology.all
-    
     # can_current_user?(:edit, @feature)
+  end
+
+  def update_slide_order
+    params["slides"].each do |index, slide_hash|
+      slide = slide_hash["class"].constantize.find(slide_hash["id"])
+      slide.position = index
+      slide.save
+    end
+    # {"slides"=>{"0"=>{"class"=>"Snippet", "id"=>"1"}, "1"=>{"class"=>"Snippet", "id"=>"1"}}, "feature_id"=>"41"}
   end
 
   # POST /users/1/features
@@ -67,7 +75,7 @@ class FeaturesController < ApplicationController
     if params[:slides] 
       params[:slides].each_with_index do |slide, index|
         snippet_or_upload = slide[:class].constantize.find(slide[:id])
-        snippet_or_upload.position = index + 1
+        snippet_or_upload.position = index
         snippet_or_upload.save
       end
     end

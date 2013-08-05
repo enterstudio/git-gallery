@@ -4,6 +4,7 @@ GitAtMe::Application.routes.draw do
     match 'auth/failure', to: redirect('/')
     match 'signout', to: 'sessions#destroy', as: 'signout'
 
+   post "features/:feature_id/update_slide_order" => "features#update_slide_order"
   
   get "/login"  => "sessions#new"
   post "/login" => "sessions#create"
