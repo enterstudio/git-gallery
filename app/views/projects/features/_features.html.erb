@@ -22,12 +22,10 @@ $(document).ready(function() {
       <div class="feature new">
 
         <div class="creator">
-        <% if @features.empty? && current_user %>
-          <h3 class="feature-card-title">Add A Feature To Your Project.</h3>
-        <% elsif current_user%>
-          <h3 id="features-title" class="section-header">Features</h3>
-        <% end %>
-          <%= link_to 'New', new_project_feature_path(@project) if current_user%>
+          <h3 class="feature-card-title">
+            <%= link_to 'Add A Feature To Your Project.', new_project_feature_path(@project) if current_user%>
+          </h3>
+          
         </div>
 
       </div>
