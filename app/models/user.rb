@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
 
   after_destroy :prune_repos, :disassociate_projects
 
-  validates :email, :uniqueness => true, :email_format => true
+  validates :email, :uniqueness => true
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :update, :allow_nil => true
 
   def tech_features(chosen_tech)
     Feature.joins(:technologies).where(:user_id => self.id, :technologies => {:name => chosen_tech.name})
@@ -27,11 +28,7 @@ class User < ActiveRecord::Base
   end
 
   def features
-    features = []
-    self.user_projects.each do |user_project|
-      features << user_project.features
-    end
-    features.flatten
+    user_projects.collect(&:features).flatten
   end
 
   def self.search(query)
@@ -47,7 +44,7 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.github_id = auth["uid"]
       user.name = auth["info"]["nickname"]
-      user.email = auth["info"]["email"] || "#{user.name}@UPDATE-EMAIL.com"
+      user.email = auth["info"]["email"] #|| "#{user.name}@UPDATE-EMAIL.com"
       user.avatar_url = auth["info"]["image"]
       user.token = auth["credentials"]["token"]
       user.registered = false
