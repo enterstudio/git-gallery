@@ -62,6 +62,13 @@ class Project < ActiveRecord::Base
       userproject.user_id = user.id if user
       userproject.save
       GgMailer.new_project(self, contributor_info).deliver
+
+      # raise self
+      if self.users.where(:github_id == contributor_info["id"]).first
+        GgMailer.new_project(self, self.users.where(:github_id == contributor_info["id"]).first).deliver
+      elsif contributor_info["email"]
+        GgMailer.new_project(self, contributor_info).deliver
+      end
     end
   end
 
