@@ -2,6 +2,21 @@ sign in with github page
 
 first sign in I see update "username" kinda weird.
 maybe should be a welcome page with some information about this site.
+
+
+*** WHAT WE ARE CURRENTLY USING ***                        *** WHAT WE SHOULD BE USING *** 
+H2     => SHOULD BE THE MAIN THING ON PAGE              |  H1
+H3     => SHOULD BE FOR SECOND LEVEL HEADERS            |  H2
+H4     => SHOULD BE FOR THIRD LEVEL HEADERS             |  H3
+H5     => SHOULD BE FOR FORTH LEVEL HEADERS             |  H4
+LI     => SHOULD USE SOME MORE MARKUP TO STYLE THIS     |  SHOULD NOT LEAVE THINGS IN A LI MARK IT UP
+EM     => SHOULD BE FOR SOME MINOR EMPHASIS             |  EM
+STRONG => SHOULD BE FOR SOME MAJOR EMPHASIS             |  STRONG
+P      => SHOULD BE FOR DESCRIPTIVE FIELDS              |  P
+LABEL  => SHOULD BE FOR LABELS IN FORMS                 |  LABEL
+BUTTON => SHOULD BE FOR ACTIONS LIKE SUBMIT             |  BUTTON
+LINK   => SHOULD BE FOR LINKING TO PAGES NOT ACTIONS    |  LINKS
+
 (http://localhost:3000/users/1/edit)
 ----------------------
 H2 Update User
@@ -33,9 +48,24 @@ H3 project description
  italic username
 ========================
 ====== FEATURES ========
+H2 Feature title
 H3 Make a new Feature
 ========================
 ====== CAROUSEL ========
+H3 Snippet Title
+H4 Upload Title looks bigger than Snippet Title
+strong snippet description-label
+p snippet description
+===== SIDEBAR ==========
+H2 username
+em member since
+H2 Feature Description-label
+p span feature description
+H2 Feature Slides
+li First Snippet
+em snippet title
+p em created on
+p em last updated on
 ========================
 ----------------------
 
@@ -71,8 +101,62 @@ label Name your snippet
 label Original Github url
 label Language
 label Source Code
-
+label Code description
+btn I'm done with this feature
 ----------------------
+
+(http://localhost:3000/features/1/slides/new)
+The new fork page in the creation process.
+----------------------
+div no markup What would you like...
+a link styled like btn Copy/Paste code snippet
+a link styled like btn Upload image
+these links are reversed, copy appears on left while upload is right
+but upload comes first in the code.
+----------------------
+
+(http://localhost:3000/features/1/uploads/new)
+----------------------
+legend Upload a screenshot...
+label Give this...
+label Choose an image...
+label Explain what...
+btn I'm done with this Feature
+btn Next Slide
+----------------------
+
+NOTE: You cannot get out of a feature now with the flow as is.
+
+Users=========
+          name
+         email
+
+Projects======
+          name
+        source
+   description
+
+Features======
+         title 
+   description
+
+Slides========
+
+Snippets======
+          name
+      language
+          code
+           url
+   description
+
+Technologies==
+          name
+      icon_url
+
+Uploads=======
+          name
+     extension
+   description
 
 
 
