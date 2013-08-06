@@ -1,9 +1,5 @@
-
-  <div class="feature-inline">
-    <%= best_in_place feat, :title, :type => :input, :activator => ".activator-#{feat.id}-title" %>
-    <%= link_to 'Edit', edit_feature_path(feat) %>
-  </div>
-
-<i class="activator-<%= feat.id %>-title hero icon-pencil"></i>
-
-
+<div class="feature-inline"><%= feat.title %>
+  <i>
+    <%= link_to '', edit_feature_path(feat), :class => "icon-pencil" %>  
+  </i>
+</div>
