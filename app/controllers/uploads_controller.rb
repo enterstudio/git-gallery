@@ -8,7 +8,6 @@ class UploadsController < ApplicationController
   # GET /uploads/new
   # GET /uploads/new.json
   def new
-    # raise params.class
     @upload = @uploadable.uploads.new
     if User.where(:id => params[:user_id]).count > 0
       @user = User.find(params[:user_id])
@@ -44,7 +43,6 @@ class UploadsController < ApplicationController
     end
     
     # @upload.location_dependent_save(@uploadable)
-
   end
 
   # PUT /uploads/1
@@ -87,5 +85,4 @@ private
     # raise klass.find(params["#{klass.name.underscore}_id"])
     @uploadable = klass.find(params["#{klass.name.underscore}_id"])
   end
-
 end
