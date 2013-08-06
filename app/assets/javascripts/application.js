@@ -19,10 +19,8 @@
 //= require ../../../vendor/assets/theme/js/main
 //= require ../../../vendor/assets/chosen/chosen.jquery.min
 //= require ../../../vendor/assets/masonry/masonry.pkgd.min
-//= require feature_accordian
 //= require ../../../vendor/assets/javascripts/jquery-ui-sortable
 //= require update_slide_order
-//= require best_in_place
 //= require best_in_place
 //= require_tree .
 
