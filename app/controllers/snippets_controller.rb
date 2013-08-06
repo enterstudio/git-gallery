@@ -38,6 +38,7 @@ class SnippetsController < ApplicationController
   end
 
   def destroy
+
     snippet = Snippet.find(params[:id])
     @feature = snippet.feature
     snippet.destroy
@@ -47,5 +48,6 @@ class SnippetsController < ApplicationController
   def destroy_on_back
     @feature = Feature.find(params[:id])
     @feature.snippets.last.destroy
+
   end
 end

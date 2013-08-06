@@ -32,14 +32,13 @@ body {
 .feature {
   padding: 0;
   border: none;
-  // border-top: 3px solid #cb3120;
   background-color: #CCC9B4;
   margin-bottom: 0;
+  margin-top: 0;
   display: inline-block;
   width: 27%; // CHANGE THIS TO CHANGE WIDTH OF FEATURE BOX
   height: 70px;
   vertical-align: bottom;
-  margin-top: 0;
 }
 
 .feature h2, h3 {
@@ -53,7 +52,6 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 input#search {
   margin-top : 7px;
@@ -79,7 +77,8 @@ input#search {
 
 .selected {
   border: none;
-  background-color: #0E1A1C;
+  background-color: #343838;
+  // border-bottom: 3px solid #cb3120;
   h2 {
     color: white;
   }
@@ -161,4 +160,22 @@ input#search {
 
 .gg-notice {
   padding-top: 20px;
+}
+
+.gg-project-hero-title {
+  display: inline-block;
+  font-size: 50px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  float: left;
+}
+
+.gg-project-edit {
+  float:right;
+  padding-top: 50px;
+}
+
+.techs {
+  font-size: 20px;
+  margin-left: 100px;
 }
