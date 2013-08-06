@@ -52,11 +52,13 @@
               <p><%= slide.name %></p>
               <p><%= slide.description%></p>
               <img height="100px"><%= snippet_or_upload_show(slide) %></img>
-              <p><%= link_to "Delete This Slide", slide, :method => :delete %></p>
+              <p><%= link_to " Delete This Slide", slide, :method => :delete %></p>
             </p>
         </div>
+
         <% end %>
       </div>
+       <%= link_to "Add a Slide", new_feature_slide_path(@feature) %>
 </div>
 
 
