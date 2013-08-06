@@ -1,5 +1,5 @@
 <div class="container span8 gg-feature-form">
-<%= form_for [@uploadable, @upload], html: {class: "form-horizontal"} do |f|%>
+<%= form_for [@uploadable, @upload], html: {class: "form-horizontal delete-on-back"} do |f|%>
   <%= render partial: "shared/error_messages", :locals => {:target => @upload} %>
   
   <fieldset>

@@ -46,4 +46,9 @@ class SnippetsController < ApplicationController
     @snippet.destroy
     redirect_to snippets_url
   end
+
+  def destroy_on_back
+    @feature = Feature.find(params[:id])
+    @feature.snippets.last.destroy
+  end
 end
