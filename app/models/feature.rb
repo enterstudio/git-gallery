@@ -33,6 +33,11 @@ class Feature < ActiveRecord::Base
       slides = []
       self.add_snippets(slides)
       self.add_uploads(slides)
+      if slides.include?(nil)
+        slides.compact!.each_with_index do |slide, index|
+          slide.position = index
+        end
+      end
       slides
   end
 
