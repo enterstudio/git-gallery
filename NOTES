@@ -33,9 +33,24 @@ H3 project description
  italic username
 ========================
 ====== FEATURES ========
+H2 Feature title
 H3 Make a new Feature
 ========================
 ====== CAROUSEL ========
+H3 Snippet Title
+H4 Upload Title looks bigger than Snippet Title
+strong snippet description-label
+p snippet description
+===== SIDEBAR ==========
+H2 username
+em member since
+H2 Feature Description-label
+p span feature description
+H2 Feature Slides
+li First Snippet
+em snippet title
+p em created on
+p em last updated on
 ========================
 ----------------------
 
@@ -71,8 +86,33 @@ label Name your snippet
 label Original Github url
 label Language
 label Source Code
-
+label Code description
+btn I'm done with this feature
 ----------------------
+
+(http://localhost:3000/features/1/slides/new)
+The new fork page in the creation process.
+----------------------
+div no markup What would you like...
+a link styled like btn Copy/Paste code snippet
+a link styled like btn Upload image
+these links are reversed, copy appears on left while upload is right
+but upload comes first in the code.
+----------------------
+
+(http://localhost:3000/features/1/uploads/new)
+----------------------
+legend Upload a screenshot...
+label Give this...
+label Choose an image...
+label Explain what...
+btn I'm done with this Feature
+btn Next Slide
+----------------------
+
+NOTE: You cannot get out of a feature now with the flow as is.
+
+
 
 
 
