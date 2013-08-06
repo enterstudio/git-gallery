@@ -3,7 +3,9 @@
 
   <fieldset>
 
-    <legend>Please update your account</legend>
+    <legend>
+      Please update your account
+    </legend>
     <div class="control-group">
     <%= f.label(:email, :class => "control-label") %>
     <div class="controls">
@@ -11,9 +13,9 @@
     </div>
     </div>
     <div class="controls">
-      <%= f.submit "Confirm Info" %>
+      <%= f.submit "Confirm Info", :class => "btn btn-primary" %>
       <div class="clearfix"></div>
-      <%= link_to 'Delete User', @user, method: :delete, :class => "btn-danger btn-mini", data: { confirm: "Are you sure you want to delete #{@user.name}?" } if current_user == @user %>
+      <%= link_to 'Delete User', @user, method: :delete, :class => "btn btn-primary", data: { confirm: "Are you sure you want to delete #{@user.name}?" } if current_user == @user %>
     </div> 
 
   </fieldset>

@@ -1,21 +1,16 @@
-<div class="slide-creation-1">
-
-	<%= slide_prompt(@feature) %>
-
-  <div class="container span8">
-    <div class="buttons-with-margins">
-      <!-- ACCOUNT TAB -->
-      <div class="gg-multiple-buttons">
-        <%= link_to raw("<h3>Upload an Image</h3>"), new_feature_upload_path(@feature), :class => "btn btn-primary btn-primary-green"%>
-      </div>
-      <div class="gg-multiple-buttons">
-        <%= link_to raw("<h3>Copy/Paste A Code Snippet</h3>"), new_feature_snippet_path(@feature), :class => "btn btn-primary btn-primary-white"%>
-      </div>
-      <div class="gg-multiple-buttons">
-        <%= link_to raw("<h3>I'm Done Adding Slides</h3>"), edit_feature_path(@feature), :class => "btn btn-primary btn-primary-white"%>
-      </div>
-    </div>
+<div class="span8">
+  <%= slide_prompt(@feature) %> <!-- this can be found in the slideshelper -->
+  <div class="gg-multiple-buttons">
+    <%= link_to raw("<h3>Upload an Image</h3>"), new_feature_upload_path(@feature), :class => "btn btn-primary-green"%>
   </div>
+  <div class="gg-multiple-buttons">
+    <%= link_to raw("<h3>Copy/Paste A Code Snippet</h3>"), new_feature_snippet_path(@feature), :class => "btn btn-primary-white"%>
+  </div>
+  
+  <%= link_to raw("<h3>I'm Done Adding Slides</h3>"), edit_feature_path(@feature), :class => " btn-primary-white"%>
+
 </div>
+
+
 
 
