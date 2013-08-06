@@ -23,6 +23,12 @@ module ProjectsHelper
 		end
 	end
 
+	def user_dependent_edit(project)
+		if project.editable_by?(current_user)
+			render partial: "projects/hero/edit_project_button", :locals => {:project => project}
+		end
+	end
+
 	def image_link(project)
 		if project.uploads != []
 		 "#{project.uploads.first.image_url.to_s}"
