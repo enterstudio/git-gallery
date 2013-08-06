@@ -19,7 +19,7 @@ LINK   => SHOULD BE FOR LINKING TO PAGES NOT ACTIONS    |  LINKS
 
 (http://localhost:3000/users/1/edit)
 ----------------------
-H2 Update User
+H2 Update User (this is now a horizontal form)
 label email
 button confirm info
 link to delete user -> maybe should be delete account

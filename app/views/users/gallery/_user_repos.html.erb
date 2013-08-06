@@ -1,24 +1,24 @@
 <% current_user_var = current_user %>
 
-<aside class="span4 user_repo">
-  <div>
-    <h3>Make a Project</h3>
-    <h5>Available Repos</h5>
-    <ul>
+<aside class="span4">
+
+  <div class="span10">
+    <h2>Make a Project</h2>
+    <h4>Available Repos</h4>
+    <ul class="unstyled">
       <% Repo.where(:user_id => page_user.id).each do |repo| %>
         <% if !is_project?(repo) %>
-          <li class="repo">
-            <span>
+          <% if repo.check_if_contributor(current_user_var) %>
+            <li class="repo">
               <h4>
-                <% if repo.check_if_contributor(current_user_var) %>
-                  <%= link_to repo.name.truncate(25), repo.html_url, id: "#{repo.name}", :target => "_blank" %>
-                  <i><%= link_to "", projects_path(:repo_id => repo.id), :method => :post, class: 'icon-plus-sign pull-right',:title => 'Build your project.', :rel => "tooltip","data-placement" => "left", :"data-name" => "#{repo.name}" %></i>
-                <% end %>
+                <%= link_to repo.name.truncate(25), repo.html_url, id: "#{repo.name}", :target => "_blank" %>
+                <i><%= link_to "Build", projects_path(:repo_id => repo.id), :method => :post, class: ' btn btn-small pull-right', :"data-name" => "#{repo.name}" %></i>
               </h4>  
-            </span>
-          </li>
+            </li>
+          <% end %>
         <% end %>
       <% end %>
     </ul>
   </div>
+
 </aside>
