@@ -38,9 +38,10 @@ class SnippetsController < ApplicationController
   end
 
   def destroy
-    @snippet = Snippet.find(params[:id])
-    @snippet.destroy
-    redirect_to snippets_url
+    snippet = Snippet.find(params[:id])
+    @feature = snippet.feature
+    snippet.destroy
+    redirect_to edit_feature_path(@feature)
   end
 
   def destroy_on_back
