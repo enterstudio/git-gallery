@@ -12,11 +12,7 @@
       <div class="span10 hero-title">
         <span class="gg-project-hero-title"><%= @project.name %></span>
         <%= render "projects/hero/tech_tags" %>
-        <span class="pager gg-project-edit">    
-          <li class="next">
-              <%= link_to "Edit This Project", edit_project_path(@project) %>
-          </li>
-        </span>
+        <%= user_dependent_edit(@project) %>
       </div>
 
       <div class="clearfix"></div>
