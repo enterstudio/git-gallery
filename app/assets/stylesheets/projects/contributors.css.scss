@@ -4,6 +4,8 @@
 }
 
 #contribs-slide {
+ /*jennifer changed*/
+ padding-top: 30px;
  width: 100%;
  overflow-x: auto;
  overflow-wrap: scroll;
@@ -27,7 +29,9 @@
     -webkit-filter: grayscale(0); /* Google Chrome & Safari 6+ */
   }
   img {
-    border: 3px solid #cb3120;
+   /* border: 3px solid #cb3120;*/
+  /* jennifer changed*/
+   border: 3px solid #2dc5e3;
   }
 
 }

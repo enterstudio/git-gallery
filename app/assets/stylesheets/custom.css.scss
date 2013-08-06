@@ -93,7 +93,8 @@ input#search {
 }
 
 .top-create-account {
-  background-color: #538187 !important;
+/*  background-color: #538187 !important;*/
+  /*jennifer changed */
 }
 
 .icon-cog {
@@ -155,7 +156,9 @@ input#search {
 #content-wrapper {
   margin-left:auto;
   margin-right:auto;
-  width: 97%;
+/*  width: 97%;*/
+ /* jennifer changed*/
+   width: 100%;
   background-color: #f2ffee;
 }
 
@@ -179,4 +182,8 @@ input#search {
 .techs {
   font-size: 20px;
   margin-left: 100px;
+}
+
+.gg-project-tabs-custom {
+  background-color: #cff5ff;
 }
