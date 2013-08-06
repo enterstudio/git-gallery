@@ -18,10 +18,6 @@ module UsersHelper
     </a>".html_safe
   end
 
-  def is_project?(repo)
-    return true if repo.project_id != nil
-  end
-
   def show_projects(user)
     if user.projects.empty?  
       render :partial => "users/gallery/my_project_explanation"
