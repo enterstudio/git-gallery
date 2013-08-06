@@ -2,6 +2,21 @@ sign in with github page
 
 first sign in I see update "username" kinda weird.
 maybe should be a welcome page with some information about this site.
+
+
+*** WHAT WE ARE CURRENTLY USING ***                        *** WHAT WE SHOULD BE USING *** 
+H2     => SHOULD BE THE MAIN THING ON PAGE              |  H1
+H3     => SHOULD BE FOR SECOND LEVEL HEADERS            |  H2
+H4     => SHOULD BE FOR THIRD LEVEL HEADERS             |  H3
+H5     => SHOULD BE FOR FORTH LEVEL HEADERS             |  H4
+LI     => SHOULD USE SOME MORE MARKUP TO STYLE THIS     |  SHOULD NOT LEAVE THINGS IN A LI MARK IT UP
+EM     => SHOULD BE FOR SOME MINOR EMPHASIS             |  EM
+STRONG => SHOULD BE FOR SOME MAJOR EMPHASIS             |  STRONG
+P      => SHOULD BE FOR DESCRIPTIVE FIELDS              |  P
+LABEL  => SHOULD BE FOR LABELS IN FORMS                 |  LABEL
+BUTTON => SHOULD BE FOR ACTIONS LIKE SUBMIT             |  BUTTON
+LINK   => SHOULD BE FOR LINKING TO PAGES NOT ACTIONS    |  LINKS
+
 (http://localhost:3000/users/1/edit)
 ----------------------
 H2 Update User
@@ -112,7 +127,36 @@ btn Next Slide
 
 NOTE: You cannot get out of a feature now with the flow as is.
 
+Users=========
+          name
+         email
 
+Projects======
+          name
+        source
+   description
+
+Features======
+         title 
+   description
+
+Slides========
+
+Snippets======
+          name
+      language
+          code
+           url
+   description
+
+Technologies==
+          name
+      icon_url
+
+Uploads=======
+          name
+     extension
+   description
 
 
 
