@@ -4,9 +4,9 @@ first sign in I see update "username" kinda weird.
 maybe should be a welcome page with some information about this site.
 
 
-*** WHAT WE ARE CURRENTLY USING ***                        *** WHAT WE SHOULD BE USING *** 
-H2     => SHOULD BE THE MAIN THING ON PAGE              |  H1
-H3     => SHOULD BE FOR SECOND LEVEL HEADERS            |  H2
+       *** WHAT WE ARE CURRENTLY USING ***                      *** WHAT WE SHOULD BE USING *** 
+H2     => SHOULD BE THE MAIN THING ON PAGE              |  H1   should only have one per page
+H3     => SHOULD BE FOR SECOND LEVEL HEADERS            |  H2   
 H4     => SHOULD BE FOR THIRD LEVEL HEADERS             |  H3
 H5     => SHOULD BE FOR FORTH LEVEL HEADERS             |  H4
 LI     => SHOULD USE SOME MORE MARKUP TO STYLE THIS     |  SHOULD NOT LEAVE THINGS IN A LI MARK IT UP
