@@ -9,16 +9,15 @@
 <section class="hero-unit">
   <div class="row-fluid">
     <div id="hero-description" class="span12">
-      <%= user_dependent_view(@project, "name") %>
-      <div class="span3 hero-title"></div>
-      <div class="hero_tags span9">
-        <div class="row-fluid span12">
-          <%= render "projects/hero/tech_tags" %>
-        </div>
+      <div class="span10 hero-title">
+        <span class="gg-project-hero-title"><%= @project.name %></span>
+        <%= render "projects/hero/tech_tags" %>
+        <%= user_dependent_edit(@project) %>
       </div>
+
       <div class="clearfix"></div>
       <div class="span7 proj-descript">
-        <%= user_dependent_view(@project, "description") %>
+        <h3 class="hero-inline" id="project-description"><%= @project.description %></h3>
       </div>
       <div class="span4 hero-image">
         <!-- PROJECT IMAGE GOES HERE -->

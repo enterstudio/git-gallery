@@ -1,7 +1,28 @@
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<p id="notice" class="gg-notice"><%= notice %></p>
 
-Project Edit Page
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+  /* Activating Best In Place */
+  $(document).ready(function() {
+    jQuery(".best_in_place").best_in_place();
+  });
+</script>
+
+<section class="hero-unit">
+  <div class="row-fluid">
+    <div id="hero-description" class="span12">
+      <%= user_dependent_view(@project, "name") %>
+      <div class="span3 hero-title"></div>
+      <div class="hero_tags span9">
+        <div class="row-fluid span12">
+          <%= render "projects/hero/tech_tags" %>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="span7 proj-descript">
+        <%= user_dependent_view(@project, "description") %>
+      </div>
+      <div class="span4 hero-image">
+        <!-- PROJECT IMAGE GOES HERE -->
+
+</section>
