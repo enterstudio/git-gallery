@@ -34,11 +34,7 @@ class UploadsController < ApplicationController
     #IF COMING FROM PROJECT, REDIRECT TO PROJECT SHOW; IF COMING FROM USER/FEATURE, REDIRECT TO FEATURE SHOW
     if @upload.save
       if @uploadable.class.name == "Feature"
-        if params[:next_state] == "true"
-          redirect_to new_feature_slide_path(@uploadable), notice: 'Last slide was successfully created.'
-        else
-          redirect_to feature_path(@uploadable)
-        end
+        redirect_to new_feature_slide_path(@uploadable), notice: 'Last slide was successfully created.'
       else
         redirect_to project_path(@uploadable)
       end
