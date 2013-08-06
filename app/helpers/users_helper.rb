@@ -1,6 +1,5 @@
 module UsersHelper
   def avatar_url(user)
-    # raise user
     if user.avatar_url.present?
       user.avatar_url
     else
@@ -18,10 +17,6 @@ module UsersHelper
     </a>".html_safe
   end
 
-  def is_project?(repo)
-    return true if repo.project_id != nil
-  end
-
   def show_projects(user)
     if user.projects.empty?  
       render :partial => "users/gallery/my_project_explanation"
@@ -29,6 +24,4 @@ module UsersHelper
       render :partial => "users/gallery/user_gallery", :locals => { :page_user => user }
     end
   end
-
-
 end
