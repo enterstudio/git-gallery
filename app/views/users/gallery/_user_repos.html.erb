@@ -7,16 +7,16 @@
     <ul>
       <% Repo.where(:user_id => page_user.id).each do |repo| %>
         <% if !is_project?(repo) %>
+        <% if repo.check_if_contributor(current_user_var) %>
           <li class="repo">
             <span>
               <h4>
-                <% if repo.check_if_contributor(current_user_var) %>
-                  <%= link_to repo.name.truncate(25), repo.html_url, id: "#{repo.name}", :target => "_blank" %>
-                  <i><%= link_to "", projects_path(:repo_id => repo.id), :method => :post, class: 'icon-plus-sign pull-right', :"data-name" => "#{repo.name}" %></i>
-                <% end %>
+                <%= link_to repo.name.truncate(25), repo.html_url, id: "#{repo.name}", :target => "_blank" %>
+                <i><%= link_to "", projects_path(:repo_id => repo.id), :method => :post, class: 'icon-plus-sign pull-right', :"data-name" => "#{repo.name}" %></i>
               </h4>  
             </span>
           </li>
+          <% end %>
         <% end %>
       <% end %>
     </ul>

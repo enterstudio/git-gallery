@@ -18,6 +18,9 @@
   a {
     color: #cb3120;
   }
+  h3 {
+    color: black;
+  }
 }
 
 .form-header {
@@ -27,7 +30,7 @@
 .gg-multiple-buttons {
   display: inline-block;
   float: right;
-
+  padding-bottom: 3px;
   .btn-primary-white, .btn-primary-green {
     box-shadow: none;
     padding: 0;
