@@ -31,41 +31,50 @@
   <div class="activator-<%= @feature.id %>-description"><i class="hero icon-pencil"></i></div>
 
 <div class="clearfix"></div>
-<h3 class="form-header">Check Out Your Slides</h3>
+<% if @feature.slides_in_order.any? %>
+  <h3 class="form-header">Check Out Your Slides</h3>
 
 
-<div class="tabbable tabs-left">
-      <ul class="nav nav-tabs sortable" data-feature-id="<%= @feature.id %>">
-       <% @feature.slides_in_order.each_with_index do |slide, index| %>
-      	<% myclass = index == 0 ? 'active' : ''%>
-        <li data-id="<%= slide.id %>" data-class-type="<%= slide.class %>" class="<%=myclass %>"><a href="#l<%=index%>" data-toggle="tab"><%= slide.name %></a></li>
-     
-         <% end %>
-          </ul>
-      <div class="tab-content">
-      <% @feature.slides_in_order.each_with_index do |slide, index| %>
-      <% myclass = index == 0 ? 'active' : ''%>
-        <div class="tab-pane <%=myclass %>" id="l<%= index %>">
-         <p draggable="true" class="" style="">
-              <input type="hidden" name="slides[][class]" value="<%= slide.class %>"></input>
-              <input type="hidden" name="slides[][id]" value="<%= slide.id %>"></input>
-              <p><%= slide.name %></p>
-              <p><%= slide.description%></p>
-              <img height="100px"><%= snippet_or_upload_show(slide) %></img>
-              <p><%= link_to " Delete This Slide", slide, :method => :delete %></p>
-            </p>
+  <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs sortable" data-feature-id="<%= @feature.id %>">
+         <% @feature.slides_in_order.each_with_index do |slide, index| %>
+
+        	<% myclass = index == 0 ? 'active' : ''%>
+          <li data-id="<%= slide.id %>" data-class-type="<%= slide.class %>" class="<%=myclass %>"><a href="#l<%=index%>" data-toggle="tab"><%= slide.name %></a></li>
+       
+           <% end %>
+            </ul>
+        <div class="tab-content">
+        <% @feature.slides_in_order.each_with_index do |slide, index| %>
+        <% myclass = index == 0 ? 'active' : ''%>
+          <div class="tab-pane <%=myclass %>" id="l<%= index %>">
+           <p draggable="true" class="" style="">
+                <input type="hidden" name="slides[][class]" value="<%= slide.class %>"></input>
+                <input type="hidden" name="slides[][id]" value="<%= slide.id %>"></input>
+                <p><%= slide.name %></p>
+                <p><%= slide.description%></p>
+                <img height="100px"><%= snippet_or_upload_show(slide) %></img>
+                <p><%= link_to " Delete This Slide", slide, :method => :delete %></p>
+              </p>
+          </div>
+
+          <% end %>
         </div>
+  
+  </div>
+  <% else %>
+  <h3 class="form-header">No Slides Yet. Add Some!</h3>
 
-        <% end %>
-      </div>
        <%= link_to "Add a Slide", new_feature_slide_path(@feature) %>
-</div>
+
+<% end%>
+
 
 
 
 <h3 class="form-header">Pick Your Technologies</h3>
   <div class="controls">
-<%= label_tag 'feature[technologies_to_add][]', 'Technologies', class: "control-label" %>
+
     <select data-placeholder="Choose Technologies..." name="feature[technology_ids][]" class="chosen-select" multiple style="width:350px;" tabindex="4">
       <option value=""></option>
         <% for technology in @technologies %>
