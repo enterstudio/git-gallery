@@ -1,6 +1,5 @@
 module UsersHelper
   def avatar_url(user)
-    # raise user
     if user.avatar_url.present?
       user.avatar_url
     else
@@ -25,6 +24,4 @@ module UsersHelper
       render :partial => "users/gallery/user_gallery", :locals => { :page_user => user }
     end
   end
-
-
 end
