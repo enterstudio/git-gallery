@@ -12,9 +12,9 @@ sample_description = "Description of Project ... Words to fill up more space  Wo
 Project.create(:name => "Git Gallery",        :description => "Get ready for GitHub's replacement. Git Gallery is a layer of storytelling on top of Github. You can create slideshows about how you built particular features in your repository. We chose slideshows because they demand more storytelling to go with the code. These slideshows are an alternative to technical blogging with the added benefit of keeping everything in the context of your repository and your team. Teams can work together. Each team member should create the slideshows that explain the features they understand best. This is an ideal portfolio to show prospective employers. You're a developer. You know what you did and why you did it. Show off.", :source => "https://github.com/flatiron-school/git-gallery")        # 1
 Project.create(:name => "Syllaboss",          :description => "It's like homework on the internet and stuff. You can see what you have to do and how long you can procrastinate. We used bootstrap cause it's easy.", :source => "https://github.com/flatiron-school/recipes-sample-app") # 2
 Project.create(:name => "Hire-redux",         :description => "Everybody loves gauges. Boats have gauges, motorcycles have gauges, jets have gauges, why shouldn't Rebecca's hiring process have gauges? We used bootstrap cause it's easy", :source => "https://github.com/micahrcorn/playlister-r")            # 3
-Project.create(:name => "AppApp",      		  :description => "You don't have to be anxious about your application anymore. We help Adam reject applicants more efficiently. Our algorithm automates the flatiron formula: 1 professional athlete, 1 poker player, 1 sky-diver, 1 special forces soldier, 5 investment bankers, 10 Ivy-leaguers, and 20 art majors. We used bootstrap cause its easy.", :source => "https://github.com/flatiron-school/library-redux")      # 4
+Project.create(:name => "AppApp",      		    :description => "You don't have to be anxious about your application anymore. We help Adam reject applicants more efficiently. Our algorithm automates the flatiron formula: 1 professional athlete, 1 poker player, 1 sky-diver, 1 special forces soldier, 5 investment bankers, 10 Ivy-leaguers, and 20 art majors. We used bootstrap cause its easy.", :source => "https://github.com/flatiron-school/library-redux")      # 4
 Project.create(:name => "Assignmentio-Redux", :description => "Now you have to do the homework. We used bootstrap cause it's easy.", :source => "https://github.com/flatiron-school/appapp")             # 5
-Project.create(:name => "Library-Redux", 	  :description => "Please list links for working with github's api. They're impossible to find.", :source => "https://github.com/flatiron-school/assignmentio-redux") # 6
+Project.create(:name => "Library-Redux", 	    :description => "Please list links for working with github's api. They're impossible to find.", :source => "https://github.com/flatiron-school/assignmentio-redux") # 6
 Project.create(:name => "OpenExam2",          :description => "What color shoelaces was Matz wearing the first time he thought about duck typing??", :source => "https://github.com/flatiron-school/openexam2")          # 7
 Project.create(:name => "Teamline-Redux",     :description => "The Flatiron NSA", :source => "https://github.com/flatiron-school/hire-redux")         # 8
 Project.create(:name => "Pizza",              :description => "Hawaiian pizza is my favorite. What's yours?", :source => "https://github.com/flatiron-school/teamline-redux")     # 9
@@ -151,7 +151,7 @@ timezones           = Feature.create(:title => "Time Zones",                 :de
 tomato_sauce        = Feature.create(:title => "Tomato Sauce",               :description => "placeholder description",  :user_project_id => 33)
 cheese              = Feature.create(:title => "Cheese",                     :description => "placeholder description",  :user_project_id => 34)
 ham	                = Feature.create(:title => "Ham",	                       :description => "placeholder description",  :user_project_id => 35)
-pineapple	        = Feature.create(:title => "Pineapple",	                   :description => "placeholder description",  :user_project_id => 36)
+pineapple	          = Feature.create(:title => "Pineapple",	                   :description => "placeholder description",  :user_project_id => 36)
 flow_meter          = Feature.create(:title => "Flow Meter",                 :description => "placeholder description",  :user_project_id => 37)
 raspberry_pi        = Feature.create(:title => "Rasberry Pi",                :description => "placeholder description",  :user_project_id => 38)
 chron_jobs	        = Feature.create(:title => "Chron Jobs",	               :description => "placeholder description",  :user_project_id => 39)
@@ -281,13 +281,21 @@ java    = Technology.create(:name => "Java")
 objc    = Technology.create(:name => "Objective C")
 sql     = Technology.create(:name => "SQL")
 
+###############################
+# CREATE PROJECT_TECHNOLOGIES #
+###############################
+ProjectTechnology.create(:project_id => 1, :technology_id => 7)
+ProjectTechnology.create(:project_id => 1, :technology_id => 2)
+ProjectTechnology.create(:project_id => 1, :technology_id => 3)
+ProjectTechnology.create(:project_id => 1, :technology_id => 4)
+
 #####################################
 # CONNECT FEATURES AND TECHNOLOGIES #
 #####################################
 rails.features   << permissions
 rails.features   << validations
 rails.features   << sessions
-rails.features   << comments_model
+rails.features   << shallow_routes
 rails.features   << dossier
 ruby.features    << filter_functions
 ruby.features    << twitter_scraper

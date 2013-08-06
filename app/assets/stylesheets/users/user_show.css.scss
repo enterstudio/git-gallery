@@ -21,6 +21,7 @@
 
 .user_gallery {
   h3 {
+    color: #538187;
     text-align: center;
   } 
 
@@ -49,8 +50,7 @@
 
 .user_repo {
 
-  background-color: grey;
-  background-image: url("binding_dark.png");
+  background-color: #538187;
   h3, h5 {
     padding-left: 20px;
     color: white;
@@ -63,7 +63,7 @@
       text-decoration: none;
     }
     a:hover {
-      color: #538187;
+      color: #0E1A1C;
     }
   }
   li{
@@ -76,7 +76,7 @@
 }
 
 .active_repo {
-  color: #538187 !important;
+  color: #0E1A1C !important;
 }
 
 .right-push {

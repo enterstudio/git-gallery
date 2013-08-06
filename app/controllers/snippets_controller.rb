@@ -17,11 +17,7 @@ class SnippetsController < ApplicationController
     @snippet = @feature.snippets.build(params[:snippet])
     @snippet.position = @feature.snippets.size + @feature.uploads.size - 1
     if @snippet.save
-      if params[:next_state] == "true"
         redirect_to new_feature_slide_path(@feature), notice: 'Last slide was successfully created.'
-      else
-        redirect_to @feature.project, notice: "Slides were successfully created."
-      end
     else
       render :new
     end
@@ -42,8 +38,16 @@ class SnippetsController < ApplicationController
   end
 
   def destroy
-    @snippet = Snippet.find(params[:id])
-    @snippet.destroy
-    redirect_to(:back)
+
+    snippet = Snippet.find(params[:id])
+    @feature = snippet.feature
+    snippet.destroy
+    redirect_to edit_feature_path(@feature)
+  end
+
+  def destroy_on_back
+    @feature = Feature.find(params[:id])
+    @feature.snippets.last.destroy
+
   end
 end

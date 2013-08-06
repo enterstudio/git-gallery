@@ -55,6 +55,7 @@
 .proj-descript p{
   margin-top: 1.5%;
   margin-left: 5%;
+  float: left;
 }
 
 .hero.icon-pencil {
@@ -63,8 +64,17 @@
 }
 
 .hero-inline {
-
   float: left;
+  // display: inline-block;
   margin-left: 20px;
   margin-right: 10px;
+}
+
+.hero-image {
+  padding-top: 1.5%;
+  padding-left: 200px;
+  img {
+    width: 60%;
+    padding-left: 4%;
+  }
 }

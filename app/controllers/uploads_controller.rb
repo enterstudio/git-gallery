@@ -8,7 +8,6 @@ class UploadsController < ApplicationController
   # GET /uploads/new
   # GET /uploads/new.json
   def new
-    # raise params.class
     @upload = @uploadable.uploads.new
     if User.where(:id => params[:user_id]).count > 0
       @user = User.find(params[:user_id])
@@ -35,11 +34,7 @@ class UploadsController < ApplicationController
     #IF COMING FROM PROJECT, REDIRECT TO PROJECT SHOW; IF COMING FROM USER/FEATURE, REDIRECT TO FEATURE SHOW
     if @upload.save
       if @uploadable.class.name == "Feature"
-        if params[:next_state] == "true"
-          redirect_to new_feature_slide_path(@uploadable), notice: 'Last slide was successfully created.'
-        else
-          redirect_to feature_path(@uploadable)
-        end
+        redirect_to new_feature_slide_path(@uploadable), notice: 'Last slide was successfully created.'
       else
         redirect_to project_path(@uploadable)
       end
@@ -48,7 +43,6 @@ class UploadsController < ApplicationController
     end
     
     # @upload.location_dependent_save(@uploadable)
-
   end
 
   # PUT /uploads/1
@@ -91,5 +85,4 @@ private
     # raise klass.find(params["#{klass.name.underscore}_id"])
     @uploadable = klass.find(params["#{klass.name.underscore}_id"])
   end
-
 end
