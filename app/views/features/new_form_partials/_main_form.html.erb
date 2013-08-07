@@ -1,5 +1,5 @@
 <div class="container">
-<%= form_for([@project, @feature], html: {class: "form-horizontal"}) do |f| %>
+<%= form_for([@project, @feature], :validate => true, html: {class: "form-horizontal"}) do |f| %>
   <%= render partial: "shared/error_messages", :locals => {:target => @feature} %>
 
   <fieldset>

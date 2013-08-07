@@ -22,6 +22,7 @@
 //= require ../../../vendor/assets/javascripts/jquery-ui-sortable
 //= require update_slide_order
 //= require best_in_place
+//= require rails.validations
 //= require_tree .
 
 /////////// Document Ready ////////////////////////////
