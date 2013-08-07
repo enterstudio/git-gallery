@@ -200,7 +200,7 @@ input#search {
 .accordion-feat-author {
   text-align: center;
   margin-left: 0px;
-  float: center;
+  float: right;
 }
 
 .accordion-feat-name-custom {
@@ -210,4 +210,13 @@ input#search {
 .accordion-feat-description-custom {
   margin: 10px;
   padding:10px;
+  margin-left: 0px;
+}
+
+.accordion-slide-description-custom {
+  padding: 20px;
+}
+
+.add-slides-custom {
+  float: center;
 }
