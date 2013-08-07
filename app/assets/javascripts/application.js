@@ -39,7 +39,7 @@ $(function(){
     itemSelector: ".gallery-project"
   });
   ////////////////// Masonry Functions /////////////////
-
+  $('.carousel').carousel()
 
 });
 /////////// Document Ready ////////////////////////////

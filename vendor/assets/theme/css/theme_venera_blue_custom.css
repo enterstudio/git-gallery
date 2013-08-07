@@ -257,7 +257,6 @@ a:focus {
 [class*="span"] {
   float: left;
   min-height: 1px;
-  margin-left: 20px;
 }
 .container,
 .navbar-static-top .container,
@@ -4745,6 +4744,7 @@ a.badge:focus {
   font-family: "Abel", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 20px;
+  height: auto;
 }
 .carousel {
   position: relative;
@@ -9148,6 +9148,7 @@ li.L9 {
   font-size: 28px;
   line-height: 30px;
   color: #005f6b;
+  text-align: center;
 }
 .section-wrapper .section-paragraph {
   font-size: 18px;
