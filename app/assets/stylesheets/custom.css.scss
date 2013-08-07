@@ -167,6 +167,10 @@ input#search {
   background-color: #cff5ff;
 }
 
+.filler {
+  height: 250px; // This is for the feature edit page so you will have space at the bottom of the page for techs to show
+} // Added by Micah
+
 .gg-project-show-description-custom {
   color: #FFFFFF;
 }
@@ -225,3 +229,4 @@ input#search {
   float: right;
   margin-right: 70px;
 }
+

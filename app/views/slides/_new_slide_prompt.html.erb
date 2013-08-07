@@ -1,7 +1,16 @@
-<legend>
-  What do you want on your first slide?
-</legend>
+<div class="span7">
+  <legend>
+    What do you want on your first slide?
+  </legend>
 
-<p>
-  You are making a slideshow. A slide can have either a snippet of code or an image, such as a screenshot, of your webpage in action. You are encouraged to provide a description on every slide so that viewers can understand what you did and how the slides are related. For examples of slides see below or click here for a full <%= link_to 'Demo Project', Project.find(1) %>.
-</p>
+  <p>
+    You are making a slideshow. A slide can have either a snippet of code or an image, such as a screenshot, of your webpage in action. You are encouraged to provide a description on every slide so that viewers can understand what you did and how the slides are related. For examples of slides see below or click here for a full <%= link_to 'Demo Project', Project.find(1) %>.
+  </p>
+    <div class="controls">
+    <%= link_to raw("<h3>Upload an Image</h3>"), new_feature_upload_path(@feature), :class => "btn btn-primary"%>
+    <%= link_to raw("<h3>Copy/Paste A Code Snippet</h3>"), new_feature_snippet_path(@feature), :class => "btn btn-primary"%>
+    <%= link_to raw("<h3>I'm Done Adding Slides</h3>"), edit_feature_path(@feature), :class => " btn btn-primary"%>
+  </div>
+</div>
+
+

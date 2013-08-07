@@ -1,27 +1,25 @@
-<div class="container span8">
-<%= form_for([@feature, @snippet], html: {class: "form-horizontal delete-on-back"}) do |f| %>
+<div class="span8">
+<%= form_for([@feature, @snippet], html: {class: "form-horizontal"}) do |f| %>
   <%= render partial: "shared/error_messages", :locals => {:target => @snippet} %>
 
   <fieldset>
-    <legend>Copy/paste your code, then explain how it relates to your feature.</legend>
-    <div class="gg-form-section">
-      <%= render partial: "snippets/new_form_partials/name", :locals => {:f => f, :snippet => @snippet} %>
-      <%= render partial: "snippets/new_form_partials/url", :locals => {:f => f, :snippet => @snippet} %>
-      <%= render partial: "snippets/new_form_partials/language", :locals => {:f => f, :snippet => @snippet} %>
-    </div>
-    <div class="gg-form-section">
-      <%= render partial: "snippets/new_form_partials/code", :locals => {:f => f, :snippet => @snippet} %>
-      <%= render partial: "snippets/new_form_partials/description", :locals => {:f => f, :snippet => @snippet} %>
-    </div>
+
+    <legend>
+      Copy/paste your code, then explain how it relates to your feature.
+    </legend>
+
+    <%= render partial: "snippets/new_form_partials/name",        :locals => {:f => f, :snippet => @snippet} %>
+    <%= render partial: "snippets/new_form_partials/url",         :locals => {:f => f, :snippet => @snippet} %>
+    <%= render partial: "snippets/new_form_partials/language",    :locals => {:f => f, :snippet => @snippet} %>
+    <%= render partial: "snippets/new_form_partials/code",        :locals => {:f => f, :snippet => @snippet} %>
+    <%= render partial: "snippets/new_form_partials/description", :locals => {:f => f, :snippet => @snippet} %>
+  
+    <%= f.submit "I'm Done With This Snippet", :class => "btn btn-primary" %>
+
   </fieldset>
 
-  <div class="gg-button-container">
-    <div class="buttons-with-margins">
-      <div class="gg-multiple-buttons">
-        <%= f.submit "I'm Done With This Snippet", :class => "btn btn-primary btn-primary-green" %>
-      </div>
-    </div>
-  </div>
+
+
 <% end %>
 </div>
 
