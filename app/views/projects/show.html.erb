@@ -74,24 +74,21 @@
 			</div>
 			<div class="clearfix">
 				<div class="accordion" id="accordion">
-	<% @project.features.each_with_index do |feat, index| %>
-		<div class="accordion-group">
-			<div class="accordion-heading">
-				<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse<%=index%>">
-					<%= feat.title.downcase.gsub(" ", "_") %>
-				</a>
-			</div>
-			<div class="accordion-body collapse" id="collapse<%=index%>">
-				<div class="accordion-inner">
-					</div>
-					
-					</div>
+					<% @project.features.each_with_index do |feat, index| %>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse<%=index%>">
+									<%= feat.title.downcase.gsub(" ", "_") %>
+								</a>
+							</div>
+							<div class="accordion-body collapse" id="collapse<%=index%>">
+								<div class="accordion-inner">
+								Hello
+								</div>	
+							</div>
+						</div>
+					<% end %> 
 				</div>
-			<% end %> 
-		</div>
-	</div>
-</div>
-
 			</div>
 		</div>
 	</div>
