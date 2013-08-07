@@ -3,7 +3,7 @@ module FeaturesHelper
   	if slide.class == Snippet
   		raw Pygments.highlight(slide.code, lexer: slide.language)
   	elsif slide.class == Upload
-  		image_tag slide.image_url.to_s, width: '100' if slide.image?
+  		image_tag slide.image_url.to_s, width: '700px' if slide.image?
   	end
   end
 
