@@ -1,24 +1,37 @@
 <section class="span12">
 
-  <h1>
-    Feature Edit
-  </h1>
+  <h3>
+    Edit your feature
+  </h3>
 
-  <h2>
+  <span class="label label-info" style="display: inline-block; float: left; margin: 15px 100px 0 0; ">
+    Feature Title
+  </span>
+  <p class="lead">
     <%= best_in_place @feature, :title, :type => :input, :activator => ".activator-#{@feature.id}-name" %>
-  </h2>
-  <i class="hero icon-pencil activator-<%= @feature.id %>-name"></i>
-
-  <p>
-    <%= best_in_place @feature, :description, :type => :input, :activator => ".activator-#{@feature.id}-description" %>
+    <i class="hero icon-pencil activator-<%= @feature.id %>-name"></i>
   </p>
-  <i class="hero icon-pencil activator-<%= @feature.id %>-description"></i>
+
+  <span class="label label-info" style="display: inline-block; float: left; margin: 8px 65px 0 0; ">
+    Feature Decription
+  </span>
+
+  <p class="lead">
+    <%= best_in_place @feature, :description, :type => :input, :activator => ".activator-#{@feature.id}-description" %>
+    <i class="hero icon-pencil activator-<%= @feature.id %>-description"></i>
+  </p>
+  
 
   <div class="clearfix"></div>
 
   <% if @feature.slides_in_order.any? %>
-  <h3>Check Out Your Slides</h3>
-
+  <span class="label label-info" style="display: inline-block; float: left; margin: 5px 90px 0 0; ">
+    Current Slides
+  </span>
+  <%= link_to "Add a Slide", new_feature_slide_path(@feature), :class => "btn btn-small" %>
+  <h6>
+    (drag slide name to re-order)
+  </h6>
 
   <div class="tabbable tabs-left">
         <ul class="nav nav-tabs sortable" data-feature-id="<%= @feature.id %>">
@@ -29,33 +42,32 @@
        
            <% end %>
             </ul>
-        <div class="tab-content">
-        <% @feature.slides_in_order.each_with_index do |slide, index| %>
-        <% myclass = index == 0 ? 'active' : ''%>
-          <div class="tab-pane <%=myclass %>" id="l<%= index %>">
-           <p draggable="true" class="" style="">
-                <input type="hidden" name="slides[][class]" value="<%= slide.class %>"></input>
-                <input type="hidden" name="slides[][id]" value="<%= slide.id %>"></input>
-                <p><%= slide.name %></p>
-                <p><%= slide.description%></p>
-                <img height="100px"><%= snippet_or_upload_show(slide) %></img>
-                <p><%= link_to " Delete This Slide", slide, :method => :delete %></p>
-              </p>
-          </div>
 
+        <div class="tab-content" style="height: 450px; width: 700px;">
+
+          <% @feature.slides_in_order.each_with_index do |slide, index| %>
+          <% myclass = index == 0 ? 'active' : ''%>
+
+          <div class="tab-pane <%=myclass %>" id="l<%= index %>">
+            <div draggable="true">
+              <input type="hidden" name="slides[][class]" value="<%= slide.class %>"></input>
+              <input type="hidden" name="slides[][id]" value="<%= slide.id %>"></input>
+              <p>Name:&nbsp;<%= slide.name %></p>
+              <p>Description:&nbsp;<%= slide.description%></p>
+              <%= snippet_or_upload_show(slide) %>
+            </div>
+            <%= link_to " Delete This Slide", slide, :method => :delete, :class => "btn btn-small" %>
+          </div>
           <% end %>
+
         </div>
   
   </div>
   <% else %>
   <h3 class="form-header">No Slides Yet. Add Some!</h3>
-
-       <%= link_to "Add a Slide", new_feature_slide_path(@feature) %>
-
   <% end%>
 
-
-  <h3>Pick Your Technologies</h3>
+  <h3>Add Technologies</h3>
 
   <div class="controls">
     <select data-placeholder="Choose Technologies..." name="feature[technology_ids][]" class="chosen-select" multiple style="width:350px;" tabindex="4">
