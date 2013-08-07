@@ -132,7 +132,7 @@ twitter_scraper     = Feature.create(:title => "Twitter Scraper",            :de
 calendar            = Feature.create(:title => "Calendar",                   :description => "placeholder description",  :user_project_id => 14)
 ratf_abstraction    = Feature.create(:title => "Ratf Abstraction",           :description => "placeholder description",  :user_project_id => 15)
 polymorphic         = Feature.create(:title => "Polymorphism",               :description => "placeholder description",  :user_project_id => 16)
-shallow_routes      = Feature.create(:title => "Shallow Routes",             :description => "placeholder description",  :user_project_id => 17)
+shallow_routes      = Feature.create(:title => "Shallow Routes",             :description => "placeholder description",  :user_project_id => 4)
 permissions2        = Feature.create(:title => "Permissions",                :description => "placeholder description",  :user_project_id => 18)
 validations	        = Feature.create(:title => "Validations",	               :description => "placeholder description",  :user_project_id => 19)
 due_dates           = Feature.create(:title => "Due Dates",                  :description => "placeholder description",  :user_project_id => 20)
@@ -151,7 +151,7 @@ timezones           = Feature.create(:title => "Time Zones",                 :de
 tomato_sauce        = Feature.create(:title => "Tomato Sauce",               :description => "placeholder description",  :user_project_id => 33)
 cheese              = Feature.create(:title => "Cheese",                     :description => "placeholder description",  :user_project_id => 34)
 ham	                = Feature.create(:title => "Ham",	                       :description => "placeholder description",  :user_project_id => 35)
-pineapple	          = Feature.create(:title => "Pineapple",	                   :description => "placeholder description",  :user_project_id => 36)
+pineapple	          = Feature.create(:title => "Pineapple",	                 :description => "placeholder description",  :user_project_id => 36)
 flow_meter          = Feature.create(:title => "Flow Meter",                 :description => "placeholder description",  :user_project_id => 37)
 raspberry_pi        = Feature.create(:title => "Rasberry Pi",                :description => "placeholder description",  :user_project_id => 38)
 chron_jobs	        = Feature.create(:title => "Chron Jobs",	               :description => "placeholder description",  :user_project_id => 39)
@@ -161,10 +161,9 @@ chron_jobs	        = Feature.create(:title => "Chron Jobs",	               :desc
 #######################
 user_project = UserProject.create(:contributor_github_id => 1010670,  :project_id => 1, :user_id => 3)
 user_project = UserProject.create(:contributor_github_id => 4138752,  :project_id => 1, :user_id => 1)
-user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1)
+user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1, :user_id => 2)
+user_project = UserProject.create(:contributor_github_id => 774328,  :project_id => 1)
 user_project = UserProject.create(:project_id => 1, :user_id => 17)
-user_project = UserProject.create(:user_id => 1,  :project_id => 1) #5
-user_project = UserProject.create(:user_id => 3,  :project_id => 1) #6
 user_project = UserProject.create(:user_id => 17, :project_id => 2) #7
 user_project = UserProject.create(:user_id => 20, :project_id => 2) #8
 user_project = UserProject.create(:user_id => 24, :project_id => 2) #9
@@ -175,10 +174,8 @@ user_project = UserProject.create(:user_id => 23, :project_id => 3) #13
 user_project = UserProject.create(:user_id => 30, :project_id => 3) #14
 user_project = UserProject.create(:user_id => 11, :project_id => 4) #15
 user_project = UserProject.create(:user_id => 32, :project_id => 4) #16
-user_project = UserProject.create(:user_id => 33, :project_id => 1) #17
-user_project = UserProject.create(:user_id => 19, :project_id => 4) #18
-user_project = UserProject.create(:user_id => 6,  :project_id => 5) #19
-user_project = UserProject.create(:user_id => 33,  :project_id => 1)
+user_project = UserProject.create(:user_id => 19, :project_id => 4) #17
+user_project = UserProject.create(:user_id => 6,  :project_id => 5) #18
 user_project = UserProject.create(:user_id => 2,  :project_id => 1)
 user_project = UserProject.create(:user_id => 10, :project_id => 5)
 user_project = UserProject.create(:user_id => 18, :project_id => 5)
