@@ -11,18 +11,36 @@
 <section class="hero-unit">
   <div class="row-fluid">
     <div id="hero-description" class="span12">
-      <%= user_dependent_view(@project, "name") %>
-      <div class="span3 hero-title"></div>
-      <div class="hero_tags span9">
-        <div class="row-fluid span12">
-          <%= render "projects/hero/tech_tags" %>
-        </div>
+      <div>
+        <h1 id="project-title">
+          <div class="hero-inline">Please update <%= @project.name %></div>
+        </h1>
       </div>
-      <div class="clearfix"></div>
-      <div class="span7 proj-descript">
-        <%= user_dependent_view(@project, "description") %>
-      </div>
-      <div class="span4 hero-image">
-        <!-- PROJECT IMAGE GOES HERE -->
 
+      <%= form_for(@project, :html => {:class => "form-horizontal"}) do |f| %>
+        <%= render :partial => "shared/error_messages", :locals => {:target => @project} %>
+        <fieldset>
+          
+          <div class="control-group">
+            <%= f.label(:name, :class => "control-label") %>
+            <div class="controls">
+              <%= f.text_field :name %>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <%= f.label(:description, :class => "control-label") %>
+            <div class="controls">
+              <%= f.text_area :description, :class => "edit_form_text_area" %>
+            </div>
+          </div>
+
+          <div class="controls">
+            <%= f.submit "Confirm Info" %>
+          </div> 
+        </fieldset>
+      <% end %>
+
+    </div>
+  </div>
 </section>
