@@ -26,6 +26,7 @@ gem 'carrierwave'
 gem 'pygments.rb'
 gem 'omniauth-github'
 gem 'best_in_place'
+gem 'client_side_validations'
 
 
 # To use ActiveModel has_secure_password
