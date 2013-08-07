@@ -82,9 +82,10 @@
 				<% @project.features.each_with_index do |feat, index| %>
 				<div class="accordion-group">
 					<div class="accordion-heading">
-						<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse<%=index%>">
-							<%= feat.title.downcase.gsub(" ", "_") %>
-						</a>
+						<p class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse<%=index%>">
+							<%= feat.title.upcase%>
+							<%=link_to "Edit", edit_feature_path(feat), :class => "accordion-edit-custom"%>
+						</p>
 					</div>
 					<div class="accordion-body collapse" id="collapse<%=index%>">
 						<div class="accordion-inner">

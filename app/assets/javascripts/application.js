@@ -27,7 +27,6 @@
 /////////// Document Ready ////////////////////////////
 $(function(){
 
-
 	$(".chosen-select").chosen();
 
 	$('.sortable').sortable().bind('sortupdate', function() {
@@ -42,6 +41,12 @@ $(function(){
   $('.carousel').carousel({
  interval: 0
   })
+
+  //set edit links to got to edit view ignore carsel behabvior
+  $("a.accordion-edit-custom").click(function(e){
+    var url = $(this).attr("href");
+    window.open(url,'_self');
+  });
  
 });
 /////////// Document Ready ////////////////////////////
