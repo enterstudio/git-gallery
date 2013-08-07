@@ -3,7 +3,7 @@ module SlidesHelper
     if feature.uploads.count == 0 && feature.snippets.count == 0
       render :partial => 'new_slide_prompt'
     else
-      "What would you like on your next slide?"
+      render :partial => 'slideshow_builder', :locals => {:feature => feature}
     end
   end
 

@@ -1,0 +1,49 @@
+<div class="span8">
+  
+  <h2>
+    What would you like on your next slide?
+  </h2>
+  
+  <div class="controls">
+    <%= link_to raw("<h3>Upload an Image</h3>"), new_feature_upload_path(@feature), :class => "btn btn-primary"%>
+    <%= link_to raw("<h3>Copy/Paste A Code Snippet</h3>"), new_feature_snippet_path(@feature), :class => "btn btn-primary"%>
+    <%= link_to raw("<h3>I'm Done Adding Slides</h3>"), edit_feature_path(@feature), :class => " btn btn-primary"%>
+  </div>
+
+
+  <legend>
+    Current Slides
+  </legend>
+
+  <% if @feature.slides_in_order.any? %>
+
+    <div class="tabbable tabs-left">
+
+      <ul class="nav nav-tabs sortable" data-feature-id="<%= @feature.id %>">
+      <% @feature.slides_in_order.each_with_index do |slide, index| %>
+        <% myclass = index == 0 ? 'active' : ''%>
+        <li data-id="<%= slide.id %>" data-class-type="<%= slide.class %>" class="<%=myclass %>"><a href="#l<%=index%>" data-toggle="tab"><%= slide.name %></a></li>
+      <% end %>
+      </ul>
+
+      <div class="tab-content">
+        <% @feature.slides_in_order.each_with_index do |slide, index| %>
+        <% myclass = index == 0 ? 'active' : ''%>
+
+        <div class="tab-pane <%=myclass %>" id="l<%= index %>">
+          <p draggable="true" class="" style="">
+          <input type="hidden" name="slides[][class]" value="<%= slide.class %>"></input>
+          <input type="hidden" name="slides[][id]" value="<%= slide.id %>"></input>
+          <p><%= slide.name %></p>
+          <p><%= slide.description%></p>
+          <img height="100px"><%= snippet_or_upload_show(slide) %></img>
+          <p><%= link_to " Delete This Slide", slide, :method => :delete %></p>
+        </div>
+        
+        <% end %>
+      </div>
+
+  <% end %>
+  </div>
+</div>
+
