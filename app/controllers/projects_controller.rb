@@ -38,6 +38,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1/edit
   def edit
     @project = Project.find(params[:id])
+    @upload = Upload.find_or_create_by(params[:id])
+    @uploadable = @project
   end
 
   # POST /projects
@@ -71,7 +73,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
-        format.html { redirect to(@project, :notice => 'User was successfully updated')}
+        format.html { redirect_to(@project, :notice => 'User was successfully updated')}
         format.json { respond_with_bip(@project)}
       else
         format.html { render :action => "edit"}

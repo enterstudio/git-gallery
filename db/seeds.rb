@@ -80,7 +80,7 @@ kegkong.uploads.first.save
 ################
 # CREATE USERS #
 ################
-matt    = User.create(:name => "Matt Schmaus",       :email => "mschmaus201@gmail.com",    				      	) # 1
+matt    = User.create(:name => "Matt Schmaus",       :email => "mschmaus@email.com",    				      	) # 1
 jen     = User.create(:name => "Jennifer Campbell",  :email => "jennifer.ml.campbell@gmail.com",  		  		) # 2
 micah   = User.create(:name => "Micah Corn",         :email => "micah.corn@flatironschool.com",         	) # 3
 des     = User.create(:name => "Desmond Rawls",   	 :email => "captaingrover@test.com",      			    	) # 4
@@ -160,9 +160,9 @@ chron_jobs	        = Feature.create(:title => "Chron Jobs",	               :desc
 # Add UserProjects    #
 #######################
 user_project = UserProject.create(:contributor_github_id => 1010670,  :project_id => 1, :user_id => 3)
-user_project = UserProject.create(:contributor_github_id => 4138752,  :project_id => 1, :user_id => 1)
+user_project = UserProject.create(:contributor_github_id => 4138752,  :project_id => 1)
 user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1, :user_id => 2)
-user_project = UserProject.create(:contributor_github_id => 774328,  :project_id => 1)
+user_project = UserProject.create(:contributor_github_id => 774328,  :project_id => 1, :user_id => 4)
 user_project = UserProject.create(:project_id => 1, :user_id => 17)
 user_project = UserProject.create(:user_id => 17, :project_id => 2) #7
 user_project = UserProject.create(:user_id => 20, :project_id => 2) #8
