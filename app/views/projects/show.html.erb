@@ -1,133 +1,150 @@
 <div class="carousel-inner slider-w">
-<p id="notice" class="gg-notice"><%= notice %></p>
+	<p id="notice" class="gg-notice">
+		<%= notice %>
+	</p>
 </div>
 
 
 <div class="carousel slide over-something" id="homepage-carousel">
+	<!-- Project Section Starts -->
 	<div class="carousel-inner slider-w">
 		<div class="active item">
 			<div class="container">
 				<h1 class="slider-header">
 					<strong>
-					<%= @project.name %>
+						<%= @project.name %>
 					</strong>
 				</h1>
 				<h2 class="slider-sub-header">
-					<ul class="inline tech">
-					  <% @project.technologies.each do |tech| %>
-					    <li><%= tech.name %><li>
-					  <% end %>
-					</ul>
+				<ul class="inline tech">
+					<% @project.technologies.each do |tech| %>
+					<li>
+						<%=tech.name%>
+					<li>
+					<% end %>
+				</ul>
 				</h2>
-			
 				<h3 class="gg-project-show-description-custom">
-					<%= @project.description %>
+					<%=@project.description%>
 				</h3>
-
+				<% if current_user %>
 				<div class="top-account-control visible-desktop">
-				<%= link_to "Edit This Project", edit_project_path(@project), :class => "top-create-account"%>
-</div>
+					<%=link_to "Edit This Project", edit_project_path(@project), :class => "top-create-account"%>
+				</div>
+				<% end %>
 			</div>
 		</div>
 	</div>
-
-
-<div class="sub-slider-features">
-<div class="container">
-<div class="row">
-<div class="info-bullet">
-<h5>Contributors</h5>
-<div class="container contrib-contain">
-  <div class="row">
-    <div class="span12">
-      <div id="contribs-slide">
-        <% @project.users.uniq.each do |user| %>
-          <div class="contrib">
-            <%= link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %><br>
-	         <div class="info-bullet">
-				<p><i><%= user.name.split(" ").first %></i></p>
-			</div>
-          </div>
-        <% end %>
-       </div>
-    </div>
-  </div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Feature Carousel Starts Here -->
-
-<section class="section-wrapper under-slider">
-	<div class="container">
-		<div class="row">
-			<div class="span12 span12-custom">
-
-				<h3 class="section-header">Features</h3>
-			</div>
-			<div class="clearfix">
-				<div class="accordion" id="accordion">
-					<% @project.features.each_with_index do |feat, index| %>
-						<div class="accordion-group">
-							<div class="accordion-heading">
-								<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse<%=index%>">
-									<%= feat.title.downcase.gsub(" ", "_") %>
-								</a>
-							</div>
-
-							<div class="accordion-body collapse" id="collapse<%=index%>">
-								
-								<div class="accordion-inner">
-								<%= feat.description %>
-								<p>Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description DescriptionDescription Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description DescriptionDescription Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description DescriptionDescription Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description DescriptionDescription Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description</p>
-	
+	<!-- Project Section End -->
+	<!-- Contributers Section Start -->
+	<div class="sub-slider-features">
+		<div class="container">
+			<div class="row">
+				<div class="info-bullet">
+					<h5>Contributors</h5>
+					<div class="container contrib-contain">
+						<div class="row">
+							<div class="span12">
+								<div id="contribs-slide">
+									<% @project.users.uniq.each do |user| %>
+									<div class="contrib">
+										<%=link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
+										<br>
+										<div class="info-bullet">
+											<p>
+												<i>
+												<%=user.name.split(" ").first %>
+												</i>
+											</p>
+										</div>
+									</div>
+									<% end %>
 								</div>
-							
-								<div class="accordion-inner">
-						
-
-
-<div id="myCarousel" class="carousel slide">
-                <div class="carousel-inner">
-                <br/>
-                 <br/>
-                  <br/>
-                   <br/>
-                    <br/>
-               <% feat.slides_in_order.each do |slide| %>
-                  <div class="item">
-                 <li>
-        <p><%= slide.name %></p>
-        <p><%= slide.description%></p>
-        <p><%= snippet_or_upload_show(slide) %></p>
-      </li>  
-                  </div>
-                  <% end %>
-
-                 
-                </div>
-
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-</div>
-
-
-
-
-								</div>	
 							</div>
 						</div>
-					<% end %> 
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- Contributers Section End -->
+</div>
+
+<!-- Feature Carousel Starts Here -->
+<section class="section-wrapper under-slider">
+<div class="container">
+	<div class="row">
+		<div class="span12 span12-custom">
+			<h3 class="section-header">Features</h3>
+		</div>
+		<div class="clearfix">
+			<div class="accordion" id="accordion">
+				<% @project.features.each_with_index do |feat, index| %>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse<%=index%>">
+							<%= feat.title.downcase.gsub(" ", "_") %>
+						</a>
+					</div>
+					<div class="accordion-body collapse" id="collapse<%=index%>">
+						<div class="accordion-inner">
+							<div class="span8 accordion-feat-description-custom">
+								<h4><%=feat.description %></h4>
+							</div>
+							<div class="span2 accordion-feat-author">
+								<h2 class="accordion-feat-name-custom">
+									<%=feat.user.name if feat.user %>
+								</h2>
+								<%=link_to (image_tag avatar_url(feat.user), class: "img-circle"), user_path(feat.user) if feat.user %>
+							</div>
+							<div class="clearfix">
+							</div>
+						</div>
+						<div class="accordion-inner">
+							<div id="myCarousel" class="carousel slide">
+								<div class="carousel-inner">
+									<% if feat.slides_in_order.any? %>
+									<% feat.slides_in_order.each do |slide| %>
+									<div class="item">
+										<p class="accordion-feat-name-custom">
+											<%=slide.name %>
+										</p>
+										<div class="accordion-feat-upload-custom">
+											<%=snippet_or_upload_show(slide) %>
+										</div>
+										<h6 class="accordion-slide-description-custom">
+											<%=slide.description%>
+										</h6>
+										<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+										<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+									</div>
+									<% end %>
+									<% else %>
+										<div class="item">
+											<p class="accordion-feat-name-custom">
+												No Slides Yet! Add Some!
+											</p>
+											<p class="top-account-control">
+												<%=link_to "Add Slides", new_feature_slide_path(feat), :class => "top-create-account"%>
+											</p>
+										</div>								
+									<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<% end %>
+			</div>
+		</div>
+		<% if current_user %>
+		<div class="top-account-control visible-desktop">
+			<%=link_to "Add a Feature", new_project_feature_path(@project), :class => "top-create-account"%>
+		</div>
+		<% end %>
+	</div>
+</div>
 </section>
 
-<!-- Feature Carousel Ends Here -->
-
+F<!-- Feature Carousel Ends Here -->
 
