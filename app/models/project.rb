@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
   has_many :user_projects
   has_many :users, :through => :user_projects
 
-  has_many :uploads, :as => :uploadable, :dependent => :destroy
+  has_one :upload, :as => :uploadable, :dependent => :destroy
 
   def this_user_features(chosen_user)
     Feature.joins(:project).where(:project_id => self.id, :user_id => chosen_user.id)

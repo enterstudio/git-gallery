@@ -1,15 +1,15 @@
 module ProjectsHelper
 	def link_to_project_image(project)
-		if project.uploads.count > 0
-			link_to image_tag(project.uploads.first.image_url.to_s), project_path(project)
+		if project.upload
+			link_to image_tag(project.upload.image_url.to_s), project_path(project)
 		else
 			link_to image_tag("http://octodex.github.com/images/octocat-de-los-muertos.jpg"), project_path(project)
 		end
 	end
 
 	def project_image(project)
-		if project.uploads.count > 0
-			image_tag(project.uploads.first.image_url.to_s)
+		if project.upload
+			image_tag(project.upload.image_url.to_s)
 		else
 			image_tag("http://octodex.github.com/images/octocat-de-los-muertos.jpg")
 		end
@@ -30,8 +30,8 @@ module ProjectsHelper
 	end
 
 	def image_link(project)
-		if project.uploads != []
-		 "#{project.uploads.first.image_url.to_s}"
+		if project.upload
+		 "#{project.upload.image_url.to_s}"
 		else
 			"http://octodex.github.com/images/octocat-de-los-muertos.jpg"
 		end
@@ -40,7 +40,13 @@ module ProjectsHelper
 	def default_description
 		"Add a Description"
 	end
+
+	def create_or_edit_upload(project)
+		
+		if project.upload
+			render :partial => "projects/upload/edit_upload", :locals => {:project => project}
+		else
+			render :partial => "projects/upload/create_upload", :locals => {:project => project}
+		end
+	end
 end
-
-
-

@@ -1,28 +1,40 @@
-<p id="notice" class="gg-notice"><%= notice %></p>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>
-  /* Activating Best In Place */
-  $(document).ready(function() {
-    jQuery(".best_in_place").best_in_place();
-  });
-</script>
-
-<section class="hero-unit">
-  <div class="row-fluid">
-    <div id="hero-description" class="span12">
-      <%= user_dependent_view(@project, "name") %>
-      <div class="span3 hero-title"></div>
-      <div class="hero_tags span9">
-        <div class="row-fluid span12">
-          <%= render "projects/hero/tech_tags" %>
-        </div>
+<h1><%= @project.name %></h1>
+<%= form_for(@project, :html => {:class => "form-horizontal"}) do |f| %>
+  <%= render :partial => "shared/error_messages", :locals => {:target => @project} %>
+  <fieldset>
+    <legend>Please update the project</legend>
+    
+    <div class="control-group">
+      <%= f.label :name, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :name %>
       </div>
-      <div class="clearfix"></div>
-      <div class="span7 proj-descript">
-        <%= user_dependent_view(@project, "description") %>
-      </div>
-      <div class="span4 hero-image">
-        <!-- PROJECT IMAGE GOES HERE -->
+    </div>
 
-</section>
+    <div class="control-group">
+      <%= f.label :description, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :description, :rows => 10, :id => "edit_form_text_area" %>
+      </div>
+    </div>
+
+    <div class="controls">
+      <%= f.submit "Confirm Info" %>
+    </div>
+  </fieldset>
+<% end %>
+
+<%= form_for [@uploadable, @upload], :html => { :class => "form-horizontal delete-on-back" } do |f|%>
+  <%= render partial: "shared/error_messages", :locals => { :target => @upload } %>
+  
+  <%= image_tag image_link(@project), :id => "edit_form_image", :class => "thumbnail" %>
+
+  <%= f.label :image, mark_required(@upload, :image, :label => "Main project image"), :class => "control-label" %>
+  <div class="controls">
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= create_or_edit_upload(@project) %>
+  </div>
+<% end %>

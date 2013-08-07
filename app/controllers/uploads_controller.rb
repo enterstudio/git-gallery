@@ -5,6 +5,9 @@ class UploadsController < ApplicationController
     @uploads = @uploadable.uploads
   end
 
+  def show
+  end
+
   # GET /uploads/new
   # GET /uploads/new.json
   def new
@@ -48,11 +51,16 @@ class UploadsController < ApplicationController
   # PUT /uploads/1
   # PUT /uploads/1.json
   def update
-    @upload = Upload.find(params[:id])
+    # @upload = Upload.find(params[:id]) #ORIGINAL CODE
 
+    # CODE TO GET UPLOAD TO WORK FROM PROJECT EDIT
+    @project = Project.find(params[:project_id])
+    @project.upload.destroy if @project.upload
+    @upload = Upload.create(:name => "#{@project.name} photo", :uploadable_type => @project.class.name, :uploadable_id => @project.id)
+    
     respond_to do |format|
       if @upload.update_attributes(params[:upload])
-        format.html { redirect_to @upload, notice: 'upload was successfully updated.' }
+        format.html { redirect_to @uploadable, notice: 'upload was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
