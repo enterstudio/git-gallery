@@ -1,5 +1,65 @@
+<div class="carousel-inner slider-w">
 <p id="notice" class="gg-notice"><%= notice %></p>
+</div>
 
-<%= render "projects/hero/hero" %>
+
+<div class="carousel slide over-something" id="homepage-carousel">
+	<div class="carousel-inner slider-w">
+		<div class="active item">
+			<div class="container">
+				<h1 class="slider-header">
+					<strong>
+					<%= @project.name %>
+					</strong>
+				</h1>
+				<h2 class="slider-sub-header">
+					<ul class="inline tech">
+					  <% @project.technologies.each do |tech| %>
+					    <li><%= tech.name %><li>
+					  <% end %>
+					</ul>
+				</h2>
+				<h3>
+					<%= @project.description %>
+				</h3>
+				<div class="top-account-control visible-desktop">
+				<%= link_to "Edit This Project", edit_project_path(@project), :class => "top-create-account"%>
+</div>
+			</div>
+		</div>
+	</div>
+
+
+<div class="sub-slider-features">
+<div class="container">
+<div class="row">
+<div class="info-bullet">
+<h5>Contributors</h5>
+<div class="container contrib-contain">
+  <div class="row">
+    <div class="span12">
+      <div id="contribs-slide">
+        <% @project.users.uniq.each do |user| %>
+          <div class="contrib">
+            <%= link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %><br>
+	         <div class="info-bullet">
+				<p><i><%= user.name.split(" ").first %></i></p>
+			</div>
+          </div>
+        <% end %>
+       </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+
 
 <%= render "projects/features/features" %>
+
