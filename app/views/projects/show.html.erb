@@ -93,18 +93,14 @@
 
 <div id="myCarousel" class="carousel slide">
                 <div class="carousel-inner">
-                <br/>
-                 <br/>
-                  <br/>
-                   <br/>
-                    <br/>
+ 
                <% feat.slides_in_order.each do |slide| %>
                   <div class="item">
-                 <li>
-        <p><%= slide.name %></p>
+              
+        <p class="accordion-feat-name-custom"><%= slide.name %></p>
         <p><%= slide.description%></p>
         <p><%= snippet_or_upload_show(slide) %></p>
-      </li>  
+    
                   </div>
                   <% end %>
 

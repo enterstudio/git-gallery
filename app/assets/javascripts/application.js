@@ -39,8 +39,10 @@ $(function(){
     itemSelector: ".gallery-project"
   });
   ////////////////// Masonry Functions /////////////////
-  $('.carousel').carousel()
-
+  $('.carousel').carousel({
+ interval: 0
+  })
+ 
 });
 /////////// Document Ready ////////////////////////////
 
