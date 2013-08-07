@@ -1,17 +1,4 @@
-body {
-  margin: 0 !important;
-  padding: 40px 0 0 0 !important;
-}
 
-.breadcrumb {
-  // position: fixed;
-  display: inline-block;
-}
-
-#wrapper {
-  background-color: #f2ffee;
-
-}
 
 #features-title {
   display: inline;
@@ -152,14 +139,7 @@ input#search {
   margin: 30px;
 }
 
-#content-wrapper {
-  margin-left:auto;
-  margin-right:auto;
-/*  width: 97%;*/
- /* jennifer changed*/
-   width: 100%;
-  background-color: #f2ffee;
-}
+
 
 .gg-notice {
   padding-top: 20px;
@@ -190,3 +170,23 @@ input#search {
 .filler {
   height: 250px; // This is for the feature edit page so you will have space at the bottom of the page for techs to show
 } // Added by Micah
+
+.gg-project-show-description-custom {
+  color: #FFFFFF;
+}
+
+.gg-feature-description-custom {
+  width: 80%;
+  float: left;
+}
+
+.gg-feature-author-custom {
+  width: 20%;
+  float: right;
+}
+
+.span12-custom {
+  width: 100%;
+  margin-left: -10px;
+}
+

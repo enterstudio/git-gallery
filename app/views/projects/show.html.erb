@@ -19,9 +19,11 @@
 					  <% end %>
 					</ul>
 				</h2>
-				<h3>
+			
+				<h3 class="gg-project-show-description-custom">
 					<%= @project.description %>
 				</h3>
+
 				<div class="top-account-control visible-desktop">
 				<%= link_to "Edit This Project", edit_project_path(@project), :class => "top-create-account"%>
 </div>
@@ -56,10 +58,76 @@
 </div>
 </div>
 </div>
+</div>
+
+<!-- Feature Carousel Starts Here -->
+
+<section class="section-wrapper under-slider">
+	<div class="container">
+		<div class="row">
+			<div class="span12 span12-custom">
+
+				<h3 class="section-header">Features</h3>
+			</div>
+			<div class="clearfix">
+				<div class="accordion" id="accordion">
+					<% @project.features.each_with_index do |feat, index| %>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse<%=index%>">
+									<%= feat.title.downcase.gsub(" ", "_") %>
+								</a>
+							</div>
+
+							<div class="accordion-body collapse" id="collapse<%=index%>">
+								
+								<div class="accordion-inner">
+								<%= feat.description %>
+								<p>Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description DescriptionDescription Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description DescriptionDescription Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description DescriptionDescription Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description DescriptionDescription Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description</p>
+	
+								</div>
+							
+								<div class="accordion-inner">
+						
 
 
+<div id="myCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                <br/>
+                 <br/>
+                  <br/>
+                   <br/>
+                    <br/>
+               <% feat.slides_in_order.each do |slide| %>
+                  <div class="item">
+                 <li>
+        <p><%= slide.name %></p>
+        <p><%= slide.description%></p>
+        <p><%= snippet_or_upload_show(slide) %></p>
+      </li>  
+                  </div>
+                  <% end %>
+
+                 
+                </div>
+
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
 </div>
 
 
-<%= render "projects/features/features" %>
+
+
+								</div>	
+							</div>
+						</div>
+					<% end %> 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Feature Carousel Ends Here -->
+
 
