@@ -30,14 +30,15 @@ class FeaturesController < ApplicationController
     @technologies = Technology.all
     @feature = Feature.new
 
-    # can_current_user?(:create, @feature)
+    redirect_to current_user if !current_user.can?(:edit, @project)
   end
 
   # GET /users/1/features/1/edit
   def edit
     @feature = Feature.find(params[:id])
     @technologies = Technology.all
-    # can_current_user?(:edit, @feature)
+
+    redirect_to current_user if !current_user.can?(:edit, @feature)
   end
 
   def update_slide_order
@@ -96,7 +97,7 @@ class FeaturesController < ApplicationController
   # DELETE /users/1/features/1.json
   def destroy
     @feature = Feature.find(params[:id])
-    @feature.destroy if can_current_user?(:destroy, @feature)
+    current_user.can?(:destroy, @feature) ? @feature.destroy : redirect_to(current_user)
 
     respond_to do |format|
       format.html { redirect_to user_path(@feature.user) }

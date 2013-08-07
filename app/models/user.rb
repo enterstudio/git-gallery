@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
     self == user
   end
 
+  def can?(action, object)
+    object.send("#{action}able_by?", self)
+  end
+
   def features
     user_projects.collect(&:features).flatten
   end
