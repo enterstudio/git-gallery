@@ -1,46 +1,33 @@
-<p id="notice" class="gg-notice"><%= notice %></p>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>
-  /* Activating Best In Place */
-  $(document).ready(function() {
-    jQuery(".best_in_place").best_in_place();
-  });
-</script>
-
-<section class="hero-unit">
-  <div class="row-fluid">
-    <div id="hero-description" class="span12">
-      <div>
-        <h1 id="project-title">
-          <div class="hero-inline">Please update <%= @project.name %></div>
-        </h1>
+<h1><%= @project.name %></h1>
+<%= form_for(@project, :html => {:class => "form-horizontal"}) do |f| %>
+  <%= render :partial => "shared/error_messages", :locals => {:target => @project} %>
+  <fieldset>
+    <legend>Please update the project</legend>
+    
+    <div class="control-group">
+      <%= f.label :name, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :name %>
       </div>
-
-      <%= form_for(@project, :html => {:class => "form-horizontal"}) do |f| %>
-        <%= render :partial => "shared/error_messages", :locals => {:target => @project} %>
-        <fieldset>
-          
-          <div class="control-group">
-            <%= f.label(:name, :class => "control-label") %>
-            <div class="controls">
-              <%= f.text_field :name %>
-            </div>
-          </div>
-
-          <div class="control-group">
-            <%= f.label(:description, :class => "control-label") %>
-            <div class="controls">
-              <%= f.text_area :description, :class => "edit_form_text_area" %>
-            </div>
-          </div>
-
-          <div class="controls">
-            <%= f.submit "Confirm Info" %>
-          </div> 
-        </fieldset>
-      <% end %>
-
     </div>
-  </div>
-</section>
+
+    <div class="control-group">
+      <%= f.label :description, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :description, :class => "edit_form_text_area" %> <!-- USE THIS CLASS TO EDIT WIDTH OF TEXT_AREA -->
+      </div>
+    </div>
+
+    <div class="control-group">
+      
+      <%= f.label :image, :class => "control-label" %>
+      <div class="controls">
+        <%= f.file_field :image %>
+      </div>
+    </div>
+
+    <div class="controls">
+      <%= f.submit "Confirm Info" %>
+    </div>
+  </fieldset>
+<% end %>

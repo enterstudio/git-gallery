@@ -1,3 +1,16 @@
-  <%= render 'uploads/new_upload_partials/form' %>
-
-
+<div class="container span8 gg-feature-form">
+  <%= form_for [@uploadable, @upload], html: {class: "form-horizontal delete-on-back"} do |f|%>
+    <%= render partial: "shared/error_messages", :locals => {:target => @upload} %>
+    <fieldset>
+      <legend>Upload a screenshot and describe how it relates to your feature.</legend>
+      <div class="gg-form-section">
+        <%= render partial: "uploads/new_upload_partials/name", :locals => {:f => f, :upload => @upload} %>
+        <%= render partial: "uploads/new_upload_partials/image", :locals => {:f => f, :upload => @upload} %>
+        <%= render partial: "uploads/new_upload_partials/description", :locals => {:f => f, :upload => @upload} %>
+      </div>
+      <div class="button-options">
+        <%= submit_to_uploadable(@uploadable)%>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
