@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
 
-    can_current_user?(:edit, @user)
+    redirect_to current_user if !current_user.can?(:edit, @user)
   end
 
   # POST /users
