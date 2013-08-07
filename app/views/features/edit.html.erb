@@ -1,45 +1,30 @@
+<section class="span12">
 
-<div class="slides-custom">
+  <h1>
+    Feature Edit
+  </h1>
 
-<div>
-<ul class="pager">    
-  <li class="next">
-      <%= link_to "Delete This Feature", @feature, :method => :delete, :confirm => "Are you sure you want to delete this feature?" %>
-  </li>
-</ul>
-</div>
+  <h2>
+    <%= best_in_place @feature, :title, :type => :input, :activator => ".activator-#{@feature.id}-name" %>
+  </h2>
+  <i class="hero icon-pencil activator-<%= @feature.id %>-name"></i>
 
-<h1 id="project-title">
-<div>
-    <div class="hero-inline">
-        <%= best_in_place @feature, :title, :type => :input, :activator => ".activator-#{@feature.id}-name" %>
-    </div>
-    <div class="activator-<%= @feature.id %>-name">
-      <i class="hero icon-pencil"></i>
-      </div>
-</div>
-</h1>
-
-<div class="description-custom">
-  <div class="hero-inline">
-  <p id="project-description">
-      <%= best_in_place @feature, :description, :type => :input, :activator => ".activator-#{@feature.id}-description" %>
+  <p>
+    <%= best_in_place @feature, :description, :type => :input, :activator => ".activator-#{@feature.id}-description" %>
   </p>
-  </div>
-</div>
+  <i class="hero icon-pencil activator-<%= @feature.id %>-description"></i>
 
-  <div class="activator-<%= @feature.id %>-description"><i class="hero icon-pencil"></i></div>
+  <div class="clearfix"></div>
 
-<div class="clearfix"></div>
-<% if @feature.slides_in_order.any? %>
-  <h3 class="form-header">Check Out Your Slides</h3>
+  <% if @feature.slides_in_order.any? %>
+  <h3>Check Out Your Slides</h3>
 
 
   <div class="tabbable tabs-left">
         <ul class="nav nav-tabs sortable" data-feature-id="<%= @feature.id %>">
          <% @feature.slides_in_order.each_with_index do |slide, index| %>
 
-        	<% myclass = index == 0 ? 'active' : ''%>
+          <% myclass = index == 0 ? 'active' : ''%>
           <li data-id="<%= slide.id %>" data-class-type="<%= slide.class %>" class="<%=myclass %>"><a href="#l<%=index%>" data-toggle="tab"><%= slide.name %></a></li>
        
            <% end %>
@@ -67,30 +52,23 @@
 
        <%= link_to "Add a Slide", new_feature_slide_path(@feature) %>
 
-<% end%>
+  <% end%>
 
 
+  <h3>Pick Your Technologies</h3>
 
-
-<h3 class="form-header">Pick Your Technologies</h3>
   <div class="controls">
-
     <select data-placeholder="Choose Technologies..." name="feature[technology_ids][]" class="chosen-select" multiple style="width:350px;" tabindex="4">
-      <option value=""></option>
-        <% for technology in @technologies %>
-          <option value=<%= technology.id%>><%= technology.name %></option>
-        <% end %>
+    <option value=""></option>
+    <% for technology in @technologies %>
+    <option value=<%= technology.id%>><%= technology.name %></option>
+    <% end %>
     </select>
   </div>
-  <div class="pager-custom">
-<ul class="pager">
-    <li class="next"><%= link_to 'Go to Feature Page →', @feature %></li>
-</ul>
-</div>
-</div>
 
-
-
-
-
-
+  
+  <div class="filler"></div>
+  <div class="clearfix"></div>
+  <%= link_to " Go to #{@feature.project.name}", @feature.project, :class => "btn btn-small" %>
+  <%= link_to "Delete This Feature", @feature.project, :method => :delete, :class => "btn btn-small pull right", :confirm => "Are you sure you want to delete this feature?" %>
+</section>
