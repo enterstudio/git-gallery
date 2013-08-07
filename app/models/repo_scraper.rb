@@ -8,13 +8,22 @@ class RepoScraper
     scrape_repos
   end
 
+  def check_if_contributor(user)
+    contributors = JSON.parse(open("https://api.github.com/repos/#{self["owner"]["name"]}/#{self["name"]}/contributors?access_token=#{user.token}").read)
+    contributors.each { |contributor| return true if contributor["id"].to_s == user.github_id }
+    false
+  end
+
   def scrape_repos
     repos = JSON.parse(open("https://api.github.com/users/#{@user.name}/repos?access_token=#{@user.token}").read)
 
     repos.each do |repo|
       repo_check = Repo.where(:github_id => repo["id"])
-      
-      if repo_check.empty?
+
+      contributors = JSON.parse(open("https://api.github.com/repos/#{repo["owner"]["login"]}/#{repo["name"]}/contributors?access_token=#{@user.token}").read)
+      contributor_status = contributors.collect{|contributor| contributor["id"].to_s}.include?(@user.github_id)
+
+      if repo_check.empty? && contributor_status
         new_repo = Repo.new
         new_repo.github_id = repo["id"]
         new_repo.name = repo["name"]
