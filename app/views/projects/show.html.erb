@@ -62,6 +62,39 @@
 
 </div>
 
+<!-- Test Carousel Start -->
 
-<%= render "projects/features/features" %>
+
+<!-- Test Carousel End -->
+<section class="section-wrapper under-slider">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<h3 class="section-header">Features</h3>
+			</div>
+			<div class="clearfix">
+				<div class="accordion" id="accordion">
+	<% @project.features.each_with_index do |feat, index| %>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse<%=index%>">
+					<%= feat.title.downcase.gsub(" ", "_") %>
+				</a>
+			</div>
+			<div class="accordion-body collapse" id="collapse<%=index%>">
+				<div class="accordion-inner">
+					</div>
+					
+					</div>
+				</div>
+			<% end %> 
+		</div>
+	</div>
+</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
 
