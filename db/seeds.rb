@@ -132,7 +132,7 @@ twitter_scraper     = Feature.create(:title => "Twitter Scraper",            :de
 calendar            = Feature.create(:title => "Calendar",                   :description => "placeholder description",  :user_project_id => 14)
 ratf_abstraction    = Feature.create(:title => "Ratf Abstraction",           :description => "placeholder description",  :user_project_id => 15)
 polymorphic         = Feature.create(:title => "Polymorphism",               :description => "placeholder description",  :user_project_id => 16)
-shallow_routes      = Feature.create(:title => "Shallow Routes",             :description => "placeholder description",  :user_project_id => 17)
+shallow_routes      = Feature.create(:title => "Shallow Routes",             :description => "placeholder description",  :user_project_id => 4)
 permissions2        = Feature.create(:title => "Permissions",                :description => "placeholder description",  :user_project_id => 18)
 validations	        = Feature.create(:title => "Validations",	               :description => "placeholder description",  :user_project_id => 19)
 due_dates           = Feature.create(:title => "Due Dates",                  :description => "placeholder description",  :user_project_id => 20)
@@ -151,7 +151,7 @@ timezones           = Feature.create(:title => "Time Zones",                 :de
 tomato_sauce        = Feature.create(:title => "Tomato Sauce",               :description => "placeholder description",  :user_project_id => 33)
 cheese              = Feature.create(:title => "Cheese",                     :description => "placeholder description",  :user_project_id => 34)
 ham	                = Feature.create(:title => "Ham",	                       :description => "placeholder description",  :user_project_id => 35)
-pineapple	          = Feature.create(:title => "Pineapple",	                   :description => "placeholder description",  :user_project_id => 36)
+pineapple	          = Feature.create(:title => "Pineapple",	                 :description => "placeholder description",  :user_project_id => 36)
 flow_meter          = Feature.create(:title => "Flow Meter",                 :description => "placeholder description",  :user_project_id => 37)
 raspberry_pi        = Feature.create(:title => "Rasberry Pi",                :description => "placeholder description",  :user_project_id => 38)
 chron_jobs	        = Feature.create(:title => "Chron Jobs",	               :description => "placeholder description",  :user_project_id => 39)
@@ -161,10 +161,9 @@ chron_jobs	        = Feature.create(:title => "Chron Jobs",	               :desc
 #######################
 user_project = UserProject.create(:contributor_github_id => 1010670,  :project_id => 1, :user_id => 3)
 user_project = UserProject.create(:contributor_github_id => 4138752,  :project_id => 1, :user_id => 1)
-user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1)
+user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1, :user_id => 2)
+user_project = UserProject.create(:contributor_github_id => 774328,  :project_id => 1)
 user_project = UserProject.create(:project_id => 1, :user_id => 17)
-user_project = UserProject.create(:user_id => 1,  :project_id => 1) #5
-user_project = UserProject.create(:user_id => 3,  :project_id => 1) #6
 user_project = UserProject.create(:user_id => 17, :project_id => 2) #7
 user_project = UserProject.create(:user_id => 20, :project_id => 2) #8
 user_project = UserProject.create(:user_id => 24, :project_id => 2) #9
@@ -175,10 +174,8 @@ user_project = UserProject.create(:user_id => 23, :project_id => 3) #13
 user_project = UserProject.create(:user_id => 30, :project_id => 3) #14
 user_project = UserProject.create(:user_id => 11, :project_id => 4) #15
 user_project = UserProject.create(:user_id => 32, :project_id => 4) #16
-user_project = UserProject.create(:user_id => 33, :project_id => 1) #17
-user_project = UserProject.create(:user_id => 19, :project_id => 4) #18
-user_project = UserProject.create(:user_id => 6,  :project_id => 5) #19
-user_project = UserProject.create(:user_id => 33,  :project_id => 1)
+user_project = UserProject.create(:user_id => 19, :project_id => 4) #17
+user_project = UserProject.create(:user_id => 6,  :project_id => 5) #18
 user_project = UserProject.create(:user_id => 2,  :project_id => 1)
 user_project = UserProject.create(:user_id => 10, :project_id => 5)
 user_project = UserProject.create(:user_id => 18, :project_id => 5)
@@ -210,27 +207,32 @@ user_project = UserProject.create(:user_id => 28, :project_id => 10)
 feature1 = gitgallery.features.last
 	feature1.uploads.build(:name => "shallow_routes_feature")
 	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/cac794eea510798937bbef981bc14409/tumblr_mqibnsstiy1sat8iwo1_1280.jpg"
-	feature1.uploads.first.position = 1
+  feature1.uploads.first.description = "That's what a url should look like."
+  feature1.uploads.first.position = 0
 	feature1.uploads.first.save
 
 	one = feature1.uploads.build(:name => "shallow_routes_rake_after")
 	one.remote_image_url = "http://24.media.tumblr.com/a9be25c610b23f91167bbc9b997ea8eb/tumblr_mqibnsstiy1sat8iwo2_1280.jpg" 
-	one.position = 2
+	one.description = "Now all my feature routes have only one id in them. Every feature is unique so that's all I need."
+  one.position = 2
 	one.save
 
 	two = feature1.uploads.build(:name => "shallow_routes_rake_before")
 	two.remote_image_url = "http://25.media.tumblr.com/c08585bbe24b689d75cfc03626956a45/tumblr_mqibnsstiy1sat8iwo3_1280.jpg" 
-	two.position = 3
+	two.description = "My feature resource is nested inside the user resource so that all routes for features require a :user_id and a feature :id. This is cumbersome and unnecessary."
+  two.position = 1
 	two.save
 
 	three = feature1.uploads.build(:name => "shallow_routes_snippet")
 	three.remote_image_url = "http://25.media.tumblr.com/1330e132c4bb3649adcf1116687fa8bb/tumblr_mqibnsstiy1sat8iwo4_1280.jpg" 
-	three.position = 4
+	three.description = "Check out the url on my new snippet form. I'm able to do everything for a particular feature without worrying about the user."
+  three.position = 3
 	three.save
 
 	four = feature1.uploads.build(:name => "shallow_routes_user")
 	four.remote_image_url = "http://24.media.tumblr.com/a9447d4a4db1066facd445624a824593/tumblr_mqibnsstiy1sat8iwo5_1280.jpg" 
-	four.position = 5
+	four.description = "And my user urls haven't changed."
+  four.position = 4
 	four.save
 
 ############################
@@ -288,38 +290,74 @@ ProjectTechnology.create(:project_id => 1, :technology_id => 7)
 ProjectTechnology.create(:project_id => 1, :technology_id => 2)
 ProjectTechnology.create(:project_id => 1, :technology_id => 3)
 ProjectTechnology.create(:project_id => 1, :technology_id => 4)
+ProjectTechnology.create(:project_id => 2, :technology_id => 7)
+ProjectTechnology.create(:project_id => 2, :technology_id => 2)
+ProjectTechnology.create(:project_id => 2, :technology_id => 3)
+ProjectTechnology.create(:project_id => 2, :technology_id => 4)
+ProjectTechnology.create(:project_id => 3, :technology_id => 7)
+ProjectTechnology.create(:project_id => 3, :technology_id => 2)
+ProjectTechnology.create(:project_id => 3, :technology_id => 3)
+ProjectTechnology.create(:project_id => 3, :technology_id => 4)
+ProjectTechnology.create(:project_id => 4, :technology_id => 7)
+ProjectTechnology.create(:project_id => 4, :technology_id => 2)
+ProjectTechnology.create(:project_id => 4, :technology_id => 3)
+ProjectTechnology.create(:project_id => 4, :technology_id => 4)
+ProjectTechnology.create(:project_id => 5, :technology_id => 7)
+ProjectTechnology.create(:project_id => 5, :technology_id => 2)
+ProjectTechnology.create(:project_id => 5, :technology_id => 3)
+ProjectTechnology.create(:project_id => 5, :technology_id => 4)
+ProjectTechnology.create(:project_id => 6, :technology_id => 7)
+ProjectTechnology.create(:project_id => 6, :technology_id => 2)
+ProjectTechnology.create(:project_id => 6, :technology_id => 3)
+ProjectTechnology.create(:project_id => 6, :technology_id => 4)
+ProjectTechnology.create(:project_id => 7, :technology_id => 7)
+ProjectTechnology.create(:project_id => 7, :technology_id => 2)
+ProjectTechnology.create(:project_id => 7, :technology_id => 3)
+ProjectTechnology.create(:project_id => 7, :technology_id => 4)
 
 #####################################
 # CONNECT FEATURES AND TECHNOLOGIES #
 #####################################
-rails.features   << permissions
-rails.features   << validations
-rails.features   << sessions
-rails.features   << shallow_routes
-rails.features   << dossier
-ruby.features    << filter_functions
-ruby.features    << twitter_scraper
-ruby.features    << add_period
-ruby.features    << github_scraper
-ruby.features    << chron_jobs
-git.features     << ham
-git.features     << pineapple
-git.features     << cheese
-json.features    << twitter_scraper          
-jquery.features  << github_scraper      
-css.features     << dashboard_view          
-css.features     << theme_swap         
-jquery.features  << slider_js            
-jquery.features  << syntax_highlighting         
-js.features      << slider_js       
-js.features      << syntax_highlighting       
-html.features    << chart       
-sql.features     << ratf_abstraction          
-sinatra.features << chron_jobs            
-json.features    << github_scraper  
-python.features  << tomato_sauce       
-html.features    << tab_views 
-sql.features     << permissions
+FeatureTechnology.create(:feature_id => 1, :technology_id => 7)
+FeatureTechnology.create(:feature_id => 2, :technology_id => 2)
+FeatureTechnology.create(:feature_id => 3, :technology_id => 3)
+FeatureTechnology.create(:feature_id => 4, :technology_id => 4)
+FeatureTechnology.create(:feature_id => 5, :technology_id => 1)
+FeatureTechnology.create(:feature_id => 6, :technology_id => 2)
+FeatureTechnology.create(:feature_id => 7, :technology_id => 3)
+FeatureTechnology.create(:feature_id => 8, :technology_id => 5)
+FeatureTechnology.create(:feature_id => 9, :technology_id => 6)
+FeatureTechnology.create(:feature_id => 10, :technology_id => 8)
+FeatureTechnology.create(:feature_id => 11, :technology_id => 3)
+FeatureTechnology.create(:feature_id => 12, :technology_id => 4)
+FeatureTechnology.create(:feature_id => 13, :technology_id => 1)
+FeatureTechnology.create(:feature_id => 14, :technology_id => 2)
+FeatureTechnology.create(:feature_id => 15, :technology_id => 3)
+FeatureTechnology.create(:feature_id => 16, :technology_id => 4)
+FeatureTechnology.create(:feature_id => 17, :technology_id => 7)
+FeatureTechnology.create(:feature_id => 18, :technology_id => 2)
+FeatureTechnology.create(:feature_id => 19, :technology_id => 3)
+FeatureTechnology.create(:feature_id => 20, :technology_id => 4)
+FeatureTechnology.create(:feature_id => 21, :technology_id => 1)
+FeatureTechnology.create(:feature_id => 22, :technology_id => 2)
+FeatureTechnology.create(:feature_id => 23, :technology_id => 3)
+FeatureTechnology.create(:feature_id => 24, :technology_id => 5)
+FeatureTechnology.create(:feature_id => 25, :technology_id => 6)
+FeatureTechnology.create(:feature_id => 26, :technology_id => 8)
+FeatureTechnology.create(:feature_id => 27, :technology_id => 3)
+FeatureTechnology.create(:feature_id => 28, :technology_id => 4)
+FeatureTechnology.create(:feature_id => 29, :technology_id => 1)
+FeatureTechnology.create(:feature_id => 30, :technology_id => 2)
+FeatureTechnology.create(:feature_id => 31, :technology_id => 3)
+FeatureTechnology.create(:feature_id => 32, :technology_id => 4)
+FeatureTechnology.create(:feature_id => 33, :technology_id => 7)
+FeatureTechnology.create(:feature_id => 34, :technology_id => 2)
+FeatureTechnology.create(:feature_id => 35, :technology_id => 3)
+FeatureTechnology.create(:feature_id => 36, :technology_id => 4)
+FeatureTechnology.create(:feature_id => 37, :technology_id => 1)
+FeatureTechnology.create(:feature_id => 38, :technology_id => 2)
+FeatureTechnology.create(:feature_id => 39, :technology_id => 3)
+
 
 rails.save
 git.save
