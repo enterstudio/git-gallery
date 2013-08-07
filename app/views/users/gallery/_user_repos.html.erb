@@ -7,7 +7,6 @@
     <ul>
       <% Repo.where(:user_id => page_user.id).each do |repo| %>
         <% if !is_project?(repo) %>
-        <% if repo.check_if_contributor(current_user_var) %>
           <li class="repo">
             <span>
               <h4>
@@ -16,7 +15,6 @@
               </h4>  
             </span>
           </li>
-          <% end %>
         <% end %>
       <% end %>
     </ul>
