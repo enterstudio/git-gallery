@@ -6,6 +6,7 @@
 
 
 <div class="carousel slide over-something" id="homepage-carousel">
+	<!-- Project Section Starts -->
 	<div class="carousel-inner slider-w">
 		<div class="active item">
 			<div class="container">
@@ -27,11 +28,13 @@
 					<%=@project.description%>
 				</h3>
 				<div class="top-account-control visible-desktop">
-					<% link_to "Edit This Project", edit_project_path(@project), :class => "top-create-account"%>
+					<%=link_to "Edit This Project", edit_project_path(@project), :class => "top-create-account"%>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- Project Section End -->
+	<!-- Contributers Section Start -->
 	<div class="sub-slider-features">
 		<div class="container">
 			<div class="row">
@@ -43,12 +46,12 @@
 								<div id="contribs-slide">
 									<% @project.users.uniq.each do |user| %>
 									<div class="contrib">
-										<% link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
+										<%=link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
 										<br>
 										<div class="info-bullet">
 											<p>
 												<i>
-												<% user.name.split(" ").first %>
+												<%=user.name.split(" ").first %>
 												</i>
 											</p>
 										</div>
@@ -62,6 +65,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- Contributers Section End -->
 </div>
 
 <!-- Feature Carousel Starts Here -->
@@ -80,15 +84,15 @@
 									<%= feat.title.downcase.gsub(" ", "_") %>
 								</a>
 					</div>
-					<div class="accordion-body collapse" id="collapse<%=index%>
-						">
+					<div class="accordion-body collapse" id="collapse<%=index%>">
+						
 						<div class="accordion-inner">
 							<div class="span9 accordion-feat-description-custom">
 								<h4><%=feat.description %></h4>
 							</div>
 							<div class="accordion-feat-author">
 								<h2 class="accordion-feat-name-custom"><%=feat.user.name if feat.user %></h2>
-								<% link_to (image_tag avatar_url(feat.user), class: "img-circle"), user_path(feat.user) if feat.user %>
+								<%=link_to (image_tag avatar_url(feat.user), class: "img-circle"), user_path(feat.user) if feat.user %>
 							</div>
 							<div class="clearfix">
 							</div>
@@ -122,4 +126,5 @@
 	</div>
 </div>
 </section>
+F<!-- eature Carousel Ends Here -->
 
