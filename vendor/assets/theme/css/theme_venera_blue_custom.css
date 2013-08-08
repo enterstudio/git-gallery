@@ -8356,15 +8356,19 @@ li.L9 {
   margin-bottom: 20px;
 }
 .recent-post .recent-post-header {
+  text-align: center;
   font-size: 20px;
   line-height: 24px;
-  padding-bottom: 10px;
+  padding-bottom: 3px;
   padding-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   border-bottom: 1px solid #dfe1d6;
+
   -webkit-box-shadow: 0px 1px 0px 0px #ffffff;
   -moz-box-shadow: 0px 1px 0px 0px #ffffff;
   box-shadow: 0px 1px 0px 0px #ffffff;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .recent-post .recent-post-header a {
   color: #005f6b;
@@ -9171,7 +9175,7 @@ li.L9 {
 }
 /* White shadowed block */
 .white-card {
-  padding: 10px;
+  padding: 40px 10px;
   background-color: #f8f9f4;
   -webkit-box-shadow: 0px 1px 4px 1px #b4b6a9, 2px 2px 1px 0px #fff inset;
   -moz-box-shadow: 0px 1px 4px 1px #b4b6a9, 2px 2px 1px 0px #fff inset;
