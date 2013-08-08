@@ -70,9 +70,18 @@ class ProjectsController < ApplicationController
   # PUT /projects/1.json
   def update
     @project = Project.find(params[:id])
+    @project.name = params[:project][:name]
+    @project.description = params[:project][:description]
+    
+    @project.upload.destroy if @project.upload
+    image = Upload.new(:image => params[:project][:image].tempfile) if params[:project][:image]
+    image.save if image
+    @project.upload = image
+    # debugger
+    raise @project
 
     respond_to do |format|
-      if @project.update_attributes(params[:project])
+      if @project.save
         format.html { redirect_to(@project, :notice => 'User was successfully updated')}
         format.json { respond_with_bip(@project)}
       else

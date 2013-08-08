@@ -51,12 +51,12 @@ class UploadsController < ApplicationController
   # PUT /uploads/1
   # PUT /uploads/1.json
   def update
-    # @upload = Upload.find(params[:id]) #ORIGINAL CODE
+    @upload = Upload.find(params[:id]) #ORIGINAL CODE
 
     # CODE TO GET UPLOAD TO WORK FROM PROJECT EDIT
-    @project = Project.find(params[:project_id])
-    @project.upload.destroy if @project.upload
-    @upload = Upload.create(:name => "#{@project.name} photo", :uploadable_type => @project.class.name, :uploadable_id => @project.id)
+    # @project = Project.find(params[:project_id])
+    # @project.upload.destroy if @project.upload
+    # @upload = Upload.create(:name => "#{@project.name} photo", :uploadable_type => @project.class.name, :uploadable_id => @project.id)
     
     respond_to do |format|
       if @upload.update_attributes(params[:upload])

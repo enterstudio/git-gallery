@@ -6,7 +6,7 @@ class Upload < ActiveRecord::Base
 
   validates_presence_of :description, :if => :uploadable_is_feature?
   # validates_presence_of :image
-  validates_presence_of :name
+  # validates_presence_of :name
 
   def shift_position(index)
     self.position = index.to_i + 1
