@@ -77,8 +77,6 @@ class ProjectsController < ApplicationController
     image = Upload.new(:image => params[:project][:image].tempfile) if params[:project][:image]
     image.save if image
     @project.upload = image
-    # debugger
-    raise @project
 
     respond_to do |format|
       if @project.save
