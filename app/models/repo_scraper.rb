@@ -14,10 +14,21 @@ class RepoScraper
     false
   end
 
-  def scrape_repos
-    repos = JSON.parse(open("https://api.github.com/users/#{@user.name}/repos?access_token=#{@user.token}").read)
+  def get_repos
+    repos = []
+    page_index = 1
+    stop = false
+    while !stop
+      repos_page = JSON.parse(open("https://api.github.com/users/#{@user.name}/repos?page=#{page_index}&access_token=#{@user.token}").read)
+      stop = true if repos_page.count == 0
+      repos << repos_page
+      page_index += 1
+    end
+    repos.flatten
+  end
 
-    repos.each do |repo|
+  def scrape_repos
+    get_repos.each do |repo|
       repo_check = Repo.where(:github_id => repo["id"])
 
       contributors = JSON.parse(open("https://api.github.com/repos/#{repo["owner"]["login"]}/#{repo["name"]}/contributors?access_token=#{@user.token}").read)
