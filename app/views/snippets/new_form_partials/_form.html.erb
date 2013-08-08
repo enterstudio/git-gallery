@@ -14,7 +14,7 @@
     <%= render partial: "snippets/new_form_partials/code",        :locals => {:f => f, :snippet => @snippet} %>
     <%= render partial: "snippets/new_form_partials/description", :locals => {:f => f, :snippet => @snippet} %>
   
-    <%= f.submit "I'm Done With This Snippet", :class => "btn btn-primary" %>
+    <%= f.submit, :class => "btn btn-primary" %>
 
   </fieldset>
 
@@ -22,4 +22,6 @@
 
 <% end %>
 </div>
+
+
 
