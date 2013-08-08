@@ -8,14 +8,12 @@
     <ul class="unstyled">
       <% Repo.where(:user_id => page_user.id).each do |repo| %>
         <% if !is_project?(repo) %>
-          <% if repo.check_if_contributor(current_user_var) %>
-            <li class="repo">
-              <h4>
-                <%= link_to repo.name.truncate(25), repo.html_url, id: "#{repo.name}", :target => "_blank" %>
-                <i><%= link_to "Build", projects_path(:repo_id => repo.id), :method => :post, class: ' btn btn-small pull-right', :"data-name" => "#{repo.name}" %></i>
-              </h4>  
-            </li>
-          <% end %>
+          <li class="repo">
+            <h4>
+              <%= link_to repo.name.truncate(25), repo.html_url, id: "#{repo.name}", :target => "_blank" %>
+              <i><%= link_to "Build", projects_path(:repo_id => repo.id), :method => :post, class: ' btn btn-small pull-right', :"data-name" => "#{repo.name}" %></i>
+            </h4>  
+          </li>
         <% end %>
       <% end %>
     </ul>
