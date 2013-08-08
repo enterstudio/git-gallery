@@ -24,4 +24,4 @@ vendor/assets/theme/.DS_Store
 
 # Customize your seed file so everyone doesn't have to log in! See the instructions at the top
 # Comment this out if you need to change the collective seed file
-db/seeds.rb
+

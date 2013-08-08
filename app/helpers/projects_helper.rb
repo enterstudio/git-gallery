@@ -40,13 +40,4 @@ module ProjectsHelper
 	def default_description
 		"Add a Description"
 	end
-
-	def create_or_edit_upload(project)
-		
-		if project.upload
-			render :partial => "projects/upload/edit_upload", :locals => {:project => project}
-		else
-			render :partial => "projects/upload/create_upload", :locals => {:project => project}
-		end
-	end
 end
