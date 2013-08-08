@@ -4,9 +4,9 @@ class Upload < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  validates_presence_of :image
+  validates_presence_of :name, :if => :uploadable_is_feature?
   validates_presence_of :description, :if => :uploadable_is_feature?
-  # validates_presence_of :image
-  # validates_presence_of :name
 
   def shift_position(index)
     self.position = index.to_i + 1
@@ -17,5 +17,4 @@ class Upload < ActiveRecord::Base
   end
 
   extend Findable
-
 end
