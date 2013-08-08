@@ -1,9 +1,9 @@
 module UploadsHelper
-	def submit_to_uploadable(uploadable)
+	def submit_to_uploadable(uploadable, f)
 		if uploadable.class == Feature
-			render 'uploads/feature_submit'
+			render partial: 'uploads/feature_submit', :locals => {:f => f, :uploadable => uploadable}
 		else
-			render 'uploads/project_submit'
+			render partial: 'uploads/project_submit', :locals => {:f => f, :uploadable => uploadable}
 		end
 	end
 end
