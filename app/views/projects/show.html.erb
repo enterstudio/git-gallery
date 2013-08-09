@@ -119,15 +119,15 @@
 													<%= link_to "Edit #{feat.title}", edit_feature_path(feat), :class => "top-create-account" %>
 												<% end %>
 											</p>
-									<% else %>
+									<% else%>
 										<div class="item">
 											<p class="accordion-feat-name-custom">
-												No Slides Yet! Add Some!
+												<%= no_slides_message(feat) %>
 											</p>
 											<p class="top-account-control">
 												<%= link_to "Add Slides", new_feature_slide_path(feat), :class => "top-create-account" if feat.user == current_user %>
 											</p>
-										</div>								
+										</div>							
 									<% end %>
 								</div>
 							</div>

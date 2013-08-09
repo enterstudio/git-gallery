@@ -40,4 +40,8 @@ module ProjectsHelper
 	def default_description
 		"Add a Description"
 	end
+
+	def no_slides_message(feature)
+		current_user == feature.user ? "No Slides Yet! Add Some!" : "#{feature.user.name} hasn't added any slides yet!"
+	end
 end
