@@ -120,7 +120,7 @@
 												No Slides Yet! Add Some!
 											</p>
 											<p class="top-account-control">
-												<%= link_to "Add Slides", new_feature_slide_path(feat), :class => "top-create-account" if @project.users.include?(current_user) %>
+												<%= link_to "Add Slides", new_feature_slide_path(feat), :class => "top-create-account" if feat.user == current_user %>
 											</p>
 										</div>								
 									<% end %>
