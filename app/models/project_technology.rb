@@ -3,6 +3,4 @@ class ProjectTechnology < ActiveRecord::Base
 
   belongs_to :project
   belongs_to :technology
-
-  extend Findable
 end

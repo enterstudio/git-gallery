@@ -7,5 +7,4 @@ class UserProject < ActiveRecord::Base
 
   has_many :features
   
-  extend Findable
 end

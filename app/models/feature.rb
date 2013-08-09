@@ -15,9 +15,9 @@ class Feature < ActiveRecord::Base
 
   def technologies_to_add=(technologies)
     technologies.collect(&:downcase).collect(&:strip).uniq.reject(&:blank?).each do |technology|
-      technology.class == String ? checked_tech = Technology.find_or_create_by(:name => technology) : checked_tech = technology
-      FeatureTechnology.find_or_create_by(:feature_id => self.id, :technology_id => checked_tech.id)
-      ProjectTechnology.find_or_create_by(:project_id => self.project.id, :technology_id => checked_tech.id)
+      technology.class == String ? checked_tech = Technology.find_or_create_by_name(:name => technology) : checked_tech = technology
+      FeatureTechnology.find_or_create_by_feature_id(:feature_id => self.id, :technology_id => checked_tech.id)
+      ProjectTechnology.find_or_create_by_project_id(:project_id => self.project.id, :technology_id => checked_tech.id)
     end
   end
 
