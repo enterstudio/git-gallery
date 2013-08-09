@@ -75,6 +75,7 @@
   }
 }
 
+
 .active_repo {
   color: #0E1A1C !important;
 }
@@ -82,4 +83,16 @@
 .right-push {
   margin-top: 50px;
   margin-left: 250px;
+}
+
+.blog-categories {
+margin-top: 77px;
+
+  li{
+    list-style: none;
+  }
+  .icon-plus-sign {
+    padding-top: 30px;
+    margin-right: 50px;
+  }
 }
