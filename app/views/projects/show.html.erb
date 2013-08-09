@@ -22,7 +22,7 @@
 				</ul>
 				</h2>
 				<h3 class="gg-project-show-description-custom">
-					<%=@project.description%>
+					<%= @project.description %>
 				</h3>
 				<div class="top-account-control visible-desktop">
 					<%= link_to "Edit This Project", edit_project_path(@project), :class => "top-create-account" if @project.users.include?(current_user) %>
@@ -77,18 +77,19 @@
 					<div class="accordion-heading">
 						<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse<%=index%>">
 							<%= feat.title.downcase.gsub(" ", "_") %>
+							<%= image_tag avatar_url(feat.user), :class => "accordion-inline-avatar pull-left" %>
 						</a>
 					</div>
 					<div class="accordion-body collapse" id="collapse<%=index%>">
 						<div class="accordion-inner">
 							<div class="span8 accordion-feat-description-custom">
-								<h4><%=feat.description %></h4>
+								<h4><%= feat.description %></h4>
 							</div>
 							<div class="span2 accordion-feat-author">
 								<h2 class="accordion-feat-name-custom">
-									<%=feat.user.name if feat.user %>
+									<%= feat.user.name if feat.user %>
 								</h2>
-								<%=link_to (image_tag avatar_url(feat.user), class: "img-circle"), user_path(feat.user) if feat.user %>
+								<%= link_to (image_tag avatar_url(feat.user), class: "img-circle"), user_path(feat.user) if feat.user %>
 							</div>
 							<div class="clearfix">
 							</div>
