@@ -28,7 +28,6 @@
   <span class="label label-info" style="display: inline-block; float: left; margin: 5px 90px 0 0; ">
     Current Slides
   </span>
-  <%= link_to "Add a Slide", new_feature_slide_path(@feature), :class => "btn btn-small" %>
   <h6>
     (drag slide name to re-order)
   </h6>
@@ -41,7 +40,8 @@
           <li data-id="<%= slide.id %>" data-class-type="<%= slide.class %>" class="<%=myclass %>"><a href="#l<%=index%>" data-toggle="tab"><%= slide.name %></a></li>
        
            <% end %>
-            </ul>
+          <li><%= link_to "Add a Slide", new_feature_slide_path(@feature), :class => "btn btn-small" %></li>
+        </ul>
 
         <div class="tab-content">
 
