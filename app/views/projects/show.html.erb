@@ -114,6 +114,9 @@
 												<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
 											</div>
 										<% end %>
+											<p class="top-account-control">
+												<%= link_to "Add Slides", new_feature_slide_path(feat), :class => "top-create-account" if feat.user == current_user %>
+											</p>
 									<% else %>
 										<div class="item">
 											<p class="accordion-feat-name-custom">
