@@ -23,66 +23,67 @@ Project.create(:name => "KegKong",            :description => "The first step in
 #######################
 # Add Project Uploads #
 #######################
+
 gitgallery = Project.all.first
-gitgallery.uploads.build(:name => "landing page gg")
-gitgallery.uploads.first.remote_image_url = "http://25.media.tumblr.com/725f1dc52c3cdfd8c307e17b6c8c4766/tumblr_mqimmjKiEh1sat8iwo1_r1_1280.jpg"
-gitgallery.uploads.first.position = 1
-gitgallery.uploads.first.save
+gitgallery.upload = Upload.create(:name => "landing page gg")
+gitgallery.upload.remote_image_url = "http://25.media.tumblr.com/725f1dc52c3cdfd8c307e17b6c8c4766/tumblr_mqimmjKiEh1sat8iwo1_r1_1280.jpg"
+gitgallery.upload.position = 1
+gitgallery.upload.save
 
 syllaboss = Project.find(2)
-syllaboss.uploads.build(:name => "landing page sb")
-syllaboss.uploads.first.remote_image_url = "http://25.media.tumblr.com/71309855e732bbf68922f3ee347e49ae/tumblr_mqicwxGxxE1sat8iwo1_1280.jpg" 
-syllaboss.uploads.first.position = 1
-syllaboss.uploads.first.save
+syllaboss.upload = Upload.create(:name => "landing page sb")
+syllaboss.upload.remote_image_url = "http://25.media.tumblr.com/71309855e732bbf68922f3ee347e49ae/tumblr_mqicwxGxxE1sat8iwo1_1280.jpg" 
+syllaboss.upload.position = 1
+syllaboss.upload.save
 
 hireredux = Project.find(3)
-hireredux.uploads.build(:name => "landing page hr")
-hireredux.uploads.first.remote_image_url = "http://24.media.tumblr.com/5df852a1c08b9b69dbf7330a955160d8/tumblr_mqiddtCNuN1sat8iwo1_1280.jpg" 
-hireredux.uploads.first.position = 1
-hireredux.uploads.first.save
+hireredux.upload = Upload.create(:name => "landing page hr")
+hireredux.upload.remote_image_url = "http://24.media.tumblr.com/5df852a1c08b9b69dbf7330a955160d8/tumblr_mqiddtCNuN1sat8iwo1_1280.jpg" 
+hireredux.upload.position = 1
+hireredux.upload.save
 
 appapp = Project.find(4)
-appapp.uploads.build(:name => "landing page aa")
-appapp.uploads.first.remote_image_url = "http://24.media.tumblr.com/2bce7c7d37b602841d5c1000f10937eb/tumblr_mqieg3KgT81sat8iwo1_1280.jpg" 
-appapp.uploads.first.position = 1
-appapp.uploads.first.save
+appapp.upload = Upload.create(:name => "landing page aa")
+appapp.upload.remote_image_url = "http://24.media.tumblr.com/2bce7c7d37b602841d5c1000f10937eb/tumblr_mqieg3KgT81sat8iwo1_1280.jpg" 
+appapp.upload.position = 1
+appapp.upload.save
 
 assignmentioredux = Project.find(5)
-assignmentioredux.uploads.build(:name => "landing page ar")
-assignmentioredux.uploads.first.remote_image_url = "http://25.media.tumblr.com/3b8c9146db28690df25f508b78dcc84e/tumblr_mqiexqwgm31sat8iwo1_1280.jpg" 
-assignmentioredux.uploads.first.position = 1
-assignmentioredux.uploads.first.save
+assignmentioredux.upload = Upload.create(:name => "landing page ar")
+assignmentioredux.upload.remote_image_url = "http://25.media.tumblr.com/3b8c9146db28690df25f508b78dcc84e/tumblr_mqiexqwgm31sat8iwo1_1280.jpg" 
+assignmentioredux.upload.position = 1
+assignmentioredux.upload.save
 
 libraryredux = Project.find(6)
-libraryredux.uploads.build(:name => "landing page lr")
-libraryredux.uploads.first.remote_image_url = "http://24.media.tumblr.com/2d11d481e79ca7d9fe72e65605fbe015/tumblr_mqif8q43HO1sat8iwo1_1280.jpg" 
-libraryredux.uploads.first.position = 1
-libraryredux.uploads.first.save
+libraryredux.upload = Upload.create(:name => "landing page lr")
+libraryredux.upload.remote_image_url = "http://24.media.tumblr.com/2d11d481e79ca7d9fe72e65605fbe015/tumblr_mqif8q43HO1sat8iwo1_1280.jpg" 
+libraryredux.upload.position = 1
+libraryredux.upload.save
 
 openexam = Project.find(7)
-openexam.uploads.build(:name => "landing page oe")
-openexam.uploads.first.remote_image_url = "http://25.media.tumblr.com/68c09941abaddc596f61dcc2765c9677/tumblr_mqifrlhXzj1sat8iwo1_1280.jpg" 
-openexam.uploads.first.position = 1
-openexam.uploads.first.save
+openexam.upload = Upload.create(:name => "landing page oe")
+openexam.upload.remote_image_url = "http://25.media.tumblr.com/68c09941abaddc596f61dcc2765c9677/tumblr_mqifrlhXzj1sat8iwo1_1280.jpg" 
+openexam.upload.position = 1
+openexam.upload.save
 
 teamline = Project.find(8)
-teamline.uploads.build(:name => "landing page oe")
-teamline.uploads.first.remote_image_url = "http://24.media.tumblr.com/692982b3659acdfcc1e2f734cb03a8bf/tumblr_mqk43zoU8w1sat8iwo1_1280.jpg" 
-teamline.uploads.first.position = 1
-teamline.uploads.first.save	
+teamline.upload = Upload.create(:name => "landing page oe")
+teamline.upload.remote_image_url = "http://24.media.tumblr.com/692982b3659acdfcc1e2f734cb03a8bf/tumblr_mqk43zoU8w1sat8iwo1_1280.jpg" 
+teamline.upload.position = 1
+teamline.upload.save	
 
 kegkong = Project.find(10)
-kegkong.uploads.build(:name => "landing page kegkong")
-kegkong.uploads.first.remote_image_url = "http://25.media.tumblr.com/210151e01686cf79ead887214e6dd6f7/tumblr_mqk1x66nEL1sat8iwo1_1280.jpg" 
-kegkong.uploads.first.position = 1
-kegkong.uploads.first.save
+kegkong.upload = Upload.create(:name => "landing page kegkong")
+kegkong.upload.remote_image_url = "http://25.media.tumblr.com/210151e01686cf79ead887214e6dd6f7/tumblr_mqk1x66nEL1sat8iwo1_1280.jpg" 
+kegkong.upload.position = 1
+kegkong.upload.save
 
 ################
 # CREATE USERS #
 ################
 matt    = User.create(:name => "Matt Schmaus",       :email => "mschmaus@email.com",    				      	) # 1
 jen     = User.create(:name => "Jennifer Campbell",  :email => "jennifer.ml.campbell@gmail.com",  		  		) # 2
-micah   = User.create(:name => "Micah Corn",         :email => "micah.corn@flatironschool.com",         	) # 3
+micah   = User.create(:name => "Micah Corn",         :email => "micah@ironschool.com",         	) # 3
 des     = User.create(:name => "Desmond Rawls",   	 :email => "captaingrover@test.com",      			    	) # 4
 thomas  = User.create(:name => "Thomas Deatherage",  :email => "thomas.deatherage@flatironschool.com",  		) # 5
 mendal  = User.create(:name => "Mendel Kramer",    	 :email => "mendal.kramer@flatironschool.com",      		) # 6
@@ -159,8 +160,8 @@ chron_jobs	        = Feature.create(:title => "Chron Jobs",	               :desc
 #######################
 # Add UserProjects    #
 #######################
-user_project = UserProject.create(:contributor_github_id => 1010670,  :project_id => 1, :user_id => 3)
-user_project = UserProject.create(:contributor_github_id => 4138752,  :project_id => 1)
+user_project = UserProject.create(:contributor_github_id => 3950139,  :project_id => 1)
+user_project = UserProject.create(:contributor_github_id => 4138752,  :project_id => 1, :user_id => 1)
 user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1, :user_id => 2)
 user_project = UserProject.create(:contributor_github_id => 774328,  :project_id => 1, :user_id => 4)
 user_project = UserProject.create(:project_id => 1, :user_id => 17)
