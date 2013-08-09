@@ -43,12 +43,12 @@
 								<div id="contribs-slide">
 									<% @project.users.uniq.each do |user| %>
 									<div class="contrib">
-										<%=link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
+										<%= link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
 										<br>
 										<div class="info-bullet">
 											<p>
 												<i>
-												<%=user.name.split(" ").first %>
+												<%= user.name.split(" ").first %>
 												</i>
 											</p>
 										</div>
@@ -102,20 +102,23 @@
 										<% feat.slides_in_order.each do |slide| %>
 											<div class="item">
 												<p class="accordion-feat-name-custom">
-													<%=slide.name %>
+													<%= slide.name %>
 												</p>
 												<div class="accordion-feat-upload-custom">
-													<%=snippet_or_upload_show(slide) %>
+													<%= snippet_or_upload_show(slide) %>
 												</div>
 												<h6 class="accordion-slide-description-custom">
-													<%=slide.description%>
+													<%= slide.description %>
 												</h6>
 												<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
 												<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
 											</div>
 										<% end %>
 											<p class="top-account-control">
-												<%= link_to "Add Slides", new_feature_slide_path(feat), :class => "top-create-account" if feat.user == current_user %>
+												<% if feat.user == current_user %>
+													<%= link_to "Add Slides", new_feature_slide_path(feat), :class => "top-create-account" %><br><br>
+													<%= link_to "Edit #{feat.title}", edit_feature_path(feat), :class => "top-create-account" %>
+												<% end %>
 											</p>
 									<% else %>
 										<div class="item">
@@ -142,5 +145,5 @@
 </div>
 </section>
 
-F<!-- Feature Carousel Ends Here -->
+<!-- Feature Carousel Ends Here -->
 
