@@ -1,4 +1,11 @@
+.slideshow-button-list {
+  text-decoration: none;
+  list-style: none;
 
+  li {
+    display: inline-block;
+  }
+}
 
 #features-title {
   display: inline;
