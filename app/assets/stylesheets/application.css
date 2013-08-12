@@ -21,9 +21,8 @@
 
  */
 html, body {
-
   height: 100%;
-
+  color: #0d0e69 !important;
   #wrapper {
     min-height: 100%;
   }
