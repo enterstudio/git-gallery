@@ -22,7 +22,6 @@
  */
 html, body {
   height: 100%;
-  color: #0d0e69 !important;
   #wrapper {
     min-height: 100%;
   }
@@ -38,7 +37,7 @@ div#wrapper {
        min-height: 100%;
        height: auto !important;
        height: 100%;
-       margin: 0px 0px -41px 0px;
+       margin: 40px 0px -41px 0px;
  }
 
  div#content_wrapper {
