@@ -1,27 +1,19 @@
 <div class="span8">
-<%= form_for([@feature, @snippet], html: {class: "form-horizontal"}) do |f| %>
-  <%= render partial: "shared/error_messages", :locals => {:target => @snippet} %>
+  <%= form_for([@feature, @snippet], html: {class: "form-horizontal"}) do |f| %>
+    <%= render partial: "shared/error_messages", :locals => {:target => @snippet} %>
 
-  <fieldset>
+    <fieldset>
+      <h1>
+        New Snippet Slide!
+      </h1>
 
-    <legend>
-      Copy/paste your code, then explain how it relates to your feature.
-    </legend>
-
-    <%= render partial: "snippets/new_form_partials/name",        :locals => {:f => f, :snippet => @snippet} %>
-    <%= render partial: "snippets/new_form_partials/url",         :locals => {:f => f, :snippet => @snippet} %>
-    <%= render partial: "snippets/new_form_partials/language",    :locals => {:f => f, :snippet => @snippet} %>
-    <%= render partial: "snippets/new_form_partials/code",        :locals => {:f => f, :snippet => @snippet} %>
-    <%= render partial: "snippets/new_form_partials/description", :locals => {:f => f, :snippet => @snippet} %>
-  
-    <%= f.submit "I'm Done With This Snippet", :class => "btn btn-primary" %>
-
-  </fieldset>
-
-
-
-<% end %>
+      <%= render partial: "snippets/new_form_partials/name",        :locals => {:f => f, :snippet => @snippet} %>
+      <%= render partial: "snippets/new_form_partials/url",         :locals => {:f => f, :snippet => @snippet} %>
+      <%= render partial: "snippets/new_form_partials/language",    :locals => {:f => f, :snippet => @snippet} %>
+      <%= render partial: "snippets/new_form_partials/code",        :locals => {:f => f, :snippet => @snippet} %>
+      <%= render partial: "snippets/new_form_partials/description", :locals => {:f => f, :snippet => @snippet} %>
+    
+      <%= f.submit "I'm Done With This Snippet", :class => "btn btn-primary" %>
+    </fieldset>
+  <% end %>
 </div>
-
-
-
