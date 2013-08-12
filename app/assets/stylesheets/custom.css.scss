@@ -285,7 +285,7 @@ input#search {
 
 .build-project-custom {
   margin-right: 10px;
-  width: 270px;
+  width: 210px;
   float: left;
 }
 
@@ -308,10 +308,12 @@ input#search {
 
 .float-custom-left {
   float: left;
+  margin-right: 30px;
 }
 
 .float-custom-right {
   float: right;
+  padding-top: 20px;
 }
 .inline-custom {
   display: inline-block;
