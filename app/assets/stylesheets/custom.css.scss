@@ -1,3 +1,19 @@
+.bottom-page-buttons {
+  margin-top: 50px;
+  height: 200px;
+}
+
+.controls.edit-user {
+  margin-left: 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
+.controls.new-feature {
+  text-align: left;
+}
 .slideshow-button-list {
   text-decoration: none;
   list-style: none;
@@ -146,10 +162,10 @@ input#search {
   margin: 30px;
 }
 
-
-
 .gg-notice {
   padding-top: 20px;
+  font-size: 20px;
+  color: red;
 }
 
 .gg-project-hero-title {
