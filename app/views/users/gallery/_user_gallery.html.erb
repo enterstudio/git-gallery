@@ -1,22 +1,29 @@
-<section class="span8 user_gallery">
-  <% if page_user == current_user %>
-    <h3 class="section-header">My Projects</h3>
-  <% else %>
-    <h3 class="section-header"><%= "#{page_user.name}'s" %> Projects</h3>
-  <% end %>
 
-  <ul class="thumbnails">
-    <% page_user.projects.each do |project| %>
-      <li class="span4"> 
-        <div class="gallery-project">
-          <div class="gallery-project-title-card">
-            <div class="gallery-project-title">
-              <h4><%= project.name %></h4>  
-            </div>  
-          </div>
-          <%= link_to_hidden_description(project) %>
-        </div>
-      </li>  
-    <% end %>
-  </ul>
-</section>
+
+
+
+<div class="section-wrapper">
+  <h3 class="section-header">Your Projects</h3>
+
+<div class="row project-row-custom">
+<% @user.projects.each do |project| %>
+
+  <div class="span4">
+    <div class="white-card recent-post clearfix project-post-custom">
+      <h5 class="recent-post-header">
+        <a href="<%= project_path(project)%>"><%= project.name %></a>
+      </h5>
+      <div class="post-info clearfix">
+  
+      </div>
+    <%= project_image(project) %>
+  
+  <p class="post-content separated"><%= project.description %></p>
+  
+  </div>
+  </div>
+
+
+<% end %>
+  </div>
+  </div>

@@ -7678,7 +7678,9 @@ a .icon-flip-vertical:before {
   position: relative;
   padding: 50px;
   *padding-top: 30px;
-  background: transparent url('../images/stripped-bg.png') left top repeat;
+  /*background: transparent url('../images/stripped-bg.png') left top repeat;*/
+  background-color: #DDEAF3;
+  background: #DDEAF3;
   -webkit-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1) inset;
@@ -7687,22 +7689,7 @@ a .icon-flip-vertical:before {
   border-right: 1px solid #fff;
   margin-bottom: 10px;
 }
-/* Echo out a label for the example */
-.bs-docs-example:after {
-  content: "Example";
-  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.1) inset;
-  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.1) inset;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  padding: 3px 7px;
-  font-size: 14px;
-  font-weight: 300;
-  background-color: #B3D8CF;
-  border: 1px solid #96c4b9;
-  color: #fff;
-}
+
 /* Tweak examples
 ------------------------- */
 .bs-docs-example > p:last-child {
@@ -8435,6 +8422,7 @@ li.L9 {
 }
 .recent-post .post-content {
   margin-bottom: 15px;
+  margin-top: 20px;
   font-size: 16px;
 }
 .recent-post .separated {

@@ -52,7 +52,8 @@
 }
 
 .feature h2, h3 {
-  margin-left: 20px;
+
+  // margin-left: 20px;
   font-weight: 400;
   // color: #FFFFFF; micah changed!!!
   vertical-align: middle;
@@ -211,6 +212,7 @@ input#search {
 .span12-custom {
   width: 100%;
   margin-left: -10px;
+  text-align: center;
 }
 
 .accordion-feat-name-custom {
@@ -298,3 +300,43 @@ input#search {
 #search input[type="text"]:focus {
     width: 170px;
     }
+
+.build-project-custom {
+  margin-right: 10px;
+  width: 210px;
+  float: left;
+}
+
+.projects-custom {
+
+}
+
+.widget-custom {
+  float: right;
+}
+
+.project-post-custom {
+  margin: 10px;
+}
+
+.project-row-custom {
+  margin: 10px;
+  text-align: center;
+}
+
+.float-custom-left {
+  float: left;
+  margin-right: 30px;
+}
+
+.float-custom-right {
+  float: right;
+  padding-top: 20px;
+}
+.inline-custom {
+  display: inline-block;
+}
+
+.technologies-custom {
+  padding: 10px;
+}
