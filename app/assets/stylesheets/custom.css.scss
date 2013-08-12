@@ -212,6 +212,10 @@ input#search {
 }
 
 .accordion-feat-upload-custom {
+  padding-top: 50px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-bottom: 0px;
   height: auto;
   text-align: center;
 }
@@ -226,6 +230,15 @@ input#search {
   text-align: center;
 }
 
+.accordion-feat-pagination {
+  font-size: 16px;
+  text-align: center;
+}
+
+.accordion-feat-title {
+  margin-bottom: 30px;
+}
+
 .accordion-feat-description-custom {
   margin: 10px;
   padding:10px;
@@ -233,7 +246,12 @@ input#search {
 }
 
 .accordion-slide-description-custom {
-  padding: 20px;
+  font-size: 25px;
+  line-height: 35px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .add-slides-custom {
