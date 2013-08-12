@@ -185,26 +185,23 @@ DESMOND
   - notice of success needs to stand out more
 
 MATT
-
+- project show
+  - make sure all headers are perfectly centered, as well as contributors
+  - where is project image
+  - not obvious to scroll down to features
+    - anchors on contributors and features so click on link and it scrolls down for you
+  - contributors
+    - scroll bar on right side shouldn't be there
 
 
 
 - new snippet
   - button consistency
   - back button
+
 - new upload
   - button consistency
   - back button
-
-- project show
-  - no feature edit button if no slides
-  - make sure all headers are perfectly centered, as well as contributors
-  - link to github repo
-  - where is project image
-  - not obvious to scroll down to features
-    - anchors on contributors and features so click on link and it scrolls down for you
-  - contributors
-    - scroll bar on right side shouldn't be there
 
 - edit feature
   - top stuff centered, middle stuff not, looks weird...consistency
@@ -230,8 +227,6 @@ MATT
   - add slide tab under slide names?
   - edit slide link?
   - headers should be bigger
-
-
 
 OPTIONAL
 - login process
