@@ -1,6 +1,6 @@
 <div class="control-group">
-    <%= f.label :description, mark_required(snippet, :description, :label => "What is the significance of this code"), class: "control-label" %>
+    <%= f.label :description, mark_required(snippet, :description, :label => "Code Significance"), class: "control-label" %>
     <div class="controls">
-    	<%= f.text_area :description, rows: "8", :class => "gg-code-snippet" %>
+    	<%= f.text_area :description, rows: "8", :class => "gg-code-snippet", :placeholder => "Explain your code here" %>
 	</div>
 </div>
