@@ -22,7 +22,7 @@
 				</ul>
 				</h2>
 				<h3 class="gg-project-show-description-custom">
-					<%=@project.description%>
+					<%= @project.description %>
 				</h3>
 				<div class="top-account-control visible-desktop">
 					<%= link_to "Edit This Project", edit_project_path(@project), :class => "top-create-account" if @project.users.include?(current_user) %>
@@ -39,17 +39,15 @@
 					<h5>Contributors</h5>
 					<div class="container contrib-contain">
 						<div class="row">
-							<div class="span12">
+							<div class="span12 span12-custom">
 								<div id="contribs-slide">
 									<% @project.users.uniq.each do |user| %>
 									<div class="contrib">
-										<%=link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
+										<%= link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip', class: "img-circle"), user_path(user) %>
 										<br>
 										<div class="info-bullet">
 											<p>
-												<i>
-												<%=user.name.split(" ").first %>
-												</i>
+												<em><%= user.name.split(" ").first %></em>
 											</p>
 										</div>
 									</div>
@@ -79,50 +77,57 @@
 					<div class="accordion-heading">
 						<a class="accordion-toggle" data-parent="#accordion" data-toggle="collapse" href="#collapse<%=index%>">
 							<%= feat.title.downcase.gsub(" ", "_") %>
+							<%= image_tag avatar_url(feat.user), :class => "accordion-inline-avatar pull-left" %>
 						</a>
 					</div>
 					<div class="accordion-body collapse" id="collapse<%=index%>">
 						<div class="accordion-inner">
 							<div class="span8 accordion-feat-description-custom">
-								<h4><%=feat.description %></h4>
+								<h4><%= feat.description %></h4>
 							</div>
 							<div class="span2 accordion-feat-author">
 								<h2 class="accordion-feat-name-custom">
-									<%=feat.user.name if feat.user %>
+									<%= feat.user.name if feat.user %>
 								</h2>
-								<%=link_to (image_tag avatar_url(feat.user), class: "img-circle"), user_path(feat.user) if feat.user %>
+								<%= link_to (image_tag avatar_url(feat.user), class: "img-circle"), user_path(feat.user) if feat.user %>
 							</div>
 							<div class="clearfix">
 							</div>
 						</div>
 						<div class="accordion-inner">
-							<div id="myCarousel" class="carousel slide">
+							<div id="myCarousel<%=feat.id%>" class="carousel slide">
 								<div class="carousel-inner">
 									<% if feat.slides_in_order.any? %>
 										<% feat.slides_in_order.each do |slide| %>
 											<div class="item">
 												<p class="accordion-feat-name-custom">
-													<%=slide.name %>
+													<%= slide.name %>
 												</p>
 												<div class="accordion-feat-upload-custom">
-													<%=snippet_or_upload_show(slide) %>
+													<%= snippet_or_upload_show(slide) %>
 												</div>
 												<h6 class="accordion-slide-description-custom">
-													<%=slide.description%>
+													<%= slide.description %>
 												</h6>
-												<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-												<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+												<a class="left carousel-control" href="#myCarousel<%=feat.id%>" data-slide="prev">‹</a>
+												<a class="right carousel-control" href="#myCarousel<%=feat.id%>" data-slide="next">›</a>
 											</div>
 										<% end %>
-									<% else %>
+											<p class="top-account-control">
+												<% if feat.user == current_user %>
+													<%= link_to "Add Slides", new_feature_slide_path(feat), :class => "top-create-account" %><br><br>
+													<%= link_to "Edit #{feat.title}", edit_feature_path(feat), :class => "top-create-account" %>
+												<% end %>
+											</p>
+									<% else%>
 										<div class="item">
 											<p class="accordion-feat-name-custom">
-												No Slides Yet! Add Some!
+												<%= no_slides_message(feat) %>
 											</p>
 											<p class="top-account-control">
 												<%= link_to "Add Slides", new_feature_slide_path(feat), :class => "top-create-account" if feat.user == current_user %>
 											</p>
-										</div>								
+										</div>							
 									<% end %>
 								</div>
 							</div>
@@ -139,5 +144,5 @@
 </div>
 </section>
 
-F<!-- Feature Carousel Ends Here -->
+<!-- Feature Carousel Ends Here -->
 

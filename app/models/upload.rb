@@ -15,6 +15,4 @@ class Upload < ActiveRecord::Base
   def uploadable_is_feature?
     uploadable.kind_of? Feature
   end
-
-  extend Findable
 end

@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1/edit
   def edit
     @project = Project.find(params[:id])
-    @upload = Upload.find_or_create_by(params[:id])
+    @upload = Upload.find_or_create_by_id(params[:id])
     @uploadable = @project
   end
 

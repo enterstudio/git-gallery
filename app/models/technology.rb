@@ -8,5 +8,4 @@ class Technology < ActiveRecord::Base
   has_many :features, :through => :feature_technologies
   has_many :users, :through => :features 
 
-  extend Findable
 end

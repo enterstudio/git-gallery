@@ -57,7 +57,7 @@ class Project < ActiveRecord::Base
     
     contributors.each do |contributor|
       contributor_info = JSON.parse(open("https://api.github.com/users/#{contributor["login"]}?access_token=#{creator.token}").read)
-      userproject = UserProject.find_or_create_by(:project_id => self.id, :contributor_github_id => contributor_info["id"])
+      userproject = UserProject.find_or_create_by_project_id(:project_id => self.id, :contributor_github_id => contributor_info["id"])
       user = User.where(:github_id => userproject.contributor_github_id).first
       userproject.user_id = user.id if user
       userproject.save
