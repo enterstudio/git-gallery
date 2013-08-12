@@ -11,13 +11,14 @@
 			<div class="container">
 				<h1 class="slider-header">
 					<strong>
-						<%= @project.name %>
+						<%= link_to @project.name, @project.repo.html_url, :target => "_blank" %>
 					</strong>
 				</h1>
+				<%= link_to "This project on GitHub", @project.repo.html_url, :target => "_blank" %>
 				<h2 class="slider-sub-header">
 				<ul class="inline tech">
 					<% @project.technologies.each do |tech| %>
-						<li><%=tech.name%><li>
+						<li><%= tech.name %><li>
 					<% end %>
 				</ul>
 				</h2>
@@ -125,7 +126,8 @@
 												<%= no_slides_message(feat) %>
 											</p>
 											<p class="top-account-control">
-												<%= link_to "Add Slides", new_feature_slide_path(feat), :class => "top-create-account" if feat.user == current_user %>
+												<%= link_to "Add Slides", new_feature_slide_path(feat), :class => "top-create-account" if feat.user == current_user %><br><br>
+												<%= link_to "Edit #{feat.title}", edit_feature_path(feat), :class => "top-create-account" %>
 											</p>
 										</div>							
 									<% end %>
