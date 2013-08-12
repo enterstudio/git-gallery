@@ -163,15 +163,39 @@ Uploads=======
 # FEEDBACK FROM JON #
 #####################
 necessary
+
+JEN
 - project index
   - center "Projects" title
     - make it H1
-- navbar
-  - search bar should search projects if on projects index and search users if on users index
+
+MICAH
 - user edit
   - consistency with buttons
+- project edit
+  - project title isn't centered
+  - whole form isn't centered
+  - need space between each section title and the above section
+  - button needs to be consistent with all the others (ie navbar name button)
+- new feature
+  - button needs to be consistent with all the others (ie navbar name button)
+
+DESMOND
 - project creation
   - notice of success needs to stand out more
+
+MATT
+
+
+
+
+- new snippet
+  - button consistency
+  - back button
+- new upload
+  - button consistency
+  - back button
+
 - project show
   - no feature edit button if no slides
   - make sure all headers are perfectly centered, as well as contributors
@@ -181,27 +205,24 @@ necessary
     - anchors on contributors and features so click on link and it scrolls down for you
   - contributors
     - scroll bar on right side shouldn't be there
-- project edit
-  - project title isn't centered
-  - whole form isn't centered
-  - need space between each section title and the above section
-  - button needs to be consistent with all the others (ie navbar name button)
-- new feature
-  - button needs to be consistent with all the others (ie navbar name button)
+
 - edit feature
   - top stuff centered, middle stuff not, looks weird...consistency
   - buttons need to be consistent throughout site
   - able to drag "add a slide" tab...shouldn't be able to...should always be at bottom or top
   - delete slide should have confirmation popup
+
 - new slide (first)
   - button needs to be consistent with all the others (ie navbar name button)
     - separate done with slides from other two
+      - should done with slides even be here? instead, just a back button?
   - header should be bigger
     - what's with that space by the header
   - text needs to be bigger
   - demo project should open up in modal or new page
   - link to project's repo should be here
     - open up in modal or new page
+
 - new slide (not-first)
   - buttons up top should have same consistency through site
     - done with slides button should go at bottom
@@ -209,22 +230,11 @@ necessary
   - add slide tab under slide names?
   - edit slide link?
   - headers should be bigger
-- new snippet
-  - is github url necessary?
-    - auto fill in
-    - call it source code url
-  - button needs to be consistent with all the others (ie navbar name button)
-  - back button
-  - header should be bigger
-  - labels should be shorter
-    - ie Snippet Name/Code Significance
-- new upload
-  - button needs to be consistent with all the others (ie navbar name button)
-  - back button
-  - header should be bigger
-  - labels should be shorter
-    - ie Slide Name/Explanation
 
-optional
+
+
+OPTIONAL
 - login process
   - instead of routing to github for signin, make it a iframe/modal and then refresh git gallery page once logged in (so you never leave gitgallery)
+- navbar
+  - search bar should search projects if on projects index and search users if on users index
