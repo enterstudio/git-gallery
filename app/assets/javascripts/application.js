@@ -34,15 +34,15 @@ $(function(){
 	$('.sortable').sortable().bind('sortupdate', function() {
 	});
   
-  ////////////////// Masonry Functions /////////////////
-  $('.thumbnails').masonry( {
+////////////////// Masonry Functions /////////////////
+  $('.thumbnails').masonry({
     gutter: 20,
     itemSelector: ".gallery-project"
   });
-  ////////////////// Masonry Functions /////////////////
+////////////////// Masonry Functions /////////////////
   $('.carousel').carousel({
  interval: 0
-  })
+  });
  
 });
 /////////// Document Ready ////////////////////////////
