@@ -6,11 +6,11 @@ $(function(){
 
   function rewind()
   {
-    var form-action = ($('.destroy-on-back').attr('action'));
+    var form_action = ($('.destroy-on-back').attr('action'));
 
     request = $.ajax({
 
-      url: form-action + "/destroy-on-back",
+      url: form_action + "/destroy-on-back",
       type: "post",
       data: {"hello"},
       dataType: "json",
