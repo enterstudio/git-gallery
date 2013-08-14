@@ -104,4 +104,7 @@ class ProjectsController < ApplicationController
   def filtered
     @projects = Project.technologies(params[:tech_name])  
   end
+
+  def landing
+  end
 end
