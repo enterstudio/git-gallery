@@ -2208,7 +2208,7 @@ button.close {
   vertical-align: middle;
   cursor: pointer;
   color: #545454;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75)
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   /*background-color: #e3e3e3;
   background-image: -moz-linear-gradient(top, #ededed, #d4d4d4);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ededed), to(#d4d4d4));
