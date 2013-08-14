@@ -1,3 +1,4 @@
+
 <div class="carousel-inner slider-w">
 	<p id="notice" class="gg-notice">
 		<%= notice %>
@@ -33,11 +34,31 @@
 	</div>
 	<!-- Project Section End -->
 	<!-- Contributers Section Start -->
+
 	<div class="sub-slider-features">
 		<div class="container">
 			<div class="row">
 				<div class="info-bullet">
 					<h5>Contributors</h5>
+			<!-- 		test -->
+			<% @project.users.uniq.each do |user| %>
+			<div class="avatar-custom">
+					<figure>
+						<%= link_to (image_tag avatar_url(user), title: "#{user.name}", rel: 'tooltip'), user_path(user) %>
+						<figcaption>
+							<h4>Andy Warhol</h4>
+							<p>Team Lead</p>
+						</figcaption>
+					</figure>
+					<div class="socials">
+						<a href="#"><i class="icon-facebook"></i></a>
+						<a href="#"><i class="icon-twitter"></i></a>
+						<a href="#"><i class="icon-linkedin"></i></a>
+						<a href="#"><i class="icon-github-alt"></i></a>
+					</div>
+			</div>
+			<% end %>
+<!-- 
 					<div class="container contrib-contain">
 						<div class="row">
 							<div class="span12 span12-custom">
@@ -56,11 +77,13 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
 	</div>
+
+
 	<!-- Contributers Section End -->
 </div>
 
@@ -83,8 +106,10 @@
 					</div>
 					<div class="accordion-body collapse" id="collapse<%=index%>">
 						<div class="accordion-inner">
-							<div class="span8 accordion-feat-description-custom">
-								<h4><%= feat.description %></h4>
+							<div class="span8">
+								<h3 class="accordion-feat-title">BEHIND THE SCENES OF <%= feat.user.name.upcase %>'S <%= feat.title.upcase %></h3>
+								<h4><strong>Feature Description:</strong></h4>
+								<h4 class="accordion-feat-description-custom"><%= feat.description %></h4>
 							</div>
 							<div class="span2 accordion-feat-author">
 								<h2 class="accordion-feat-name-custom">
@@ -103,6 +128,11 @@
 											<div class="item">
 												<p class="accordion-feat-name-custom">
 													<%= slide.name %>
+												</p>
+												<p class="accordion-feat-pagination">
+													<%= slide.position + 1 %>
+								          of
+								          <%= feat.slides_in_order.length %>
 												</p>
 												<div class="accordion-feat-upload-custom">
 													<%= snippet_or_upload_show(slide) %>
@@ -148,3 +178,9 @@
 
 <!-- Feature Carousel Ends Here -->
 
+
+
+		
+		
+		
+	
