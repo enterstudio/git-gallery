@@ -278,12 +278,12 @@ input#search {
 }
 
 #search input[type="text"]:focus{
-  width:170px
+  width:180px
 }
 
 
 div.avatar-custom {
-  width: 200px;
+  width: 180px;
   position: relative;
   height: 270px;
   display: inline-block;
@@ -292,7 +292,7 @@ div.avatar-custom {
  
 .avatar-custom figure{
   position: relative;
-  width: 200px;
+  width: 180px;
   height: 270px;
   overflow: hidden;
 }
@@ -300,7 +300,7 @@ div.avatar-custom {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 180px;
   height: 173px;
 }
 .avatar-custom figcaption {
