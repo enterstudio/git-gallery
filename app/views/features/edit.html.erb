@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="span12 project-title-custom">
-        <div class="white-card no-padding just-white">
+        <div class="white-card just-white padded-white-card">
             <h3>Edit Your Feature</h3>
           <legend>Feature Title</legend>
           <p class="lead">
@@ -18,12 +18,14 @@
 
           <!-- slides -->
                 <% if @feature.slides_in_order.any? %>
-        <legend>
-            Current Slides
-        </legend>
+
       </div>
 
-      <h6>You can arrange the slide order by dragging the small tabs on the left up or down.</h6>
+        <legend class="feature-edit-section">
+            Current Slides
+        </legend>
+
+      <h6 class="gg-header-instructions gg-instructions">You can arrange the slide order by dragging the small tabs on the left up or down.</h6>
 
       <div class="tabbable tabs-left">
         <ul class="nav nav-tabs sortable" data-feature-id="<%= @feature.id %>">

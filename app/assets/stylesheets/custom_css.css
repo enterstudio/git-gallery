@@ -362,4 +362,43 @@ div.avatar-custom {
   margin-left: auto;
 }
 
+.form-horizontal .control-group {
+  margin-bottom: 70px;
+  margin-top: 40px;
+}
+
+legend {
+  line-height: 100px;
+}
+
+.slideshow-button-list {
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
+.project-title-custom {
+  margin-top: 100px;
+}
+
+.gg-header-instructions {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  line-height: 30px;
+}
+
+.feature-edit-section {
+  margin-top: 50px;
+}
+
+.lead {
+  padding-bottom: 70px;
+}
+
+.padded-white-card {
+  padding: 50px;
+}
+
+.gg-instructions {
+  font-size: 20px;
+}
 
