@@ -18,10 +18,10 @@
 
  *= require custom
  
- *= require /features
- *= require /forms
- *= require /projects
- *= require /user
+ *= require_tree ./features
+ *= require_tree ./forms
+ *= require_tree ./projects
+ *= require_tree ./user
 
  *= require new_slide
  *= require pygments

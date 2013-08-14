@@ -64,4 +64,7 @@ GitAtMe::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  GITHUB_APP_ID = 'dca44f044ea7569694f0'
+  GITHUB_SECRET = 'b9d2efa73429f287c75249406aabac99cdf19669'
 end
