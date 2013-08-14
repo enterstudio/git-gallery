@@ -128,4 +128,13 @@ div.feature-section {
   padding-top: 5%;
 }
 
+.demo-project {
+  color: orange;
+}
+
+.demo-project:hover {
+  text-decoration: none;
+}
+
+
 
