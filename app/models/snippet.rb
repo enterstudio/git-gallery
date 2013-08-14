@@ -3,10 +3,10 @@ class Snippet < ActiveRecord::Base
   
   belongs_to :feature
 
-  # validates_presence_of :description, :message => ("Please fill in a description.")
-  # validates_presence_of :code
-  # validates_presence_of :name
-  # validates_presence_of :language, :message => ("Please select which languages you used in this feature")
+  validates_presence_of :description, :message => ("Please fill in a description.")
+  validates_presence_of :code
+  validates_presence_of :name
+  validates_presence_of :language, :message => ("Please select which languages you used in this feature")
   
   def shift_position(index)
     self.position = index.to_i + 1
