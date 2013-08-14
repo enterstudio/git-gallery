@@ -1,4 +1,4 @@
-`/*!
+/*!
  * Bootstrap v2.3.2
  *
  * Copyright 2012 Twitter, Inc
@@ -2140,7 +2140,7 @@ table th[class*="span"],
 }
 .well blockquote {
   border-color: #ddd;
-  border-color: rgba(0, 0, 0, 0.15);
+  /*border-color: rgba(0, 0, 0, 0.15);*/
 }
 .well-large {
   padding: 24px;
@@ -2217,9 +2217,9 @@ button.close {
   background-image: -o-linear-gradient(top, #ededed, #d4d4d4);
   background-image: linear-gradient(to bottom, #ededed, #d4d4d4);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffededed', endColorstr='#ffd4d4d4', GradientType=0);
-  border-color: #d4d4d4 #d4d4d4 #adadad;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffededed', endColorstr='#ffd4d4d4', GradientType=0);*/
+  /*border-color: #d4d4d4 #d4d4d4 #adadad;*/
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
   *background-color: #d4d4d4;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -2358,7 +2358,7 @@ input[type="button"].btn-block {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffefdd7', endColorstr='#fffdfba5', GradientType=0);
   border-color: #fdfba5 #fdfba5 #fbf75b;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
   *background-color: #fdfba5;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -2390,7 +2390,7 @@ input[type="button"].btn-block {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff30a9c5', endColorstr='#ff2b97b0', GradientType=0);
   border-color: #2b97b0 #2b97b0 #1c6373;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
   *background-color: #2b97b0;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -2422,7 +2422,7 @@ input[type="button"].btn-block {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffff7d3', endColorstr='#fff8ebac', GradientType=0);
   border-color: #f8ebac #f8ebac #f2da65;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
   *background-color: #f8ebac;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -2454,7 +2454,7 @@ input[type="button"].btn-block {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe08e79', endColorstr='#ffce7f6b', GradientType=0);
   border-color: #ce7f6b #ce7f6b #b2533b;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
   *background-color: #ce7f6b;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -2486,7 +2486,7 @@ input[type="button"].btn-block {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb9cf7f', endColorstr='#ffaabf70', GradientType=0);
   border-color: #aabf70 #aabf70 #859c46;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
   *background-color: #aabf70;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -2518,7 +2518,7 @@ input[type="button"].btn-block {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff40a39f', endColorstr='#ff69adaa', GradientType=0);
   border-color: #69adaa #69adaa #478280;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
   *background-color: #69adaa;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -2550,7 +2550,7 @@ input[type="button"].btn-block {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);
   border-color: #222222 #222222 #000000;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
   *background-color: #222222;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -2582,7 +2582,7 @@ input[type="button"].btn-block {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff3f3f3', endColorstr='#ffeeeeee', GradientType=0);
   border-color: #eeeeee #eeeeee #c8c8c8;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
   *background-color: #eeeeee;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -3563,7 +3563,7 @@ input[type="submit"].btn.btn-mini {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffe5e5e5', GradientType=0);
   border-color: #e5e5e5 #e5e5e5 #bfbfbf;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
   *background-color: #e5e5e5;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -3805,7 +3805,7 @@ input[type="submit"].btn.btn-mini {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff282b2b', endColorstr='#ff282b2b', GradientType=0);
   border-color: #282b2b #282b2b #030303;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
   *background-color: #282b2b;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 

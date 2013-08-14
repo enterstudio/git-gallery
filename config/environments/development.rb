@@ -34,4 +34,7 @@ GitAtMe::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  GITHUB_APP_ID = 'dca44f044ea7569694f0'
+  GITHUB_SECRET = 'b9d2efa73429f287c75249406aabac99cdf19669'
 end

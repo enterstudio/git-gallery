@@ -6,7 +6,6 @@
 .white-card p {
   font-size: 1.5em;
   line-height: 1.25em;
-  color: 
 }
 
 
@@ -281,6 +280,7 @@ input#search {
 #search input[type="text"]:focus{
   width:170px
 }
+
 
 div.avatar-custom {
   width: 234px;
