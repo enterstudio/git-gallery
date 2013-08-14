@@ -283,7 +283,7 @@ input#search {
 
 
 div.avatar-custom {
-  width: 234px;
+  width: 200px;
   position: relative;
   height: 270px;
   display: inline-block;
@@ -292,7 +292,7 @@ div.avatar-custom {
  
 .avatar-custom figure{
   position: relative;
-  width: 234px;
+  width: 200px;
   height: 270px;
   overflow: hidden;
 }
@@ -300,7 +300,7 @@ div.avatar-custom {
   position: absolute;
   top: 0;
   left: 0;
-  width: 234px;
+  width: 200px;
   height: 173px;
 }
 .avatar-custom figcaption {
