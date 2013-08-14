@@ -13,7 +13,7 @@
     </div>
 
     <legend>
-    Current Slides <h6>You can arrange the slide order by dragging the small tabs on the left up or down.</h6>
+    Current Slides <h4>You can arrange the slide order by dragging the small tabs on the left up or down.</h4>
   </legend>
 
   <% if @feature.slides_in_order.any? %>
@@ -38,7 +38,6 @@
           <p><%= slide.name %></p>
           <p><%= slide.description%></p>
           <img height="100px"><%= snippet_or_upload_show(slide) %></img>
-          <p><%= link_to " Delete This Slide", slide, :method => :delete %></p>
         </div>
         
         <% end %>

@@ -27,55 +27,46 @@ Project.create(:name => "KegKong",            :description => "The first step in
 gitgallery = Project.all.first
 gitgallery.upload = Upload.create(:name => "landing page gg")
 gitgallery.upload.remote_image_url = "http://25.media.tumblr.com/725f1dc52c3cdfd8c307e17b6c8c4766/tumblr_mqimmjKiEh1sat8iwo1_r1_1280.jpg"
-gitgallery.upload.position = 1
 gitgallery.upload.save
 
 syllaboss = Project.find(2)
 syllaboss.upload = Upload.create(:name => "landing page sb")
 syllaboss.upload.remote_image_url = "http://25.media.tumblr.com/71309855e732bbf68922f3ee347e49ae/tumblr_mqicwxGxxE1sat8iwo1_1280.jpg" 
-syllaboss.upload.position = 1
 syllaboss.upload.save
 
 hireredux = Project.find(3)
 hireredux.upload = Upload.create(:name => "landing page hr")
 hireredux.upload.remote_image_url = "http://24.media.tumblr.com/5df852a1c08b9b69dbf7330a955160d8/tumblr_mqiddtCNuN1sat8iwo1_1280.jpg" 
-hireredux.upload.position = 1
 hireredux.upload.save
 
 appapp = Project.find(4)
 appapp.upload = Upload.create(:name => "landing page aa")
 appapp.upload.remote_image_url = "http://24.media.tumblr.com/2bce7c7d37b602841d5c1000f10937eb/tumblr_mqieg3KgT81sat8iwo1_1280.jpg" 
-appapp.upload.position = 1
 appapp.upload.save
 
 assignmentioredux = Project.find(5)
 assignmentioredux.upload = Upload.create(:name => "landing page ar")
 assignmentioredux.upload.remote_image_url = "http://25.media.tumblr.com/3b8c9146db28690df25f508b78dcc84e/tumblr_mqiexqwgm31sat8iwo1_1280.jpg" 
-assignmentioredux.upload.position = 1
 assignmentioredux.upload.save
 
 libraryredux = Project.find(6)
 libraryredux.upload = Upload.create(:name => "landing page lr")
 libraryredux.upload.remote_image_url = "http://24.media.tumblr.com/2d11d481e79ca7d9fe72e65605fbe015/tumblr_mqif8q43HO1sat8iwo1_1280.jpg" 
-libraryredux.upload.position = 1
 libraryredux.upload.save
 
 openexam = Project.find(7)
 openexam.upload = Upload.create(:name => "landing page oe")
 openexam.upload.remote_image_url = "http://25.media.tumblr.com/68c09941abaddc596f61dcc2765c9677/tumblr_mqifrlhXzj1sat8iwo1_1280.jpg" 
-openexam.upload.position = 1
 openexam.upload.save
 
 teamline = Project.find(8)
 teamline.upload = Upload.create(:name => "landing page oe")
 teamline.upload.remote_image_url = "http://24.media.tumblr.com/692982b3659acdfcc1e2f734cb03a8bf/tumblr_mqk43zoU8w1sat8iwo1_1280.jpg" 
-teamline.upload.position = 1
 teamline.upload.save	
 
 kegkong = Project.find(10)
 kegkong.upload = Upload.create(:name => "landing page kegkong")
 kegkong.upload.remote_image_url = "http://25.media.tumblr.com/210151e01686cf79ead887214e6dd6f7/tumblr_mqk1x66nEL1sat8iwo1_1280.jpg" 
-kegkong.upload.position = 1
 kegkong.upload.save
 
 ################
@@ -160,10 +151,10 @@ chron_jobs	        = Feature.create(:title => "Chron Jobs",	               :desc
 #######################
 # Add UserProjects    #
 #######################
-user_project = UserProject.create(:contributor_github_id => 3950139,  :project_id => 1)
+user_project = UserProject.create(:contributor_github_id => 3950139,  :project_id => 1, :user_id => 3)
 user_project = UserProject.create(:contributor_github_id => 4138752,  :project_id => 1, :user_id => 1)
 user_project = UserProject.create(:contributor_github_id => 4601045,  :project_id => 1, :user_id => 2)
-user_project = UserProject.create(:contributor_github_id => 774328,  :project_id => 1, :user_id => 4)
+user_project = UserProject.create(:contributor_github_id => 774328,  :project_id => 1)
 user_project = UserProject.create(:project_id => 1, :user_id => 17)
 user_project = UserProject.create(:user_id => 17, :project_id => 2) #7
 user_project = UserProject.create(:user_id => 20, :project_id => 2) #8
@@ -205,6 +196,7 @@ user_project = UserProject.create(:user_id => 28, :project_id => 10)
 #######################
 # Add Feature Uploads #
 #######################
+
 feature1 = gitgallery.features.last
 	feature1.uploads.build(:name => "shallow_routes_feature")
 	feature1.uploads.first.remote_image_url = "http://24.media.tumblr.com/cac794eea510798937bbef981bc14409/tumblr_mqibnsstiy1sat8iwo1_1280.jpg"
