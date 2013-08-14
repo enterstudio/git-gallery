@@ -3,6 +3,9 @@ require 'bundler/capistrano' # for bundler support
 set :application, "git-gallery"
 set :repository,  "git@github.com:flatiron-school/git-gallery.git"
 
+set :branch, fetch(:branch, "master")
+set :env, fetch(:env, "production")
+
 set :user, 'teambuilt_admin'
 set :deploy_to, "/home/#{ user }/#{ application }"
 set :use_sudo, false
