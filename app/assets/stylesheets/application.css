@@ -15,7 +15,7 @@
  *= require /features
  *= require /forms
  *= require /projects
- *= require /users
+ *= require /user
 
  *= require new_slide
  *= require pygments
