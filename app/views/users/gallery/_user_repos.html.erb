@@ -1,10 +1,7 @@
 <% current_user_var = current_user %>
 
 <div class="blog-categories widget-tp">
-  <h3>
-  <!-- <i class="icon-th-list"></i> -->
-  Build a Project!
-  </h3>
+  <h3>Build a Project!</h3>
 
   <ul>
     <li>
@@ -17,7 +14,6 @@
     </li>
 
     <% Repo.where(:user_id => page_user.id).each do |repo| %>
-
       <% if !is_project?(repo) %>
         <li>
           <div class="user-repo-url">
@@ -28,11 +24,9 @@
           </div>
         </li>
       <% end %>
-
-  <% end %>
-
+    <% end %>
   </ul>
-</div     >
+</div>
 
 
 
