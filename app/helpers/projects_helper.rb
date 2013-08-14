@@ -9,9 +9,9 @@ module ProjectsHelper
 
 	def project_image(project)
 		if project.upload
-			image_tag(project.upload.image_url.to_s)
+			link_to( image_tag(project.upload.image_url.to_s), project_path(project))
 		else
-			image_tag("http://octodex.github.com/images/octocat-de-los-muertos.jpg")
+			link_to( image_tag("http://octodex.github.com/images/octocat-de-los-muertos.jpg"), project_path(project))
 		end
 	end
 
