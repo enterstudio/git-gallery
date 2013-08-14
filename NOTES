@@ -233,3 +233,82 @@ OPTIONAL
   - instead of routing to github for signin, make it a iframe/modal and then refresh git gallery page once logged in (so you never leave gitgallery)
 - navbar
   - search bar should search projects if on projects index and search users if on users index
+
+=============================+
+=============================+
+
+
+  Come up with an actual email for the registration and project creation.
+  set environment variables and gitignore them
+  venera blue vs vbcustom
+
+  user show page -
+  example section needs to be kept and striped
+  figure out about the stripiness
+  figure out the build section buttons
+
+
+  make the big button the build action and the smaller right button the show gh repo action
+  make image the link to project show page
+  on index pages
+
+
+
+  on project show page -
+  remove link from title and change text color for repo link.
+  move edit this project on the hero section next to project title
+  flash notice on project update should say project not user.
+
+
+  project edit page
+
+  project title label needs to be centered. h3 label 
+  whole unit should be centered on page.
+  image should be smaller
+  increase width of description text box
+  fix button hovers across site
+  description label needs to be better h3 maybe
+  truncate description on user show and project index
+  
+New Feature page...
+
+  back to project button on left and submit centered
+
+First new slide page
+
+paragraph text bigger title too
+
+make link visible.
+redo database and have Git Gallery as the linked project.
+open on new tab.
+
+new image slide
+
+styling is not there at all.
+
+need to show thumbnail of slide on this page.
+
+new slides not first
+
+upload and copy buttons or links bigger and centered
+im done button moved below main content
+
+Feature Edit page 
+
+flow is still not making sense
+when you delete a slide it should keep you on the same page?
+
+need to add the title name of the Feature in slide show.
+
+project show feature avatar on title bar is not sized right
+
+
+
+
+
+
+
+
+
+
+
