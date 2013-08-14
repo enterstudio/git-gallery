@@ -12,10 +12,10 @@
  *= require ../../../vendor/assets/chosen/chosen.min
  *= require ../../../vendor/assets/theme/css/theme_venera_blue_custom
  
- *= require /features
- *= require /forms
- *= require /projects
- *= require /user
+ *= require_tree ./features
+ *= require_tree ./forms
+ *= require_tree ./projects
+ *= require_tree ./user
 
  *= require new_slide
  *= require pygments

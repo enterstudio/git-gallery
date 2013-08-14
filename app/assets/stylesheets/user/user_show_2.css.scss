@@ -69,10 +69,7 @@
   li{
     list-style: none;
   }
-  .icon-plus-sign {
-    color: white;
-    margin-right: 50px;
-  }
+  
 }
 
 
@@ -91,8 +88,28 @@ margin-top: 77px;
   li{
     list-style: none;
   }
-  .icon-plus-sign {
-    padding-top: 30px;
-    margin-right: 50px;
-  }
+  
 }
+
+.user-repo-icon {
+  color: white;
+  font-size: 32px;
+  width: 20%;
+  display: block;
+  float: left;
+  text-align: center;
+}
+
+.user-repo-url {
+  width: 80%;
+  display: block;
+  float: left;
+}
+
+.blog-categories ul li .user-repo-url a {
+  height: 33px;
+  font-size: 1.5em;
+  padding-top: 17px 10px 10px 10px;
+}
+
+
