@@ -286,6 +286,8 @@ div.avatar-custom {
   width: 234px;
   position: relative;
   height: 270px;
+  display: inline-block;
+  margin: 10px;
 }
  
 .avatar-custom figure{
