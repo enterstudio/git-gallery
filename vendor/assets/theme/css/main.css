@@ -7,7 +7,7 @@
 /**/
 html, body, header, footer, nav, section, article, aside, div,
 h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, ol, li, figure, figcaption, img, hr,
-form, input, select, textarea, button {
+form, select, textarea, button {
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -46,7 +46,7 @@ img {
 /**/
 /* forms */
 /**/
-input, textarea, button {
+ textarea, button {
 	display: block;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -64,15 +64,7 @@ input, textarea, button {
 	-moz-transition: border-color 0.3s;
 	-webkit-transition: border-color 0.3s;
 }
-input, textarea {	
-	border: 1px solid #c6d0d2;
-}
-input:hover, textarea:hover {
-	border-color: #959d9e;
-}
-input:focus, textarea:focus {
-	border-color: #2ecc71;
-}
+
 textarea {
 	height: auto;
 	resize: none;
@@ -2341,9 +2333,7 @@ h3 {
 	line-height: 18px;
 	color: #e74b3c;
 }
-.contacts form input, textarea {
-	margin-top: 18px;
-}
+
 .contacts form button {
 	margin-top: 18px;
 }

@@ -23,7 +23,8 @@
                   <%= f.label :image, "Display Image"%>
                 </h5>
                 <%= image_tag image_link(@project), :id => "edit_form_image", :class => "thumbnail" %>
-                <div class="controls">
+                <div class="controls" id="image-submit-custom">
+
                   <%= f.file_field :image %>
                 </div>
 

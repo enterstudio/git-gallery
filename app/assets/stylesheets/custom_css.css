@@ -357,7 +357,9 @@ div.avatar-custom {
   opacity: 0.9;
 }
 
-
-
+#image-submit-custom {
+  margin-right: auto;
+  margin-left: auto;
+}
 
 
