@@ -369,6 +369,7 @@ div.avatar-custom {
 
 legend {
   line-height: 100px;
+  font-size: 30px;
 }
 
 .slideshow-button-list {
@@ -400,5 +401,13 @@ legend {
 
 .gg-instructions {
   font-size: 20px;
+}
+
+.gg-offset-buttons {
+
+}
+
+.gg-controls {
+  text-align: center;
 }
 

@@ -7,9 +7,9 @@
       </h1>
 
       <div class="gg-form-section">
-        <%= render partial: "uploads/new_upload_partials/name", :locals => {:f => f, :upload => @upload} %>
-        <%= render partial: "uploads/new_upload_partials/image", :locals => {:f => f, :upload => @upload} %>
-        <%= render partial: "uploads/new_upload_partials/description", :locals => {:f => f, :upload => @upload} %>
+        <div class="control-group"><%= render partial: "uploads/new_upload_partials/name", :locals => {:f => f, :upload => @upload} %></div>
+        <div class="control-group"><%= render partial: "uploads/new_upload_partials/image", :locals => {:f => f, :upload => @upload} %></div>
+        <div class="control-group"><%= render partial: "uploads/new_upload_partials/description", :locals => {:f => f, :upload => @upload} %></div>
       </div>
       
       <div class="button-options">
