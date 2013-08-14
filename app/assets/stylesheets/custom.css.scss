@@ -387,3 +387,43 @@ input#search {
 .technologies-custom {
   padding: 10px;
 }
+
+.landing {
+  background-color: #FFFFFF;
+}
+
+#wellcome_message h1 {
+  margin-top: 50;
+}
+#wellcome_message h1 {
+  text-align: center;
+  padding: 50px;
+  background: rgb(249,202,63);
+
+}
+
+
+#wellcome_message {
+-webkit-animation-duration: 1.3s;
+-webkit-animation-delay:2s;
+-moz-animation-duration: 1.3s;
+-moz-animation-delay:2s;
+-ms-animation-duration: 1.3s;
+-ms-animation-delay:2s;
+-o-animation-duration: 1.3s;
+-o-animation-delay:2s;
+animation-delay:2s;
+animation-duration: 1.3s;
+
+opacity:0;
+
+}
+
+.landing h1 strong {
+  border-bottom: 5px solid;
+  color: #fff !important;
+}
+
+.landing strong {
+  color: #fff;
+}

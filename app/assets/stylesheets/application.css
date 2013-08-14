@@ -12,6 +12,7 @@
  *= require ../../../vendor/assets/chosen/chosen.min
  *= require ../../../vendor/assets/theme/css/main
  *= require ../../../vendor/assets/theme/css/theme_venera_blue_custom
+ *= require ../../../vendor/assets/theme/css/animate
  *= require /projects
  *= require_tree .
 
