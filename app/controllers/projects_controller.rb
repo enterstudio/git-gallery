@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  skip_before_filter :login_required, :only => [:index, :show]
+  skip_before_filter :login_required, :only => [:index, :show, :landing]
   
   # GET /projects
   # GET /projects.json

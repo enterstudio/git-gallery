@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def login_required
-    redirect_to login_path, :notice => "You must be logged in!" if !logged_in?
+    redirect_to root_path, :notice => "You must be logged in!" if !logged_in?
   end
 
   def logged_in?
