@@ -80,7 +80,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to(@project, :notice => 'User was successfully updated')}
+        format.html { redirect_to(@project, :notice => 'Project was successfully updated')}
         format.json { respond_with_bip(@project)}
       else
         format.html { render :action => "edit"}

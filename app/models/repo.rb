@@ -6,8 +6,6 @@ class Repo < ActiveRecord::Base
   has_many :user_repos
   has_many :users, :through => :user_repos
 
-
-
   def parse_repo_trunk
   	JSON.parse(open("#{self.url}/contents?access_token=#{self.user.token}").read)
   end
@@ -18,4 +16,3 @@ class Repo < ActiveRecord::Base
     false
   end
 end
-
