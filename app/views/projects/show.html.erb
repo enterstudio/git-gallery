@@ -83,8 +83,10 @@
 					</div>
 					<div class="accordion-body collapse" id="collapse<%=index%>">
 						<div class="accordion-inner">
-							<div class="span8 accordion-feat-description-custom">
-								<h4><%= feat.description %></h4>
+							<div class="span8">
+								<h3 class="accordion-feat-title">BEHIND THE SCENES OF <%= feat.user.name.upcase %>'S <%= feat.title.upcase %></h3>
+								<h4><strong>Feature Description:</strong></h4>
+								<h4 class="accordion-feat-description-custom"><%= feat.description %></h4>
 							</div>
 							<div class="span2 accordion-feat-author">
 								<h2 class="accordion-feat-name-custom">
@@ -103,6 +105,11 @@
 											<div class="item">
 												<p class="accordion-feat-name-custom">
 													<%= slide.name %>
+												</p>
+												<p class="accordion-feat-pagination">
+													<%= slide.position + 1 %>
+								          of
+								          <%= feat.slides_in_order.length %>
 												</p>
 												<div class="accordion-feat-upload-custom">
 													<%= snippet_or_upload_show(slide) %>
