@@ -1,11 +1,12 @@
 #layout_instructions {
   background-color: #e0e5fb;
   position: fixed;
-  top: 25%;
+  top: 26%;
   bottom: 3%;
   margin-left: 20%;
   width: 60%;
   overflow-y: hidden;
+  overflow: scroll;
   p {
     padding: 0 5%;
     font-family: arial;
