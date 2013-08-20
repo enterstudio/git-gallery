@@ -29,4 +29,11 @@ Gem Usage
 - remember to rename the file and remove the .sample from the file name.
 - create your database with the following command:
 <pre><code>rake db:migrate</code></pre>
--
+
+## Github Application Registration
+- when you are signed in Github click this [link](https://github.com/settings/applications/new)
+![screenshot](http://i.imgur.com/crXyqME.png)
+
+- start your server
+<pre><code>rails s</code></pre>
+
