@@ -23,10 +23,10 @@ Gem Usage
 ## Instructions
 
 - clone Git Gallery Repo
-    git clone git@github.com:flatiron-school/git-gallery.git
+''git clone git@github.com:flatiron-school/git-gallery.git''
 - bundle install
 - configure your database.yml.sample file to set up your databases.
 - remember to rename the file and remove the .sample from the file name.
 - create your database with the following command:
-    rake db:migrate 
+''rake db:migrate''
 -
