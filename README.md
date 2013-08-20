@@ -1,11 +1,6 @@
 ## Description
 
-  This is a student Team-Built project. It has aspirations of becoming a major player in coder profile sites.
-  Team-Built consists of Desmond Rawls, Matthew Schmaus, Jennifer Campbell, and Micah Corn. We are flatiron geniuses who will be a force to reckon with for a long time.
-
-  Boo Ya!!
-
-
+  This is a Flatiron student project. This site is a portfolio site for developers where they are able to log in using Github Authentication. In doing so, it reads and brings in personal repos where they are able to create a project. After creating a project, the developer will be able to create features about units of code, and explain the feature through code snippets, descriptions and screenshots.
 
 ## Gems and Environment 
 
@@ -41,7 +36,7 @@ This application uses the API for the following purposes:
 - pulls repo list and repo information
 
 Once the account is created you will need to assign the KEY and SECRET for your app.
-This is done in 
+
 
 
 - start your server
