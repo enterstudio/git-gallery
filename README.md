@@ -30,7 +30,7 @@ Gem Usage
 
 ![screenshot](http://i.imgur.com/crXyqME.png)
 
-This application uses the API for the following purposes:
+This application uses the Github API for the following purposes:
 - user authentication
 - user information includeing github id, username, and email
 - pulls repo list and repo information
