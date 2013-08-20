@@ -21,3 +21,5 @@ Gem Usage
 - mail using this for a mail interceptor in development
 
 ## Instructions
+
+    git clone git@github.com:flatiron-school/git-gallery.git
