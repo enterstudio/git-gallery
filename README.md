@@ -10,22 +10,22 @@
 ## Gems and Environment 
 
 Gem Usage
-- carrierwave to upload images
-- pygments.rb to highlight syntax for code snippets
-- omniauth-github for authorization and sigin through github
-- best_in_place for inline field editing
-- client_side_validations for form validations
-- debugger for debuggin!
-- better_errors and binding_of_caller for a nice interface for error reporting
-- therubyracer embedding ruby in javascript
-- mail using this for a mail interceptor in development
+- [carrierwave](https://github.com/carrierwaveuploader/carrierwave) to upload images
+- [pygments.rb](https://github.com/tmm1/pygments.rb) to highlight syntax for code snippets
+- [omniauth-github](https://github.com/intridea/omniauth-github) for authorization and sigin through github
+- [best_in_place](https://github.com/bernat/best_in_place) for inline field editing
+- [client_side_validations](https://github.com/bcardarella/client_side_validations) for form validations
+- [debugger](http://rubydoc.info/gems/debugger/1.6.1/frames) for debuggin!
+- [better_errors](https://github.com/charliesome/better_errors) and [binding_of_caller](https://github.com/banister/binding_of_caller) for a nice interface for error reporting
+- [therubyracer](http://rubydoc.info/gems/therubyracer/0.12.0/frames) embedding ruby in javascript
+- [mail](https://github.com/mikel/mail) using this for a mail interceptor in development
 
 ## Instructions
 
 - clone Git Gallery Repo
 <pre><code>git clone git@github.com:flatiron-school/git-gallery.git</code></pre>
 - bundle install
-- configure your database.yml.sample file to set up your databases.
+- configure your database.yml.sample file (in the config directory) to set up your databases.
 - remember to rename the file and remove the .sample from the file name.
 - create your database with the following command:
 <pre><code>rake db:migrate</code></pre>
