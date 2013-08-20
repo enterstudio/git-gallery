@@ -17,6 +17,9 @@
 # Ignore uploaded images
 /public/uploads/upload/image/
 
+# Ignore the database.yml 
+/config/database.yml
+
 
 .DS_Store
 
