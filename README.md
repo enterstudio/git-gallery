@@ -31,8 +31,18 @@ Gem Usage
 <pre><code>rake db:migrate</code></pre>
 
 ## Github Application Registration
-- when you are signed in Github click this [link](https://github.com/settings/applications/new)
+- when you are signed in Github click this [link](https://github.com/settings/applications/new) and register your application to be able use the [Github API](http://developer.github.com/v3/).
+
 ![screenshot](http://i.imgur.com/crXyqME.png)
+
+This application uses the API for the following purposes:
+- user authentication
+- user information includeing github id, username, and email
+- pulls repo list and repo information
+
+Once the account is created you will need to assign the KEY and SECRET for your app.
+This is done in 
+
 
 - start your server
 <pre><code>rails s</code></pre>
