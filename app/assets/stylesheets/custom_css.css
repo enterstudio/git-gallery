@@ -210,7 +210,7 @@ input#search {
 
 .accordion-feat-upload-custom{
   height:auto;
-  text-align:center
+  text-align:left
 }
 
 .accordion-feat-author{
@@ -409,5 +409,9 @@ legend {
 
 .gg-controls {
   text-align: center;
+}
+
+.accordion-feat-upload-custom {
+  text-align: left;
 }
 
