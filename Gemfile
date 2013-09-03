@@ -50,6 +50,14 @@ gem 'twitter-bootstrap-rails'
 
 gem "mail"
 
+group :test, :development do
+  gem 'rspec-rails',             "~> 2.14.0"
+  gem 'factory_girl_rails',      "~> 4.2.1"
+  gem "guard-rspec",             "~> 3.0.2"
+  gem "terminal-notifier-guard", "~> 1.5.3"
+end
+
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

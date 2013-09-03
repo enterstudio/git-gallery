@@ -34,4 +34,7 @@ GitAtMe::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  GITHUB_APP_ID = 'dca44f044ea7569694f0'
+  GITHUB_SECRET = 'b9d2efa73429f287c75249406aabac99cdf19669'
 end
