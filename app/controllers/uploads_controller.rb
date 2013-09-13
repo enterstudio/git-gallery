@@ -68,10 +68,11 @@ class UploadsController < ApplicationController
   # DELETE /uploads/1.json
   def destroy
     @upload = Upload.find(params[:id])
+    feature = @upload.feature
     @upload.destroy
 
     respond_to do |format|
-      format.html { redirect_to uploads_url }
+      format.html { redirect_to feature }
       format.json { head :no_content }
     end
   end
