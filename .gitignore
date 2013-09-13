@@ -17,8 +17,6 @@
 # Ignore uploaded images
 /public/uploads/upload/image/
 
-
-
 .DS_Store
 app/.DS_Store
 
