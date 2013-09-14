@@ -34,7 +34,7 @@ namespace :deploy do
 
   task :symlink_config, :roles => :app do 
     run "ln -nfs #{shared_path}/production.sqlite3 #{current_release}/db/production.sqlite3"
-    run "ln -nfs #{shared_path}/assets #{current_release}/public/assets"
+    run "ln -nfs #{shared_path}/image #{current_release}/public/uploads/upload/image"
   end
 end
 

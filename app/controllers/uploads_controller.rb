@@ -68,21 +68,16 @@ class UploadsController < ApplicationController
   # DELETE /uploads/1.json
   def destroy
     @upload = Upload.find(params[:id])
-    feature = @upload.feature
+    uploadable = @upload.uploadable
     @upload.destroy
 
     respond_to do |format|
-      format.html { redirect_to feature }
+      format.html { redirect_to uploadable }
       format.json { head :no_content }
     end
   end
 
 private
-  
-  # def load_uploadable
-  #   resource, id = request.path.split('/')[1,2]
-  #   @uploadable = resource.singularize.classify.constantize.find(id)
-  # end
 
   def load_uploadable
     klass = [Project, Feature].detect {|c| params["#{c.name.underscore}_id"]}
