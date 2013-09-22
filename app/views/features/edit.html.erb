@@ -71,7 +71,7 @@
 
         <div class="bottom-page-buttons">
           <%= link_to "Go to #{@feature.project.name}", @feature.project, :class => "btn btn-primary btn-extra post-btn" %>
-          <%= link_to "Delete This Feature", @feature.project, :method => :delete, :class => "btn btn-primary btn-extra post-btn", :confirm => "Are you sure you want to delete this feature?" %>
+          <%= link_to "Delete This Feature", @feature, :method => :delete, :class => "btn btn-primary btn-extra post-btn", :confirm => "Are you sure you want to delete this feature?" %>
         </div>
       </div>
     </div>

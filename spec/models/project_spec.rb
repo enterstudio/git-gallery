@@ -1,9 +1,18 @@
 require 'spec_helper'
 
 describe Project do
-  it "should have a name" do
-    project = Project.new
-    project.name = "test_dude"
-    expect(project.name).to eq /[\w]/
+
+  describe 'associations' do
+    it { should have_one(:repo) }
+    it { should have_one(:upload)}
+
+    it { should have_many(:project_technologies) }
+    it { should have_many(:technologies) }
+    it { should have_many(:user_projects) }
+    it { should have_many(:users) }
   end
+  
 end
+
+
+

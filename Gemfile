@@ -51,10 +51,21 @@ gem 'twitter-bootstrap-rails'
 gem "mail"
 
 group :test, :development do
-  gem 'rspec-rails',             "~> 2.14.0"
-  gem 'factory_girl_rails',      "~> 4.2.1"
-  gem "guard-rspec",             "~> 3.0.2"
-  gem "terminal-notifier-guard", "~> 1.5.3"
+  gem 'rspec-rails', '2.14.0'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'capybara-accessible'
+  gem 'launchy'
+  gem 'sqlite3'
+  gem 'database_cleaner'
+  gem 'pry-debugger'
+  gem 'letter_opener'
+  gem 'timecop'
+  gem 'foreman'
+  gem 'fakefs', :require => 'fakefs/safe'
 end
 
 
