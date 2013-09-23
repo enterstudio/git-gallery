@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :project do
+    name "Confidence Survey"
+
   end
 end
