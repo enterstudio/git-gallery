@@ -37,6 +37,10 @@ body {
   color: $main_font_color;
 }
 
+  ////////////////////
+ // User Pages     //
+////////////////////
+
 .bs-docs-example {
   margin-top: 40px;
   background-image: none;
@@ -71,7 +75,61 @@ body {
     color: $main_font_color;
   }
 }
-// .gg-project-tabs-custom {
-//   background-color: $background;
-// }
+  ////////////////////
+ // Project Pages  //
+////////////////////
 
+.section-wrapper .section-header {
+  border-bottom: 3px solid $orange;
+  box-shadow: none;
+  color: $main_font_color;
+}
+
+  ////////////////////
+ // Landing Page   //
+////////////////////
+
+#layout_instructions {
+  background-color: $light;
+  border: 5px solid $main_font_color;
+  position: fixed;
+  top: 35%;
+  bottom: 1%;
+  margin-left: 17%;
+  width: 65%;
+  overflow-y: hidden;
+  overflow: scroll;
+  p {
+    padding: 0 5%;
+    font-family: arial;
+    font-size: 1.3em;
+    line-height: 1.2em;
+    color: $main_font_color;
+  }
+}
+
+#layout_instructions_caption {
+  text-align: center;
+}
+
+#wellcome_message {
+  background-color: $orange;
+  border: 5px solid $main_font_color;
+  width: 100%;
+  position: fixed;
+  top: 8.5%;
+   h1 {
+    text-align: center;
+    color: $main_font_color;
+    padding: 50px;
+  }
+}
+
+.landing h1 strong {
+  border-bottom: 5px solid $background;
+}
+
+.landing a {
+  color: $background;
+  text-decoration: none;
+}
