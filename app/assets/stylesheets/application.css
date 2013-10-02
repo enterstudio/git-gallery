@@ -14,18 +14,13 @@
  *= require ../../../vendor/assets/theme/css/theme_venera_blue_custom
  *= require ../../../vendor/assets/theme/css/animate
  *= require /projects
- *= require_tree .
-
  *= require custom
- 
  *= require_tree ./features
  *= require_tree ./forms
  *= require_tree ./projects
- *= require_tree ./user
-
+ *= require ./user/user_show_2
  *= require new_slide
  *= require pygments
- * require_tree .
-
- *= require custom
+ *= require custom_css
+ *= require october_micah
  */
