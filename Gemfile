@@ -37,6 +37,8 @@ gem 'debugger'
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'thin'
+gem "brakeman", :require => false
 
 # Deploy with Capistrano
 gem 'capistrano'
