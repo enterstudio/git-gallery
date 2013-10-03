@@ -279,13 +279,18 @@ legend {
   border: 0;
 }
 
+  ////////////////////
+ // Project Show   //
+////////////////////
+
 .project-info {
   background-color: $main_font_color;
-  padding: 50px;
+  padding: 0 50px 50px 50px;
   margin-top: 80px;
   margin-right: auto;
   margin-left: auto;
   width: 75%;
+  height: 480px;
   h1 {
     color: $background;
     text-align: center;
@@ -299,6 +304,7 @@ legend {
     display: block;
     text-decoration: none;
     text-align: center;
+    width: 200px;
     color: $orange;
   }
   a:hover {
@@ -347,6 +353,7 @@ font-family: Oswald, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 font-size: 18px;
 font-weight: 300;
 height: 20px;
+width: 125px;
 line-height: 20px;
 padding-bottom: 3px;
 padding-left: 10px;
@@ -365,8 +372,56 @@ a.edit-project:hover {
   color: $main_font_color;
 }
 
-.project-description {
+.project-show-description {
+  height: 250px;
+  display: block;
   margin-left: auto;
   margin-right: auto;
   width: 75%;
 }
+
+.edit-project-button {
+  float: right;
+  clear: both;
+  margin-bottom: 50px;
+}
+
+.project-contributers {
+  background-color: $midtonegrey;
+  padding-bottom: 10px;
+  padding-top: 1px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  width: 70%;
+  
+  h5 {
+    color: $background;
+    font-weight: 300;
+    text-align: center;
+  }
+  img {
+    border: 3px solid $background;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+.contributer {
+  width: 120px;
+}
+
+.project-features-carousels-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+
+
+
+
+
+
+
