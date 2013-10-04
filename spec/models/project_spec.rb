@@ -14,6 +14,6 @@ describe Project do
   end
 
   it "does something" do
-    
+
   end
 end

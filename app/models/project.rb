@@ -56,7 +56,7 @@ class Project < ActiveRecord::Base
 
   def get_contributors
     contributors = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}/contributors?access_token=#{creator.token}").read)
-    
+
     contributors.each do |contributor|
       contributor_info = JSON.parse(open("https://api.github.com/users/#{contributor["login"]}?access_token=#{creator.token}").read)
       userproject = UserProject.find_or_create_by_project_id(:project_id => self.id, :contributor_github_id => contributor_info["id"])
@@ -85,7 +85,7 @@ class Project < ActiveRecord::Base
     github_description = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}").read)["description"]
     if github_description.nil? || github_description.empty?
       self.description = "Please write a short description about this project."
-    else 
+    else
       self.description =  github_description
     end
     self.save

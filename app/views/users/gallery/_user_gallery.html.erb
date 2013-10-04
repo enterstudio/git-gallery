@@ -1,14 +1,17 @@
-<h3 class="section-header">Your Projects</h3>
+<div class="section-wrapper clearfix">
 
-<% @user.projects.each do |project| %>
+  <h3 class="section-header">Your Projects</h3>
 
-  <div class="span4">
-    <div class="user-project">
-      <%= link_to project.name.truncate(20), project_path(project) %>
-      <%= project_image(project) %>
-      <p><%= project.description.truncate(30) %></p>
+  <% @user.projects.each do |project| %>
+
+    <div class="span4">
+      <div class="user-project">
+        <%= link_to project.name.truncate(20), project_path(project) %>
+        <%= project_image(project) %>
+        <p><%= project.description.truncate(30) %></p>
+      </div>
     </div>
-  </div>
 
-<% end %>
+  <% end %>
 
+</div>

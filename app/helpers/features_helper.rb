@@ -1,4 +1,4 @@
-module FeaturesHelper 
+module FeaturesHelper
   def snippet_or_upload_show(slide)
   	if slide.class == Snippet
   		raw Pygments.highlight(slide.code, lexer: slide.language, width: '700')
@@ -19,5 +19,5 @@ module FeaturesHelper
       feature.send(attribute)
     end
   end
-  
+
 end

@@ -1,6 +1,6 @@
 class FeaturesController < ApplicationController
   skip_before_filter :login_required, :only => [:index, :show, :edit, :update_slide_order]
-  
+
   # GET /users/1/features
   # GET /users/1/features.json
   def index
@@ -64,7 +64,7 @@ class FeaturesController < ApplicationController
         format.json { render json: @feature, status: :created, location: @feature }
       else
         @technologies = Technology.all
-        format.html { render action: "new" }
+        format.html { render "new" }
         format.json { render json: @feature.errors, status: :unprocessable_entity }
       end
     end
@@ -73,7 +73,7 @@ class FeaturesController < ApplicationController
   # PUT /users/1/features/1
   # PUT /users/1/features/1.json
   def update
-    if params[:slides] 
+    if params[:slides]
       params[:slides].each_with_index do |slide, index|
         snippet_or_upload = slide[:class].constantize.find(slide[:id])
         snippet_or_upload.position = index
@@ -87,7 +87,7 @@ class FeaturesController < ApplicationController
         format.html { redirect_to feature_path(@feature), notice: 'Feature was successfully updated.' }
         format.json { respond_with_bip(@feature)}
       else
-        format.html { render action: "edit" }
+        format.html { render "edit" }
         format.json { render json: @feature.errors, status: :unprocessable_entity }
       end
     end

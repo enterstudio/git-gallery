@@ -2,7 +2,7 @@
 
   This is a Flatiron student project. This site is a portfolio site for developers where they are able to log in using Github Authentication. In doing so, it reads and brings in personal repos where they are able to create a project. After creating a project, the developer will be able to create features about units of code, and explain the feature through code snippets, descriptions and screenshots.
 
-## Gems and Environment 
+## Gems and Environment
 
 Gem Usage
 - [carrierwave](https://github.com/carrierwaveuploader/carrierwave) to upload images

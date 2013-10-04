@@ -31,42 +31,42 @@ gitgallery.upload.save
 
 syllaboss = Project.find(2)
 syllaboss.upload = Upload.create(:name => "landing page sb")
-syllaboss.upload.remote_image_url = "http://25.media.tumblr.com/71309855e732bbf68922f3ee347e49ae/tumblr_mqicwxGxxE1sat8iwo1_1280.jpg" 
+syllaboss.upload.remote_image_url = "http://25.media.tumblr.com/71309855e732bbf68922f3ee347e49ae/tumblr_mqicwxGxxE1sat8iwo1_1280.jpg"
 syllaboss.upload.save
 
 hireredux = Project.find(3)
 hireredux.upload = Upload.create(:name => "landing page hr")
-hireredux.upload.remote_image_url = "http://24.media.tumblr.com/5df852a1c08b9b69dbf7330a955160d8/tumblr_mqiddtCNuN1sat8iwo1_1280.jpg" 
+hireredux.upload.remote_image_url = "http://24.media.tumblr.com/5df852a1c08b9b69dbf7330a955160d8/tumblr_mqiddtCNuN1sat8iwo1_1280.jpg"
 hireredux.upload.save
 
 appapp = Project.find(4)
 appapp.upload = Upload.create(:name => "landing page aa")
-appapp.upload.remote_image_url = "http://24.media.tumblr.com/2bce7c7d37b602841d5c1000f10937eb/tumblr_mqieg3KgT81sat8iwo1_1280.jpg" 
+appapp.upload.remote_image_url = "http://24.media.tumblr.com/2bce7c7d37b602841d5c1000f10937eb/tumblr_mqieg3KgT81sat8iwo1_1280.jpg"
 appapp.upload.save
 
 assignmentioredux = Project.find(5)
 assignmentioredux.upload = Upload.create(:name => "landing page ar")
-assignmentioredux.upload.remote_image_url = "http://25.media.tumblr.com/3b8c9146db28690df25f508b78dcc84e/tumblr_mqiexqwgm31sat8iwo1_1280.jpg" 
+assignmentioredux.upload.remote_image_url = "http://25.media.tumblr.com/3b8c9146db28690df25f508b78dcc84e/tumblr_mqiexqwgm31sat8iwo1_1280.jpg"
 assignmentioredux.upload.save
 
 libraryredux = Project.find(6)
 libraryredux.upload = Upload.create(:name => "landing page lr")
-libraryredux.upload.remote_image_url = "http://24.media.tumblr.com/2d11d481e79ca7d9fe72e65605fbe015/tumblr_mqif8q43HO1sat8iwo1_1280.jpg" 
+libraryredux.upload.remote_image_url = "http://24.media.tumblr.com/2d11d481e79ca7d9fe72e65605fbe015/tumblr_mqif8q43HO1sat8iwo1_1280.jpg"
 libraryredux.upload.save
 
 openexam = Project.find(7)
 openexam.upload = Upload.create(:name => "landing page oe")
-openexam.upload.remote_image_url = "http://25.media.tumblr.com/68c09941abaddc596f61dcc2765c9677/tumblr_mqifrlhXzj1sat8iwo1_1280.jpg" 
+openexam.upload.remote_image_url = "http://25.media.tumblr.com/68c09941abaddc596f61dcc2765c9677/tumblr_mqifrlhXzj1sat8iwo1_1280.jpg"
 openexam.upload.save
 
 teamline = Project.find(8)
 teamline.upload = Upload.create(:name => "landing page oe")
-teamline.upload.remote_image_url = "http://24.media.tumblr.com/692982b3659acdfcc1e2f734cb03a8bf/tumblr_mqk43zoU8w1sat8iwo1_1280.jpg" 
-teamline.upload.save	
+teamline.upload.remote_image_url = "http://24.media.tumblr.com/692982b3659acdfcc1e2f734cb03a8bf/tumblr_mqk43zoU8w1sat8iwo1_1280.jpg"
+teamline.upload.save
 
 kegkong = Project.find(10)
 kegkong.upload = Upload.create(:name => "landing page kegkong")
-kegkong.upload.remote_image_url = "http://25.media.tumblr.com/210151e01686cf79ead887214e6dd6f7/tumblr_mqk1x66nEL1sat8iwo1_1280.jpg" 
+kegkong.upload.remote_image_url = "http://25.media.tumblr.com/210151e01686cf79ead887214e6dd6f7/tumblr_mqk1x66nEL1sat8iwo1_1280.jpg"
 kegkong.upload.save
 
 ################
@@ -205,25 +205,25 @@ feature1 = gitgallery.features.last
 	feature1.uploads.first.save
 
 	one = feature1.uploads.build(:name => "shallow_routes_rake_after")
-	one.remote_image_url = "http://24.media.tumblr.com/a9be25c610b23f91167bbc9b997ea8eb/tumblr_mqibnsstiy1sat8iwo2_1280.jpg" 
+	one.remote_image_url = "http://24.media.tumblr.com/a9be25c610b23f91167bbc9b997ea8eb/tumblr_mqibnsstiy1sat8iwo2_1280.jpg"
 	one.description = "Now all my feature routes have only one id in them. Every feature is unique so that's all I need."
   one.position = 2
 	one.save
 
 	two = feature1.uploads.build(:name => "shallow_routes_rake_before")
-	two.remote_image_url = "http://25.media.tumblr.com/c08585bbe24b689d75cfc03626956a45/tumblr_mqibnsstiy1sat8iwo3_1280.jpg" 
+	two.remote_image_url = "http://25.media.tumblr.com/c08585bbe24b689d75cfc03626956a45/tumblr_mqibnsstiy1sat8iwo3_1280.jpg"
 	two.description = "My feature resource is nested inside the user resource so that all routes for features require a :user_id and a feature :id. This is cumbersome and unnecessary."
   two.position = 1
 	two.save
 
 	three = feature1.uploads.build(:name => "shallow_routes_snippet")
-	three.remote_image_url = "http://25.media.tumblr.com/1330e132c4bb3649adcf1116687fa8bb/tumblr_mqibnsstiy1sat8iwo4_1280.jpg" 
+	three.remote_image_url = "http://25.media.tumblr.com/1330e132c4bb3649adcf1116687fa8bb/tumblr_mqibnsstiy1sat8iwo4_1280.jpg"
 	three.description = "Check out the url on my new snippet form. I'm able to do everything for a particular feature without worrying about the user."
   three.position = 3
 	three.save
 
 	four = feature1.uploads.build(:name => "shallow_routes_user")
-	four.remote_image_url = "http://24.media.tumblr.com/a9447d4a4db1066facd445624a824593/tumblr_mqibnsstiy1sat8iwo5_1280.jpg" 
+	four.remote_image_url = "http://24.media.tumblr.com/a9447d4a4db1066facd445624a824593/tumblr_mqibnsstiy1sat8iwo5_1280.jpg"
 	four.description = "And my user urls haven't changed."
   four.position = 4
 	four.save
@@ -231,20 +231,20 @@ feature1 = gitgallery.features.last
 ############################
 # ADD SNIPPETS TO FEATURES #
 ############################
-routes = Snippet.create(:name => "routes.rb",	:url => "https://github.com/flatiron-school/git-gallery/blob/master/config/routes.rb", 	:language => "ruby", 	:code => 
+routes = Snippet.create(:name => "routes.rb",	:url => "https://github.com/flatiron-school/git-gallery/blob/master/config/routes.rb", 	:language => "ruby", 	:code =>
 	  "resources :users do
 	resources :features, :shallow => true do
 		resources :snippets
 		resources :uploads
 	end
 	resources :technologies, only: [:show]
-end", 
+end",
 	  :description => "I didn't want to have a double-nested url so I made features shallow. This one line immediately changes the routes visible in rake routes.", :feature_id => 17, :position => 0)
 
 paths = Snippet.create(:name => "shallow paths", :url => "https://github.com/flatiron-school/git-gallery/blob/master/app/views/features/show.html.erb", :language => "ruby", :code =>
 	 "#this path:
 new_user_feature_snippet_path(@user, @feature)
- 
+
 #became this simpler path:
 new_feature_snippet_path(@feature)",
 		:description => "All feature paths previously included the user. For snippets and uploads, which belong to a feature, the user is unnecessary information. Now the paths to snippets and uploads only depend on the feature they belong to.", :feature_id => 17, :position => 1)
@@ -252,7 +252,7 @@ new_feature_snippet_path(@feature)",
 forms = Snippet.create(:name => "shallow forms", :url => "https://github.com/flatiron-school/git-gallery/blob/master/app/views/snippets/_form.html.erb", :language => "ruby", :code =>
 	"#this form tag:
 <%= form_for [@user, @feature, @snippet] do |f| %>
- 
+
 #became this simpler form tag:
 <%= form_for [@feature, @snippet] do |f| %>",
 		:description => "Similar to what we saw with the paths, all form tags became simpler. Form tags for resources nested under features went from relying on the user, the feature, and the current resource to relying on only the feature and the current resource (in this case snippets).", :feature_id => 17, :position => 2)
@@ -354,10 +354,10 @@ FeatureTechnology.create(:feature_id => 39, :technology_id => 3)
 
 rails.save
 git.save
-js.save     
+js.save
 ruby.save
 css.save
-html.save 
+html.save
 jquery.save
 php.save
 webgl.save

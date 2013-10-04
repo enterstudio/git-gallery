@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   end
 
   def prune_repos
-    self.repos.each { |repo| !repo.project_id ? repo.destroy : repo.user_id = nil } 
+    self.repos.each { |repo| !repo.project_id ? repo.destroy : repo.user_id = nil }
   end
 
   def associate_with_existing_projects ## Maybe use an error catch for each on NilClass so we can iterate over the original database response

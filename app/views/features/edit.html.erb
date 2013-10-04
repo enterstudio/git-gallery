@@ -46,11 +46,11 @@
               <p>Name:&nbsp;<%= slide.name %></p>
               <p>Description:&nbsp;<%= slide.description%></p>
               <%= snippet_or_upload_show(slide) %>
-            </div> 
+            </div>
             <%= link_to " Delete This Slide", slide, :method => :delete, :class => "btn btn-small" %>
-          </div> 
+          </div>
           <% end %>
-        </div> 
+        </div>
       </div>
         <% else %>
         <h3 class="form-header">No Slides Yet. Add Some!</h3>

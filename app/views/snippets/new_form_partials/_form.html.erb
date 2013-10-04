@@ -8,7 +8,7 @@
       </h1>
       <h4 class="gg-header-instructions instructions">
         This slide is about explaining the code you wrote to create your <%= @feature.title %> feature. A good slide tells a story. Use a short snippet and relate it to the other slides in this feature.
-      </h4>    
+      </h4>
 
 
       <%= render partial: "snippets/new_form_partials/name",        :locals => {:f => f, :snippet => @snippet} %>
@@ -16,7 +16,7 @@
       <%= render partial: "snippets/new_form_partials/language",    :locals => {:f => f, :snippet => @snippet} %>
       <%= render partial: "snippets/new_form_partials/code",        :locals => {:f => f, :snippet => @snippet} %>
       <%= render partial: "snippets/new_form_partials/description", :locals => {:f => f, :snippet => @snippet} %>
-    
+
       <%= f.submit "I'm Done With This Snippet", :class => "btn btn-primary" %>
     </fieldset>
   <% end %>

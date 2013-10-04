@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   skip_before_filter :login_required, :only => [:index, :show, :landing]
-  
+
   # GET /projects
   # GET /projects.json
   def index
@@ -48,7 +48,7 @@ class ProjectsController < ApplicationController
     @repo = Repo.find(params[:repo_id])
     @project = Project.new
     @project.name = @repo.name
-    
+
     respond_to do |format|
       if @project.save
         @repo.project_id = @project.id
@@ -56,11 +56,11 @@ class ProjectsController < ApplicationController
         @project.get_description
         @project.get_technologies
         @project.get_contributors
-        
+
         format.html { redirect_to project_path(@project), notice: 'Project was successfully created.' }
         format.json { render json: @project, status: :created, location: @project }
       else
-        format.html { render action: "new" }
+        format.html { render "new" }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
@@ -72,7 +72,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.name = params[:project][:name]
     @project.description = params[:project][:description]
-    
+
     @project.upload.destroy if @project.upload
     image = Upload.new(:image => params[:project][:image].tempfile) if params[:project][:image]
     image.save if image
@@ -83,7 +83,7 @@ class ProjectsController < ApplicationController
         format.html { redirect_to(@project, :notice => 'Project was successfully updated')}
         format.json { respond_with_bip(@project)}
       else
-        format.html { render :action => "edit"}
+        format.html { render "edit"}
         format.json { respond_with_bip(@project)}
       end
     end
@@ -102,7 +102,7 @@ class ProjectsController < ApplicationController
   end
 
   def filtered
-    @projects = Project.technologies(params[:tech_name])  
+    @projects = Project.technologies(params[:tech_name])
   end
 
   def landing

@@ -7,7 +7,7 @@ GitAtMe::Application.routes.draw do
   post "features/:feature_id/update_slide_order" => "features#update_slide_order"
   post "features/:feature_id/uploads/destroy-on-back" => "uploads#destroy_on_back"
   post "features/:feature_id/snippets/destroy-on-back" => "uploads#destroy_on_back"
-  
+
   get "/login"  => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
@@ -21,7 +21,7 @@ GitAtMe::Application.routes.draw do
     resources :uploads
   end
 
-  
+
   resources :users do
     resources :technologies, only: [:show]
     resources :repos, :shallow => true, only: [:show]

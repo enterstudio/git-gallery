@@ -46,6 +46,6 @@ class RepoScraper
 
         puts "saved successfully" if new_repo.save
       end
-    end     
+    end
   end
 end

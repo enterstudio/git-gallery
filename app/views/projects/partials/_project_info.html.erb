@@ -2,25 +2,25 @@
 
   <p id="notice" class="gg-notice"><%= notice %></p>
 
-  <h1><%= project.name %></h1> 
+  <h1><%= project.name %></h1>
 
   <%= link_to "See this project on GitHub", project.repo.html_url, :target => "_blank" %>
 
   <ul>
     <% project.technologies.each do |tech| %>
     <li><%= tech.name %></li>
-    <% end %>  
+    <% end %>
   </ul>
 
   <div class="project-show-description">
-    <p><%= project.description.truncate(475) %></p>  
+    <p><%= project.description.truncate(475) %></p>
   </div>
 
 
 
   <div class="edit-project-button">
-    <%= link_to "Edit This Project", edit_project_path(project), :class => "edit-project" if project.users.include?(current_user) %> 
+    <%= link_to "Edit This Project", edit_project_path(project), :class => "edit-project" if project.users.include?(current_user) %>
   </div>
 
- 
+
 </div>

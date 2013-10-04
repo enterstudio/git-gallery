@@ -8,7 +8,7 @@ module SlidesHelper
   end
 
   def render_slide(slide_type)
-    if slide_type 
+    if slide_type
       render :partial => slide_partial_name(slide_type), :locals => {:snippet => slide_type }
     end
   end

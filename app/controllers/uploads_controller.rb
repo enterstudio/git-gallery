@@ -44,7 +44,7 @@ class UploadsController < ApplicationController
     else
       render :new
     end
-    
+
     # @upload.location_dependent_save(@uploadable)
   end
 
@@ -52,13 +52,13 @@ class UploadsController < ApplicationController
   # PUT /uploads/1.json
   def update
     @upload = Upload.find(params[:id])
-    
+
     respond_to do |format|
       if @upload.update_attributes(params[:upload])
         format.html { redirect_to @uploadable, notice: 'upload was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render "edit" }
         format.json { render json: @upload.errors, status: :unprocessable_entity }
       end
     end

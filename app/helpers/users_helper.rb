@@ -17,10 +17,16 @@ module UsersHelper
   end
 
   def show_projects(user)
-    if user.projects.empty?  
+    if user.projects.empty?
       render :partial => "users/gallery/my_project_explanation"
     else
       render :partial => "users/gallery/user_gallery", :locals => { :page_user => user }
     end
+  end
+
+  def get_the_projects(user)
+    login(user)
+    user.associate_with_existing_projects
+    Repo_scraper.new(user)
   end
 end

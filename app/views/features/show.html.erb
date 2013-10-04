@@ -10,7 +10,7 @@
 
 
   <p><b>Description:</b> <%= @feature.description %></p>
-    
+
   <ul>
     <% @feature.slides_in_order.each do |slide| %>
       <li>
@@ -31,6 +31,6 @@
 </div>
 
 <%= link_to 'Edit', edit_feature_path(@feature) %> |
-<%= link_to "Back to #{@feature.project.name}", @feature.project %> | 
+<%= link_to "Back to #{@feature.project.name}", @feature.project %> |
 <%= link_to "Upload an Image", [:new, @feature, :upload] %> |
 <%= link_to 'Add Snippet', new_feature_snippet_path(@feature) %> |

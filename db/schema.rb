@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130803180512) do
+ActiveRecord::Schema.define(:version => 20131004131029) do
 
   create_table "feature_technologies", :force => true do |t|
     t.integer  "feature_id"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(:version => 20130803180512) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
+
+  add_index "feature_technologies", ["feature_id"], :name => "index_feature_technologies_on_feature_id"
+  add_index "feature_technologies", ["technology_id"], :name => "index_feature_technologies_on_technology_id"
 
   create_table "features", :force => true do |t|
     t.string   "title"
@@ -28,12 +31,17 @@ ActiveRecord::Schema.define(:version => 20130803180512) do
     t.integer  "user_project_id"
   end
 
+  add_index "features", ["user_project_id"], :name => "index_features_on_user_project_id"
+
   create_table "project_technologies", :force => true do |t|
     t.integer  "project_id"
     t.integer  "technology_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
+
+  add_index "project_technologies", ["project_id"], :name => "index_project_technologies_on_project_id"
+  add_index "project_technologies", ["technology_id"], :name => "index_project_technologies_on_technology_id"
 
   create_table "projects", :force => true do |t|
     t.string   "name"
@@ -56,6 +64,9 @@ ActiveRecord::Schema.define(:version => 20130803180512) do
     t.integer  "github_owner_id"
   end
 
+  add_index "repos", ["project_id"], :name => "index_repos_on_project_id"
+  add_index "repos", ["user_id"], :name => "index_repos_on_user_id"
+
   create_table "snippets", :force => true do |t|
     t.string   "name"
     t.string   "language"
@@ -67,6 +78,8 @@ ActiveRecord::Schema.define(:version => 20130803180512) do
     t.integer  "feature_id"
     t.integer  "position"
   end
+
+  add_index "snippets", ["feature_id"], :name => "index_snippets_on_feature_id"
 
   create_table "technologies", :force => true do |t|
     t.string   "name"
@@ -97,6 +110,9 @@ ActiveRecord::Schema.define(:version => 20130803180512) do
     t.datetime "updated_at",            :null => false
     t.integer  "contributor_github_id"
   end
+
+  add_index "user_projects", ["project_id"], :name => "index_user_projects_on_project_id"
+  add_index "user_projects", ["user_id"], :name => "index_user_projects_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

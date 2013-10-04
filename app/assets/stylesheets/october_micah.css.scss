@@ -87,6 +87,10 @@ body {
   background-image: none;
 }
 
+.section-wrapper-show-text {
+  background-color: $orange;
+  background-image: none;
+}
  .blog-categories ul li a {
   background-color: $background;
   box-shadow: none;
@@ -395,7 +399,7 @@ a.edit-project:hover {
   margin-right: auto;
   margin-bottom: 50px;
   width: 70%;
-  
+
   h5 {
     color: $background;
     font-weight: 300;

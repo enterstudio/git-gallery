@@ -1,3 +1,4 @@
+<div class="section-wrapper-show">
 <% if current_user == @user %>
   <h1>My Projects</h1>
   <h2>Welcome to your Gallery Page.</h2>
@@ -5,7 +6,7 @@
   <p class="lead">
     This page will eventually show off your projects. In order to create a project, please see the sidebar to the right which shows all available repos we found on your github page and choose one to get started. We will notify your github collaborators so they can participate.
     <br><br>
-    You and your collaborators will be able to edit your project's basic information and create features that showcase your skills. There will be a slider that contains all features you and your collaborators have made for your project. Below this, there will be a slide carousel showing the explanation, code snippet or images associated with each feature. 
+    You and your collaborators will be able to edit your project's basic information and create features that showcase your skills. There will be a slider that contains all features you and your collaborators have made for your project. Below this, there will be a slide carousel showing the explanation, code snippet or images associated with each feature.
   </p>
 
   <div class="clearfix"></div>
@@ -15,3 +16,5 @@
   <h2><%= @user.name %> hasn't created any repos yet...</h2>
   <h3>Check back soon!</h3>
 <% end %>
+
+</div>

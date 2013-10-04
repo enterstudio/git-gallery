@@ -6,6 +6,6 @@ class Technology < ActiveRecord::Base
 
   has_many :feature_technologies
   has_many :features, :through => :feature_technologies
-  has_many :users, :through => :features 
+  has_many :users, :through => :features
 
 end
