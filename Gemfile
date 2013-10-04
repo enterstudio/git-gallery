@@ -59,6 +59,7 @@ group :test, :development do
   gem "terminal-notifier-guard", "~> 1.5.3"
 end
 
+gem 'simplecov', :require => false, :group => :test
 
 group :development do
   gem "better_errors"

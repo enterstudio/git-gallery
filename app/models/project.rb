@@ -11,6 +11,8 @@ class Project < ActiveRecord::Base
 
   has_one :upload, :as => :uploadable, :dependent => :destroy
 
+  validates :name, :presence => true
+
   def this_user_features(chosen_user)
     Feature.joins(:project).where(:project_id => self.id, :user_id => chosen_user.id)
   end
