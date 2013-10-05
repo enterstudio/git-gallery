@@ -1,0 +1,9 @@
+<div class="span4">
+
+  <div class="user-project" id="<%= index %>">
+    <%= link_to project.name.truncate(20), project_path(project) %>
+    <%= project_image(project) %>
+    <p><%= project.description.truncate(30) %></p>
+  </div>
+
+</div>

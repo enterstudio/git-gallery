@@ -13,7 +13,17 @@ $('.feature h2').click(function() {
   $(this).parent().addClass('selected');
 
   $('.item1').hide();
-  
+
   var sel = "#"+$(this).data('name');
   $(sel).show();
+});
+
+$(".user-project").hover(function () {
+  $('.current-description').addClass('no-display');
+  $('.current-description').removeClass('current-description');
+
+  var ident = $(this).attr('id');
+  var blank = $(".project-full-description").children()[ident];
+  $(blank).removeClass("no-display");
+  $(blank).addClass('current-description');
 });

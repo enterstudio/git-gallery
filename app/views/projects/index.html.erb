@@ -1,32 +1,34 @@
-<section class="section-wrapper">
-<div class="container">
-<div class="row">
-<div class="span12">
-<h3 class="section-header">Projects</h3>
-</div>
-<% @projects.each do |project| %>
-      <div class="span4">
-      <div class="white-card recent-post clearfix">
-      <h5 class="recent-post-header">
-         <a href="<%= project_path(project)%>"><%= project.name %></a>
-      </h5>
-      <div class="post-info clearfix">
-      </div>
-<%= project_image(project) %>
+<div class="inline-custom">
+  <div class="container user_show">
+    <div class="row-fluid span12">
+      <div class="span8 float-custom-left">
+        <div class="bs-docs-example">
+          <div class="section-wrapper clearfix">
 
-  <p class="post-content separated"><%= project.description %></p>
-      <div class="technologies-custom">
-    <% project.technologies.each do |tech| %>
-    <span class="label"><%=tech.name%></span>
-    <% end %>
+            <h3 class="section-header">Projects</h3>
+
+            <% @projects.each_with_index do |project, index| %>
+              <%= render :partial => "projects/partials/index_card", :locals => { :project => project, :index => index } %>
+            <% end %>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="span3 float-custom-right">
+
+        <div class="blog-categories widget-tp">
+          <h3>Project Preview</h3>
+          <div class="project-full-description">
+            <% @projects.each_with_index do |project, index| %>
+              <%= render :partial => "projects/partials/project_full_description", :locals => { :project => project, :index => index } %>
+            <% end %>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
   </div>
-      </div>
-      </div>
-<%end %>
 </div>
-</div>
-</section>
-
-
-
 
