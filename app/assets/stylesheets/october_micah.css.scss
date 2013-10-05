@@ -17,6 +17,12 @@ body {
  // Navigation Bar //
 ////////////////////
 
+.navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+  color: $main_font_color;
+  text-shadow: none;
+}
+
 .icon-cog, .pull-right {
   color: $main_font_color;
 }
@@ -151,6 +157,11 @@ body {
  // Project Pages  //
 ////////////////////
 
+.stick {
+  position:fixed;
+  top:0px;
+}
+
 .section-wrapper .section-header {
   border-bottom: 3px solid $orange;
   box-shadow: none;
@@ -160,7 +171,10 @@ body {
 .project-full-description {
   padding: 15px;
   background-color: $main_font_color;
-  min-height: 300px;
+  min-height: 550px;
+  max-height: 550px;
+  min-width: 300px;
+  overflow: auto;
   h4, p {
     color: $background;
     font-weight: 300;
@@ -173,6 +187,22 @@ body {
   }
 
 }
+
+.avatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.user-link a {
+  color: $orange;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.user-link a:hover {
+  color: $background;
+}
+
 
   ////////////////////
  // Landing Page   //

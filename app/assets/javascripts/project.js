@@ -27,3 +27,16 @@ $(".user-project").hover(function () {
   $(blank).removeClass("no-display");
   $(blank).addClass('current-description');
 });
+
+$(document).ready(function() { // http://www.pixelbind.com/make-a-div-stick-when-you-scroll/
+    var s = $(".blog-categories");
+    var pos = s.position();
+    $(window).scroll(function() {
+        var windowpos = $(window).scrollTop();
+        if (windowpos >= pos.top) {
+            s.addClass("stick");
+        } else {
+            s.removeClass("stick");
+        }
+    });
+});

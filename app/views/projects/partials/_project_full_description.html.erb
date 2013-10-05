@@ -1,4 +1,8 @@
 <div class="<%= index %> no-display">
-  <h4><%=  project.name %></h4>
+  <h4><%=  project.name.downcase %></h4>
   <p><%=  project.description %></p>
+  <h4>technologies</h4>
+  <%= render :partial => "projects/partials/technologies", :locals => { :project => project } %>
+  <h4>contributers</h4>
+  <%= render :partial => "projects/partials/contributers", :locals => { :project => project } %>
 </div>

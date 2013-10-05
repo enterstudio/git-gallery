@@ -1,0 +1,10 @@
+<ul>
+  <% project.users.uniq.each do |user| %>
+  <div class="avatar">
+    <%= link_to (image_tag avatar_url(user)), user_path(user)  %>
+  </div>
+  <p><%= user.name.downcase %></p>
+  <p><%= user.created_at.strftime("member since: %b %d %Y") %></p>
+  <p class="user-link"><%= link_to "projects", user_path(user) %></p>
+  <% end %>
+</ul>
