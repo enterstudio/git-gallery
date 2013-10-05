@@ -1,5 +1,33 @@
-<%= render :partial => "projects/partials/project_info", :locals => { :project => @project } %>
+<div class="inline-custom">
+  <div class="container user_show">
+    <div class="row-fluid span12">
 
-<%= render :partial => "projects/partials/project_contributers", :locals => { :project => @project } %>
+      <div class="span8 float-custom-left">
 
-<%= render :partial => "projects/partials/project_features", :locals => { :project => @project } %>
+        <div class="bs-docs-example project-container">
+
+          <div class="section-wrapper">
+            <h3 class="section-header"><%= @project.name %></h3>
+            <%= render :partial => "projects/partials/project_features", :locals => { :project => @project } %>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="span3 float-custom-right">
+
+        <div class="blog-categories widget-tp">
+          <h3>Project Information</h3>
+          <div class="project-full-description">
+            <%= render :partial => "projects/partials/information", :locals => { :project => @project } %>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+

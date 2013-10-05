@@ -334,6 +334,18 @@ legend {
  // Project Show   //
 ////////////////////
 
+.project-container {
+  min-height: 600px;
+  max-height: 600px;
+  min-width:  898px;
+  max-width:  898px;
+
+  .section-wrapper {
+    min-height: 530px;
+    max-height: 530px;
+  }
+}
+
 .project-info {
   background-color: $main_font_color;
   padding: 0 50px 50px 50px;

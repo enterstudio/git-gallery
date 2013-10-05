@@ -1,41 +1,10 @@
-<div class="span12 span12-custom">
-  <h3 class="section-header">Features</h3>
-</div>
-
 <div class="project-features-carousels-container">
-
-<% project.features.each_with_index do |feat, index| %>
-  <p><%= index + ": " + feat.title %></p>
-<% end %>
-
-<%= link_to "Add a Feature", new_project_feature_path(project), :class => "top-create-account" if project.users.include?(current_user) %>
-
   <div class="accordion" id="accordion2">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        Collapsible Group Item #1
-      </a>
-    </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        Collapsible Group Item #2
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
-      </div>
-    </div>
-  </div>
-</div>
 
-</div>
+    <% project.features.each_with_index do |feature, index| %>
+      <%= render :partial => "projects/partials/accordion-group", :locals => { :feature => feature } %>
+    <% end %>
 
+  </div>
+  <%= link_to "Add a Feature", new_project_feature_path(project), :class => "top-create-account" if project.users.include?(current_user) %>
+</div> <!-- project-features-carousels-container -->
