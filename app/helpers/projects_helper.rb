@@ -37,6 +37,22 @@ module ProjectsHelper
 		end
 	end
 
+	def show_project_description(project)
+		(project.description if project.description) || "a work in progress"
+	end
+
+	def show_truncated_project_description(project)
+		show_project_description(project).truncate(30)
+	end
+
+	def show_project_technologies(project)
+		render :partial => "projects/partials/technologies", :locals => { :project => project } if project.technologies.size > 0
+	end
+
+	def show_project_contributers(project)
+		render :partial => "projects/partials/contributers", :locals => { :project => project } if project.users.size > 0
+	end
+
 	def default_description
 		"Add a Description"
 	end

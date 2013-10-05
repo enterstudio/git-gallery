@@ -3,7 +3,7 @@
   <div class="user-project" id="<%= index %>">
     <%= link_to project.name.downcase.truncate(20), project_path(project) %>
     <%= project_image(project) %>
-    <p><%= project.description.truncate(30) %></p>
+    <p><%= show_truncated_project_description(project) %></p>
   </div>
 
 </div>
