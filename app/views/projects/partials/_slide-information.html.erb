@@ -1,0 +1,30 @@
+<% project.features.each_with_index do |feature| %>
+
+  <% feature.slides_in_order.each_with_index do |slide| %>
+  <div class="slide-info-container <%= slide.name %>">
+   <h4><%= slide.name %></h4>
+    <p><%= slide.description %></p>
+
+    <h4>technologies</h4>
+
+    <ul>
+      <li><p><%= slide.language.downcase if slide.is_a?(Snippet) %></p></li>
+    </ul>
+
+    <h4>contributers</h4>
+    <ul>
+      <div class="avatar">
+        <%= link_to (image_tag avatar_url(feature.user)), user_path(feature.user)  %>
+      </div>
+      <p><%= feature.user.name.downcase                                    %></p>
+      <p><%= feature.user.created_at.strftime("member since: %b %d %Y")    %></p>
+      <p class="user-link"><%= link_to "projects", user_path(feature.user) %></p>
+    </ul>
+  </div>
+
+
+
+
+  <% end %>
+<% end %>
+

@@ -1,0 +1,15 @@
+<div class="accordion-inner">
+  <div id="myCarousel<%= index %>" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <% if feature.slides_in_order.any? %>
+        <% feature.slides_in_order.each_with_index do |slide, index| %>
+          <%= render :partial => "projects/partials/carousel_slide", :locals => { :feature => feature, :slide => slide, :index => index} %>
+        <% end %>
+      <% end %>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel<%= index %>" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel<%= index %>" data-slide="next">&rsaquo;</a>
+  </div>
+</div>

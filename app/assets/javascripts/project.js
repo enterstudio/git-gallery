@@ -18,6 +18,8 @@ $('.feature h2').click(function() {
   $(sel).show();
 });
 
+// The following function controls the project preview area
+
 $(".user-project").hover(function () {
   $('.current-description').addClass('no-display');
   $('.current-description').removeClass('current-description');
@@ -27,6 +29,9 @@ $(".user-project").hover(function () {
   $(blank).removeClass("no-display");
   $(blank).addClass('current-description');
 });
+
+
+// The following function controls the stickiness of the project preview area
 
 $(document).ready(function() { // http://www.pixelbind.com/make-a-div-stick-when-you-scroll/
     var s = $(".blog-categories");

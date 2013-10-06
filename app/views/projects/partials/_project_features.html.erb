@@ -1,10 +1,24 @@
 <div class="project-features-carousels-container">
-  <div class="accordion" id="accordion2">
+  <div class="accordion" id="accordion">
 
-    <% project.features.each_with_index do |feature, index| %>
-      <%= render :partial => "projects/partials/accordion-group", :locals => { :feature => feature } %>
-    <% end %>
+  <% project.features.each_with_index do |feature, index| %>
+  <!-- ******************************************************* -->
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse#<%= index %>">
+        <%= feature.title %>
+      </a>
+    </div>
+    <div id="collapse#<%= index %>" class="accordion-body collapse in">
+      <%= render :partial => "projects/partials/carousel_for_feature", :locals => { :feature => feature, :index => index} %>
+    </div>
+  </div>
+  <!-- ******************************************************* -->
+  <% end %>
 
   </div>
-  <%= link_to "Add a Feature", new_project_feature_path(project), :class => "top-create-account" if project.users.include?(current_user) %>
-</div> <!-- project-features-carousels-container -->
+  <div class="top-account-control visible-desktop">
+    <%= link_to "Add a Feature", new_project_feature_path(project), :class => "top-create-account" if project.users.include?(current_user) %>
+    </div>
+</div>
+
