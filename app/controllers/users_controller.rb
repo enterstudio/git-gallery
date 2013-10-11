@@ -53,12 +53,13 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        get_the_projects(@user)
-
+        login(@user)
+        @user.associate_with_existing_projects
+        Repo_scraper.new(@user)
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { render "new" }
+        format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -78,7 +79,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render "edit" }
+        format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
