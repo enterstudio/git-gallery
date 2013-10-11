@@ -1,6 +1,50 @@
-<section class="span9">
-  <%= render partial: 'snippets/new_form_partials/form', :locals => {:feature => @feature, :snippet => @snippet} %>
-</section>
+<div class="white-card">
+  <%= form_for([@feature, @snippet], html: {class: "form-horizontal"}) do |f| %>
+    <%= render partial: "shared/error_messages", :locals => {:target => @snippet} %>
+  <fieldset>
+    <h1>New Snippet Slide!</h1>
+    <p class="lead">
+      This slide is about explaining the code you wrote to create your <%= @feature.title %> feature. A good slide tells a story. Use a short snippet and relate it to the other slides in this feature.
+    </p>
+
+    <div class="control-group">
+      <%= f.label :name, mark_required(@snippet, :name, :label => "Snippet Name"), class: "control-label"%>
+      <%= f.text_field :name, :placeholder => "Name your snippet" %>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :url, "Source Code URL", class: "control-label" %>
+      <%= f.text_field :url, :placeholder => "GitHub URL for source code" %>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :language, mark_required(@snippet, :language), class: "control-label"%>
+      <%= f.select :language, options_for_select([["", ""], ["Ruby", "ruby"], ["Python", "python"], ["JavaScript", "javascript"], ["CoffeeScript", "coffeescript"], ["CSS", "css"], ["HTML", "html"]]) %>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :code, mark_required(@snippet, :code, :label => "Source Code"), class: "control-label" %>
+      <%= f.text_area :code,  :placeholder => "Paste your code here" %>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description, mark_required(@snippet, :description, :label => "Code Significance"), class: "control-label" %>
+      <%= f.text_area :description, :placeholder => "Explain your code here" %>
+    </div>
+
+    <div class="caption clearfix">
+      <caption>* required field</caption>
+    </div>
+
+    <ul class="horizontal">
+      <li>
+        <%= f.submit "SUBMIT", :class => "confirm-info" %>
+      </li>
+    </ul>
+  </fieldset>
+  <% end %>
+</div>
+
 
 
 

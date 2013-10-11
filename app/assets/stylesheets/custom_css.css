@@ -10,7 +10,7 @@
 
 
 
-.controls.edit-user { 
+.controls.edit-user {
   margin-left:0;
   text-align:center;
   margin-top:20px;
@@ -44,7 +44,7 @@
   width:100%;
   overflow-x:auto;
   overflow-wrap:scroll;
-  white-space:nowrap 
+  white-space:nowrap
 }
 
 .feature {
@@ -289,7 +289,7 @@ div.avatar-custom {
   display: inline-block;
   margin: 10px;
 }
- 
+
 .avatar-custom figure{
   position: relative;
   width: 180px;
@@ -391,9 +391,6 @@ legend {
   margin-top: 50px;
 }
 
-.lead {
-  padding-bottom: 70px;
-}
 
 .padded-white-card {
   padding: 50px;
