@@ -7,7 +7,7 @@
 	    	</div>
 	    </div>
 	    <div class="span3 float-custom-right">
-	    <%= render :partial => "users/gallery/user_repos", :locals => { :page_user => @user } if @user == current_user %>
+	    	<%= show_projects_or_repos(@user) %>
 	    </div>
 	  </div>
 	</div>

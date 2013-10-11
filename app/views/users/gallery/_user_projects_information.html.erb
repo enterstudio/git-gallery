@@ -1,0 +1,8 @@
+<div class="blog-categories widget-tp">
+  <h3>Project Preview</h3>
+  <div class="project-full-description">
+    <% user.projects.each_with_index do |project, index| %>
+      <%= render :partial => "projects/partials/project_full_description", :locals => { :project => project, :index => index } %>
+    <% end %>
+  </div>
+</div>

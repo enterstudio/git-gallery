@@ -118,6 +118,12 @@ body {
   color: $main_font_color !important;
 }
 
+.repo-listing {
+  min-height: 620px;
+  max-height: 620px;
+  overflow: auto;
+}
+
 .blog-categories {
   color: $main_font_color;
   h3 {
@@ -129,6 +135,7 @@ body {
   border-bottom: 1px solid $main_font_color;
   color: $main_font_color;
   min-width: 332px;
+
 }
 
 .user-project{
