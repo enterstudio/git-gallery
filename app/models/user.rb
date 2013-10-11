@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :github_id
-  attr_reader :token
 
   has_many :repos
   has_many :user_projects
