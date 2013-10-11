@@ -1,0 +1,16 @@
+<div class="progress-card">
+  <h3>What would you like on your next slide?</h3>
+  <div class="controls clearfix">
+    <ul class="horizontal">
+      <li>
+        <%= link_to "UPLOAD AN IMAGE",new_feature_upload_path(feature), :class => "upload-image" %>
+      </li>
+      <li>
+        <%= link_to "INSERT A SNIPPET",new_feature_snippet_path(feature), :class => "insert-snippet" %>
+      </li>
+      <li>
+        <%= link_to "FINISHED WITH SLIDES",edit_feature_path(feature), :class => "finish-slides pull-right" %>
+      </li>
+    </ul>
+  </div>
+</div>

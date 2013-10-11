@@ -54,7 +54,7 @@ textarea {
   box-shadow: none;
 }
 
-.back-to-project, .insert-snippet {
+.back-to-project, .insert-snippet, .finish-slides {
   display: inline-block;
   margin-right: 0;
   margin-left: 153px;
@@ -569,6 +569,7 @@ p.lead {
 .upload-image{
   width: 125px;
 }
+
 .upload-image:hover {
   background-color: $background;
   color: $main_font_color;
@@ -587,4 +588,55 @@ p.lead {
 .form-horizontal .control-group {
     margin-bottom: 12px;
     margin-top:    12px;
+}
+
+
+
+.finish-slides {
+  background-color: $main_font_color;
+  color: $background;
+  margin-top: 12px;
+}
+
+.finish-slides:hover {
+  text-decoration: none;
+  color: $midtonegrey;
+}
+
+.progress-card {
+  width: 400px;
+  padding: 12px;
+  background-color: $light;
+  border: 5px solid $main_font_color;
+  box-shadow: none;
+  background-image: none;
+  margin-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: left;
+  color: $main_font_color;
+  .upload-image {
+    float: left;
+    margin-left: 40px;
+  }
+  .insert-snippet {
+    margin-left: 0;
+  }
+}
+
+.current-slides {
+  border: 5px solid $main_font_color;
+  min-height: 400px;
+  max-height: 400px;
+  overflow: auto;
+  padding: 12px;
+  margin-top: 50px;
+  background-color: $orange;
+  width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+  legend, h4 {
+    color: $background;
+    font-weight: 300;
+  }
 }

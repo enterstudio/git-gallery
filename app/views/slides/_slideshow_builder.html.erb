@@ -1,18 +1,7 @@
-<div class="container">
-  <div class="row">
+<%= render :partial => "slides/progress_card", :locals => {:feature => feature} %>
 
-    <div class="span12 project-title-custom">
-      <h3>
-        What would you like on your next slide?
-      </h3>
-      <ul class="slideshow-button-list">
-        <li class="next"><%= link_to "Upload an Image",new_feature_upload_path(@feature), :class => "btn btn-primary btn-extra post-btn" %></li>
-        <li class="next"><%= link_to "Copy/Paste A Code Snippet",new_feature_snippet_path(@feature), :class => "btn btn-primary btn-extra post-btn" %></li>
-        <li class="next"><%= link_to "I'm Done Adding Slides",edit_feature_path(@feature), :class => "btn btn-primary btn-extra post-btn" %></li>
-      </ul>
-    </div>
-
-    <legend>
+<div class="current-slides">
+   <legend>
     Current Slides <h4>You can arrange the slide order by dragging the small tabs on the left up or down.</h4>
   </legend>
 
@@ -45,7 +34,6 @@
 
   <% end %>
 
-  </div>
 </div>
 
 
