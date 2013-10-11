@@ -1271,7 +1271,7 @@ a:hover {
 	-o-transition-property: -o-transform;
 	-ms-transition-property: -ms-transform;
 	-moz-transition-property: -moz-transform;
-  -webkit-transition-property: -webkit-transform;          
+  -webkit-transition-property: -webkit-transform;
 }
 .isotope.no-transition,
 .isotope.no-transition .isotope-item,
@@ -1326,7 +1326,7 @@ a:hover {
 .main-nav span {
 	display: block;
 	padding: 0 36px 0 47px;
-	background: #fff;	
+	background: #fff;
 }
 .main-nav i {
 	position: absolute;
@@ -1451,7 +1451,7 @@ a:hover {
 	font-weight: 700;
 	text-decoration: none;
 	color: #3b3a3a;
-	cursor: default;	
+	cursor: default;
 }
 
 
@@ -1520,7 +1520,7 @@ h2 .yellow {
 }
 h2 .green {
 	border-bottom: 2px solid #2ecc71;
-	color: #2ecc71;	
+	color: #2ecc71;
 }
 h2 .blue {
 	color: #3498db;
@@ -1611,7 +1611,7 @@ h3 {
 	-webkit-transition: opacity 0.3s;
 	-o-animation: spin 1s linear infinite;
 	-ms-animation: spin 1s linear infinite;
-	-moz-animation: spin 1s linear infinite; 
+	-moz-animation: spin 1s linear infinite;
 	-webkit-animation: spin 1s linear infinite;
 }
 .intro .scroll strong {
@@ -1622,7 +1622,7 @@ h3 {
 	opacity: 0.9;
 	-o-animation: blink 1s linear infinite;
 	-ms-animation: blink 1s linear infinite;
-	-moz-animation: blink 1s linear infinite; 
+	-moz-animation: blink 1s linear infinite;
 	-webkit-animation: blink 1s linear infinite;
 }
 .intro .scroll strong:before {
@@ -1649,7 +1649,7 @@ h3 {
 	content: 'Scroll down';
 }
 .loaded .intro .scroll:hover span {
-	background: rgba(0,0,0,0.4);	
+	background: rgba(0,0,0,0.4);
 }
 .loaded .intro .scroll:hover i {
 	color: #f1c30f;
@@ -1834,7 +1834,7 @@ h3 {
 	cursor: default;
 }
 .portfolio .details aside nav .disabled:hover {
-	color: #919191;	
+	color: #919191;
 }
 .portfolio .details aside p {
 	margin-top: 36px;
@@ -2080,7 +2080,7 @@ h3 {
 .about .award p {
 	display: table-cell;
 	vertical-align: middle;
-	width: 234px;	
+	width: 234px;
 	height: 68px;
 	border-top-width: 1px;
 	border-top-style: solid;
@@ -2110,104 +2110,104 @@ h3 {
 	border-bottom-color: #bf382b;
 }
 .about .award-red p {
-	border-top-color: #bf382b;	
+	border-top-color: #bf382b;
 }
 .about .award-red a:hover {
 	background: #bf382b;
 	border-bottom-color: #e74b3c;
 }
 .about .award-red a:hover p {
-	border-top-color: #e74b3c;	
+	border-top-color: #e74b3c;
 }
 .about .award-orange a {
 	background: #e57e22;
 	border-bottom-color: #d35400;
 }
 .about .award-orange p {
-	border-top-color: #d35400;	
+	border-top-color: #d35400;
 }
 .about .award-orange a:hover {
 	background: #d35400;
 	border-bottom-color: #e57e22;
 }
 .about .award-orange a:hover p {
-	border-top-color: #e57e22;	
+	border-top-color: #e57e22;
 }
 .about .award-yellow a {
 	background: #f1c30f;
 	border-bottom-color: #f39c12;
 }
 .about .award-yellow p {
-	border-top-color: #f39c12;	
+	border-top-color: #f39c12;
 }
 .about .award-yellow a:hover {
 	background: #f39c12;
 	border-bottom-color: #f1c30f;
 }
 .about .award-yellow a:hover p {
-	border-top-color: #f1c30f;	
+	border-top-color: #f1c30f;
 }
 .about .award-green a {
 	background: #2ecc71;
 	border-bottom-color: #27ae60;
 }
 .about .award-green p {
-	border-top-color: #27ae60;	
+	border-top-color: #27ae60;
 }
 .about .award-green a:hover {
 	background: #27ae60;
 	border-bottom-color: #2ecc71;
 }
 .about .award-green a:hover p {
-	border-top-color: #2ecc71;	
+	border-top-color: #2ecc71;
 }
 .about .award-cyan a {
 	background: #1abc9c;
 	border-bottom-color: #159f84;
 }
 .about .award-cyan p {
-	border-top-color: #159f84;	
+	border-top-color: #159f84;
 }
 .about .award-cyan a:hover {
 	background: #159f84;
 	border-bottom-color: #1abc9c;
 }
 .about .award-cyan a:hover p {
-	border-top-color: #1abc9c;	
+	border-top-color: #1abc9c;
 }
 .about .award-blue a {
 	background: #3498db;
 	border-bottom-color: #2980b9;
 }
 .about .award-blue p {
-	border-top-color: #2980b9;	
+	border-top-color: #2980b9;
 }
 .about .award-blue a:hover {
 	background: #2980b9;
 	border-bottom-color: #3498db;
 }
 .about .award-blue a:hover p {
-	border-top-color: #3498db;	
+	border-top-color: #3498db;
 }
 .about .award-purple a {
 	background: #9b59b6;
 	border-bottom-color: #8e44ac;
 }
 .about .award-purple p {
-	border-top-color: #8e44ac;	
+	border-top-color: #8e44ac;
 }
 .about .award-purple a:hover {
 	background: #8e44ac;
 	border-bottom-color: #9b59b6;
 }
 .about .award-purple a:hover p {
-	border-top-color: #9b59b6;	
+	border-top-color: #9b59b6;
 }
 .about .press dl {
 	width: 486px;
 	border-bottom: 3px solid #c0c8ca;
 	background: #fff;
-	text-align: left;	
+	text-align: left;
 }
 .about .press dt {
 	height: 212px;
@@ -2252,7 +2252,7 @@ h3 {
 .about .appreciation dl {
 	width: 486px;
 	background: #fff;
-	text-align: left;	
+	text-align: left;
 	border-bottom: 3px solid #c0c8ca;
 }
 .about .appreciation dt {
@@ -2444,8 +2444,8 @@ h3 {
 @media screen and (max-width: 1008px) {
 	.filters-nav {
 		text-align: right;
-	}	
-	
+	}
+
 	.portfolio h1 {
 		font-size: 24px;
 		line-height: 26px;
@@ -2484,7 +2484,7 @@ h3 {
 		max-width: 100%;
 		height: auto;
 	}
-	
+
 	.about ul {
 		width: 756px;
 	}
@@ -2494,7 +2494,7 @@ h3 {
 	.about .more {
 		width: 744px;
 	}
-	
+
 	.contacts h2 {
 		margin-left: -369px;
 	}
@@ -2524,15 +2524,15 @@ h3 {
 	}
 	.main-nav a:first-child {
 		padding-left: 35px;
-	}	
-	
+	}
+
 	.filters-nav li {
 		margin: 0 6px;
 	}
 	.filters-nav li:last-child {
 		margin-right: 12px;
 	}
-	
+
 	.intro .logo {
 		width: 152px;
 		height: 68px;
@@ -2627,7 +2627,7 @@ h3 {
 		margin-top: 24px;
 		padding-top: 12px;
 	}
-	
+
 	.about {
 		padding-bottom: 30px;
 	}
@@ -2693,7 +2693,7 @@ h3 {
 	.about .award p {
 		display: table-cell;
 		vertical-align: middle;
-		width: 142px;	
+		width: 142px;
 		height: 41px;
 		border-top-width: 1px;
 		border-top-style: solid;
@@ -2780,7 +2780,7 @@ h3 {
 	.about .appreciation dd i {
 		margin-top: 11px;
 	}
-	
+
 	.contacts h2 {
 		display: none;
 	}
@@ -2808,11 +2808,11 @@ h3 {
 	.main-nav a:first-child {
 		padding-left: 47px;
 	}
-	
+
 	.filters-nav ul {
 		display: none !important;
 	}
-	
+
 	.portfolio ul {
 		width: 308px;
 	}
@@ -2825,7 +2825,7 @@ h3 {
 	.portfolio .details {
 		width: 296px;
 	}
-	
+
 	.about ul {
 		width: 308px;
 	}

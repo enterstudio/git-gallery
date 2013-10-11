@@ -13,6 +13,17 @@ body {
   background-color: $background;
 }
 
+input {
+  width:   335px;
+}
+
+textarea {
+  margin-top: 2px;
+  width:   350px;
+  height:  200px;
+  padding: 5px;
+}
+
   ////////////////////
  // Navigation Bar //
 ////////////////////
@@ -36,6 +47,27 @@ body {
   background-image: none;
   border-color: $background;
   box-shadow: none;
+}
+
+.back-to-project {
+  display: inline-block;
+  margin-right: 0;
+  margin-left: 153px;
+  background: $background;
+  color: $main_font_color;
+  font-family: Oswald, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  height: 20px;
+  line-height: 20px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+}
+.back-to-project:hover {
+  text-decoration: none;
+  color: $main_font_color;
 }
 
 .top-account-control > a.top-sign-in {
@@ -341,6 +373,11 @@ legend {
   ////////////////////
  // Project Show   //
 ////////////////////
+
+.caption {
+  margin-left: 500px;
+  margin-bottom: 10px;
+}
 
 .project-container {
   min-height: 600px;

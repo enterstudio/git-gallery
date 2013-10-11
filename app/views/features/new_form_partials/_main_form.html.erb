@@ -8,8 +8,12 @@
     <legend>
       Start a New Slideshow Feature for <%= @project.name %>
     </legend>
+
     <div class="control-group">
-      <%= render partial: "features/new_form_partials/title", :locals => {:f => f, :feature => @feature} %>
+      <%= f.label :title, mark_required(feature, :title), class: "control-label" %>
+      <div class="controls new-feature">
+        <%= f.text_field :title, placeholder: "Give your feature a title..." %>
+      </div>
     </div>
 
     <div class="control-group">

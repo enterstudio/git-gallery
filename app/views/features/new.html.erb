@@ -1,43 +1,38 @@
-<section class="section-wrapper stripped">
-  <div class="container">
-    <div class="row">
-      <div class="span12 project-title-custom">
-        <div class="white-card no-padding just-white">
+<div class="white-card">
 
-          <div class="container">
-            <fieldset>
-              <%= form_for([@project, @feature], :validate => true, html: {class: "form-horizontal"}) do |f| %>
-              <%= render partial: "shared/error_messages", :locals => {:target => @feature} %>
-              <legend>
-                Start a New Slideshow Feature for <%= @project.name %>
-              </legend>
+  <h1>New Feature</h1>
+  <%= form_for([@project, @feature], :validate => true, html: {class: "form-horizontal"}) do |f| %>
+  <%= render :partial => "shared/error_messages", :locals => {:target => @feature} %>
 
-              <div class="control-group">
-                <%= render partial: "features/new_form_partials/title", :locals => {:f => f, :feature => @feature} %>
-              </div>
+  <fieldset>
+    <legend>Start a New Slideshow Feature for <%= @project.name %></legend>
 
-              <div class="control-group">
-                <%= render partial: "features/new_form_partials/description", :locals => {:f => f, :feature => @feature} %>
-              </div>
+      <%= f.label :title, mark_required(@feature, :title), class: "control-label" %>
+      <%= f.text_field :title, placeholder: "Give your feature a title..." %>
 
-              <div class="control-group">
-                <%= render partial: "features/new_form_partials/technologies", :locals => {:f => f, :feature => @feature} %>
-              </div>
-            </fieldset>
-          </div>
-        </div>
+      <%= f.label :description, mark_required(@feature, :description), class: "control-label" %>
+      <%= f.text_area :description, :rows => "5", placeholder: "What did your feature accomplish…" %>
 
-        <ul class="slideshow-button-list">
-          <li class="next"><%= f.submit "Submit", :class => "btn btn-primary btn-extra post-btn" %></li>
-          <% end %>
-          <li class="next"><%= link_to "Back to #{@project.name}", @project, :class => "btn btn-primary btn-extra post-btn" %></li>
+      <div class="control-group">
+        <%= render partial: "features/new_form_partials/technologies", :locals => {:f => f, :feature => @feature} %>
+      </div>
+      <div class="caption clearfix">
+        <caption>* required field</caption>
+      </div>
+      <div class="controls">
+        <ul class="horizontal">
+          <li>
+          <%= f.submit "SUBMIT", :class => "confirm-info" %>
+          </li>
+          <li>
+          <%= link_to "BACK TO #{@project.name.upcase}", @project, :class => "back-to-project" %>
+          </li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
 
+  </fieldset>
+  <% end %>
 
-
+</div>
 
 

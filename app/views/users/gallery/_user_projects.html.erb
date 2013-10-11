@@ -1,6 +1,6 @@
 
   <div class="section-wrapper clearfix">
-    <h3 class="section-header"><%= user.name.capitalize %>'s Projects</h3>
+    <h3 class="section-header">Welcome to the Gallery of <%= user.name.capitalize %></h3>
     <% user.projects.each_with_index do |project, index| %>
       <%= render :partial => "projects/partials/index_card", :locals => { :project => project, :index => index } %>
     <% end %>
