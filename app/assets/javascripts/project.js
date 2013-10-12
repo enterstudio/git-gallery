@@ -31,6 +31,23 @@ $(".user-project").hover(function () {
 });
 
 
+ // beginning of a function to show the slide information on the right of the page
+ // when a new slide becomes active.
+
+var slideController = $(".active").attr('id');
+var currentSlide = $('.' + slideController);
+currentSlide.removeClass('no-display');
+
+$('.carousel-control').click(function (){
+  currentSlide.addClass('no-display');
+  slideController = $(".active").attr('id');
+  alert(slideController);
+  currentSlide = $('.' + slideController);
+  alert(currentSlide);
+  // currentSlide.removeClass('no-display');
+});
+
+
 // The following function controls the stickiness of the project preview area
 
 $(document).ready(function() { // http://www.pixelbind.com/make-a-div-stick-when-you-scroll/

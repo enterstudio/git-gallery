@@ -1,4 +1,4 @@
-<div class="item" id="<%= slide.name %>">
+<div class="item" id="<%= slide.name.gsub(/[^[:alnum:]]/, '') %>">
   <%= slide.name %>
 <%= "#{slide.position + 1} of #{feature.slides_in_order.length}" %>
 <%= snippet_or_upload_show(slide) %>

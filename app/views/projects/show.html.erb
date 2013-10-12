@@ -9,6 +9,10 @@
           <div class="section-wrapper">
             <h3 class="section-header"><%= @project.name %></h3>
             <%= render :partial => "projects/partials/project_features", :locals => { :project => @project } %>
+
+            <div class="top-account-control visible-desktop">
+              <%= link_to "Add a Feature", new_project_feature_path(@project), :class => "top-create-account" if @project.users.include?(current_user) %>
+            </div>
           </div>
 
         </div>

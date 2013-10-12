@@ -1,5 +1,5 @@
 class Upload < ActiveRecord::Base
-  attr_accessible :extension, :name, :image, :description, :position, :uploadable_type, :uploadable_id
+  attr_accessible :extension, :name, :image, :description, :position, :uploadable_type, :uploadable_id, :image_cache
   belongs_to :uploadable, polymorphic: true
 
   mount_uploader :image, ImageUploader

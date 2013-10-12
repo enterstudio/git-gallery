@@ -1,22 +1,43 @@
-<div class="container span8 gg-feature-form">
+<div class="white-card">
   <%= form_for [@uploadable, @upload], html: {class: "form-horizontal delete-on-back"} do |f|%>
     <%= render partial: "shared/error_messages", :locals => {:target => @upload} %>
-    <fieldset>
-      <h1>
-        New Image Slide!
-      </h1>
+  <fieldset>
+    <h1>New Image Slide!</h1>
+    <p class="lead">
+      This slide is about explaining the code you wrote to create your <%= @uploadable.title %> feature. A good slide tells a story. Use a short snippet and relate it to the other slides in this feature.
+    </p>
 
-      <div class="gg-form-section">
-        <div class="control-group"><%= render partial: "uploads/new_upload_partials/name", :locals => {:f => f, :upload => @upload} %></div>
-        <div class="control-group"><%= render partial: "uploads/new_upload_partials/image", :locals => {:f => f, :upload => @upload} %></div>
-        <div class="control-group"><%= render partial: "uploads/new_upload_partials/description", :locals => {:f => f, :upload => @upload} %></div>
+    <div class="control-group">
+      <%= f.label :name, mark_required(@upload, :name, :label => "Image"), class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :name, :placeholder => "Name your image slide" %>
       </div>
+    </div>
 
-      <div class="button-options">
-        <%= submit_to_uploadable(@uploadable, f) %>
+    <div class="control-group">
+      <%= f.label :image, mark_required(@upload, :image, :label => "Choose File"), class: "control-label" %>
+      <div class="controls">
+        <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %>
       </div>
-    </fieldset>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description, mark_required(@upload, :description, :label => "Image Explanation"), class: "control-label shift-label-left" %>
+      <div class="controls shift-control-left">
+        <%= f.text_area :description, :rows => "8", :placeholder => "Explain what your image shows" %>
+      </div>
+    </div>
+
+    <div class="caption clearfix">
+      <caption>* required field</caption>
+    </div>
+
+    <ul class="horizontal">
+      <li>
+      <%= submit_to_uploadable(@uploadable, f) %>
+      </li>
+    </ul>
+  </fieldset>
   <% end %>
 </div>
-
-

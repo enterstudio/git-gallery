@@ -1,7 +1,7 @@
 <% project.features.each_with_index do |feature| %>
 
   <% feature.slides_in_order.each_with_index do |slide| %>
-  <div class="slide-info-container <%= slide.name %>">
+  <div class="slide-info-container <%= slide.name.gsub(/[^[:alnum:]]/, '') %> no-display">
    <h4><%= slide.name %></h4>
     <p><%= slide.description %></p>
 

@@ -9,7 +9,7 @@
         <%= link_to "INSERT A SNIPPET",new_feature_snippet_path(feature), :class => "insert-snippet" %>
       </li>
       <li>
-        <%= link_to "FINISHED WITH SLIDES",edit_feature_path(feature), :class => "finish-slides pull-right" %>
+        <%= link_to "FINISHED WITH SLIDES", project_path(feature.project), :class => "finish-slides pull-right" %>
       </li>
     </ul>
   </div>
