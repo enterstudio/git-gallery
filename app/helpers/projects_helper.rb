@@ -1,4 +1,6 @@
 module ProjectsHelper
+
+
 	def link_to_project_image(project)
 		if project.upload
 			link_to image_tag(project.upload.image_url.to_s), project_path(project)

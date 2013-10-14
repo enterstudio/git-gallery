@@ -50,13 +50,8 @@ class ProjectsController < ApplicationController
     @project.name = @repo.name
 
     respond_to do |format|
-      if @project.save
-        @repo.project_id = @project.id
-        @repo.save
-        @project.get_description
-        @project.get_technologies
-        @project.get_contributors
-
+       if @project.save
+        @project.make_from @repo
         format.html { redirect_to project_path(@project), notice: 'Project was successfully created.' }
         format.json { render json: @project, status: :created, location: @project }
       else

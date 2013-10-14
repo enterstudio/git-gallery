@@ -128,6 +128,9 @@ textarea {
 .section-wrapper {
   background-color: $background;
   background-image: none;
+  p {
+    color: $main_font_color;
+  }
 }
 
 .section-wrapper-show-text {
@@ -582,6 +585,15 @@ p.lead {
   margin-left: 227px;
 }
 
+.information-container {
+  background-color: $background;
+  margin-top: 20px;
+  padding: 4px;
+  p {
+    color: $main_font_color;
+  }
+}
+
 .insert-snippet:hover {
   text-decoration: none;
   color: $orange;
@@ -647,4 +659,15 @@ p.lead {
   color: $background;
   text-align: center;
   margin-bottom: 0;
+}
+.project-info-container h3 {
+  font-family: Oswald, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $main_font_color;
+  color: $main_font_color;
 }

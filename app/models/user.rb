@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :technologies, :through => :features
 
   validates :email, :uniqueness => true
+  validates :name, :github_id, :token, :avatar_url, :presence => true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :update, :allow_nil => true
 
   after_destroy :prune_repos, :disassociate_projects

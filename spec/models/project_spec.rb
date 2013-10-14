@@ -13,7 +13,6 @@ describe Project do
     project.should_not be_valid
   end
 
-  it "does something" do
+  it "should have a repo"
 
-  end
 end

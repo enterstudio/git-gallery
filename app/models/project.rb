@@ -13,6 +13,15 @@ class Project < ActiveRecord::Base
 
   validates :name, :presence => true
 
+  def make_from(repo)
+    self.repo = repo
+    self.get_description
+    self.get_technologies
+    self.get_contributors
+    repo.project_id = self.id
+    repo.save
+  end
+
   def this_user_features(chosen_user)
     Feature.joins(:project).where(:project_id => self.id, :user_id => chosen_user.id)
   end
@@ -78,16 +87,17 @@ class Project < ActiveRecord::Base
   end
 
   def default_description
-    self.description || "This is a sample description."
+    self.description || "This is a work in progress."
   end
 
   def get_description
     github_description = JSON.parse(open("https://api.github.com/repos/#{creator.name}/#{self.name}").read)["description"]
     if github_description.nil? || github_description.empty?
-      self.description = "Please write a short description about this project."
+     return self.default_description
     else
       self.description =  github_description
     end
     self.save
+    self.description
   end
 end

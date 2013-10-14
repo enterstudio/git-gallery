@@ -7,7 +7,7 @@
         <div class="bs-docs-example project-container">
 
           <div class="section-wrapper">
-            <h3 class="section-header"><%= @project.name %></h3>
+            <h3 class="section-header"><%= @project.name.upcase %></h3>
             <%= render :partial => "projects/partials/project_features", :locals => { :project => @project } %>
 
             <div class="top-account-control visible-desktop">
@@ -20,6 +20,12 @@
       </div>
 
       <div class="span3 float-custom-right">
+        <div class="project-info-container">
+          <h3>PROJECT INFORMATION</h3>
+        <div class="information-container">
+            <%= render :partial => "projects/partials/information", :locals => { :project => @project } %>
+          </div>
+        </div>
 
         <div class="blog-categories widget-tp">
           <h3>Slide Information</h3>
