@@ -21,11 +21,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 3.1.3'
 gem 'carrierwave'
 gem 'pygments.rb'
 gem 'omniauth-github'
-gem 'best_in_place'
+gem 'best_in_place', '>= 2.1.0'
 gem 'client_side_validations'
 
 
