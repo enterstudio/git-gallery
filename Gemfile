@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '6.0.3.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -25,7 +25,7 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'pygments.rb'
 gem 'omniauth-github'
-gem 'best_in_place'
+gem 'best_in_place', '>= 3.0.0'
 gem 'client_side_validations'
 
 
@@ -46,7 +46,7 @@ gem 'capistrano'
 
 gem "therubyracer"
 gem "less-rails"
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '>= 2.2.8'
 
 gem "mail"
 
