@@ -22,7 +22,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'carrierwave'
+gem 'carrierwave', '>= 2.2.5'
 gem 'pygments.rb'
 gem 'omniauth-github'
 gem 'best_in_place'
