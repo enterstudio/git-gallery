@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '7.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -13,7 +13,7 @@ gem 'sqlite3'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'coffee-rails', '~> 4.2.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -21,10 +21,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-gem 'carrierwave'
+gem 'jquery-rails', '>= 4.0.1'
+gem 'carrierwave', '>= 0.10.0'
 gem 'pygments.rb'
-gem 'omniauth-github'
+gem 'omniauth-github', '>= 2.0.0'
 gem 'best_in_place'
 gem 'client_side_validations'
 
@@ -45,15 +45,15 @@ gem 'capistrano'
 # gem 'debugger'
 
 gem "therubyracer"
-gem "less-rails"
-gem 'twitter-bootstrap-rails'
+gem "less-rails", ">= 2.4.0"
+gem 'twitter-bootstrap-rails', '>= 3.2.2'
 
 gem "mail"
 
 group :test, :development do
-  gem 'rspec-rails',             "~> 2.14.0"
-  gem 'factory_girl_rails',      "~> 4.2.1"
-  gem "guard-rspec",             "~> 3.0.2"
+  gem 'rspec-rails', '~> 2.14.1'
+  gem 'factory_girl_rails', '~> 4.3.0'
+  gem "guard-rspec", "~> 3.0.3"
   gem "terminal-notifier-guard", "~> 1.5.3"
 end
 
