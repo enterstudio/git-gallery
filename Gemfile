@@ -24,7 +24,7 @@ end
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'pygments.rb'
-gem 'omniauth-github'
+gem 'omniauth-github', '>= 1.1.2'
 gem 'best_in_place'
 gem 'client_side_validations'
 
